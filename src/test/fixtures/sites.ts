@@ -47,9 +47,18 @@ export function createValidEightSites() {
         y: 50,
       },
       photos: [
-        `/synthetic/site-${sequence}/photo-01.jpg`,
-        `/synthetic/site-${sequence}/photo-02.jpg`,
-        `/synthetic/site-${sequence}/photo-03.jpg`,
+        {
+          src: `/synthetic/site-${sequence}/photo-01.jpg`,
+          alt: `合成地点${sequence}的测试照片一`,
+        },
+        {
+          src: `/synthetic/site-${sequence}/photo-02.jpg`,
+          alt: `合成地点${sequence}的测试照片二`,
+        },
+        {
+          src: `/synthetic/site-${sequence}/photo-03.jpg`,
+          alt: `合成地点${sequence}的测试照片三`,
+        },
       ],
       video: {
         url: `https://media.invalid/synthetic/site-${sequence}.mp4`,

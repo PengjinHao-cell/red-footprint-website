@@ -25,7 +25,15 @@ export const siteSchema = z.object({
     x: z.number().min(0).max(100),
     y: z.number().min(0).max(100),
   }),
-  photos: z.array(z.string().min(1)).min(3).max(5),
+  photos: z
+    .array(
+      z.object({
+        src: z.string().min(1),
+        alt: z.string().min(4),
+      }),
+    )
+    .min(1)
+    .max(5),
   video: z.object({
     url: z
       .string()

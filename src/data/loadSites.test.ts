@@ -45,26 +45,73 @@ describe('loadSites', () => {
     expect(() => loadSites(sites)).toThrow();
   });
 
-  it('rejects fewer than three photos', () => {
+  it('accepts a site containing one selected photo', () => {
     const sites = createValidEightSites();
-    sites[0] = { ...sites[0], photos: sites[0].photos.slice(0, 2) };
+    sites[0] = { ...sites[0], photos: sites[0].photos.slice(0, 1) };
+
+    expect(loadSites(sites)).toHaveLength(8);
+  });
+
+  it('rejects a site containing no selected photos', () => {
+    const sites = createValidEightSites();
+    sites[0] = { ...sites[0], photos: [] };
 
     expect(() => loadSites(sites)).toThrow();
   });
 
-  it('rejects more than five photos', () => {
+  it('accepts a site containing five selected photos', () => {
     const sites = createValidEightSites();
+    const selectedPhoto = sites[0].photos[0];
+    sites[0] = {
+      ...sites[0],
+      photos: [...sites[0].photos, selectedPhoto, selectedPhoto],
+    };
+
+    expect(loadSites(sites)).toHaveLength(8);
+  });
+
+  it('rejects a site containing six selected photos', () => {
+    const sites = createValidEightSites();
+    const selectedPhoto = sites[0].photos[0];
     sites[0] = {
       ...sites[0],
       photos: [
         ...sites[0].photos,
-        '/synthetic/extra/photo-04.jpg',
-        '/synthetic/extra/photo-05.jpg',
-        '/synthetic/extra/photo-06.jpg',
+        selectedPhoto,
+        selectedPhoto,
+        selectedPhoto,
       ],
     };
 
     expect(() => loadSites(sites)).toThrow();
+  });
+
+  it('rejects a selected photo without alt text', () => {
+    const sites = createValidEightSites();
+    const sitesWithMissingAlt = sites.map((site, index) =>
+      index === 0
+        ? {
+            ...site,
+            photos: [{ src: '/synthetic/missing-alt.jpg' }],
+          }
+        : site,
+    );
+
+    expect(() => loadSites(sitesWithMissingAlt)).toThrow();
+  });
+
+  it('rejects a selected photo with empty alt text', () => {
+    const sites = createValidEightSites();
+    const sitesWithEmptyAlt = sites.map((site, index) =>
+      index === 0
+        ? {
+            ...site,
+            photos: [{ src: '/synthetic/empty-alt.jpg', alt: '' }],
+          }
+        : site,
+    );
+
+    expect(() => loadSites(sitesWithEmptyAlt)).toThrow();
   });
 
   it('rejects a province outside Jiangsu and Shanghai', () => {
