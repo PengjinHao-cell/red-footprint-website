@@ -1,0 +1,12 @@
+:root {
+  --paper: #fbf7ee;
+  --sand: #e7d4b5;
+  --brick: #982e2d;
+  --brick-dark: #54201d;
+  --ink: #3f2925;
+  --focus: var(--brick);
+  --font-display: 'Songti SC', 'STSong', 'Noto Serif CJK SC', serif;
+  --font-body: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --content-width: 48rem;
+  --touch-target: 44px;
+}
