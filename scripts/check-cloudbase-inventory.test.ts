@@ -57,4 +57,46 @@ describe('validateCloudBaseInventory', () => {
       'status must be complete or blocked',
     );
   });
+
+  it('rejects an unknowns path that does not exist', () => {
+    const record = {
+      ...validRecord,
+      status: 'blocked',
+      blocker: 'Some fields could not be read safely.',
+      unknowns: ['plan.fullQuotaLimits'],
+    };
+
+    expect(validateCloudBaseInventory(record)).toContain(
+      'unknowns[0]: path plan.fullQuotaLimits does not exist',
+    );
+  });
+
+  it('rejects an unknowns path whose value is not null', () => {
+    const record = {
+      ...validRecord,
+      status: 'blocked',
+      blocker: 'Some fields could not be read safely.',
+      unknowns: ['plan.id'],
+      plan: { ...validRecord.plan, id: 'baas_trial' },
+    };
+
+    expect(validateCloudBaseInventory(record)).toContain(
+      'unknowns[0]: path plan.id must resolve to null',
+    );
+  });
+
+  it('checks every unknowns path in a blocked inventory', () => {
+    const record = {
+      ...validRecord,
+      status: 'blocked',
+      blocker: 'Some fields could not be read safely.',
+      unknowns: ['plan.fullQuotaLimits', 'github.linked'],
+      plan: { ...validRecord.plan, fullQuotaLimits: null },
+      github: { ...validRecord.github, linked: true },
+    };
+
+    expect(validateCloudBaseInventory(record)).toContain(
+      'unknowns[1]: path github.linked must resolve to null',
+    );
+  });
 });

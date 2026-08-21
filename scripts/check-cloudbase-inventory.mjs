@@ -121,6 +121,30 @@ function validateReadOnlyCalls(calls, mcpAvailable, errors) {
   });
 }
 
+function validateUnknownPaths(input, unknowns, errors) {
+  if (!Array.isArray(unknowns)) return;
+
+  unknowns.forEach((path, index) => {
+    if (typeof path !== 'string' || path === '') return;
+
+    let value = input;
+    let exists = true;
+    for (const segment of path.split('.')) {
+      if (!isRecord(value) || !Object.hasOwn(value, segment)) {
+        exists = false;
+        break;
+      }
+      value = value[segment];
+    }
+
+    if (!exists) {
+      errors.push(`unknowns[${index}]: path ${path} does not exist`);
+    } else if (value !== null) {
+      errors.push(`unknowns[${index}]: path ${path} must resolve to null`);
+    }
+  });
+}
+
 export function validateCloudBaseInventory(input) {
   const errors = [];
   if (!isRecord(input)) return ['inventory must be a JSON object'];
@@ -163,6 +187,7 @@ export function validateCloudBaseInventory(input) {
     if (!Array.isArray(input.unknowns) || input.unknowns.length === 0) {
       errors.push('unknowns must list unreadable fields for a blocked inventory');
     }
+    validateUnknownPaths(input, input.unknowns, errors);
   }
 
   return errors;

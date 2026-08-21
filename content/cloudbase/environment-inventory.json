@@ -14,7 +14,8 @@
       "environmentQps": 500,
       "qpsCustomLimit": -1,
       "overrunEnabled": false
-    }
+    },
+    "fullQuotaLimits": null
   },
   "hosting": {
     "exists": true,
