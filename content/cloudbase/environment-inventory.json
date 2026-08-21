@@ -1,0 +1,88 @@
+{
+  "status": "blocked",
+  "blocker": "Required CloudBase read-only tools for hosting, storage objects, GitHub binding, custom domains, and permissions do not expose an environment ID parameter in their schemas, so they were not called.",
+  "environmentId": "red-footprint-preview-d5322636bd",
+  "observedAt": "2026-08-21T17:42:15+08:00",
+  "mcpAvailable": true,
+  "accessMode": "read-only",
+  "writeOperationsPerformed": false,
+  "region": "ap-shanghai",
+  "plan": {
+    "id": "baas_trial",
+    "name": "体验版",
+    "quotas": {
+      "environmentQps": 500,
+      "qpsCustomLimit": -1,
+      "overrunEnabled": false
+    }
+  },
+  "hosting": {
+    "exists": true,
+    "instanceId": null,
+    "bucketId": "b0b1-static-red-footprint-preview-d5322636bd-1438111688",
+    "status": "online",
+    "defaultDomain": "red-footprint-preview-d5322636bd-1438111688.tcloudbaseapp.com",
+    "customDomains": null,
+    "defaultDomainRouteEnabled": true,
+    "capacityBytes": 0
+  },
+  "storage": {
+    "exists": true,
+    "bucketId": "7265-red-footprint-preview-d5322636bd-1438111688",
+    "status": "NORMAL",
+    "publicDomains": null,
+    "cdnDomains": [
+      "7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
+    ],
+    "objectCount": null,
+    "capacityBytes": 0
+  },
+  "usageObservation": {
+    "periodStart": "2026-08-21",
+    "periodEnd": "2026-09-21",
+    "storageCapacity": {
+      "value": 0,
+      "unit": "MB",
+      "resourceType": "COS"
+    },
+    "hostingCapacity": {
+      "value": 0,
+      "unit": "MB",
+      "resourceType": "HOSTING"
+    }
+  },
+  "github": {
+    "linked": null,
+    "repository": null,
+    "branch": null
+  },
+  "permissions": {
+    "visible": null,
+    "summary": null
+  },
+  "readOnlyCalls": [
+    {
+      "tool": "mcp__cloudbase__queryEnv",
+      "action": "info",
+      "environmentId": "red-footprint-preview-d5322636bd"
+    },
+    {
+      "tool": "mcp__cloudbase__queryEnv",
+      "action": "usage",
+      "environmentId": "red-footprint-preview-d5322636bd",
+      "needUsageDetails": false
+    }
+  ],
+  "unknowns": [
+    "plan.fullQuotaLimits",
+    "hosting.instanceId",
+    "hosting.customDomains",
+    "storage.publicDomains",
+    "storage.objectCount",
+    "github.linked",
+    "github.repository",
+    "github.branch",
+    "permissions.visible",
+    "permissions.summary"
+  ]
+}

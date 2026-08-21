@@ -10,6 +10,7 @@
     "test": "vitest --exclude 'tests/e2e/**'",
     "test:run": "vitest run --exclude 'tests/e2e/**'",
     "test:e2e": "playwright test",
+    "check:cloudbase-inventory": "node scripts/check-cloudbase-inventory.mjs",
     "check:content": "node scripts/check-content.mjs",
     "check:map": "node scripts/check-map-compliance.mjs"
   },
