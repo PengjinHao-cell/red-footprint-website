@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "test": "vitest",
-    "test:run": "vitest run",
+    "test": "vitest --exclude 'tests/e2e/**'",
+    "test:run": "vitest run --exclude 'tests/e2e/**'",
     "test:e2e": "playwright test",
     "check:content": "node scripts/check-content.mjs",
     "check:map": "node scripts/check-map-compliance.mjs"
