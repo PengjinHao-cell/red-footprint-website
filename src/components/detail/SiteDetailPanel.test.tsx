@@ -1,3 +1,7 @@
+/// <reference types="node" />
+
+import { readFileSync } from 'node:fs';
+
 import {
   cleanup,
   fireEvent,
@@ -12,6 +16,10 @@ import { createValidEightSites } from '../../test/fixtures/sites';
 import SiteDetailPanel from './SiteDetailPanel';
 
 const site = siteSchema.parse(createValidEightSites()[0]);
+const detailStyles = readFileSync(
+  'src/components/detail/detail.css',
+  'utf8',
+);
 
 beforeEach(() => {
   vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(
@@ -201,5 +209,26 @@ describe('SiteDetailPanel', () => {
     unmount();
 
     expect(trigger).toHaveFocus();
+  });
+
+  it('ships responsive media geometry, touch targets, and reduced motion rules', () => {
+    expect(detailStyles).toMatch(
+      /\.media-carousel__viewport\s*{[^}]*aspect-ratio:\s*4\s*\/\s*5/s,
+    );
+    expect(detailStyles).toMatch(
+      /\.media-carousel__viewport\s*{[^}]*touch-action:\s*pan-y pinch-zoom/s,
+    );
+    expect(detailStyles).toMatch(
+      /\.media-carousel__image,[^{]*\.media-carousel__video\s*{[^}]*object-fit:\s*contain/s,
+    );
+    expect(detailStyles).toMatch(
+      /\.media-carousel__control\s*{[^}]*min-width:\s*var\(--touch-target\)[^}]*min-height:\s*var\(--touch-target\)/s,
+    );
+    expect(detailStyles).toContain('@media (min-width: 48rem)');
+    expect(detailStyles).toContain('@media (min-width: 64rem)');
+    expect(detailStyles).toMatch(/max-width:\s*72ch/);
+    expect(detailStyles).toMatch(
+      /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.media-carousel__track\s*{[^}]*transition:\s*none/s,
+    );
   });
 });

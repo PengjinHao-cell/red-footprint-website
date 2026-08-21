@@ -4,6 +4,7 @@ import type { Site } from '../../data/siteSchema';
 import { buildMediaItems } from '../../lib/media';
 import MediaCarousel from './MediaCarousel';
 import SiteHero from './SiteHero';
+import './detail.css';
 
 type SiteDetailPanelProps = {
   site: Site;
