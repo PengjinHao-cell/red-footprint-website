@@ -35,7 +35,7 @@ const globeMock = vi.hoisted(() => ({
 const reducedMotionMock = vi.hoisted(() => ({ enabled: false }));
 
 const timelineMock = vi.hoisted(() => ({
-  instances: [] as Array<{ killCalls: number }>,
+  instances: [] as Array<{ durations: number[]; killCalls: number }>,
 }));
 
 vi.mock('../../hooks/useReducedMotion', () => ({
@@ -48,9 +48,12 @@ vi.mock('gsap', () => ({
       let elapsedMilliseconds = 0;
       const timers: Array<ReturnType<typeof setTimeout>> = [];
       const instance = {
+        durations: [] as number[],
         killCalls: 0,
         to(target: Record<string, number>, tween: Record<string, unknown>) {
-          elapsedMilliseconds += Number(tween.duration) * 1_000;
+          const duration = Number(tween.duration);
+          instance.durations.push(duration);
+          elapsedMilliseconds += duration * 1_000;
           timers.push(
             setTimeout(() => {
               Object.entries(tween).forEach(([key, value]) => {
@@ -494,7 +497,7 @@ describe('GlobeScene', () => {
     expect(rendered.props.onReturnComplete).toHaveBeenCalledTimes(1);
   });
 
-  it('keeps an open journey returnable when reduced-motion preference changes', async () => {
+  it('uses live reduced motion for return without rebuilding the open globe journey', async () => {
     setWebGLSupported(true);
     enableComplianceMetadata();
     const rendered = renderScene();
@@ -504,6 +507,10 @@ describe('GlobeScene', () => {
     vi.useFakeTimers();
     instance.pointClick?.(instance.pointData[0]);
     act(() => vi.runAllTimers());
+    const spatialViewsAfterFlight = instance.pointOfViewCalls.length;
+
+    expect(spatialViewsAfterFlight).toBeGreaterThan(0);
+    expect(rendered.props.onTravelComplete).toHaveBeenCalledTimes(1);
 
     reducedMotionMock.enabled = true;
     rendered.rerender(<GlobeScene {...rendered.props} detailOpen />);
@@ -512,6 +519,33 @@ describe('GlobeScene', () => {
     act(() => vi.runAllTimers());
 
     expect(rendered.props.onReturnComplete).toHaveBeenCalledTimes(1);
+    expect(rendered.props.onTravelComplete).toHaveBeenCalledTimes(1);
+    expect(instance.pointOfViewCalls).toHaveLength(spatialViewsAfterFlight);
+    expect(timelineMock.instances.at(-1)?.durations).toEqual([0.12, 0.12]);
+    expect(instance.destructor).not.toHaveBeenCalled();
+    expect(globeMock.instances).toHaveLength(1);
+  });
+
+  it('uses spatial motion for the next flight after reduced motion is disabled while idle', async () => {
+    reducedMotionMock.enabled = true;
+    setWebGLSupported(true);
+    enableComplianceMetadata();
+    const rendered = renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const instance = latestInstance();
+    reducedMotionMock.enabled = false;
+    rendered.rerender(<GlobeScene {...rendered.props} />);
+    await act(async () => Promise.resolve());
+    vi.useFakeTimers();
+
+    instance.pointClick?.(instance.pointData[0]);
+    act(() => vi.runAllTimers());
+
+    expect(instance.pointOfViewCalls.length).toBeGreaterThan(0);
+    expect(timelineMock.instances[0]?.durations).toEqual([0.45, 0.95, 0.7]);
+    expect(rendered.props.onTravelComplete).toHaveBeenCalledTimes(1);
+    expect(instance.destructor).not.toHaveBeenCalled();
     expect(globeMock.instances).toHaveLength(1);
   });
 

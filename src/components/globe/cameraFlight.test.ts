@@ -80,7 +80,7 @@ class FakeTimeline implements CameraFlightTimeline {
 }
 
 function createHarness(options?: {
-  reducedMotion?: boolean;
+  reducedMotion?: boolean | (() => boolean);
   leakAfterKill?: boolean;
 }) {
   const camera = new FakeCamera();
@@ -216,5 +216,46 @@ describe('createCameraFlightController', () => {
       'returning',
       'idle',
     ]);
+  });
+
+  it('uses a newly enabled reduced-motion preference for the return boundary', () => {
+    let reducedMotion = false;
+    const { camera, controller, openedSites, timelines } = createHarness({
+      reducedMotion: () => reducedMotion,
+    });
+
+    controller.flyTo(firstSite);
+    vi.runAllTimers();
+
+    const spatialViewsAfterFlight = camera.views.length;
+    expect(spatialViewsAfterFlight).toBeGreaterThan(0);
+    expect(openedSites).toEqual([firstSite]);
+
+    reducedMotion = true;
+    controller.returnToOverview();
+    vi.runAllTimers();
+
+    expect(controller.getState()).toBe('idle');
+    expect(camera.views).toHaveLength(spatialViewsAfterFlight);
+    expect(camera.opacities).toEqual([0, 1]);
+    expect(timelines.at(-1)?.durations).toEqual([0.12, 0.12]);
+    expect(openedSites).toEqual([firstSite]);
+  });
+
+  it('uses spatial motion for the next flight after reduced motion is disabled while idle', () => {
+    let reducedMotion = true;
+    const { camera, controller, openedSites, timelines } = createHarness({
+      reducedMotion: () => reducedMotion,
+    });
+
+    reducedMotion = false;
+    controller.flyTo(firstSite);
+    vi.runAllTimers();
+
+    expect(controller.getState()).toBe('open');
+    expect(camera.views.length).toBeGreaterThan(0);
+    expect(camera.opacities).toHaveLength(0);
+    expect(timelines[0]?.durations).toEqual([0.45, 0.95, 0.7]);
+    expect(openedSites).toEqual([firstSite]);
   });
 });

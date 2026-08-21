@@ -90,7 +90,7 @@ export default function GlobeScene({
 }: GlobeSceneProps) {
   const supportsWebGL = useWebGLSupport();
   const reducedMotion = useReducedMotion();
-  const initialReducedMotionRef = useRef(reducedMotion);
+  const reducedMotionRef = useRef(reducedMotion);
   const complianceReady = hasComplianceMetadata();
   const containerRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<import('globe.gl').GlobeInstance | null>(null);
@@ -129,6 +129,7 @@ export default function GlobeScene({
   useEffect(() => {
     sitesRef.current = sites;
     selectedIdRef.current = selectedId;
+    reducedMotionRef.current = reducedMotion;
     markersRef.current = markers;
     onSelectRef.current = onSelect;
     onTravelCompleteRef.current = onTravelComplete;
@@ -142,6 +143,7 @@ export default function GlobeScene({
     onReturnComplete,
     onSelect,
     onTravelComplete,
+    reducedMotion,
     selectedId,
     sites,
   ]);
@@ -213,7 +215,7 @@ export default function GlobeScene({
             },
           },
           {
-            reducedMotion: initialReducedMotionRef.current,
+            reducedMotion: () => reducedMotionRef.current,
             onOpen: (site) => {
               if (active) {
                 onTravelCompleteRef.current(site.id);

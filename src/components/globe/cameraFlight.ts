@@ -34,7 +34,7 @@ export interface CameraFlightTimeline {
 }
 
 type CameraFlightOptions = {
-  reducedMotion?: boolean;
+  reducedMotion?: boolean | (() => boolean);
   onOpen?: (site: Site) => void;
   onStateChange?: (state: CameraFlightState) => void;
   timelineFactory?: () => CameraFlightTimeline;
@@ -76,6 +76,12 @@ export function createCameraFlightController(
   let state: CameraFlightState = 'idle';
   let activeTimeline: CameraFlightTimeline | null = null;
   let operation = 0;
+
+  function prefersReducedMotion(): boolean {
+    return typeof options.reducedMotion === 'function'
+      ? options.reducedMotion()
+      : (options.reducedMotion ?? false);
+  }
 
   function setState(nextState: CameraFlightState): void {
     if (state === nextState) {
@@ -161,7 +167,7 @@ export function createCameraFlightController(
     const activeOperation = ++operation;
     setState('departing');
 
-    if (options.reducedMotion) {
+    if (prefersReducedMotion()) {
       flyWithReducedMotion(site, activeOperation);
       return;
     }
@@ -179,7 +185,7 @@ export function createCameraFlightController(
     const timeline = timelineFactory();
     activeTimeline = timeline;
 
-    if (options.reducedMotion) {
+    if (prefersReducedMotion()) {
       const fade = { opacity: 1 };
       timeline
         .to(fade, {
