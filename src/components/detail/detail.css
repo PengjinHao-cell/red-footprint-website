@@ -23,9 +23,15 @@
   animation: site-detail-reveal 220ms ease-out both;
 }
 
+.site-detail__sticky-actions {
+  position: sticky;
+  z-index: 4;
+  top: 0;
+  height: 0;
+}
+
 .site-detail__close {
   position: absolute;
-  z-index: 4;
   top: 0.75rem;
   right: 0.75rem;
   display: grid;

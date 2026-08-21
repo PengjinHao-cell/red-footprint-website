@@ -111,18 +111,20 @@ export default function SiteDetailPanel({
         role="dialog"
         tabIndex={-1}
       >
-        <button
-          aria-label="关闭景点详情"
-          className="site-detail__close"
-          onClick={requestClose}
-          ref={closeButtonRef}
-          type="button"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
+        <div className="site-detail__sticky-actions">
+          <button
+            aria-label="关闭景点详情"
+            className="site-detail__close"
+            onClick={requestClose}
+            ref={closeButtonRef}
+            type="button"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
 
         <SiteHero site={site} titleId={titleId} />
-        <MediaCarousel items={mediaItems} />
+        <MediaCarousel items={mediaItems} key={site.id} />
 
         <div className="site-detail__content">
           <section className="site-detail__section site-detail__section--basic">

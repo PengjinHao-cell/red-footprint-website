@@ -16,6 +16,7 @@ import { createValidEightSites } from '../../test/fixtures/sites';
 import SiteDetailPanel from './SiteDetailPanel';
 
 const site = siteSchema.parse(createValidEightSites()[0]);
+const secondSite = siteSchema.parse(createValidEightSites()[1]);
 const detailStyles = readFileSync(
   'src/components/detail/detail.css',
   'utf8',
@@ -69,6 +70,20 @@ describe('SiteDetailPanel', () => {
     expect(
       within(dialog).getByRole('button', { name: '关闭景点详情' }),
     ).toBeVisible();
+  });
+
+  it('keeps the close action in a sticky layer while content scrolls', () => {
+    renderPanel();
+
+    const closeButton = screen.getByRole('button', {
+      name: '关闭景点详情',
+    });
+    expect(closeButton.parentElement).toHaveClass(
+      'site-detail__sticky-actions',
+    );
+    expect(detailStyles).toMatch(
+      /\.site-detail__sticky-actions\s*{[^}]*position:\s*sticky[^}]*top:\s*0/s,
+    );
   });
 
   it('uses the real hero photo, configured focus, and title overlay', () => {
@@ -126,6 +141,29 @@ describe('SiteDetailPanel', () => {
     expectBefore(people!, spirit!);
     expectBefore(spirit!, reflection!);
     expectBefore(reflection!, sources!);
+  });
+
+  it('resets the media sequence when the site changes without unmounting the panel', () => {
+    const { onClose, rerender } = renderPanel();
+
+    fireEvent.click(screen.getByRole('button', { name: '下一项媒体' }));
+    fireEvent.click(screen.getByRole('button', { name: '下一项媒体' }));
+    expect(screen.getByText('照片 · 3 / 4')).toBeVisible();
+
+    rerender(<SiteDetailPanel site={secondSite} onClose={onClose} />);
+
+    expect(screen.getByText('视频 · 1 / 4')).toBeVisible();
+  });
+
+  it('clears a video failure when the site changes without unmounting the panel', () => {
+    const { onClose, rerender } = renderPanel();
+
+    fireEvent.error(screen.getByLabelText('景点讲解视频'));
+    expect(screen.getByRole('alert')).toHaveTextContent('视频加载失败');
+
+    rerender(<SiteDetailPanel site={secondSite} onClose={onClose} />);
+
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
   it('does not render headings for empty narrative modules', () => {
