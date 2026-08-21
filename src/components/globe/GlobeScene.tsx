@@ -1,7 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { Site } from '../../data/siteSchema';
+import useReducedMotion from '../../hooks/useReducedMotion';
 import useWebGLSupport from '../../hooks/useWebGLSupport';
+import {
+  createCameraFlightController,
+  type CameraFlightController,
+  type CameraFlightState,
+} from './cameraFlight';
 import SiteListFallback from './SiteListFallback';
 
 const PAPER_COLOR = '#fbf7ee';
@@ -32,7 +38,10 @@ type GlobeSceneProps = {
   sites: ReadonlyArray<Site>;
   visitedIds: ReadonlyArray<string>;
   selectedId: string | null;
+  detailOpen: boolean;
   onSelect: (id: string) => void;
+  onTravelComplete: (id: string) => void;
+  onReturnComplete: () => void;
   onReady: () => void;
   onError: (error: Error) => void;
 };
@@ -72,14 +81,32 @@ export default function GlobeScene({
   sites,
   visitedIds,
   selectedId,
+  detailOpen,
   onSelect,
+  onTravelComplete,
+  onReturnComplete,
   onReady,
   onError,
 }: GlobeSceneProps) {
   const supportsWebGL = useWebGLSupport();
+  const reducedMotion = useReducedMotion();
+  const initialReducedMotionRef = useRef(reducedMotion);
   const complianceReady = hasComplianceMetadata();
   const containerRef = useRef<HTMLDivElement>(null);
+  const globeRef = useRef<import('globe.gl').GlobeInstance | null>(null);
+  const controllerRef = useRef<CameraFlightController | null>(null);
+  const activeSiteIdRef = useRef<string | null>(null);
+  const fallbackSelectionLockedRef = useRef(false);
+  const previousDetailOpenRef = useRef(detailOpen);
   const complianceErrorReportedRef = useRef(false);
+  const sitesRef = useRef(sites);
+  const markersRef = useRef<GlobeMarker[]>([]);
+  const selectedIdRef = useRef(selectedId);
+  const onSelectRef = useRef(onSelect);
+  const onTravelCompleteRef = useRef(onTravelComplete);
+  const onReturnCompleteRef = useRef(onReturnComplete);
+  const onReadyRef = useRef(onReady);
+  const onErrorRef = useRef(onError);
   const [initializationFailed, setInitializationFailed] = useState(false);
 
   const markers = useMemo<GlobeMarker[]>(() => {
@@ -100,6 +127,26 @@ export default function GlobeScene({
   }, [selectedId, sites, visitedIds]);
 
   useEffect(() => {
+    sitesRef.current = sites;
+    selectedIdRef.current = selectedId;
+    markersRef.current = markers;
+    onSelectRef.current = onSelect;
+    onTravelCompleteRef.current = onTravelComplete;
+    onReturnCompleteRef.current = onReturnComplete;
+    onReadyRef.current = onReady;
+    onErrorRef.current = onError;
+  }, [
+    markers,
+    onError,
+    onReady,
+    onReturnComplete,
+    onSelect,
+    onTravelComplete,
+    selectedId,
+    sites,
+  ]);
+
+  useEffect(() => {
     if (!supportsWebGL || complianceReady) {
       complianceErrorReportedRef.current = false;
       return;
@@ -107,13 +154,13 @@ export default function GlobeScene({
 
     if (!complianceErrorReportedRef.current) {
       complianceErrorReportedRef.current = true;
-      onError(
+      onErrorRef.current(
         new Error(
           'Map compliance metadata is incomplete; globe initialization was refused.',
         ),
       );
     }
-  }, [complianceReady, onError, supportsWebGL]);
+  }, [complianceReady, supportsWebGL]);
 
   useEffect(() => {
     if (!supportsWebGL || !complianceReady || initializationFailed) {
@@ -142,12 +189,56 @@ export default function GlobeScene({
             antialias: true,
           },
         });
+        globeRef.current = globe;
 
         const width = Math.max(container.clientWidth, 320);
         const height = Math.max(container.clientHeight, 480);
-        const unvisitedMarkers = markers.filter(
+        const initialMarkers = markersRef.current;
+        const initialUnvisitedMarkers = initialMarkers.filter(
           ({ markerState }) => markerState === 'unvisited',
         );
+
+        let previousFlightState: CameraFlightState = 'idle';
+        const controls = globe.controls();
+        const controller = createCameraFlightController(
+          {
+            getView: () => globe?.pointOfView() ?? { lat: 0, lng: 0, altitude: 2.5 },
+            setView: (view) => {
+              globe?.pointOfView(view, 0);
+            },
+            setOpacity: (opacity) => {
+              if (containerRef.current) {
+                containerRef.current.style.opacity = String(opacity);
+              }
+            },
+          },
+          {
+            reducedMotion: initialReducedMotionRef.current,
+            onOpen: (site) => {
+              if (active) {
+                onTravelCompleteRef.current(site.id);
+              }
+            },
+            onStateChange: (state) => {
+              if (!active || !globe) {
+                return;
+              }
+
+              const returningFinished =
+                previousFlightState === 'returning' && state === 'idle';
+              previousFlightState = state;
+              const idle = state === 'idle';
+              controls.autoRotate = idle;
+              globe.enablePointerInteraction(idle);
+
+              if (returningFinished) {
+                activeSiteIdRef.current = null;
+                onReturnCompleteRef.current();
+              }
+            },
+          },
+        );
+        controllerRef.current = controller;
 
         globe
           .width(width)
@@ -156,7 +247,7 @@ export default function GlobeScene({
           .showAtmosphere(true)
           .atmosphereColor(SAND_COLOR)
           .atmosphereAltitude(0.12)
-          .pointsData(markers)
+          .pointsData(initialMarkers)
           .pointLat('lat')
           .pointLng('lng')
           .pointLabel('officialName')
@@ -167,7 +258,7 @@ export default function GlobeScene({
           .pointRadius((point) =>
             (point as GlobeMarker).markerState === 'selected' ? 0.55 : 0.38,
           )
-          .ringsData(unvisitedMarkers)
+          .ringsData(initialUnvisitedMarkers)
           .ringLat('lat')
           .ringLng('lng')
           .ringColor([BRICK_COLOR, 'rgba(152, 46, 45, 0)'])
@@ -175,8 +266,28 @@ export default function GlobeScene({
           .ringPropagationSpeed(0.55)
           .ringRepeatPeriod(2200)
           .onPointClick((point) => {
-            if (active) {
-              onSelect((point as GlobeMarker).id);
+            if (!active || controller.getState() !== 'idle') {
+              return;
+            }
+
+            const site = sitesRef.current.find(
+              ({ id }) => id === (point as GlobeMarker).id,
+            );
+            if (!site) {
+              return;
+            }
+
+            try {
+              activeSiteIdRef.current = site.id;
+              controller.flyTo(site);
+              if (controller.getState() !== 'idle') {
+                onSelectRef.current(site.id);
+              }
+            } catch (error) {
+              controller.cancel();
+              activeSiteIdRef.current = null;
+              setInitializationFailed(true);
+              onErrorRef.current(toError(error));
             }
           })
           .onGlobeReady(() => {
@@ -185,7 +296,7 @@ export default function GlobeScene({
             }
 
             readyDelivered = true;
-            onReady();
+            onReadyRef.current();
           });
 
         const material = globe.globeMaterial() as WarmGlobeMaterial;
@@ -202,7 +313,6 @@ export default function GlobeScene({
             Math.min(MAX_DEVICE_PIXEL_RATIO, Math.max(1, devicePixelRatio)),
           );
 
-        const controls = globe.controls();
         controls.autoRotate = true;
         controls.autoRotateSpeed = 0.35;
         controls.enableDamping = true;
@@ -211,10 +321,13 @@ export default function GlobeScene({
           return;
         }
 
+        controllerRef.current?.cancel();
+        controllerRef.current = null;
         globe?._destructor();
         globe = undefined;
+        globeRef.current = null;
         setInitializationFailed(true);
-        onError(toError(error));
+        onErrorRef.current(toError(error));
       }
     }
 
@@ -222,21 +335,77 @@ export default function GlobeScene({
 
     return () => {
       active = false;
+      controllerRef.current?.cancel();
+      controllerRef.current = null;
       globe?._destructor();
       globe = undefined;
+      globeRef.current = null;
+      activeSiteIdRef.current = null;
     };
-  }, [
-    complianceReady,
-    initializationFailed,
-    markers,
-    onError,
-    onReady,
-    onSelect,
-    supportsWebGL,
-  ]);
+  }, [complianceReady, initializationFailed, supportsWebGL]);
 
-  if (!supportsWebGL || !complianceReady || initializationFailed) {
-    return <SiteListFallback sites={sites} onSelect={onSelect} />;
+  useEffect(() => {
+    const globe = globeRef.current;
+    if (!globe) {
+      return;
+    }
+
+    globe.pointsData(markers).ringsData(
+      markers.filter(({ markerState }) => markerState === 'unvisited'),
+    );
+  }, [markers]);
+
+  useEffect(() => {
+    const controller = controllerRef.current;
+    const activeSiteId = activeSiteIdRef.current;
+    if (
+      controller &&
+      controller.getState() !== 'idle' &&
+      activeSiteId &&
+      selectedId !== activeSiteId
+    ) {
+      controller.cancel();
+      activeSiteIdRef.current = null;
+    }
+
+    if (selectedId === null) {
+      fallbackSelectionLockedRef.current = false;
+    }
+  }, [selectedId]);
+
+  useEffect(() => {
+    const wasDetailOpen = previousDetailOpenRef.current;
+    previousDetailOpenRef.current = detailOpen;
+    if (!wasDetailOpen || detailOpen) {
+      return;
+    }
+
+    const controller = controllerRef.current;
+    if (controller?.getState() === 'open') {
+      controller.returnToOverview();
+      return;
+    }
+
+    if (!controller && selectedIdRef.current !== null) {
+      queueMicrotask(() => onReturnCompleteRef.current());
+    }
+  }, [detailOpen]);
+
+  const showFallback =
+    !supportsWebGL || !complianceReady || initializationFailed;
+
+  const selectFromFallback = (id: string) => {
+    if (fallbackSelectionLockedRef.current || selectedIdRef.current !== null) {
+      return;
+    }
+
+    fallbackSelectionLockedRef.current = true;
+    onSelectRef.current(id);
+    queueMicrotask(() => onTravelCompleteRef.current(id));
+  };
+
+  if (showFallback) {
+    return <SiteListFallback sites={sites} onSelect={selectFromFallback} />;
   }
 
   return (
