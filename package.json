@@ -10,8 +10,8 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "playwright test",
-    "check:content": "node -e \"console.log('Content checks are introduced in phase 09.')\"",
-    "check:map": "node -e \"console.log('Map checks are introduced in phase 09.')\""
+    "check:content": "node scripts/check-content.mjs",
+    "check:map": "node scripts/check-map-compliance.mjs"
   },
   "dependencies": {
     "globe.gl": "^2.46.1",

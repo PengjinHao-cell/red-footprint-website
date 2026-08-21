@@ -1,0 +1,20 @@
+{
+  "status": "blocked",
+  "publicUseAllowed": false,
+  "reason": "尚未取得并核验实际使用的合规地图资源，禁止初始化公开边界层或公开发布。",
+  "missingFields": [
+    "resourceName",
+    "publisher",
+    "authorityType",
+    "sourceUrl",
+    "resource",
+    "reviewNumber",
+    "usageScope",
+    "verifiedAt",
+    "verifiedBy",
+    "humanReview.fullTerritory",
+    "humanReview.nationalBoundaries",
+    "humanReview.administrativeBoundaries",
+    "humanReview.islands"
+  ]
+}
