@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { productionSiteCollectionSchema } from '../src/data/siteSchema.ts';
 import { validateProductionContent } from './check-production-content.mjs';
 import { checkMedia } from './check-media.mjs';
+import { flattenMediaManifest } from './check-upload-reconciliation.mjs';
 import { generateSites, serializeSites } from './generate-sites.mjs';
 
 const placeholderHostPattern =
@@ -55,8 +56,12 @@ export function validateContent(input, _options = {}) {
 }
 
 function parseArguments(argv) {
-  const options = { sites: 'src/data/sites.json' };
+  const options = { sites: 'src/data/sites.json', release: false };
   for (let index = 0; index < argv.length; index += 1) {
+    if (argv[index] === '--release') {
+      options.release = true;
+      continue;
+    }
     if (argv[index] !== '--sites') {
       throw new Error(`unknown argument: ${argv[index]}`);
     }
@@ -70,8 +75,97 @@ function parseArguments(argv) {
   return options;
 }
 
-export function runContentCheck(argv = process.argv.slice(2)) {
-  const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+function validateReleaseBuildInputs(input, root) {
+  const errors = [];
+  let manifest;
+  let reconciliation;
+  try {
+    manifest = JSON.parse(
+      readFileSync(resolve(root, 'content/media/media-manifest.json'), 'utf8'),
+    );
+  } catch (error) {
+    return [`[release build input] media manifest is unreadable (${error.message})`];
+  }
+  try {
+    reconciliation = JSON.parse(
+      readFileSync(
+        resolve(root, 'content/cloudbase/upload-reconciliation.json'),
+        'utf8',
+      ),
+    );
+  } catch (error) {
+    return [`[release build input] upload reconciliation is unreadable (${error.message})`];
+  }
+
+  const expectedObjects = new Map(
+    flattenMediaManifest(manifest).map((object) => [object.objectPath, object]),
+  );
+  const reconciledObjects = new Map(
+    (reconciliation.objects ?? []).map((object) => [object.objectPath, object]),
+  );
+  const resources = input.flatMap((site) => [
+    site.heroAsset,
+    ...(site.photos ?? []).map((photo) => photo.asset),
+    site.video?.asset,
+    site.video?.posterAsset,
+    site.video?.captionsAsset,
+  ]);
+  const resourcePaths = resources.map((resource) => resource?.objectPath);
+
+  if (resources.length !== 60 || new Set(resourcePaths).size !== 60) {
+    errors.push('[release build input] sites.json must contain 60 unique media resources');
+  }
+
+  for (const resource of resources) {
+    const expected = expectedObjects.get(resource?.objectPath);
+    const reconciled = reconciledObjects.get(resource?.objectPath);
+    if (!expected || !reconciled) {
+      errors.push(
+        `[release build input] ${resource?.objectPath ?? 'unknown resource'} is absent from manifest or reconciliation`,
+      );
+      continue;
+    }
+    for (const field of ['bytes', 'mime', 'sha256']) {
+      if (resource[field] !== expected[field]) {
+        errors.push(
+          `[release build input] ${resource.objectPath}.${field} must match media manifest`,
+        );
+      }
+    }
+    if (
+      resource.deliveryStatus !== 'reconciled-production' ||
+      resource.url !== reconciled.httpsUrl ||
+      resource.productionUrl !== reconciled.httpsUrl
+    ) {
+      errors.push(
+        `[release build input] ${resource.objectPath} must use its reconciled production HTTPS URL`,
+      );
+    }
+    if (resource.digestRef !== `sha256:${expected.sha256}`) {
+      errors.push(
+        `[release build input] ${resource.objectPath}.digestRef must match media manifest`,
+      );
+    }
+  }
+
+  for (const site of input) {
+    if (
+      site.mediaDelivery?.status !== 'reconciled-production' ||
+      site.mediaDelivery?.productionBaseUrl !== reconciliation.cdnBaseUrl
+    ) {
+      errors.push(
+        `[release build input] ${site.id}.mediaDelivery must match upload reconciliation`,
+      );
+    }
+  }
+
+  return errors;
+}
+
+export function runContentCheck(
+  argv = process.argv.slice(2),
+  root = resolve(dirname(fileURLToPath(import.meta.url)), '..'),
+) {
   const options = parseArguments(argv);
   const sitesPath = resolve(root, options.sites);
   const errors = [];
@@ -85,7 +179,9 @@ export function runContentCheck(argv = process.argv.slice(2)) {
     console.log('[check:content] Task 3 production content passed');
   }
 
-  const mediaErrors = checkMedia(root);
+  const mediaErrors = checkMedia(root, {
+    mode: options.release ? 'release' : 'local',
+  });
   if (mediaErrors.length > 0) {
     errors.push(...mediaErrors.map((error) => `[Task 4 media] ${error}`));
   } else {
@@ -110,16 +206,34 @@ export function runContentCheck(argv = process.argv.slice(2)) {
         console.log('[check:content] production schema passed');
       }
 
-      const firstGenerated = serializeSites(generateSites(root));
-      const secondGenerated = serializeSites(generateSites(root));
-      if (firstGenerated !== secondGenerated) {
-        errors.push('[generated sites] repeated generation is not byte-identical');
-      } else if (readFileSync(sitesPath, 'utf8') !== firstGenerated) {
-        errors.push(
-          `[generated sites] ${sitesPath} does not match generated output; manual drift is forbidden`,
-        );
+      if (options.release) {
+        const releaseInputErrors = validateReleaseBuildInputs(input, root);
+        if (releaseInputErrors.length > 0) {
+          errors.push(...releaseInputErrors);
+        } else {
+          console.log(
+            '[check:content] release build inputs match the media manifest and upload reconciliation',
+          );
+        }
+      } else if (
+        productionContentErrors.length === 0 &&
+        mediaErrors.length === 0
+      ) {
+        const firstGenerated = serializeSites(generateSites(root));
+        const secondGenerated = serializeSites(generateSites(root));
+        if (firstGenerated !== secondGenerated) {
+          errors.push('[generated sites] repeated generation is not byte-identical');
+        } else if (readFileSync(sitesPath, 'utf8') !== firstGenerated) {
+          errors.push(
+            `[generated sites] ${sitesPath} does not match generated output; manual drift is forbidden`,
+          );
+        } else {
+          console.log('[check:content] generated sites are byte-identical and drift-free');
+        }
       } else {
-        console.log('[check:content] generated sites are byte-identical and drift-free');
+        errors.push(
+          '[generated sites] strict deterministic generation requires valid local production content and media files',
+        );
       }
 
       const serialized = JSON.stringify(input);

@@ -1,5 +1,6 @@
 import {
   chmodSync,
+  cpSync,
   existsSync,
   mkdtempSync,
   readFileSync,
@@ -12,20 +13,22 @@ import { spawnSync } from 'node:child_process';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
+import { checkUploadReconciliation } from './check-upload-reconciliation.mjs';
+
 const temporaryDirectories: string[] = [];
-const releaseSteps = [
-  'check:production-content',
-  'check:media',
-  'check:upload-reconciliation',
-  'check:content',
-  'check:map',
-  'lint',
-  'test:run',
-  'build',
-  'test:e2e',
+const releaseCalls = [
+  'run check:production-content',
+  'run check:media -- --release',
+  'run check:upload-reconciliation',
+  'run check:content -- --release',
+  'run check:map',
+  'run lint',
+  'run test:run',
+  'run build',
+  'run test:e2e',
 ];
 
-function runWithFakeNpm(failingStep?: string) {
+function runWithFakeNpm(failingCall?: string) {
   const directory = mkdtempSync(join(tmpdir(), 'verify-release-'));
   temporaryDirectories.push(directory);
   const npmPath = join(directory, 'npm');
@@ -34,7 +37,7 @@ function runWithFakeNpm(failingStep?: string) {
     npmPath,
     `#!/bin/sh
 printf '%s\\n' "$*" >> "$VERIFY_RELEASE_TEST_LOG"
-if [ "$*" = "run $VERIFY_RELEASE_FAIL_STEP" ]; then
+if [ "$*" = "$VERIFY_RELEASE_FAIL_STEP" ]; then
   exit 23
 fi
 exit 0
@@ -48,7 +51,7 @@ exit 0
     env: {
       ...process.env,
       PATH: `${directory}:${process.env.PATH ?? ''}`,
-      VERIFY_RELEASE_FAIL_STEP: failingStep ?? '__none__',
+      VERIFY_RELEASE_FAIL_STEP: failingCall ?? '__none__',
       VERIFY_RELEASE_TEST_LOG: logPath,
     },
   });
@@ -101,17 +104,52 @@ describe('release verification runner', () => {
     const result = runWithFakeNpm();
 
     expect(result.status, `${result.stdout}${result.stderr}`).toBe(0);
-    expect(result.calls).toEqual(releaseSteps.map((step) => `run ${step}`));
+    expect(result.calls).toEqual(releaseCalls);
   });
 
   it('stops at the first failed gate and preserves its non-zero exit code', () => {
-    const result = runWithFakeNpm('check:upload-reconciliation');
+    const failingCall = 'run check:upload-reconciliation';
+    const result = runWithFakeNpm(failingCall);
 
     expect(result.status).toBe(23);
     expect(result.calls).toEqual(
-      releaseSteps
-        .slice(0, releaseSteps.indexOf('check:upload-reconciliation') + 1)
-        .map((step) => `run ${step}`),
+      releaseCalls.slice(0, releaseCalls.indexOf(failingCall) + 1),
     );
+  });
+
+  it('keeps reconciliation, digest, HTTPS, and video Range evidence mandatory', () => {
+    const root = mkdtempSync(join(tmpdir(), 'release-reconciliation-'));
+    temporaryDirectories.push(root);
+    cpSync(join(process.cwd(), 'content'), join(root, 'content'), {
+      recursive: true,
+    });
+    const reconciliationPath = join(
+      root,
+      'content/cloudbase/upload-reconciliation.json',
+    );
+    const reconciliation = JSON.parse(
+      readFileSync(reconciliationPath, 'utf8'),
+    );
+    reconciliation.objectCount -= 1;
+    reconciliation.objects.pop();
+    reconciliation.objects[0].http.sha256 = 'f'.repeat(64);
+    reconciliation.objects[1].httpsUrl = reconciliation.objects[1].httpsUrl.replace(
+      'https://',
+      'http://',
+    );
+    const video = reconciliation.objects.find(
+      (object: { mime: string }) => object.mime === 'video/mp4',
+    );
+    delete video.http.range;
+    writeFileSync(
+      reconciliationPath,
+      `${JSON.stringify(reconciliation, null, 2)}\n`,
+    );
+
+    const errors = checkUploadReconciliation(root).join('\n');
+    expect(errors).toMatch(/60|missing/i);
+    expect(errors).toMatch(/sha256/i);
+    expect(errors).toMatch(/HTTPS/i);
+    expect(errors).toMatch(/Range evidence/i);
   });
 });

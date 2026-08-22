@@ -174,13 +174,28 @@ export function parseWebVtt(input) {
   return { errors, cues };
 }
 
-export function checkMedia(root = process.cwd()) {
+function resolveMode(options) {
+  const mode = options.mode ?? 'local';
+  if (mode !== 'local' && mode !== 'release') {
+    throw new Error(`unknown media check mode: ${mode}`);
+  }
+  return mode;
+}
+
+function parseArguments(argv) {
+  if (argv.length === 0) return { mode: 'local' };
+  if (argv.length === 1 && argv[0] === '--release') return { mode: 'release' };
+  throw new Error(`unknown argument: ${argv[0]}`);
+}
+
+export function checkMedia(root = process.cwd(), options = {}) {
+  const mode = resolveMode(options);
   const errors = [];
   let manifest;
   let rights;
   try { manifest = JSON.parse(readFileSync(join(root, 'content/media/media-manifest.json'), 'utf8')); } catch (error) { errors.push(`media-manifest.json is unreadable: ${error.message}`); }
   try { rights = JSON.parse(readFileSync(join(root, 'content/media/media-rights-declaration.json'), 'utf8')); } catch (error) { errors.push(`media-rights-declaration.json is unreadable: ${error.message}`); }
-  if (manifest) errors.push(...validateMediaManifest(manifest, { root, verifyFiles: true }));
+  if (manifest) errors.push(...validateMediaManifest(manifest, { root, verifyFiles: mode === 'local' }));
   if (rights) errors.push(...validateRightsDeclaration(rights));
   let captionFiles = [];
   try { captionFiles = readdirSync(join(root, 'content/media/captions')).filter((file) => file.endsWith('.vtt')).sort(); } catch { errors.push('content/media/captions is missing'); }
@@ -198,10 +213,20 @@ export function checkMedia(root = process.cwd()) {
 const modulePath = fileURLToPath(import.meta.url);
 if (process.argv[1] && resolve(process.argv[1]) === modulePath) {
   const root = resolve(dirname(modulePath), '..');
-  const errors = checkMedia(root);
-  if (errors.length) {
-    console.error(`Media check failed with ${errors.length} error(s):`);
-    errors.forEach((error) => console.error(`- ${error}`));
+  try {
+    const options = parseArguments(process.argv.slice(2));
+    const errors = checkMedia(root, options);
+    if (errors.length) {
+      console.error(`Media check failed with ${errors.length} error(s):`);
+      errors.forEach((error) => console.error(`- ${error}`));
+      process.exitCode = 1;
+    } else if (options.mode === 'release') {
+      console.log('Media release check passed: manifest, rights, and 8 committed VTT files cover 60 immutable objects.');
+    } else {
+      console.log('Media check passed: 28 photos and 8 complete hero/video/poster/VTT sets (60 staged objects).');
+    }
+  } catch (error) {
+    console.error(error);
     process.exitCode = 1;
-  } else console.log('Media check passed: 28 photos and 8 complete hero/video/poster/VTT sets (60 staged objects).');
+  }
 }

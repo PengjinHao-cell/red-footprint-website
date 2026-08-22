@@ -1,5 +1,6 @@
 import { spawnSync } from 'node:child_process';
 import {
+  cpSync,
   existsSync,
   mkdtempSync,
   readFileSync,
@@ -11,7 +12,7 @@ import { join } from 'node:path';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
-import { validateContent } from './check-content.mjs';
+import { runContentCheck, validateContent } from './check-content.mjs';
 
 const temporaryDirectories: string[] = [];
 const productionSitesPath = join(process.cwd(), 'src/data/sites.json');
@@ -20,6 +21,16 @@ function readProductionSites() {
   expect(existsSync(productionSitesPath)).toBe(true);
   if (!existsSync(productionSitesPath)) return [];
   return JSON.parse(readFileSync(productionSitesPath, 'utf8'));
+}
+
+function createCommittedProjectRoot() {
+  const root = mkdtempSync(join(tmpdir(), 'committed-project-'));
+  temporaryDirectories.push(root);
+  cpSync(join(process.cwd(), 'content'), join(root, 'content'), {
+    recursive: true,
+  });
+  cpSync(join(process.cwd(), 'src'), join(root, 'src'), { recursive: true });
+  return root;
 }
 
 afterEach(() => {
@@ -81,5 +92,31 @@ describe('content production gate', () => {
 
     expect(result.status).toBe(1);
     expect(output).toMatch(/manual drift|does not match generated output/i);
+  });
+
+  it('passes explicit release mode in a clean committed project export', () => {
+    const root = createCommittedProjectRoot();
+
+    expect(runContentCheck(['--release'], root)).toBe(0);
+  });
+
+  it('does not silently relax the default local gate in a clean export', () => {
+    const root = createCommittedProjectRoot();
+
+    expect(runContentCheck([], root)).toBe(1);
+  });
+
+  it('rejects non-HTTPS production media in release mode', () => {
+    const root = createCommittedProjectRoot();
+    const sitesPath = join(root, 'src/data/sites.json');
+    const sites = JSON.parse(readFileSync(sitesPath, 'utf8'));
+    sites[0].heroAsset.productionUrl = sites[0].heroAsset.productionUrl.replace(
+      'https://',
+      'http://',
+    );
+    sites[0].heroAsset.url = sites[0].heroAsset.productionUrl;
+    writeFileSync(sitesPath, `${JSON.stringify(sites, null, 2)}\n`);
+
+    expect(runContentCheck(['--release'], root)).toBe(1);
   });
 });

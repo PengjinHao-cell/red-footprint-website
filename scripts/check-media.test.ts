@@ -1,14 +1,44 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import {
+  cpSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  unlinkSync,
+  writeFileSync,
+} from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 
 import {
   EXPECTED_PHOTO_COUNTS,
   REQUIRED_SITE_IDS,
+  checkMedia,
   parseWebVtt,
   validateMediaManifest,
   validateRightsDeclaration,
 } from './check-media.mjs';
+
+const temporaryDirectories: string[] = [];
+
+function createCommittedMediaRoot() {
+  const root = mkdtempSync(join(tmpdir(), 'committed-media-'));
+  temporaryDirectories.push(root);
+  cpSync(
+    join(process.cwd(), 'content/media'),
+    join(root, 'content/media'),
+    { recursive: true },
+  );
+  return root;
+}
+
+afterEach(() => {
+  temporaryDirectories.splice(0).forEach((directory) => {
+    rmSync(directory, { force: true, recursive: true });
+  });
+});
 
 function asset(kind: string, siteId: string, sequence = 1) {
   const extension = kind === 'video' ? 'mp4' : kind === 'captions' ? 'vtt' : 'webp';
@@ -129,6 +159,45 @@ describe('media manifest validation', () => {
     rights.scope.identifiablePeople = false;
     rights.aiWatermarkPosters[0].aiWatermarkAccepted = false;
     expect(validateRightsDeclaration(rights).join('\n')).toMatch(/identifiablePeople[\s\S]*aiWatermarkAccepted/);
+  });
+});
+
+describe('media gate modes', () => {
+  it('accepts a clean committed-media export only in explicit release mode', () => {
+    const root = createCommittedMediaRoot();
+
+    expect(checkMedia(root, { mode: 'release' })).toEqual([]);
+  });
+
+  it('keeps the default local mode strict when raw and staging files are absent', () => {
+    const root = createCommittedMediaRoot();
+
+    expect(checkMedia(root).join('\n')).toMatch(/staged file does not exist|original source does not exist/i);
+  });
+
+  it('rejects manifest digest, rights, and committed-caption failures in release mode', () => {
+    const root = createCommittedMediaRoot();
+    const manifestPath = join(root, 'content/media/media-manifest.json');
+    const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    manifest.sites[0].hero.sha256 = 'not-a-sha256-digest';
+    writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+    unlinkSync(join(root, 'content/media/media-rights-declaration.json'));
+    unlinkSync(join(root, 'content/media/captions', `${REQUIRED_SITE_IDS[0]}.vtt`));
+
+    const errors = checkMedia(root, { mode: 'release' }).join('\n');
+    expect(errors).toMatch(/sha-256/i);
+    expect(errors).toMatch(/rights-declaration.*unreadable/i);
+    expect(errors).toMatch(/exactly eight site VTT files/i);
+  });
+
+  it('rejects an invalid committed WebVTT file in release mode', () => {
+    const root = createCommittedMediaRoot();
+    writeFileSync(
+      join(root, 'content/media/captions', `${REQUIRED_SITE_IDS[0]}.vtt`),
+      'not a WebVTT file\n',
+    );
+
+    expect(checkMedia(root, { mode: 'release' }).join('\n')).toMatch(/WEBVTT/i);
   });
 });
 
