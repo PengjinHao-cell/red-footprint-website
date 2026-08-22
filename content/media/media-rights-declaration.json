@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "declarationDate": "2026-08-21",
+  "declaredBy": "项目方",
+  "purpose": "红色足迹网站公开展示",
+  "scope": {
+    "photos": true,
+    "videos": true,
+    "embeddedMusic": true,
+    "captions": true,
+    "identifiablePeople": true,
+    "siteWideBackgroundMusicAdded": false
+  },
+  "coveredSiteIds": [
+    "sihong-memorial",
+    "yuhuatai-martyrs",
+    "dujiang-victory",
+    "sihang-warehouse",
+    "cpc-first-congress",
+    "jiangshangqing-memorial",
+    "yangzhou-martyrs",
+    "meiyuan-new-village"
+  ],
+  "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+  "heroDecisions": [
+    {
+      "siteId": "dujiang-victory",
+      "decision": "带“77周年”横幅的已选照片可作为长期 Hero"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "decision": "牌匾近景可作为临时 Hero，不阻断发布"
+    }
+  ],
+  "aiWatermarkPosters": [
+    {
+      "siteId": "yuhuatai-martyrs",
+      "aiWatermarkPresent": true,
+      "aiWatermarkAccepted": true,
+      "acceptedBy": "项目方",
+      "acceptedAt": "2026-08-21"
+    },
+    {
+      "siteId": "jiangshangqing-memorial",
+      "aiWatermarkPresent": true,
+      "aiWatermarkAccepted": true,
+      "acceptedBy": "项目方",
+      "acceptedAt": "2026-08-21"
+    },
+    {
+      "siteId": "yangzhou-martyrs",
+      "aiWatermarkPresent": true,
+      "aiWatermarkAccepted": true,
+      "acceptedBy": "项目方",
+      "acceptedAt": "2026-08-21"
+    }
+  ]
+}

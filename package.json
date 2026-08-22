@@ -13,7 +13,10 @@
     "check:cloudbase-inventory": "node scripts/check-cloudbase-inventory.mjs",
     "check:production-content": "node scripts/check-production-content.mjs",
     "check:content": "node scripts/check-content.mjs",
-    "check:map": "node scripts/check-map-resource.mjs"
+    "check:map": "node scripts/check-map-resource.mjs",
+    "media:dry-run": "node scripts/process-media.mjs --dry-run",
+    "media:process": "node scripts/process-media.mjs",
+    "check:media": "node scripts/check-media.mjs"
   },
   "dependencies": {
     "globe.gl": "^2.46.1",

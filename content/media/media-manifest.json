@@ -1,0 +1,1233 @@
+{
+  "schemaVersion": 1,
+  "version": "v1",
+  "stagingDirectory": ".media-staging",
+  "sites": [
+    {
+      "id": "sihong-memorial",
+      "officialName": "淮北抗日民主根据地纪念馆",
+      "hero": {
+        "sourcePath": "Videos/淮北抗日民主根据地纪念馆/淮北抗日民主根据地纪念馆——主图/3c03b98426e9aa556df1cef466ad0040.jpg",
+        "objectPath": "media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+        "alt": "阴云下，一座顶部带红色造型和金色五角星的高大纪念碑立于广场中央。",
+        "original": {
+          "codedWidth": 1440,
+          "codedHeight": 1920,
+          "rotation": 0,
+          "width": 1440,
+          "height": 1920,
+          "bytes": 317339,
+          "sha256": "75d39bc569f15742fc983b19ea7e1562af7e30228b43129d5c8148084cb0ec50"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 128044,
+        "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/淮北抗日民主根据地纪念馆/淮北抗日民主根据地纪念馆——主图/3c03b98426e9aa556df1cef466ad0040.jpg",
+          "objectPath": "media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+          "sequence": 1,
+          "alt": "阴云下，一座顶部带红色造型和金色五角星的高大纪念碑立于广场中央。",
+          "original": {
+            "codedWidth": 1440,
+            "codedHeight": 1920,
+            "rotation": 0,
+            "width": 1440,
+            "height": 1920,
+            "bytes": 317339,
+            "sha256": "75d39bc569f15742fc983b19ea7e1562af7e30228b43129d5c8148084cb0ec50"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 128044,
+          "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3"
+        },
+        {
+          "sourcePath": "Videos/淮北抗日民主根据地纪念馆/淮北抗日民主根据地纪念馆——主图/d80949c9af66a3f57ad72e22853f10ef.jpg",
+          "objectPath": "media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+          "sequence": 2,
+          "alt": "展厅内四尊深色人物雕塑站在红色隔离带后，背景墙陈列图文展板。",
+          "original": {
+            "codedWidth": 1440,
+            "codedHeight": 1920,
+            "rotation": 0,
+            "width": 1440,
+            "height": 1920,
+            "bytes": 722675,
+            "sha256": "3b33976568660f7aeb36b867955ee5cc9059988106570cf498c4629646cecf29"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 413718,
+          "sha256": "bf733491ac6684944711615ce6472568a6ce22bab4a6e5cb7f036a24752b7058"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/淮北抗日民主根据地纪念馆/淮北抗日民主根据地纪念馆——讲解视频/4f51357b0c07a79158a6a7c3374d6be7.mp4",
+        "objectPath": "media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 1280,
+        "bytes": 13385832,
+        "sha256": "f39e8ffb19f3b5cd59ff14390fcd65e9686d4af2db8078ebe92d963322776785",
+        "durationSeconds": 62,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 720,
+          "codedHeight": 1280,
+          "rotation": 0,
+          "width": 720,
+          "height": 1280,
+          "durationSeconds": 61.950998,
+          "bytes": 18969194,
+          "faststart": false,
+          "sha256": "577923988ab49031feb5ac1d83ea55ddf9125d3421e7158f74162664c2f6040f"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/淮北抗日民主根据地纪念馆/淮北抗日民主根据地纪念馆——讲解视频/4f51357b0c07a79158a6a7c3374d6be7.mp4",
+        "generatedFromVideoAtSeconds": 1,
+        "objectPath": "media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "original": {
+          "codedWidth": 720,
+          "codedHeight": 1280,
+          "rotation": 0,
+          "width": 720,
+          "height": 1280,
+          "bytes": 18969194,
+          "sha256": "577923988ab49031feb5ac1d83ea55ddf9125d3421e7158f74162664c2f6040f"
+        },
+        "mime": "image/webp",
+        "width": 1080,
+        "height": 1920,
+        "bytes": 115600,
+        "sha256": "75e032428da8ab8de0a2d0db6e344a6dbc5d0308237a3d849fa002f9a46b25c0"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/sihong-memorial.vtt",
+        "objectPath": "media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 1325,
+        "sha256": "39be16c27880a17114db49f53d8580041fd0d3ca50134a90f1b9905fdd2cd2ec"
+      }
+    },
+    {
+      "id": "yuhuatai-martyrs",
+      "officialName": "雨花台烈士陵园",
+      "hero": {
+        "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——主图/74D4D7FB5C6BB0793B13925AD5C2963C.jpg",
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+        "alt": "灰色高塔式纪念碑前立有一尊深色人物雕塑，周围环绕树木与开阔广场。",
+        "original": {
+          "codedWidth": 3072,
+          "codedHeight": 4096,
+          "rotation": 0,
+          "width": 3072,
+          "height": 4096,
+          "bytes": 825838,
+          "sha256": "c76f821db8a941932d3d1c2ebefa920c10112b27dc3d30e3a2b944baf39dc45e"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 147016,
+        "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——主图/74D4D7FB5C6BB0793B13925AD5C2963C.jpg",
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+          "sequence": 1,
+          "alt": "灰色高塔式纪念碑前立有一尊深色人物雕塑，周围环绕树木与开阔广场。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 825838,
+            "sha256": "c76f821db8a941932d3d1c2ebefa920c10112b27dc3d30e3a2b944baf39dc45e"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 147016,
+          "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0"
+        },
+        {
+          "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——主图/924F82A0F8E5DB7904C60FA0336C91B4.jpg",
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+          "sequence": 2,
+          "alt": "宽阔石阶尽头立有一组多人石雕，背景是茂密树木。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 2238199,
+            "sha256": "a2c69603f9a647873ebabd777910500e0a4a7360f14b8a570c69e3dbbf9d4b77"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 494198,
+          "sha256": "88178acd2c9fa6b95dfe1e2989d958de28f30ace19e950e0c599a2f51a706bec"
+        },
+        {
+          "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——主图/4DFE2B4D8020791F3015B4299271946D.jpg",
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+          "sequence": 3,
+          "alt": "展厅墙面排列多幅黑白人物照片和说明牌，下方设有小型展柜。",
+          "original": {
+            "codedWidth": 4096,
+            "codedHeight": 3072,
+            "rotation": 0,
+            "width": 4096,
+            "height": 3072,
+            "bytes": 871697,
+            "sha256": "22fb68f2a177fd59223f71b9a7850dfca3e8eaedc4d78896a7d803e0ebcf4a1c"
+          },
+          "mime": "image/webp",
+          "width": 1920,
+          "height": 1440,
+          "bytes": 182064,
+          "sha256": "429dd363db086056312bb7d154bfabf5667db7fdbe2d640f286eb94e30a9e93a"
+        },
+        {
+          "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——主图/DF98EED3D190DED76C962EFE6916A34E.jpg",
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+          "sequence": 4,
+          "alt": "室内展板上有金色标志、红色立体大字以及中英文说明文字。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 1084206,
+            "sha256": "f93f51fa647135e92ec00f39da2e218fcdfc6307ef169e4ad6245d9b24e40865"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 193684,
+          "sha256": "ffc65792b6964f5f899d92f482cdf3eed4bf1fc28aef34a2fe8b84ab366f579a"
+        },
+        {
+          "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——主图/1EBA0805B98855C29BFADF9F8321D7E9.jpg",
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+          "sequence": 5,
+          "alt": "红色墙面上方设有金色标志，下方排列多组金色文字。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 510315,
+            "sha256": "b2c1661116d8e070ccb466ff49a2744e3d85fb97ca27927e4ee935941aa3baff"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 79508,
+          "sha256": "5866202dd080261dd1fab8b8de81dbd3331ea82c38a435ef14c4c34fe4d46f3d"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——讲解视频/d625e606b1a45c2f891ec688bf8fc9a2.mp4",
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 1280,
+        "bytes": 12390860,
+        "sha256": "24fc1ba5d1a48be6c8469e3fdb4adbf7ef902579503562c1423d4d0193e1f985",
+        "durationSeconds": 59.92,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 1080,
+          "codedHeight": 1920,
+          "rotation": 0,
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 59.856389,
+          "bytes": 67199999,
+          "faststart": true,
+          "sha256": "90bed9975773bba598b0876d8ee9945fc140ec68b5eacc969d5f2adf2792ac51"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/雨花台烈士陵园/雨花台烈士陵园——讲解视频/04F77A58224BDE6A5A165D9FC5346279.jpg",
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+        "aiWatermarkPresent": true,
+        "aiWatermarkAccepted": true,
+        "original": {
+          "codedWidth": 2732,
+          "codedHeight": 1534,
+          "rotation": 0,
+          "width": 2732,
+          "height": 1534,
+          "bytes": 454213,
+          "sha256": "c3e119cf96452e3efec6ed9b920f515f096fc140696a0ef7bbc7a0ec0a687a25"
+        },
+        "mime": "image/webp",
+        "width": 1920,
+        "height": 1078,
+        "bytes": 336864,
+        "sha256": "0f1ed43d76d990fd1d61a8c2448d7a42dc26edd8a1737b6ee9ff842e926e3852"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/yuhuatai-martyrs.vtt",
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 810,
+        "sha256": "94bf0f8b1a7d7385e27d8b30c876bc4b24d6ba543e5f8a2f5a971e5b92ea0b6d"
+      }
+    },
+    {
+      "id": "dujiang-victory",
+      "officialName": "渡江胜利纪念馆",
+      "hero": {
+        "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141503_29_2.jpg",
+        "objectPath": "media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+        "alt": "蓝天下，红褐色纪念馆外墙写有金色馆名，参观者沿入口坡道行走。",
+        "original": {
+          "codedWidth": 5712,
+          "codedHeight": 4284,
+          "rotation": -90,
+          "width": 4284,
+          "height": 5712,
+          "bytes": 7811310,
+          "sha256": "4346dce2017c260dc9a859d77d51623bc1b350d542eed54d4e7988c94baa6e00"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 358872,
+        "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141503_29_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+          "sequence": 1,
+          "alt": "蓝天下，红褐色纪念馆外墙写有金色馆名，参观者沿入口坡道行走。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 7811310,
+            "sha256": "4346dce2017c260dc9a859d77d51623bc1b350d542eed54d4e7988c94baa6e00"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 358872,
+          "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141507_30_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+          "sequence": 2,
+          "alt": "广场上红色折面构筑物向上展开，旗杆立于中央，远处可见高层建筑。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 6095371,
+            "sha256": "760fbbf897daf124c9462bb10baaff6e33962b41670e8d5f8f093b058782449c"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 223632,
+          "sha256": "536c57b5166c52dc7850558812c4befc49ad17a8c71fe19da2c4ae9496d0b45e"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141515_32_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+          "sequence": 3,
+          "alt": "玻璃展柜内分层陈列多件长短不一的深色枪械状展品。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 6583349,
+            "sha256": "23727aaa0ce5c493b1e4d7906af8126a32a82051f1d24b9871c36742ded9b4aa"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 116348,
+          "sha256": "276e4b5fe0ac7803a3d71f366ca84b34d53532c21fa66a46112f39981d8d60ad"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141518_33_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+          "sequence": 4,
+          "alt": "玻璃展柜内陈列一件棕色长外套、带星形标记的帽子、黑白照片和皮质文件夹。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 6800865,
+            "sha256": "d67f3fa76b81dd7811d82d476da45e1719f6681d22ee27675675a1da4c75876f"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 133964,
+          "sha256": "3dc05fb3ebf798d67f8400ae65feb3f42942735b81c4c6e6467206206550d411"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141544_39_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+          "sequence": 5,
+          "alt": "展柜内陈列浅色布衣、编织鞋、成卷织物和棕色挎包。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 9389900,
+            "sha256": "ae94d8a6e8222b0975ae7f53bc5121acada4cb6a7e4b4c3881b66304fb5f78ae"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 226114,
+          "sha256": "5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-讲解视频/68130e9a1397db41890ad3077dc221a9.mp4",
+        "objectPath": "media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 1280,
+        "bytes": 13803265,
+        "sha256": "dd82aa6c72d717c7485b4a20145240995a5a73ca5856b38c05d48a18c98e3ed9",
+        "durationSeconds": 58.651688,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "hevc",
+          "codecAudio": "aac",
+          "codedWidth": 720,
+          "codedHeight": 1280,
+          "rotation": 0,
+          "width": 720,
+          "height": 1280,
+          "durationSeconds": 58.651678,
+          "bytes": 12158974,
+          "faststart": true,
+          "sha256": "81933bedb2cccaca1093e5c5cf465a9315d1bafa7b9dfb6802456b0b3aba095e"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-讲解视频/微信图片_20260728145144_43_2.jpg",
+        "objectPath": "media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "original": {
+          "codedWidth": 5712,
+          "codedHeight": 4284,
+          "rotation": -90,
+          "width": 4284,
+          "height": 5712,
+          "bytes": 3854296,
+          "sha256": "7392c047bb6a3889e3dd12fc76d438770344db2068507938ec3b1ad33c8d1b12"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 81418,
+        "sha256": "d1036384ccff22054be94faeef292c7fb3de8437b9d0744440adaf7c0195e823"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/dujiang-victory.vtt",
+        "objectPath": "media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 799,
+        "sha256": "a31674c1cba65cbd1693a5d61b8c45e3c9ef4455a45abec6e39ce9b9cbf12463"
+      }
+    },
+    {
+      "id": "sihang-warehouse",
+      "officialName": "上海四行仓库抗战纪念馆",
+      "hero": {
+        "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/9EF26D098E1D2FA84C519EC6F454DE91.jpg",
+        "objectPath": "media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+        "alt": "蓝天下布满孔洞与砖面缺损的灰色墙体，前方有参观者和纪念馆字样。",
+        "original": {
+          "codedWidth": 3211,
+          "codedHeight": 5708,
+          "rotation": 0,
+          "width": 3211,
+          "height": 5708,
+          "bytes": 4430175,
+          "sha256": "8f971be5f3025ef12bdcc92a7ec4e367db6b68f0e973d9c61899b97b3c581a64"
+        },
+        "mime": "image/webp",
+        "width": 1080,
+        "height": 1920,
+        "bytes": 373300,
+        "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/9EF26D098E1D2FA84C519EC6F454DE91.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+          "sequence": 1,
+          "alt": "蓝天下布满孔洞与砖面缺损的灰色墙体，前方有参观者和纪念馆字样。",
+          "original": {
+            "codedWidth": 3211,
+            "codedHeight": 5708,
+            "rotation": 0,
+            "width": 3211,
+            "height": 5708,
+            "bytes": 4430175,
+            "sha256": "8f971be5f3025ef12bdcc92a7ec4e367db6b68f0e973d9c61899b97b3c581a64"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 373300,
+          "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/4ECB6A313AA560EE64A3B7E7947A0857.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+          "sequence": 2,
+          "alt": "展厅内悬挂多份中外文报纸样式展品，前方陈列一台黑色机械装置。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 3888316,
+            "sha256": "80985e1ad170074b3061d2ce5650fd776f9ec4a3d00d48c99c6909959c836b5a"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 339784,
+          "sha256": "c3e75cc3375e7ae2cd0adbb42e5526490e469d3e9b170fbb07055a5a155fb268"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/6AB4B76C9281A2C6920909439E78EBE8.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+          "sequence": 3,
+          "alt": "展墙由大量写有姓名、编制文字和“88D”标记的长方形牌块组成。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 4912533,
+            "sha256": "10690d59294f6f7675d8ed6c9556c722e451bc7f6ada074d26e75b9d91203fda"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 474878,
+          "sha256": "8734bad2dd5b3c9b319b06fb3b4b54d2ff18b7b13c1cd2d64bf05108dc03ce7f"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/7C1F7E832BB8EC9B5709C5F460DAA382.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+          "sequence": 4,
+          "alt": "两尊深色人物塑像俯身查看桌上地图，背景陈列报纸与说明牌。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 3171945,
+            "sha256": "5a96c56e462d911aaab589b7ca92c9b3f2387ef3a620be1047cde59a79fbddf1"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 235596,
+          "sha256": "bfb790fd7d5e114cdfcdcaecd084a76c3affcfaae5ca137f879742195cff9255"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/F5994272536B3D592203089A0252AFC8.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+          "sequence": 5,
+          "alt": "展陈场景中，多个人物模型在带有铆钉的金属门洞旁搬举挡板。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 3321863,
+            "sha256": "80be9ab2c61a859787d677feadae6e57675ffe501990a23f356daee23fda733a"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 276624,
+          "sha256": "7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库视频.mp4",
+        "objectPath": "media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 1280,
+        "bytes": 10163744,
+        "sha256": "973c025e1141f3e5eca57cb4ae7a62fe810b6e8d939e7aff3ab0ed0bdd78f1e5",
+        "durationSeconds": 43.36,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 1080,
+          "codedHeight": 1920,
+          "rotation": 0,
+          "width": 1080,
+          "height": 1920,
+          "durationSeconds": 43.305011,
+          "bytes": 45342561,
+          "faststart": true,
+          "sha256": "61a8f5c0a444338e1f8b4f605c83602fe1cf6a70c24ee543a152dd570adf252c"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库视频封面.png",
+        "objectPath": "media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "original": {
+          "codedWidth": 1508,
+          "codedHeight": 2684,
+          "rotation": 0,
+          "width": 1508,
+          "height": 2684,
+          "bytes": 1354315,
+          "sha256": "75cd80097764e196293c46589b7e9a26f54acdf6a73fc967321809c92f4d4360"
+        },
+        "mime": "image/webp",
+        "width": 1079,
+        "height": 1920,
+        "bytes": 270306,
+        "sha256": "a49156b10ffc929d17bc459cb3201a4eccd3c415a51f3a5809fcdc3e8ab1e994"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/sihang-warehouse.vtt",
+        "objectPath": "media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 820,
+        "sha256": "2437d72e44a818f9bd414dc91aaef6bb103c8ace25803132035b781d14cd740b"
+      }
+    },
+    {
+      "id": "cpc-first-congress",
+      "officialName": "中国共产党第一次全国代表大会纪念馆",
+      "hero": {
+        "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/ECA3AFBE989DE42290CB2AE50A262154.jpg",
+        "objectPath": "media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+        "alt": "灰砖与红砖相间的建筑门面上，黑色双开门旁嵌有全国重点文物保护单位标志牌。",
+        "original": {
+          "codedWidth": 2268,
+          "codedHeight": 4032,
+          "rotation": 0,
+          "width": 2268,
+          "height": 4032,
+          "bytes": 2507699,
+          "sha256": "5f1f7fa4e45ee3407fe941fcd0b96932cbfa59b935cb9100339a1aa397751e93"
+        },
+        "mime": "image/webp",
+        "width": 1080,
+        "height": 1920,
+        "bytes": 368068,
+        "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/ECA3AFBE989DE42290CB2AE50A262154.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+          "sequence": 1,
+          "alt": "灰砖与红砖相间的建筑门面上，黑色双开门旁嵌有全国重点文物保护单位标志牌。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 2507699,
+            "sha256": "5f1f7fa4e45ee3407fe941fcd0b96932cbfa59b935cb9100339a1aa397751e93"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 368068,
+          "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/76AA36EE38DA670EA5D515873288AB98.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+          "sequence": 2,
+          "alt": "两尊深色人物塑像并肩站立，其中一人举起右手，背景墙面投映有大字。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 3610707,
+            "sha256": "52f39e0548ceddf26d28fc95c7881bfcbef98019ecd89f09816714035850a4c8"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 328386,
+          "sha256": "134a836a14602bfe3a3e6a5f8225ff21427bdd0ceeba24325e286f082d4cb3b7"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/8D70EF22FF390D14D390D0FA5035264D.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+          "sequence": 3,
+          "alt": "红色展柜前写有“主义的抉择”，背景悬挂多份报刊样式展品。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 1865980,
+            "sha256": "64f9ca9b86172c7f5c7a8ef1b83dc011a3dcd31e1779a9e54e9d3835d6c1f709"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 181186,
+          "sha256": "d5f8d58771998f1c28abee4bf7d3485a4d77b1eec3ee4360c64565b104ab3adb"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/EA6C78133FAB923B003D12F2CEBADA1C.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+          "sequence": 4,
+          "alt": "灯光照亮的城市沙盘前方铺展河道与建筑模型，后方墙面陈列多幅黑白图文。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 4217560,
+            "sha256": "07260f3766087dd29198e71d42763c12377d0bada03b61b006a11dfac8a9166b"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 384716,
+          "sha256": "630d1d7e362372357c1bf83aa7767e6b8555699f05466e6b6855df1b70785579"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/FB8B58D316E1DD035C88DBCB430F537F.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+          "sequence": 5,
+          "alt": "多尊人物塑像围坐桌旁，红色背景墙陈列人物画像与说明牌。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 1759160,
+            "sha256": "ca65837429a72457f0eb1d9c4bccbde4bbd343a2e726f2d7abeffe21c7917c40"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 257932,
+          "sha256": "5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址视频.mp4",
+        "objectPath": "media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 1280,
+        "bytes": 10451376,
+        "sha256": "5723c8ce331d448339e2ba1388f950cc20ef023abc84ff5a59fb3b4bda0f0758",
+        "durationSeconds": 47.4,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 720,
+          "codedHeight": 1280,
+          "rotation": 0,
+          "width": 720,
+          "height": 1280,
+          "durationSeconds": 47.333333,
+          "bytes": 16228465,
+          "faststart": false,
+          "sha256": "a4c1967429e5b7ae3534fa263dd733e73d544f31ffb5c0fa3378b2dacd5aad63"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址视频封面.png",
+        "objectPath": "media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "original": {
+          "codedWidth": 1524,
+          "codedHeight": 2709,
+          "rotation": 0,
+          "width": 1524,
+          "height": 2709,
+          "bytes": 1090772,
+          "sha256": "478c28135195da69e22d985c526111df90cfeded09bdbc4a50adda1c4a5e7309"
+        },
+        "mime": "image/webp",
+        "width": 1080,
+        "height": 1920,
+        "bytes": 198530,
+        "sha256": "0de077add9ef4596a3d1d4c928ee61e7ff6aeab32c3a6498a710cdda26bb8c83"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/cpc-first-congress.vtt",
+        "objectPath": "media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 807,
+        "sha256": "660646c85dd7a6fe3c505c5efd0761fb856de28d306e2322574f32e232044bb7"
+      }
+    },
+    {
+      "id": "jiangshangqing-memorial",
+      "officialName": "江上青烈士史料陈列馆",
+      "hero": {
+        "sourcePath": "Videos/江上青烈士史料陈列馆/江上青烈士史料陈列馆—竖版照片.jpg",
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+        "alt": "灰砖建筑入口上方悬挂写有馆名的红褐色木牌，门内可见楼梯。",
+        "original": {
+          "codedWidth": 3072,
+          "codedHeight": 4096,
+          "rotation": 0,
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1672862,
+          "sha256": "5108226df7e2e6e4b89d6a9649b72b13ffc94355e19fb3959beb8ec1837b4430"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 338156,
+        "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/江上青烈士史料陈列馆/江上青烈士史料陈列馆—竖版照片.jpg",
+          "objectPath": "media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+          "sequence": 1,
+          "alt": "灰砖建筑入口上方悬挂写有馆名的红褐色木牌，门内可见楼梯。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 1672862,
+            "sha256": "5108226df7e2e6e4b89d6a9649b72b13ffc94355e19fb3959beb8ec1837b4430"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 338156,
+          "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/江上青烈士史料陈列馆/江上青烈士史料陈列馆—视频.mp4",
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 960,
+        "bytes": 10654463,
+        "sha256": "277650caf09a31550a99f4f4e7279c2376b3131b43c720b87d05487b227c0009",
+        "durationSeconds": 85.678021,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 720,
+          "codedHeight": 960,
+          "rotation": 0,
+          "width": 720,
+          "height": 960,
+          "durationSeconds": 85.678005,
+          "bytes": 18000916,
+          "faststart": true,
+          "sha256": "0918780f2771af399a6dc0ed6651b85f3b28da320f489abd4d8b5e655ba281f7"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/江上青烈士史料陈列馆/江上青烈士史料陈列馆—视频封面.jpg",
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+        "aiWatermarkPresent": true,
+        "aiWatermarkAccepted": true,
+        "original": {
+          "codedWidth": 1600,
+          "codedHeight": 2848,
+          "rotation": 0,
+          "width": 1600,
+          "height": 2848,
+          "bytes": 586206,
+          "sha256": "5bc7dd44aa4fdc744e03280cba935c050eebfbfce251e6b53db24b7eb0119edf"
+        },
+        "mime": "image/webp",
+        "width": 1079,
+        "height": 1920,
+        "bytes": 210122,
+        "sha256": "449a4c6304acd7a1e0d1e36395300e3962014add4fe2f2666250237b33ee992f"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/jiangshangqing-memorial.vtt",
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 1454,
+        "sha256": "361ad8cd2e714b0761819d411183e04192aea4b993338752d0b57595d9620e38"
+      }
+    },
+    {
+      "id": "yangzhou-martyrs",
+      "officialName": "扬州革命烈士陵园",
+      "hero": {
+        "sourcePath": "Videos/扬州革命烈士陵园/扬州革命烈士陵园—竖版照片.jpg",
+        "objectPath": "media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+        "alt": "门式构架中央立有多人群像雕塑和刻字纪念碑，后方是一座灰瓦建筑。",
+        "original": {
+          "codedWidth": 3072,
+          "codedHeight": 4096,
+          "rotation": 0,
+          "width": 3072,
+          "height": 4096,
+          "bytes": 1693020,
+          "sha256": "dbe4ef5354ed3074f2ceaf7a06eb622fbfd6ab1c48cc3f0238cd2ddb7a22f308"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 332788,
+        "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/扬州革命烈士陵园/扬州革命烈士陵园—竖版照片.jpg",
+          "objectPath": "media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+          "sequence": 1,
+          "alt": "门式构架中央立有多人群像雕塑和刻字纪念碑，后方是一座灰瓦建筑。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 1693020,
+            "sha256": "dbe4ef5354ed3074f2ceaf7a06eb622fbfd6ab1c48cc3f0238cd2ddb7a22f308"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 332788,
+          "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/扬州革命烈士陵园/8月20日.mp4",
+        "objectPath": "media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+        "mime": "video/mp4",
+        "width": 960,
+        "height": 720,
+        "bytes": 10561011,
+        "sha256": "53691577c5fd7f86a9ec17e09773880b1647bd354b045983d66ed9387ac5439b",
+        "durationSeconds": 84.4,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 1440,
+          "codedHeight": 1080,
+          "rotation": 0,
+          "width": 1440,
+          "height": 1080,
+          "durationSeconds": 84.373333,
+          "bytes": 105838626,
+          "faststart": true,
+          "sha256": "86fe7ec677abf535eda6227f2ea9816e8fcea98be3c45f0ace20aa8fdbbfc479"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/扬州革命烈士陵园/扬州革命烈士陵园—视频封面.jpg",
+        "objectPath": "media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+        "aiWatermarkPresent": true,
+        "aiWatermarkAccepted": true,
+        "original": {
+          "codedWidth": 1600,
+          "codedHeight": 2848,
+          "rotation": 0,
+          "width": 1600,
+          "height": 2848,
+          "bytes": 726633,
+          "sha256": "b3b0d87cd3faabf137c8a38b1cacae06156f8325ad25323fa2b0e7508c4df9a7"
+        },
+        "mime": "image/webp",
+        "width": 1079,
+        "height": 1920,
+        "bytes": 302840,
+        "sha256": "8a2e1fa5564a3049ceeeb7641befd0f6de9b6e84cc4dddcd8f5cee9010aef77d"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/yangzhou-martyrs.vtt",
+        "objectPath": "media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 1446,
+        "sha256": "4f63941188f922ea98ff9d8c0298c0987723ab9436e4dd8103485a8ffb146a3e"
+      }
+    },
+    {
+      "id": "meiyuan-new-village",
+      "officialName": "中国共产党代表团梅园新村纪念馆",
+      "hero": {
+        "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片5.jpg",
+        "objectPath": "media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+        "alt": "树枝掩映的灰色旧墙上嵌有一块写有“中共代表团办事处原址”的黑色牌匾。",
+        "original": {
+          "codedWidth": 3072,
+          "codedHeight": 4096,
+          "rotation": 0,
+          "width": 3072,
+          "height": 4096,
+          "bytes": 5349946,
+          "sha256": "c51b9e910e2be9a54cfe0250b52a6e52dfcf5e4b5927ead26b7a018a6397af81"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 378702,
+        "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3"
+      },
+      "photos": [
+        {
+          "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片5.jpg",
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+          "sequence": 1,
+          "alt": "树枝掩映的灰色旧墙上嵌有一块写有“中共代表团办事处原址”的黑色牌匾。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 5349946,
+            "sha256": "c51b9e910e2be9a54cfe0250b52a6e52dfcf5e4b5927ead26b7a018a6397af81"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 378702,
+          "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3"
+        },
+        {
+          "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片2.jpg",
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+          "sequence": 2,
+          "alt": "红色展墙上悬挂多幅黑白照片，下方玻璃展柜中陈列书籍样式展品。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 4659298,
+            "sha256": "b8c794cc5e480e5b92d64fe6a39e82f87dc952c9da5afa6d6c62a98129c5f256"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 224828,
+          "sha256": "a873ad747c1efe8784183cbfaa3c2db5b5ac08a730706717ed2f23379cf0d079"
+        },
+        {
+          "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片3.jpg",
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+          "sequence": 3,
+          "alt": "玻璃展柜内陈列两件外套、黑白照片、箱子和餐具等物件。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 3528156,
+            "sha256": "63f812f24097325dd38b5be0849a15c230a7bebca1c7ece55f9757cc5662c88c"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 141436,
+          "sha256": "3147e10cd44a313b1d6117e15c35184bafa6ecaaa3763c4c1946dc3da8bdf9f2"
+        },
+        {
+          "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片6.jpg",
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+          "sequence": 4,
+          "alt": "一名参观者站在玻璃展柜前观看衣物、照片和箱子等展品。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 3768902,
+            "sha256": "ee46e6986a1c6a1edba166e4c05d268b3ab448b3cab72b50d0fae15cf16859f6"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 165824,
+          "sha256": "ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b"
+        }
+      ],
+      "video": {
+        "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/讲解视频/梅园新村 讲解视频.mp4",
+        "objectPath": "media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+        "mime": "video/mp4",
+        "width": 720,
+        "height": 960,
+        "bytes": 2331954,
+        "sha256": "1091ffff73cceccfe590c2a251f59ee4c02291c3a82233abbf2215805a828c2a",
+        "durationSeconds": 38.64,
+        "codecs": {
+          "video": "h264",
+          "audio": "aac"
+        },
+        "faststart": true,
+        "original": {
+          "codecVideo": "h264",
+          "codecAudio": "aac",
+          "codedWidth": 1080,
+          "codedHeight": 1440,
+          "rotation": 0,
+          "width": 1080,
+          "height": 1440,
+          "durationSeconds": 38.566666,
+          "bytes": 15387353,
+          "faststart": false,
+          "sha256": "8dd04188960258ae9ccd3b3e5aa04c60a2c2b1b892e348bb5d9d307c7a1025e8"
+        }
+      },
+      "poster": {
+        "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/讲解视频/梅园新村 讲解视频.mp4",
+        "generatedFromVideoAtSeconds": 1,
+        "objectPath": "media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "original": {
+          "codedWidth": 1080,
+          "codedHeight": 1440,
+          "rotation": 0,
+          "width": 1080,
+          "height": 1440,
+          "bytes": 15387353,
+          "sha256": "8dd04188960258ae9ccd3b3e5aa04c60a2c2b1b892e348bb5d9d307c7a1025e8"
+        },
+        "mime": "image/webp",
+        "width": 1440,
+        "height": 1920,
+        "bytes": 242012,
+        "sha256": "f2c3f370f3d98b09635e23ed7c63918b276621957a89e2385feb9e548b9f3c2e"
+      },
+      "captions": {
+        "sourcePath": "content/media/captions/meiyuan-new-village.vtt",
+        "objectPath": "media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 675,
+        "sha256": "9df1f42ba0169dd3526b7370bfd1fac8d2854a34d9703fd44a5903f618507a8d"
+      }
+    }
+  ]
+}
