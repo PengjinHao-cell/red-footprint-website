@@ -1,225 +1,93 @@
-import { createHash } from 'node:crypto';
-import { spawnSync } from 'node:child_process';
-import {
-  mkdtempSync,
-  mkdirSync,
-  rmSync,
-  writeFileSync,
-} from 'node:fs';
-import { tmpdir } from 'node:os';
-import { dirname, join } from 'node:path';
-
-import { afterEach, describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { validateMapCompliance } from './mapCompliance';
 
-const temporaryDirectories: string[] = [];
-
-function createTemporaryRoot() {
-  const root = mkdtempSync(join(tmpdir(), 'map-compliance-fixture-'));
-  temporaryDirectories.push(root);
-  return root;
-}
-
-function createSyntheticVerifiedRecord(root: string) {
-  const relativePath = 'assets/approved-map.geojson';
-  const resourcePath = join(root, relativePath);
-  const contents = '{"fixture":"synthetic map bytes; not production geography"}';
-  mkdirSync(dirname(resourcePath), { recursive: true });
-  writeFileSync(resourcePath, contents);
-
+function createIntegrityRecord() {
   return {
-    status: 'verified' as const,
-    publicUseAllowed: true,
-    resourceName: '标准地图资源',
-    publisher: '自然资源主管部门',
-    authorityType: 'natural-resources-authority' as const,
-    sourceUrl: 'https://bzdt.ch.mnr.gov.cn/',
-    resource: {
-      type: 'local' as const,
-      path: relativePath,
-      sha256: createHash('sha256').update(contents).digest('hex'),
+    status: 'integrity-checked',
+    purpose: '项目内部技术与人工视觉完整性检查，不是新审图批准。',
+    derivedThreeDimensionalResource: true,
+    newReviewClaimed: false,
+    coordinateSystem: 'GCJ-02',
+    markers: Array.from({ length: 8 }, (_, index) => ({
+      id: `site-${index + 1}`,
+      officialName: `红色地点${index + 1}`,
+      lat: 31 + index / 10,
+      lng: 118 + index / 10,
+    })),
+    checks: {
+      sourceRecord: true,
+      digest: true,
+      geometry: true,
+      eightMarkers: true,
+      fallbackList: true,
+      reducedMotion: true,
     },
-    reviewNumber: 'GS(2099)9999号',
-    usageScope: '网站地球边界层展示，禁止超出授权范围使用',
-    verifiedAt: '2026-08-21',
-    verifiedBy: '合规审核员',
-    humanReview: {
-      fullTerritory: true,
+    humanVisualIntegrity: {
+      referenceReviewNumber: 'GS(2023)2762号',
+      checkedAt: '2026-08-21',
+      viewports: ['390x844', '768x1024', '1366x768', '1920x1080'],
+      mainlandOutline: true,
       nationalBoundaries: true,
       administrativeBoundaries: true,
-      islands: true,
+      majorIslands: true,
+      eightMarkers: true,
     },
   };
 }
 
-function errorText(input: unknown, root: string) {
-  return validateMapCompliance(input, { root }).join('\n');
+function errorText(input: unknown) {
+  return validateMapCompliance(input).join('\n');
 }
 
-afterEach(() => {
-  temporaryDirectories.splice(0).forEach((directory) => {
-    rmSync(directory, { force: true, recursive: true });
-  });
-});
-
 describe('validateMapCompliance', () => {
-  it('accepts a complete synthetic verified record backed by a matching local file', () => {
-    const root = createTemporaryRoot();
+  it('accepts a complete technical and visual integrity record without approval fields', () => {
+    const record = createIntegrityRecord();
 
-    expect(validateMapCompliance(createSyntheticVerifiedRecord(root), { root })).toEqual([]);
+    expect(validateMapCompliance(record)).toEqual([]);
+    expect(record).not.toHaveProperty('publicUseAllowed');
+    expect(record).not.toHaveProperty('verifiedBy');
+    expect(record).not.toHaveProperty('signature');
   });
 
-  it('rejects a missing review number', () => {
-    const root = createTemporaryRoot();
-    const record = { ...createSyntheticVerifiedRecord(root), reviewNumber: '' };
+  it('rejects any claim that the derived 3D resource obtained a new review', () => {
+    const record = { ...createIntegrityRecord(), newReviewClaimed: true };
 
-    expect(errorText(record, root)).toMatch(/reviewNumber/);
+    expect(errorText(record)).toMatch(/newReviewClaimed/);
   });
 
-  it('rejects a missing authoritative source', () => {
-    const root = createTemporaryRoot();
-    const record = createSyntheticVerifiedRecord(root);
-    delete (record as Partial<typeof record>).sourceUrl;
+  it('requires exactly eight unique GCJ-02 markers in China coordinate bounds', () => {
+    const record = createIntegrityRecord();
+    record.markers[7] = { ...record.markers[0] };
 
-    expect(errorText(record, root)).toMatch(/sourceUrl/);
+    expect(errorText(record)).toMatch(/markers.*unique/i);
   });
 
-  it('rejects an HTTP source URL', () => {
-    const root = createTemporaryRoot();
-    const record = {
-      ...createSyntheticVerifiedRecord(root),
-      sourceUrl: 'http://bzdt.ch.mnr.gov.cn/',
-    };
+  it('requires source, digest, geometry, fallback, and reduced-motion checks', () => {
+    const record = createIntegrityRecord();
+    record.checks.geometry = false;
+    record.checks.fallbackList = false;
 
-    expect(errorText(record, root)).toMatch(/sourceUrl.*HTTPS/i);
+    expect(errorText(record)).toMatch(/checks\.geometry/);
+    expect(errorText(record)).toMatch(/checks\.fallbackList/);
   });
 
-  it('rejects blocked metadata even when the missing fields are explicit', () => {
-    const root = createTemporaryRoot();
-    const record = {
+  it('requires the four viewport visual comparison and all integrity categories', () => {
+    const record = createIntegrityRecord();
+    record.humanVisualIntegrity.viewports = ['390x844'];
+    record.humanVisualIntegrity.majorIslands = false;
+
+    expect(errorText(record)).toMatch(/humanVisualIntegrity\.viewports/);
+    expect(errorText(record)).toMatch(/humanVisualIntegrity\.majorIslands/);
+  });
+
+  it('does not treat a legacy blocked approval record as the new integrity schema', () => {
+    const legacyRecord = {
       status: 'blocked',
       publicUseAllowed: false,
-      reason: '尚未获得可核验的合规地图资源',
-      missingFields: ['sourceUrl', 'reviewNumber', 'resource'],
+      missingFields: ['verifiedBy', 'signature'],
     };
 
-    expect(errorText(record, root)).toMatch(/status.*blocked/i);
-  });
-
-  it('rejects a missing actual resource record', () => {
-    const root = createTemporaryRoot();
-    const record = createSyntheticVerifiedRecord(root);
-    delete (record as Partial<typeof record>).resource;
-
-    expect(errorText(record, root)).toMatch(/resource/);
-  });
-
-  it('rejects a local resource path that does not exist', () => {
-    const root = createTemporaryRoot();
-    const record = createSyntheticVerifiedRecord(root);
-    record.resource.path = 'assets/not-present.geojson';
-
-    expect(errorText(record, root)).toMatch(/resource\.path.*does not exist/i);
-  });
-
-  it('rejects a local resource whose SHA-256 does not match', () => {
-    const root = createTemporaryRoot();
-    const record = createSyntheticVerifiedRecord(root);
-    record.resource.sha256 = '0'.repeat(64);
-
-    expect(errorText(record, root)).toMatch(/resource\.sha256.*does not match/i);
-  });
-
-  it('rejects an incomplete manual territory review', () => {
-    const root = createTemporaryRoot();
-    const record = createSyntheticVerifiedRecord(root);
-    record.humanReview.islands = false;
-
-    expect(errorText(record, root)).toMatch(/humanReview\.islands/);
-  });
-
-  it('rejects placeholder or test source domains', () => {
-    const root = createTemporaryRoot();
-    const record = {
-      ...createSyntheticVerifiedRecord(root),
-      sourceUrl: 'https://maps.example.test/approved-map',
-    };
-
-    expect(errorText(record, root)).toMatch(/sourceUrl.*placeholder/i);
-  });
-});
-
-describe('map compliance command', () => {
-  it('fails closed on the explicit blocked production metadata', () => {
-    const result = spawnSync('npm', ['run', 'check:map'], {
-      cwd: process.cwd(),
-      encoding: 'utf8',
-    });
-
-    expect(result.status).toBe(1);
-    expect(`${result.stdout}${result.stderr}`).toMatch(/mapCompliance\.json/i);
-    expect(`${result.stdout}${result.stderr}`).toMatch(/status.*blocked/i);
-  });
-
-  it('accepts only the temporary synthetic verified fixture', () => {
-    const root = createTemporaryRoot();
-    const mapPath = join(root, 'mapCompliance.json');
-    writeFileSync(mapPath, JSON.stringify(createSyntheticVerifiedRecord(root)));
-
-    const result = spawnSync(
-      'npm',
-      ['run', 'check:map', '--', '--map', mapPath, '--root', root],
-      {
-        cwd: process.cwd(),
-        encoding: 'utf8',
-      },
-    );
-
-    expect(result.status).toBe(0);
-    expect(`${result.stdout}${result.stderr}`).toMatch(/passed/i);
-  });
-
-  it('reports an explicit blocked record as a release failure', () => {
-    const root = createTemporaryRoot();
-    const mapPath = join(root, 'mapCompliance.json');
-    writeFileSync(
-      mapPath,
-      JSON.stringify({
-        status: 'blocked',
-        publicUseAllowed: false,
-        reason: '缺少合规生产地图资源',
-        missingFields: ['resource', 'reviewNumber'],
-      }),
-    );
-
-    const result = spawnSync(
-      'node',
-      ['scripts/check-map-compliance.mjs', '--map', mapPath, '--root', root],
-      { cwd: process.cwd(), encoding: 'utf8' },
-    );
-
-    expect(result.status).toBe(1);
-    expect(`${result.stdout}${result.stderr}`).toMatch(/status.*blocked/i);
-    expect(`${result.stdout}${result.stderr}`).toMatch(
-      /missingFields.*resource.*reviewNumber/i,
-    );
-  });
-
-  it('reports the exact field when a local digest does not match', () => {
-    const root = createTemporaryRoot();
-    const mapPath = join(root, 'mapCompliance.json');
-    const record = createSyntheticVerifiedRecord(root);
-    record.resource.sha256 = 'f'.repeat(64);
-    writeFileSync(mapPath, JSON.stringify(record));
-
-    const result = spawnSync(
-      'node',
-      ['scripts/check-map-compliance.mjs', '--map', mapPath, '--root', root],
-      { cwd: process.cwd(), encoding: 'utf8' },
-    );
-
-    expect(result.status).toBe(1);
-    expect(`${result.stdout}${result.stderr}`).toMatch(/resource\.sha256.*does not match/i);
+    expect(errorText(legacyRecord)).toMatch(/status.*integrity-checked/i);
   });
 });

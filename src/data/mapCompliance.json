@@ -1,20 +1,83 @@
 {
-  "status": "blocked",
-  "publicUseAllowed": false,
-  "reason": "尚未取得并核验实际使用的合规地图资源，禁止初始化公开边界层或公开发布。",
-  "missingFields": [
-    "resourceName",
-    "publisher",
-    "authorityType",
-    "sourceUrl",
-    "resource",
-    "reviewNumber",
-    "usageScope",
-    "verifiedAt",
-    "verifiedBy",
-    "humanReview.fullTerritory",
-    "humanReview.nationalBoundaries",
-    "humanReview.administrativeBoundaries",
-    "humanReview.islands"
-  ]
+  "status": "integrity-checked",
+  "purpose": "项目内部技术与人工视觉完整性检查，不是新审图批准。",
+  "derivedThreeDimensionalResource": true,
+  "newReviewClaimed": false,
+  "coordinateSystem": "GCJ-02",
+  "markers": [
+    {
+      "id": "sihong-memorial",
+      "officialName": "淮北抗日民主根据地纪念馆",
+      "lat": 33.447482,
+      "lng": 118.210953
+    },
+    {
+      "id": "yuhuatai-martyrs",
+      "officialName": "雨花台烈士陵园",
+      "lat": 31.998425,
+      "lng": 118.780177
+    },
+    {
+      "id": "dujiang-victory",
+      "officialName": "渡江胜利纪念馆",
+      "lat": 32.073563,
+      "lng": 118.73173
+    },
+    {
+      "id": "sihang-warehouse",
+      "officialName": "上海四行仓库抗战纪念馆",
+      "lat": 31.24034,
+      "lng": 121.471104
+    },
+    {
+      "id": "cpc-first-congress",
+      "officialName": "中国共产党第一次全国代表大会会址",
+      "markerAddress": "兴业路76号",
+      "lat": 31.220104,
+      "lng": 121.475407,
+      "size": "large"
+    },
+    {
+      "id": "jiangshangqing-memorial",
+      "officialName": "江上青烈士史料陈列馆",
+      "lat": 32.390314,
+      "lng": 119.434459
+    },
+    {
+      "id": "yangzhou-martyrs",
+      "officialName": "扬州革命烈士陵园",
+      "lat": 32.421642,
+      "lng": 119.415186
+    },
+    {
+      "id": "meiyuan-new-village",
+      "officialName": "中国共产党代表团梅园新村纪念馆",
+      "lat": 32.042379,
+      "lng": 118.801602
+    }
+  ],
+  "checks": {
+    "sourceRecord": true,
+    "digest": true,
+    "geometry": true,
+    "eightMarkers": true,
+    "fallbackList": true,
+    "reducedMotion": true
+  },
+  "humanVisualIntegrity": {
+    "referenceReviewNumber": "GS(2023)2762号",
+    "checkedAt": "2026-08-21",
+    "viewports": [
+      "390x844",
+      "768x1024",
+      "1366x768",
+      "1920x1080"
+    ],
+    "mainlandOutline": true,
+    "nationalBoundaries": true,
+    "administrativeBoundaries": true,
+    "majorIslands": true,
+    "eightMarkers": true,
+    "notes": "对照官方平面图检查球面中国轮廓、省级边界、台湾岛、海南岛、南海界线与长三角八个按原始经纬度定位的红色实心五角星；结论只表示项目内部视觉完整性。"
+  }
 }

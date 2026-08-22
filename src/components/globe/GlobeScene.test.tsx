@@ -8,18 +8,31 @@ import GlobeScene from './GlobeScene';
 type Marker = {
   id: string;
   officialName: string;
+  lat: number;
+  lng: number;
+  primary: boolean;
   markerState: 'selected' | 'visited' | 'unvisited';
 };
 
 type MockGlobeInstance = {
   background: string | undefined;
+  controlsState: {
+    autoRotate: boolean;
+    autoRotateSpeed: number;
+    enableDamping: boolean;
+  };
   destructor: ReturnType<typeof vi.fn>;
   enablePointerInteractionCalls: boolean[];
   globeColor: ReturnType<typeof vi.fn>;
+  htmlData: Marker[];
+  htmlElementAccessor: ((marker: object) => HTMLElement) | undefined;
   pointColorAccessor: ((point: object) => string) | undefined;
   pointClick: ((point: object) => void) | undefined;
   pointData: Marker[];
   pointOfViewCalls: Array<{ altitude: number; lat: number; lng: number }>;
+  pointRadiusAccessor: ((point: object) => number) | undefined;
+  polygonData: unknown[];
+  pathData: unknown[];
   readyCallback: (() => void) | undefined;
   rendererPixelRatio: ReturnType<typeof vi.fn>;
   ringData: Marker[];
@@ -90,13 +103,23 @@ vi.mock('globe.gl', () => {
   return {
     default: class MockGlobe {
       background: string | undefined;
+      controlsState = {
+        autoRotate: false,
+        autoRotateSpeed: 0,
+        enableDamping: false,
+      };
       destructor = vi.fn();
       enablePointerInteractionCalls: boolean[] = [];
       globeColor = vi.fn();
+      htmlData: Marker[] = [];
+      htmlElementAccessor: ((marker: object) => HTMLElement) | undefined;
       pointColorAccessor: ((point: object) => string) | undefined;
       pointClick: ((point: object) => void) | undefined;
       pointData: Marker[] = [];
       pointOfViewCalls: Array<{ altitude: number; lat: number; lng: number }> = [];
+      pointRadiusAccessor: ((point: object) => number) | undefined;
+      polygonData: unknown[] = [];
+      pathData: unknown[] = [];
       view = { lat: 31.2, lng: 119.4, altitude: 1.4 };
       readyCallback: (() => void) | undefined;
       rendererPixelRatio = vi.fn();
@@ -168,7 +191,84 @@ vi.mock('globe.gl', () => {
         return this;
       }
 
-      pointRadius() {
+      pointRadius(accessor: (point: object) => number) {
+        this.pointRadiusAccessor = accessor;
+        return this;
+      }
+
+      htmlElementsData(data: Marker[]) {
+        this.htmlData = data;
+        return this;
+      }
+
+      htmlLat() {
+        return this;
+      }
+
+      htmlLng() {
+        return this;
+      }
+
+      htmlAltitude() {
+        return this;
+      }
+
+      htmlElement(accessor: (marker: object) => HTMLElement) {
+        this.htmlElementAccessor = accessor;
+        return this;
+      }
+
+      polygonsData(data: unknown[]) {
+        this.polygonData = data;
+        return this;
+      }
+
+      polygonAltitude() {
+        return this;
+      }
+
+      polygonCapColor() {
+        return this;
+      }
+
+      polygonSideColor() {
+        return this;
+      }
+
+      polygonStrokeColor() {
+        return this;
+      }
+
+      polygonLabel() {
+        return this;
+      }
+
+      pathsData(data: unknown[]) {
+        this.pathData = data;
+        return this;
+      }
+
+      pathPoints() {
+        return this;
+      }
+
+      pathPointLat() {
+        return this;
+      }
+
+      pathPointLng() {
+        return this;
+      }
+
+      pathColor() {
+        return this;
+      }
+
+      pathStroke() {
+        return this;
+      }
+
+      pathPointAlt() {
         return this;
       }
 
@@ -234,11 +334,7 @@ vi.mock('globe.gl', () => {
       }
 
       controls() {
-        return {
-          autoRotate: false,
-          autoRotateSpeed: 0,
-          enableDamping: false,
-        };
+        return this.controlsState;
       }
 
       _destructor() {
@@ -259,15 +355,6 @@ function setWebGLSupported(supported: boolean) {
           ? ({} as WebGL2RenderingContext)
           : null) as HTMLCanvasElement['getContext'],
     );
-}
-
-function enableComplianceMetadata() {
-  vi.stubEnv('VITE_MAP_SOURCE_URL', 'https://maps.example.test/approved');
-  vi.stubEnv('VITE_MAP_REVIEW_NUMBER', 'TEST-REVIEW-NUMBER');
-  vi.stubEnv(
-    'VITE_MAP_VERIFICATION_RECORD',
-    'controlled-test-verification-record',
-  );
 }
 
 function renderScene(
@@ -295,6 +382,7 @@ function latestInstance(): MockGlobeInstance {
 
 afterEach(() => {
   cleanup();
+  window.history.replaceState({}, '', '/');
   globeMock.autoReady = true;
   globeMock.instances.length = 0;
   globeMock.shouldThrow = false;
@@ -307,6 +395,32 @@ afterEach(() => {
 });
 
 describe('GlobeScene', () => {
+  it('uses the list fallback in the explicitly flagged development E2E harness', async () => {
+    vi.stubEnv('VITE_E2E_FORCE_FALLBACK', '1');
+    window.history.replaceState({}, '', '/tests/e2e/harness/');
+    setWebGLSupported(true);
+    const moduleLoadsBeforeRender = globeMock.moduleLoads;
+
+    renderScene();
+
+    expect(await screen.findAllByRole('button')).toHaveLength(8);
+    expect(globeMock.moduleLoads).toBe(moduleLoadsBeforeRender);
+    expect(globeMock.instances).toHaveLength(0);
+    window.history.replaceState({}, '', '/');
+  });
+
+  it('keeps the globe active in the development E2E harness without the fallback flag', async () => {
+    window.history.replaceState({}, '', '/tests/e2e/harness/');
+    setWebGLSupported(true);
+
+    renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    expect(
+      screen.getByRole('region', { name: '暖色三维红色足迹地球' }),
+    ).toBeInTheDocument();
+  });
+
   it('shows the eight-site fallback without loading Globe.gl when WebGL is unavailable', async () => {
     setWebGLSupported(false);
     const moduleLoadsBeforeRender = globeMock.moduleLoads;
@@ -319,20 +433,55 @@ describe('GlobeScene', () => {
     expect(props.onError).not.toHaveBeenCalled();
   });
 
-  it('refuses globe initialization and uses the list when compliance metadata is missing', async () => {
-    const getContext = setWebGLSupported(true);
+  it('initializes the bundled China globe resource without approval environment variables', async () => {
+    setWebGLSupported(true);
     const { props } = renderScene();
 
-    await waitFor(() => expect(getContext).toHaveBeenCalledWith('webgl2'));
-    expect(await screen.findAllByRole('button')).toHaveLength(8);
-    expect(globeMock.instances).toHaveLength(0);
-    expect(props.onReady).not.toHaveBeenCalled();
-    expect(props.onError).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    await waitFor(() => expect(props.onReady).toHaveBeenCalledTimes(1));
+    expect(latestInstance().polygonData).toHaveLength(34);
+    expect(latestInstance().pathData.length).toBeGreaterThan(0);
+    expect(latestInstance().pointOfViewCalls[0]).toEqual({
+      lat: 35,
+      lng: 104,
+      altitude: 2.05,
+    });
+    expect(props.onError).not.toHaveBeenCalled();
   });
 
-  it('calls onReady once only after a compliant globe initializes successfully', async () => {
+  it('uses a larger China-centered overview for tablet viewports', async () => {
+    vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(720);
     setWebGLSupported(true);
-    enableComplianceMetadata();
+    renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    expect(latestInstance().pointOfViewCalls[0]).toEqual({
+      lat: 35,
+      lng: 104,
+      altitude: 1.45,
+    });
+  });
+
+  it('centers the globe only after the real renderer reports ready', async () => {
+    globeMock.autoReady = false;
+    setWebGLSupported(true);
+    const { props } = renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const instance = latestInstance();
+    expect(instance.pointOfViewCalls).toHaveLength(0);
+
+    instance.readyCallback?.();
+
+    expect(instance.pointOfViewCalls).toEqual([
+      { lat: 35, lng: 104, altitude: 2.05 },
+    ]);
+    expect(instance.controlsState.autoRotate).toBe(false);
+    expect(props.onReady).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls onReady once only after the bundled globe initializes successfully', async () => {
+    setWebGLSupported(true);
     const { props } = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -345,7 +494,6 @@ describe('GlobeScene', () => {
 
   it('marks visited, unvisited, and selected points with distinct states', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     renderScene({
       selectedId: sites[0].id,
       visitedIds: [sites[0].id, sites[1].id],
@@ -365,7 +513,6 @@ describe('GlobeScene', () => {
 
   it('uses brick red, dark red, and a clear selected color for point states', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     renderScene({
       selectedId: sites[0].id,
       visitedIds: [sites[1].id],
@@ -380,9 +527,43 @@ describe('GlobeScene', () => {
     expect(getColor?.(instance.pointData[2])).toBe('#982e2d');
   });
 
+  it('keeps the first-congress star larger than the other unselected stars', async () => {
+    setWebGLSupported(true);
+    renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const instance = latestInstance();
+    const primaryMarker = instance.pointData.find(({ primary }) => primary);
+    const regularMarker = instance.pointData.find(({ primary }) => !primary);
+
+    expect(primaryMarker).toBeDefined();
+    expect(instance.pointRadiusAccessor?.(primaryMarker!)).toBe(0.48);
+    expect(instance.pointRadiusAccessor?.(regularMarker!)).toBe(0.38);
+  });
+
+  it('renders eight accessible red five-point stars at their exact coordinates', async () => {
+    setWebGLSupported(true);
+    renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const instance = latestInstance();
+    const stars = instance.htmlData.map((marker) =>
+      instance.htmlElementAccessor?.(marker),
+    );
+
+    expect(stars).toHaveLength(8);
+    expect(stars.every((star) => star?.textContent === '★')).toBe(true);
+    expect(stars.map((star) => star?.getAttribute('aria-label'))).toEqual(
+      sites.map(({ officialName }) => officialName),
+    );
+    expect(stars.every((star) => star?.style.translate === '')).toBe(true);
+    expect(instance.htmlData.map(({ lat, lng }) => ({ lat, lng }))).toEqual(
+      sites.map(({ coordinates }) => coordinates),
+    );
+  });
+
   it('selects the corresponding point exactly once', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const { props } = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -395,7 +576,6 @@ describe('GlobeScene', () => {
 
   it('uses the real camera-flight controller and opens detail once after the flight', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const { props } = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -421,7 +601,6 @@ describe('GlobeScene', () => {
 
   it('ignores a second point click while the camera flight is active', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const { props } = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -441,7 +620,6 @@ describe('GlobeScene', () => {
 
   it('cancels the active camera timeline when the scene unmounts', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const { props, unmount } = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -459,24 +637,23 @@ describe('GlobeScene', () => {
   it('uses reduced motion without moving in space but still opens detail once', async () => {
     reducedMotionMock.enabled = true;
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const { props } = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
+    const spatialViewsBeforeFlight = instance.pointOfViewCalls.length;
     vi.useFakeTimers();
     instance.pointClick?.(instance.pointData[0]);
 
     act(() => vi.runAllTimers());
 
-    expect(instance.pointOfViewCalls).toHaveLength(0);
+    expect(instance.pointOfViewCalls).toHaveLength(spatialViewsBeforeFlight);
     expect(props.onTravelComplete).toHaveBeenCalledTimes(1);
     expect(props.onTravelComplete).toHaveBeenCalledWith(sites[0].id);
   });
 
   it('returns to the captured overview and reports completion once', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const rendered = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -490,16 +667,15 @@ describe('GlobeScene', () => {
     act(() => vi.runAllTimers());
 
     expect(instance.pointOfViewCalls.at(-1)).toEqual({
-      lat: 31.2,
-      lng: 119.4,
-      altitude: 1.4,
+      lat: 35,
+      lng: 104,
+      altitude: 2.05,
     });
     expect(rendered.props.onReturnComplete).toHaveBeenCalledTimes(1);
   });
 
   it('uses live reduced motion for return without rebuilding the open globe journey', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const rendered = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -529,7 +705,6 @@ describe('GlobeScene', () => {
   it('uses spatial motion for the next flight after reduced motion is disabled while idle', async () => {
     reducedMotionMock.enabled = true;
     setWebGLSupported(true);
-    enableComplianceMetadata();
     const rendered = renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
@@ -551,7 +726,6 @@ describe('GlobeScene', () => {
 
   it('uses a bright warm shell and caps high device pixel ratios', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     vi.stubGlobal('devicePixelRatio', 3);
     renderScene();
 
@@ -565,7 +739,6 @@ describe('GlobeScene', () => {
 
   it('reports initialization errors and switches to the eight-site fallback', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     globeMock.shouldThrow = true;
     const { props } = renderScene();
 
@@ -576,7 +749,6 @@ describe('GlobeScene', () => {
 
   it('does not call callbacks after unmount and destroys the globe instance', async () => {
     setWebGLSupported(true);
-    enableComplianceMetadata();
     globeMock.autoReady = false;
     const { props, unmount } = renderScene();
 

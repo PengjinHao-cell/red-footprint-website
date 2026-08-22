@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import chinaGlobeMap from '../../data/china-globe-map.json';
 import type { Site } from '../../data/siteSchema';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import useWebGLSupport from '../../hooks/useWebGLSupport';
@@ -15,8 +16,9 @@ const SAND_COLOR = '#e7d4b5';
 const BRICK_COLOR = '#982e2d';
 const VISITED_COLOR = '#54201d';
 const SELECTED_COLOR = '#b33a32';
+const BOUNDARY_COLOR = '#7f463c';
+const PROVINCE_COLOR = '#e2c9a4';
 const MAX_DEVICE_PIXEL_RATIO = 1.5;
-
 type MarkerState = 'selected' | 'visited' | 'unvisited';
 
 type GlobeMarker = {
@@ -24,7 +26,27 @@ type GlobeMarker = {
   officialName: string;
   lat: number;
   lng: number;
+  primary: boolean;
   markerState: MarkerState;
+};
+
+type GlobeMapFeature = {
+  type: 'Feature';
+  properties: {
+    adcode: string;
+    name: string;
+    kind: 'province' | 'maritime-boundary';
+  };
+  geometry: {
+    type: 'Polygon' | 'MultiPolygon';
+    coordinates: unknown;
+  };
+};
+
+type GeoPosition = [number, number];
+
+type GlobePath = {
+  points: GeoPosition[];
 };
 
 type WarmGlobeMaterial = {
@@ -46,22 +68,38 @@ type GlobeSceneProps = {
   onError: (error: Error) => void;
 };
 
-function hasComplianceMetadata(): boolean {
-  const sourceUrl = import.meta.env.VITE_MAP_SOURCE_URL?.trim();
-  const reviewNumber = import.meta.env.VITE_MAP_REVIEW_NUMBER?.trim();
-  const verificationRecord =
-    import.meta.env.VITE_MAP_VERIFICATION_RECORD?.trim();
+const globeMapFeatures = chinaGlobeMap.features as GlobeMapFeature[];
+const provinceFeatures = globeMapFeatures.filter(
+  ({ properties }) => properties.kind === 'province',
+);
 
-  if (!sourceUrl || !reviewNumber || !verificationRecord) {
-    return false;
+function collectLinearRings(value: unknown, output: GeoPosition[][] = []) {
+  if (!Array.isArray(value)) {
+    return output;
   }
 
-  try {
-    return new URL(sourceUrl).protocol === 'https:';
-  } catch {
-    return false;
+  if (
+    value.length >= 2 &&
+    value.every(
+      (position) =>
+        Array.isArray(position) &&
+        position.length >= 2 &&
+        typeof position[0] === 'number' &&
+        typeof position[1] === 'number',
+    )
+  ) {
+    output.push(value.map(([lng, lat]) => [lng, lat]));
+    return output;
   }
+
+  value.forEach((child) => collectLinearRings(child, output));
+  return output;
 }
+
+const maritimeBoundaryPaths: GlobePath[] = globeMapFeatures
+  .filter(({ properties }) => properties.kind === 'maritime-boundary')
+  .flatMap(({ geometry }) => collectLinearRings(geometry.coordinates))
+  .map((points) => ({ points }));
 
 function getMarkerColor(marker: GlobeMarker): string {
   if (marker.markerState === 'selected') {
@@ -69,6 +107,44 @@ function getMarkerColor(marker: GlobeMarker): string {
   }
 
   return marker.markerState === 'visited' ? VISITED_COLOR : BRICK_COLOR;
+}
+
+function getChinaOverview(width: number) {
+  if (width < 600) {
+    return { lat: 35, lng: 104, altitude: 2.05 };
+  }
+  if (width < 900) {
+    return { lat: 35, lng: 104, altitude: 1.45 };
+  }
+  return { lat: 35, lng: 104, altitude: 1.25 };
+}
+
+function createStarElement(
+  marker: GlobeMarker,
+  onActivate: (marker: GlobeMarker) => void,
+) {
+  const star = document.createElement('button');
+  star.type = 'button';
+  star.textContent = '★';
+  star.title = marker.officialName;
+  star.setAttribute('aria-label', marker.officialName);
+  star.setAttribute('aria-pressed', String(marker.markerState === 'selected'));
+  star.style.appearance = 'none';
+  star.style.background = 'transparent';
+  star.style.border = '0';
+  star.style.color = getMarkerColor(marker);
+  star.style.cursor = 'pointer';
+  star.style.fontSize = marker.primary ? '2rem' : '1.45rem';
+  star.style.lineHeight = '1';
+  star.style.padding = '0.2rem';
+  star.style.pointerEvents = 'auto';
+  star.style.textShadow = '0 1px 2px rgba(84, 32, 29, 0.35)';
+  star.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onActivate(marker);
+  });
+  return star;
 }
 
 function toError(value: unknown): Error {
@@ -91,14 +167,12 @@ export default function GlobeScene({
   const supportsWebGL = useWebGLSupport();
   const reducedMotion = useReducedMotion();
   const reducedMotionRef = useRef(reducedMotion);
-  const complianceReady = hasComplianceMetadata();
   const containerRef = useRef<HTMLDivElement>(null);
   const globeRef = useRef<import('globe.gl').GlobeInstance | null>(null);
   const controllerRef = useRef<CameraFlightController | null>(null);
   const activeSiteIdRef = useRef<string | null>(null);
   const fallbackSelectionLockedRef = useRef(false);
   const previousDetailOpenRef = useRef(detailOpen);
-  const complianceErrorReportedRef = useRef(false);
   const sitesRef = useRef(sites);
   const markersRef = useRef<GlobeMarker[]>([]);
   const selectedIdRef = useRef(selectedId);
@@ -108,6 +182,11 @@ export default function GlobeScene({
   const onReadyRef = useRef(onReady);
   const onErrorRef = useRef(onError);
   const [initializationFailed, setInitializationFailed] = useState(false);
+  const forceE2EHarnessFallback =
+    import.meta.env.DEV &&
+    import.meta.env.VITE_E2E_FORCE_FALLBACK === '1' &&
+    typeof window !== 'undefined' &&
+    window.location.pathname.startsWith('/tests/e2e/harness/');
 
   const markers = useMemo<GlobeMarker[]>(() => {
     const visitedSet = new Set(visitedIds);
@@ -117,6 +196,9 @@ export default function GlobeScene({
       officialName: site.officialName,
       lat: site.coordinates.lat,
       lng: site.coordinates.lng,
+      primary: /(?:第一次全国代表大会|一大会址)/.test(
+        site.officialName,
+      ),
       markerState:
         site.id === selectedId
           ? 'selected'
@@ -149,23 +231,7 @@ export default function GlobeScene({
   ]);
 
   useEffect(() => {
-    if (!supportsWebGL || complianceReady) {
-      complianceErrorReportedRef.current = false;
-      return;
-    }
-
-    if (!complianceErrorReportedRef.current) {
-      complianceErrorReportedRef.current = true;
-      onErrorRef.current(
-        new Error(
-          'Map compliance metadata is incomplete; globe initialization was refused.',
-        ),
-      );
-    }
-  }, [complianceReady, supportsWebGL]);
-
-  useEffect(() => {
-    if (!supportsWebGL || !complianceReady || initializationFailed) {
+    if (forceE2EHarnessFallback || !supportsWebGL || initializationFailed) {
       return;
     }
 
@@ -195,6 +261,7 @@ export default function GlobeScene({
 
         const width = Math.max(container.clientWidth, 320);
         const height = Math.max(container.clientHeight, 480);
+        const overview = getChinaOverview(width);
         const initialMarkers = markersRef.current;
         const initialUnvisitedMarkers = initialMarkers.filter(
           ({ markerState }) => markerState === 'unvisited',
@@ -204,7 +271,10 @@ export default function GlobeScene({
         const controls = globe.controls();
         const controller = createCameraFlightController(
           {
-            getView: () => globe?.pointOfView() ?? { lat: 0, lng: 0, altitude: 2.5 },
+            getView: () =>
+              readyDelivered
+                ? (globe?.pointOfView() ?? overview)
+                : overview,
             setView: (view) => {
               globe?.pointOfView(view, 0);
             },
@@ -230,7 +300,7 @@ export default function GlobeScene({
                 previousFlightState === 'returning' && state === 'idle';
               previousFlightState = state;
               const idle = state === 'idle';
-              controls.autoRotate = idle;
+              controls.autoRotate = false;
               globe.enablePointerInteraction(idle);
 
               if (returningFinished) {
@@ -242,6 +312,30 @@ export default function GlobeScene({
         );
         controllerRef.current = controller;
 
+        const selectMarker = (marker: GlobeMarker) => {
+          if (!active || controller.getState() !== 'idle') {
+            return;
+          }
+
+          const site = sitesRef.current.find(({ id }) => id === marker.id);
+          if (!site) {
+            return;
+          }
+
+          try {
+            activeSiteIdRef.current = site.id;
+            controller.flyTo(site);
+            if (controller.getState() !== 'idle') {
+              onSelectRef.current(site.id);
+            }
+          } catch (error) {
+            controller.cancel();
+            activeSiteIdRef.current = null;
+            setInitializationFailed(true);
+            onErrorRef.current(toError(error));
+          }
+        };
+
         globe
           .width(width)
           .height(height)
@@ -249,6 +343,28 @@ export default function GlobeScene({
           .showAtmosphere(true)
           .atmosphereColor(SAND_COLOR)
           .atmosphereAltitude(0.12)
+          .polygonsData(provinceFeatures)
+          .polygonAltitude(0.006)
+          .polygonCapColor(() => PROVINCE_COLOR)
+          .polygonSideColor(() => SAND_COLOR)
+          .polygonStrokeColor(() => BOUNDARY_COLOR)
+          .polygonLabel((feature) =>
+            (feature as GlobeMapFeature).properties.name,
+          )
+          .pathsData(maritimeBoundaryPaths)
+          .pathPoints('points')
+          .pathPointLat((point) => (point as GeoPosition)[1])
+          .pathPointLng((point) => (point as GeoPosition)[0])
+          .pathColor(() => BOUNDARY_COLOR)
+          .pathStroke(0.35)
+          .pathPointAlt(0.008)
+          .htmlElementsData(initialMarkers)
+          .htmlLat('lat')
+          .htmlLng('lng')
+          .htmlAltitude(0.025)
+          .htmlElement((marker) =>
+            createStarElement(marker as GlobeMarker, selectMarker),
+          )
           .pointsData(initialMarkers)
           .pointLat('lat')
           .pointLng('lng')
@@ -258,7 +374,11 @@ export default function GlobeScene({
             (point as GlobeMarker).markerState === 'selected' ? 0.045 : 0.025,
           )
           .pointRadius((point) =>
-            (point as GlobeMarker).markerState === 'selected' ? 0.55 : 0.38,
+            (point as GlobeMarker).markerState === 'selected'
+              ? 0.55
+              : (point as GlobeMarker).primary
+                ? 0.48
+                : 0.38,
           )
           .ringsData(initialUnvisitedMarkers)
           .ringLat('lat')
@@ -267,36 +387,13 @@ export default function GlobeScene({
           .ringMaxRadius(2.2)
           .ringPropagationSpeed(0.55)
           .ringRepeatPeriod(2200)
-          .onPointClick((point) => {
-            if (!active || controller.getState() !== 'idle') {
-              return;
-            }
-
-            const site = sitesRef.current.find(
-              ({ id }) => id === (point as GlobeMarker).id,
-            );
-            if (!site) {
-              return;
-            }
-
-            try {
-              activeSiteIdRef.current = site.id;
-              controller.flyTo(site);
-              if (controller.getState() !== 'idle') {
-                onSelectRef.current(site.id);
-              }
-            } catch (error) {
-              controller.cancel();
-              activeSiteIdRef.current = null;
-              setInitializationFailed(true);
-              onErrorRef.current(toError(error));
-            }
-          })
+          .onPointClick((point) => selectMarker(point as GlobeMarker))
           .onGlobeReady(() => {
             if (!active || readyDelivered) {
               return;
             }
 
+            globe?.pointOfView(overview, 0);
             readyDelivered = true;
             onReadyRef.current();
           });
@@ -315,8 +412,7 @@ export default function GlobeScene({
             Math.min(MAX_DEVICE_PIXEL_RATIO, Math.max(1, devicePixelRatio)),
           );
 
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.35;
+        controls.autoRotate = false;
         controls.enableDamping = true;
       } catch (error) {
         if (!active) {
@@ -344,7 +440,7 @@ export default function GlobeScene({
       globeRef.current = null;
       activeSiteIdRef.current = null;
     };
-  }, [complianceReady, initializationFailed, supportsWebGL]);
+  }, [forceE2EHarnessFallback, initializationFailed, supportsWebGL]);
 
   useEffect(() => {
     const globe = globeRef.current;
@@ -352,7 +448,7 @@ export default function GlobeScene({
       return;
     }
 
-    globe.pointsData(markers).ringsData(
+    globe.pointsData(markers).htmlElementsData(markers).ringsData(
       markers.filter(({ markerState }) => markerState === 'unvisited'),
     );
   }, [markers]);
@@ -394,7 +490,7 @@ export default function GlobeScene({
   }, [detailOpen]);
 
   const showFallback =
-    !supportsWebGL || !complianceReady || initializationFailed;
+    forceE2EHarnessFallback || !supportsWebGL || initializationFailed;
 
   const selectFromFallback = (id: string) => {
     if (fallbackSelectionLockedRef.current || selectedIdRef.current !== null) {

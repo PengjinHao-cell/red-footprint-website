@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "officialReference": {
+    "title": "中国地图",
+    "path": "docs/compliance/maps/china-map-gs-2023-2762-original.jpg",
+    "publisher": "自然资源部",
+    "service": "自然资源部标准地图服务系统",
+    "sourceUrl": "https://bzdt.ch.mnr.gov.cn/",
+    "reviewNumber": "GS(2023)2762号",
+    "sha256": "6f759d9b14920c8dab4e59674c666a1093d478c41dc75e83f1c8cd7df44def02"
+  },
+  "runtimeResource": {
+    "path": "src/data/china-globe-map.json",
+    "format": "GeoJSON",
+    "sha256": "b6c1c3a4eb69f931281b1829dc339df68316e459abee12aa887607c5c1eac34a",
+    "geometrySource": {
+      "name": "DataV.GeoAtlas 中国省级行政区边界数据",
+      "url": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json",
+      "retrievedAt": "2026-08-21"
+    },
+    "generation": "仅整理经纬度几何：删除标题、图例、纸面空白、标签、中心点与非几何属性，保留34个省级行政面与1组南海界线坐标，供 Globe.gl 球面 polygon/path 图层使用。"
+  },
+  "visualCalibration": {
+    "reference": "GS(2023)2762号官方平面中国地图",
+    "categories": [
+      "mainlandOutline",
+      "nationalBoundaries",
+      "administrativeBoundaries",
+      "majorIslands",
+      "eightMarkers"
+    ]
+  },
+  "derivedThreeDimensionalResource": true,
+  "newReviewClaimed": false,
+  "statement": "官方平面地图只作视觉校准基准；球面运行资源是三维衍生数据，未声称取得新的审图批准。"
+}
