@@ -1,0 +1,36 @@
+{
+  "siteId": "yangzhou-martyrs",
+  "sources": [
+    {
+      "id": "yangzhou-jsmzt-2021",
+      "title": "扬州革命烈士陵园",
+      "publisher": "江苏省民政厅（来源：扬州市邗江区民政局）",
+      "url": "https://mzt.jiangsu.gov.cn/art/2021/6/3/art_82390_9838494.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["officialName", "address", "history", "people", "exhibits", "spirit"]
+    },
+    {
+      "id": "yangzhou-mva-2026",
+      "title": "江苏扬州：开展“行走的红色课堂”主题活动",
+      "publisher": "中华人民共和国退役军人事务部（来源：江苏省退役军人事务厅）",
+      "url": "https://www.mva.gov.cn/xinwen/dfdt/202604/t20260421_538878.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["officialName", "history", "people", "exhibits", "spirit"]
+    },
+    {
+      "id": "yangzhou-jwjw-republish-2025",
+      "title": "江河交汇扬清风丨①理想信念专线——扬州革命烈士陵园",
+      "publisher": "扬州市纪委监委（搜狐号转载）",
+      "url": "https://www.sohu.com/a/856592738_121106832",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government-origin-republication",
+      "supports": ["opening", "reservation", "visitNotice"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      }
+    }
+  ]
+}

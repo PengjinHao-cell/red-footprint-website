@@ -1,0 +1,31 @@
+{
+  "siteId": "jiangshangqing-memorial",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021"] },
+    "address": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018"] },
+    "opening": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021"], "note": "只发布权威来源明确的开放日，不发布无法交叉核实的每日时段。" },
+    "reservation": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021"] },
+    "history": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018", "jiangshangqing-jingde-gov"] },
+    "people": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018", "jiangshangqing-jingde-gov"] },
+    "exhibits": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018"] },
+    "spirit": { "status": "verified", "sourceIds": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018", "jiangshangqing-jingde-gov"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": [
+    {
+      "field": "opening",
+      "description": "权威页面仅确认星期二至星期日开放、星期一闭馆，每日具体开放时段无法可靠核实。",
+      "excludedFromPublishedCopy": true
+    },
+    {
+      "field": "reservation",
+      "description": "未找到场馆官方个人线上预约入口或明确的免预约声明。",
+      "excludedFromPublishedCopy": true
+    }
+  ]
+}

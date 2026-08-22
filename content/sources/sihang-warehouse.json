@@ -1,0 +1,37 @@
+{
+  "siteId": "sihang-warehouse",
+  "sources": [
+    {
+      "id": "sihang-shanghai-wlj-2026",
+      "title": "上海四行仓库抗战纪念馆迎来第800万名参观者",
+      "publisher": "上海市文化和旅游局（来源：上海静安）",
+      "url": "https://whlyj.sh.gov.cn/gqfc/20260506/5fab99c9b7364ab8839d4288fa5db12f.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "culture-tourism",
+      "supports": [
+        "officialName",
+        "address",
+        "opening",
+        "reservation",
+        "visitNotice",
+        "history",
+        "people",
+        "exhibits",
+        "spirit"
+      ],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-11-20"
+      }
+    },
+    {
+      "id": "sihang-people-daily-2025",
+      "title": "那年，英雄正年轻",
+      "publisher": "人民日报",
+      "url": "https://paper.people.com.cn/rmrb/pad/content/202504/04/content_30065781.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["history", "people", "spirit"]
+    }
+  ]
+}

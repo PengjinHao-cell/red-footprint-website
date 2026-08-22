@@ -1,0 +1,34 @@
+{
+  "id": "meiyuan-new-village",
+  "officialName": "中国共产党代表团梅园新村纪念馆",
+  "shortName": "梅园新村纪念馆",
+  "province": "江苏省",
+  "city": "南京市",
+  "district": "玄武区",
+  "address": "江苏省南京市玄武区汉府街18-1号",
+  "coordinates": { "lat": 32.042379, "lng": 118.801602 },
+  "basicInformation": {
+    "opening": "南京市文化和旅游局公开资料记录：9:00—17:30开放，星期一闭馆。该页面发布较早，出行前请以纪念馆最新公告为准。",
+    "reservation": "免费参观；公开活动信息要求通过“博物南京”微信公众号提前预约免费门票，预约入口与可约时段以该平台当日页面为准。",
+    "visitNotice": "携带预约所用证件并接受安检；旧址位于居民街区，应遵守现场动线和文物保护要求。临时闭馆、团队接待与讲解安排以官方公告为准。"
+  },
+  "historicalImprint": "1946年5月至1947年3月，以周恩来为首的中国共产党代表团在南京同国民党政府开展谈判，并在梅园新村开展公开与秘密工作。纪念馆保留梅园新村17号、30号、35号等代表团办事处旧址，并以史料陈列呈现这段国共谈判史。",
+  "peopleStories": "周恩来、董必武、邓颖超等代表团成员在此工作生活。相关展陈也记录隐蔽战线工作者伊明（1924—2021）：他1946年随代表团到南京，参与机要工作，后来捐赠带有代表团成员题字的影集等文物。",
+  "exhibitsAndSiteMeaning": "旧址中的办公室和生活空间让谈判时期的工作环境得以保存。伊明使用过的绿色保险箱、代表团成员题字影集等文物，说明公开谈判背后还存在严谨的机要、通讯与组织工作；旧址群本身则是这一历史过程的空间见证。",
+  "spiritualLegacy": "梅园新村的历史体现了在复杂局势中坚持原则、争取和平、联系群众与严守纪律的品格，也呈现了公开政治工作和隐蔽保障工作之间的相互支撑。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "普通住宅尺度让我们更容易想象当年的工作节奏：谈判、写作、联络与生活挤在相邻空间里。我们感受到，重要历史不总发生在宏伟建筑中，很多坚持恰恰藏在谨慎、耐心和对细节的守护里。"
+  },
+  "factSourceMap": {
+    "officialName": ["meiyuan-nanjing-wlt-2018"],
+    "address": ["meiyuan-nanjing-wlt-2018"],
+    "opening": ["meiyuan-nanjing-wlt-2018"],
+    "reservation": ["meiyuan-rednanjing-reservation"],
+    "visitNotice": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation"],
+    "history": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"],
+    "people": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"],
+    "exhibits": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-artifact"],
+    "spirit": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "sihong-memorial",
+  "officialName": "淮北抗日民主根据地纪念馆",
+  "shortName": "淮北抗日民主根据地纪念馆",
+  "province": "江苏省",
+  "city": "宿迁市",
+  "district": "泗洪县",
+  "address": "江苏省宿迁市泗洪县体育南路23号",
+  "coordinates": { "lat": 33.447482, "lng": 118.210953 },
+  "basicInformation": {
+    "opening": "江苏省党史教育基地公开资料记录：星期三、星期六、星期日9:00—11:00、14:30—17:00对外开放；星期一、星期二、星期四、星期五由值班组接待。该公开时段发布于2021年，出行前请拨打资料所列电话0527-86222249确认当日安排。",
+    "reservation": "公开资料记载为免费开放，个人凭有效身份证件登记参观；团队或工作日参观宜提前电话联系确认接待。",
+    "visitNotice": "携带有效身份证件，服从现场登记与讲解安排；动态开放政策以场馆当日公告或电话答复为准。"
+  },
+  "historicalImprint": "纪念馆呈现淮北抗日民主根据地从开辟、建设到军民坚持敌后抗战的历程。公开党史资料将1939年后中原局和新四军相关力量在淮北地区的活动、1940年前后的根据地开辟以及此后的政权与社会建设，放在华中敌后抗战的脉络中讲述。",
+  "peopleStories": "展陈以刘少奇、彭雪枫、邓子恢、张爱萍、刘瑞龙等在淮北根据地工作的人物为线索。馆内还纪念泗洪籍抗日烈士喻尊霞（1920—1940）：她投身抗日宣传与妇女工作，1940年5月牺牲，年仅20岁。",
+  "exhibitsAndSiteMeaning": "主体建筑以五角星为构图意象；公开资料解释，外部18根立柱与建筑主体共同寓意当时淮北地区19个抗日民主根据地。序厅人物雕像、历史图片、文献和实物共同说明根据地的组织、军政与群众基础。",
+  "spiritualLegacy": "根据地史呈现了在艰难环境中依靠群众、坚持团结抗战与建设民主政权的实践，也让牺牲者的选择与普通民众的参与进入同一条历史叙事。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "我们最受触动的是，宏大的根据地历史并不只由战役构成，也由宣传、教育、妇女工作和日常组织一点点托起。面对展厅里的名字与年龄，我们更愿意把“人民”理解为具体的人，以及彼此守望的行动。"
+  },
+  "factSourceMap": {
+    "officialName": ["sihong-jswm-2021", "sihong-jsmzt-2021"],
+    "address": ["sihong-jswm-2021"],
+    "opening": ["sihong-jswm-2021"],
+    "reservation": ["sihong-jswm-2021"],
+    "visitNotice": ["sihong-jswm-2021"],
+    "history": ["sihong-jswm-2021", "sihong-jsmzt-2021"],
+    "people": ["sihong-jswm-2021", "sihong-jsmzt-2021"],
+    "exhibits": ["sihong-jswm-2021", "sihong-jsmzt-2021"],
+    "spirit": ["sihong-jswm-2021", "sihong-jsmzt-2021"]
+  }
+}

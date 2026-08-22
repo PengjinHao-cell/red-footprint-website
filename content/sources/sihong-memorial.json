@@ -1,0 +1,37 @@
+{
+  "siteId": "sihong-memorial",
+  "sources": [
+    {
+      "id": "sihong-jswm-2021",
+      "title": "淮北抗日民主根据地纪念馆",
+      "publisher": "江苏文明网（来源：江苏省党史教育基地电子地图）",
+      "url": "https://wm.jschina.com.cn/zt2021/txxd/dsjyjd/sq/202103/t20210322_7019481.shtml",
+      "accessedAt": "2026-08-22",
+      "authorityType": "authoritative-memorial",
+      "supports": [
+        "officialName",
+        "address",
+        "opening",
+        "reservation",
+        "visitNotice",
+        "history",
+        "people",
+        "exhibits",
+        "spirit"
+      ],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      }
+    },
+    {
+      "id": "sihong-jsmzt-2021",
+      "title": "淮北抗日民主根据地纪念馆",
+      "publisher": "江苏省民政厅（来源：泗洪县民政局）",
+      "url": "https://mzt.jiangsu.gov.cn/art/2021/6/3/art_82393_9838826.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["officialName", "history", "people", "exhibits", "spirit"]
+    }
+  ]
+}

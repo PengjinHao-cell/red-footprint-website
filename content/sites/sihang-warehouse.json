@@ -1,0 +1,34 @@
+{
+  "id": "sihang-warehouse",
+  "officialName": "上海四行仓库抗战纪念馆",
+  "shortName": "四行仓库抗战纪念馆",
+  "province": "上海市",
+  "city": "上海市",
+  "district": "静安区",
+  "address": "上海市静安区光复路21号",
+  "coordinates": { "lat": 31.24034, "lng": 121.471104 },
+  "basicInformation": {
+    "opening": "星期二至星期日9:00—16:30开放，16:00停止入场；星期一闭馆，国定假日另行公告。",
+    "reservation": "个人参观免费、无需预约；团队接待和讲解服务按纪念馆官方渠道公布的规则办理。",
+    "visitNotice": "建议为安检和参观动线预留时间；节假日、专题活动及临时调整以纪念馆或上海市文化和旅游局最新公告为准。"
+  },
+  "historicalImprint": "1937年淞沪会战后期，国民革命军第88师262旅524团第1营官兵奉命坚守四行仓库。谢晋元率部从10月26日夜进入仓库，至10月31日凌晨撤离，以四昼夜守卫牵制日军并向中外社会展示中国军民坚持抗战的决心。",
+  "peopleStories": "谢晋元时任第524团团附，是四行仓库守军指挥者。公开权威资料记载实际守军420余人；“八百壮士”是当时对外使用、并延续至今的历史称谓。年轻官兵的家书与个人经历，使群体称号重新落到具体生命上。",
+  "exhibitsAndSiteMeaning": "纪念馆利用仓库旧址空间，通过家书、历史照片、实物、沙盘与场景复原叙述守卫战。西墙保留的弹孔与破损痕迹，使建筑本身成为战争证据，也把城市街区与全民抗战记忆连接起来。",
+  "spiritualLegacy": "四行仓库保卫战体现了民族危亡时的责任、勇气与牺牲。今天理解这种精神，也需要同时尊重史实细节：既记住“八百壮士”的公共记忆，也辨明420余名守军的历史记录。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "隔着苏州河看仓库，我们意识到历史现场与现代城市只隔着很短的距离。西墙上的痕迹没有替我们下结论，却让“守住”这个词变得具体：人在局势最困难时，仍能选择承担自己的位置。"
+  },
+  "factSourceMap": {
+    "officialName": ["sihang-shanghai-wlj-2026"],
+    "address": ["sihang-shanghai-wlj-2026"],
+    "opening": ["sihang-shanghai-wlj-2026"],
+    "reservation": ["sihang-shanghai-wlj-2026"],
+    "visitNotice": ["sihang-shanghai-wlj-2026"],
+    "history": ["sihang-shanghai-wlj-2026", "sihang-people-daily-2025"],
+    "people": ["sihang-shanghai-wlj-2026", "sihang-people-daily-2025"],
+    "exhibits": ["sihang-shanghai-wlj-2026"],
+    "spirit": ["sihang-shanghai-wlj-2026", "sihang-people-daily-2025"]
+  }
+}

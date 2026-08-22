@@ -1,0 +1,26 @@
+{
+  "siteId": "dujiang-victory",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
+    "address": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
+    "opening": { "status": "verified", "sourceIds": ["dujiang-nanjing-wlt-2018"], "note": "正文标注为文旅局公开资料记录并提示行前复核。" },
+    "reservation": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
+    "history": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025"] },
+    "people": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025"] },
+    "exhibits": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025"] },
+    "spirit": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": [
+    {
+      "field": "opening",
+      "description": "未找到比南京市文化和旅游局2018年页面更新、且由场馆直接发布的常态时段页面。",
+      "excludedFromPublishedCopy": true
+    }
+  ]
+}

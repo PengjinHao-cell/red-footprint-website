@@ -1,0 +1,40 @@
+{
+  "siteId": "meiyuan-new-village",
+  "sources": [
+    {
+      "id": "meiyuan-nanjing-wlt-2018",
+      "title": "中共代表团梅园新村纪念馆",
+      "publisher": "南京市文化和旅游局",
+      "url": "https://wlj.nanjing.gov.cn/whcg/bwg/zgdbtmyxcjng/201807/t20180731_1078650.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "culture-tourism",
+      "supports": ["officialName", "address", "opening", "visitNotice", "history", "people", "exhibits", "spirit"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      }
+    },
+    {
+      "id": "meiyuan-rednanjing-reservation",
+      "title": "暑期红色课堂开课啦",
+      "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局（来源：博物南京）",
+      "url": "https://yht.nanjing.gov.cn/rednanjing/hsbb/202504/t20250410_5120556.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "authoritative-memorial",
+      "supports": ["reservation", "visitNotice", "history", "people", "spirit"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      }
+    },
+    {
+      "id": "meiyuan-rednanjing-artifact",
+      "title": "梅园新村纪念馆新增珍贵文物",
+      "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局（来源：金陵瞭望）",
+      "url": "https://yht.nanjing.gov.cn/rednanjing/hsbb/202504/t20250410_5120684.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "authoritative-memorial",
+      "supports": ["history", "people", "exhibits", "spirit"]
+    }
+  ]
+}

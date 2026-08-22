@@ -1,0 +1,34 @@
+{
+  "id": "jiangshangqing-memorial",
+  "officialName": "江上青烈士史料陈列馆",
+  "shortName": "江上青烈士史料陈列馆",
+  "province": "江苏省",
+  "city": "扬州市",
+  "district": "广陵区",
+  "address": "江苏省扬州市广陵区旌忠巷33号平民中学旧址内",
+  "coordinates": { "lat": 32.390314, "lng": 119.434459 },
+  "basicInformation": {
+    "opening": "权威公开资料确认星期二至星期日开放、星期一闭馆，但未公布可相互印证的每日具体时段；请在出行前向场馆或属地文旅部门确认。",
+    "reservation": "公开资料确认免费开放，未列出个人线上预约入口；团队接待或讲解需求请提前联系场馆确认。",
+    "visitNotice": "陈列馆位于平民中学旧址内，应按校园与场馆现场管理要求参观；不要以非官方平台时段替代场馆当日公告。"
+  },
+  "historicalImprint": "陈列馆依托江上青曾任教的平民中学旧址布展。1935年至1937年，他在这里以教师身份开展救亡宣传；1938年后赴皖东北工作，1939年牺牲。展览按人生阶段呈现其投身革命与抗日救亡的历程。",
+  "peopleStories": "江上青（1911—1939）是中国共产党党员、抗日英烈。1929年加入中国共产党，后来从事宣传、统战和皖东北抗日根据地相关工作，1939年8月29日遇袭牺牲，年仅28岁。",
+  "exhibitsAndSiteMeaning": "陈列馆以照片、文献和史料复原江上青学习、任教、从事革命工作的轨迹，七个主题部分将个人生命史与民族救亡背景相连接。设馆于平民中学旧址，使“教师”身份与抗日宣传实践具有可感知的空间依托。",
+  "spiritualLegacy": "江上青短暂的一生体现了追求真理、投身救亡和忠于理想的选择。旧校址中的陈列也说明，教育、写作与组织工作同样可以成为救亡实践的一部分。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "二十八岁这个年龄让我们久久停留。与其把英烈塑造成遥远符号，我们更愿意看见一个青年怎样在教学、写作和组织工作中不断作出选择；这使“理想”不再是口号，而是持续承担的生活方式。"
+  },
+  "factSourceMap": {
+    "officialName": ["jiangshangqing-jswm-2021"],
+    "address": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018"],
+    "opening": ["jiangshangqing-jswm-2021"],
+    "reservation": ["jiangshangqing-jswm-2021"],
+    "visitNotice": ["jiangshangqing-jswm-2021"],
+    "history": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018", "jiangshangqing-jingde-gov"],
+    "people": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018", "jiangshangqing-jingde-gov"],
+    "exhibits": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018"],
+    "spirit": ["jiangshangqing-jswm-2021", "jiangshangqing-mod-2018", "jiangshangqing-jingde-gov"]
+  }
+}

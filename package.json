@@ -11,6 +11,7 @@
     "test:run": "vitest run --exclude 'tests/e2e/**'",
     "test:e2e": "VITE_E2E_FORCE_FALLBACK=1 playwright test",
     "check:cloudbase-inventory": "node scripts/check-cloudbase-inventory.mjs",
+    "check:production-content": "node scripts/check-production-content.mjs",
     "check:content": "node scripts/check-content.mjs",
     "check:map": "node scripts/check-map-resource.mjs"
   },

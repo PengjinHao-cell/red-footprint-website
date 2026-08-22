@@ -1,0 +1,26 @@
+{
+  "siteId": "meiyuan-new-village",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"] },
+    "address": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"] },
+    "opening": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"], "note": "正文标注页面较早并要求行前核验。" },
+    "reservation": { "status": "verified", "sourceIds": ["meiyuan-rednanjing-reservation"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation"] },
+    "history": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"] },
+    "people": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"] },
+    "exhibits": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-artifact"] },
+    "spirit": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": [
+    {
+      "field": "opening",
+      "description": "未找到场馆2026年直接发布、可替代南京市文化和旅游局2018年页面的常态开放时段。",
+      "excludedFromPublishedCopy": true
+    }
+  ]
+}

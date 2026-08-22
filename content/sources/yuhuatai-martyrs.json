@@ -1,0 +1,27 @@
+{
+  "siteId": "yuhuatai-martyrs",
+  "sources": [
+    {
+      "id": "yuhuatai-official-visit",
+      "title": "预约服务",
+      "publisher": "南京市雨花台烈士陵园管理局",
+      "url": "https://yht.nanjing.gov.cn/yqdl/yyfw/",
+      "accessedAt": "2026-08-22",
+      "authorityType": "venue-official",
+      "supports": ["opening", "reservation", "visitNotice"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-11-20"
+      }
+    },
+    {
+      "id": "yuhuatai-rednanjing-2025",
+      "title": "雨花台烈士陵园",
+      "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局",
+      "url": "https://yht.nanjing.gov.cn/rednanjing/hszxmap/202506/t20250611_5583622.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "authoritative-memorial",
+      "supports": ["officialName", "address", "history", "people", "exhibits", "spirit"]
+    }
+  ]
+}

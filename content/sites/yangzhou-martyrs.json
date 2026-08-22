@@ -1,0 +1,34 @@
+{
+  "id": "yangzhou-martyrs",
+  "officialName": "扬州革命烈士陵园",
+  "shortName": "扬州革命烈士陵园",
+  "province": "江苏省",
+  "city": "扬州市",
+  "district": "邗江区",
+  "address": "江苏省扬州市邗江区蜀冈万松岭（瘦西湖旁）",
+  "coordinates": { "lat": 32.421642, "lng": 119.415186 },
+  "basicInformation": {
+    "opening": "扬州市纪委监委公开内容记录：8:30—11:30、14:00—17:00开放，星期一闭馆。该信息由第三方平台转载，出行前请向陵园确认当日安排。",
+    "reservation": "公开资料未列个人线上预约入口；个人参观可按现场安排入园，团队祭扫、讲解或教育活动应提前与陵园联系确认。",
+    "visitNotice": "园区兼具纪念、祭扫和国防教育功能，参观时应保持肃穆并遵守现场管理；清明等集中祭扫时段应预留客流与安检时间。"
+  },
+  "historicalImprint": "陵园始建于1954年，后经多次扩建改造，形成烈士纪念碑、烈士墓区、事迹陈列馆和教育活动空间。它集中纪念扬州地区不同历史时期牺牲的革命先烈，并持续承担烈士纪念与爱国主义教育功能。",
+  "peopleStories": "园内纪念熊成基、曾玉良、曹起溍、江上青、韦一平、许晓轩等扬州地区革命先烈。不同人物跨越辛亥革命、中国共产党领导的革命与抗日战争等历史阶段，共同构成地方革命史的人物谱系。",
+  "exhibitsAndSiteMeaning": "革命烈士纪念碑、烈士墓和烈士事迹陈列馆共同组成纪念空间：纪念碑承载公共悼念，墓区保存具体姓名与生命记忆，陈列馆则以史料说明人物所处的时代和行动。",
+  "spiritualLegacy": "陵园把地方人物、国家历史与当代纪念活动联系起来，传递对理想的坚守、面对危难的担当，以及铭记牺牲、珍视和平的公共责任。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "在万松岭的环境里，纪念不是喧闹的表达，而是一种克制的注视。我们意识到地方史并不狭小：一座城市记住自己的烈士，也是在保存国家历史中那些容易被忽略的姓名与关系。"
+  },
+  "factSourceMap": {
+    "officialName": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"],
+    "address": ["yangzhou-jsmzt-2021"],
+    "opening": ["yangzhou-jwjw-republish-2025"],
+    "reservation": ["yangzhou-jwjw-republish-2025"],
+    "visitNotice": ["yangzhou-jwjw-republish-2025"],
+    "history": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"],
+    "people": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"],
+    "exhibits": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"],
+    "spirit": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"]
+  }
+}

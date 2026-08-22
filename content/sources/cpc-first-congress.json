@@ -1,0 +1,49 @@
+{
+  "siteId": "cpc-first-congress",
+  "sources": [
+    {
+      "id": "cpc-first-official-home",
+      "title": "中共一大纪念馆",
+      "publisher": "中国共产党第一次全国代表大会纪念馆",
+      "url": "https://www.yida1921.cn/",
+      "accessedAt": "2026-08-22",
+      "authorityType": "venue-official",
+      "supports": ["officialName", "address", "opening", "reservation", "visitNotice", "history", "exhibits", "spirit"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-08-31"
+      }
+    },
+    {
+      "id": "cpc-first-summer-2026",
+      "title": "暑期不打烊！中共一大纪念馆2026年暑期周一正常开放",
+      "publisher": "中国共产党第一次全国代表大会纪念馆（上海市文化和旅游局平台发布）",
+      "url": "https://cmp.whlyj.sh.gov.cn/CMP/news_view.ac?id=7ad94c64b3a4445798f8ca02d14c6393",
+      "accessedAt": "2026-08-22",
+      "authorityType": "venue-official",
+      "supports": ["opening", "reservation", "visitNotice"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-08-31"
+      }
+    },
+    {
+      "id": "cpc-first-shanghai-gov-2026",
+      "title": "中共一大纪念馆",
+      "publisher": "上海市人民政府",
+      "url": "https://www.shanghai.gov.cn/hsly/20260625/10d0e931417d4614b0d8bbbbd03495c1.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["officialName", "address", "history", "exhibits", "spirit"]
+    },
+    {
+      "id": "cpc-first-mct-chronicle",
+      "title": "中国共产党一百年大事记（1921年7月—2021年6月）",
+      "publisher": "中华人民共和国文化和旅游部",
+      "url": "https://www.mct.gov.cn/gtb/index.jsp?url=https%3A%2F%2Fwww.mct.gov.cn%2Fpreview%2Fspecial%2F9579%2F9585%2F202106%2Ft20210630_926083.htm",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["history", "people", "spirit"]
+    }
+  ]
+}

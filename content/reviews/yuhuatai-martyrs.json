@@ -1,0 +1,20 @@
+{
+  "siteId": "yuhuatai-martyrs",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["yuhuatai-rednanjing-2025"] },
+    "address": { "status": "verified", "sourceIds": ["yuhuatai-rednanjing-2025"] },
+    "opening": { "status": "verified", "sourceIds": ["yuhuatai-official-visit"] },
+    "reservation": { "status": "verified", "sourceIds": ["yuhuatai-official-visit"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["yuhuatai-official-visit"] },
+    "history": { "status": "verified", "sourceIds": ["yuhuatai-rednanjing-2025"] },
+    "people": { "status": "verified", "sourceIds": ["yuhuatai-rednanjing-2025"] },
+    "exhibits": { "status": "verified", "sourceIds": ["yuhuatai-rednanjing-2025"] },
+    "spirit": { "status": "verified", "sourceIds": ["yuhuatai-rednanjing-2025"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-11-20" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": []
+}

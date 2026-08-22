@@ -1,0 +1,20 @@
+{
+  "siteId": "sihang-warehouse",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026"] },
+    "address": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026"] },
+    "opening": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026"] },
+    "reservation": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026"] },
+    "history": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026", "sihang-people-daily-2025"] },
+    "people": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026", "sihang-people-daily-2025"] },
+    "exhibits": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026"] },
+    "spirit": { "status": "verified", "sourceIds": ["sihang-shanghai-wlj-2026", "sihang-people-daily-2025"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-11-20" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": []
+}

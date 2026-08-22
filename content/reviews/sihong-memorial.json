@@ -1,0 +1,26 @@
+{
+  "siteId": "sihong-memorial",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["sihong-jswm-2021", "sihong-jsmzt-2021"] },
+    "address": { "status": "verified", "sourceIds": ["sihong-jswm-2021"] },
+    "opening": { "status": "verified", "sourceIds": ["sihong-jswm-2021"], "note": "正文明确标注公开资料年份并要求电话复核，未声称为无条件的当前安排。" },
+    "reservation": { "status": "verified", "sourceIds": ["sihong-jswm-2021"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["sihong-jswm-2021"] },
+    "history": { "status": "verified", "sourceIds": ["sihong-jswm-2021", "sihong-jsmzt-2021"] },
+    "people": { "status": "verified", "sourceIds": ["sihong-jswm-2021", "sihong-jsmzt-2021"] },
+    "exhibits": { "status": "verified", "sourceIds": ["sihong-jswm-2021", "sihong-jsmzt-2021"] },
+    "spirit": { "status": "verified", "sourceIds": ["sihong-jswm-2021", "sihong-jsmzt-2021"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": [
+    {
+      "field": "opening",
+      "description": "未找到场馆2026年直接发布的常态开放与预约页面，2021年时段不能无条件视为当前政策。",
+      "excludedFromPublishedCopy": true
+    }
+  ]
+}

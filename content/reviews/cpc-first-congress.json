@@ -1,0 +1,20 @@
+{
+  "siteId": "cpc-first-congress",
+  "status": "verified",
+  "reviewedAt": "2026-08-22",
+  "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+  "factReviews": {
+    "officialName": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"] },
+    "address": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"] },
+    "opening": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-summer-2026"] },
+    "reservation": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-summer-2026"] },
+    "visitNotice": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-summer-2026"] },
+    "history": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026", "cpc-first-mct-chronicle"] },
+    "people": { "status": "verified", "sourceIds": ["cpc-first-mct-chronicle"] },
+    "exhibits": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"] },
+    "spirit": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026", "cpc-first-mct-chronicle"] }
+  },
+  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-08-31" },
+  "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
+  "unresolvedFacts": []
+}

@@ -1,0 +1,34 @@
+{
+  "id": "yuhuatai-martyrs",
+  "officialName": "雨花台烈士陵园",
+  "shortName": "雨花台烈士陵园",
+  "province": "江苏省",
+  "city": "南京市",
+  "district": "雨花台区",
+  "address": "江苏省南京市雨花台区雨花路215号",
+  "coordinates": { "lat": 31.998425, "lng": 118.780177 },
+  "basicInformation": {
+    "opening": "烈士纪念馆星期二至星期日8:30开放，16:00停止入馆，17:00闭馆；星期一闭馆，法定节假日除外。",
+    "reservation": "个人参观免费、无需预约；团队讲解可通过“雨花台景区预约小程序”预约，具体以官方预约服务页为准。",
+    "visitNotice": "入馆须接受安全检查；请勿携带大型行李及危险物品，展厅内禁止吸烟、饮食和触摸展品。需要讲解的团队应按预约时段到场。"
+  },
+  "historicalImprint": "1926年至1949年间，许多共产党人和爱国志士在雨花台牺牲。新中国成立后，这里陆续建设纪念设施，形成以烈士纪念馆、烈士纪念碑、忠魂亭和烈士群雕等组成的纪念空间。",
+  "peopleStories": "基本陈列以179位烈士的生平事迹为重点，恽代英、邓中夏、罗登贤等革命者的姓名与选择构成重要线索。他们来自不同地区、从事不同革命工作，却都在新民主主义革命时期把个人生命同民族和人民的命运联系起来。",
+  "exhibitsAndSiteMeaning": "烈士纪念碑与大型烈士群雕把个体牺牲转化为公共记忆；纪念馆以档案、遗物、图片等展项还原人物经历。群雕以不同身份的烈士形象表现共同理想，纪念碑则成为陵园主轴上的精神标识。",
+  "spiritualLegacy": "雨花英烈史所传递的，是对理想信念的坚守、面对压迫时的担当，以及把个人选择置于民族解放和人民幸福之中的价值取向。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "沿着陵园主轴前行时，我们感到数字会变成重量：每一位烈士都有家庭、职业和未完成的人生。纪念的意义，不只是仰望丰碑，也是在日常判断中守住诚实、责任与对他人的关切。"
+  },
+  "factSourceMap": {
+    "officialName": ["yuhuatai-rednanjing-2025"],
+    "address": ["yuhuatai-rednanjing-2025"],
+    "opening": ["yuhuatai-official-visit"],
+    "reservation": ["yuhuatai-official-visit"],
+    "visitNotice": ["yuhuatai-official-visit"],
+    "history": ["yuhuatai-rednanjing-2025"],
+    "people": ["yuhuatai-rednanjing-2025"],
+    "exhibits": ["yuhuatai-rednanjing-2025"],
+    "spirit": ["yuhuatai-rednanjing-2025"]
+  }
+}

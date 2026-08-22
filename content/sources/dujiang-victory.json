@@ -1,0 +1,40 @@
+{
+  "siteId": "dujiang-victory",
+  "sources": [
+    {
+      "id": "dujiang-rednanjing-2025",
+      "title": "渡江胜利纪念馆",
+      "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局",
+      "url": "https://yht.nanjing.gov.cn/rednanjing/hszxmap/202506/t20250611_5583639.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "authoritative-memorial",
+      "supports": [
+        "officialName",
+        "address",
+        "reservation",
+        "visitNotice",
+        "history",
+        "people",
+        "exhibits",
+        "spirit"
+      ],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-11-20"
+      }
+    },
+    {
+      "id": "dujiang-nanjing-wlt-2018",
+      "title": "渡江胜利纪念馆",
+      "publisher": "南京市文化和旅游局",
+      "url": "https://wlj.nanjing.gov.cn/whcg/bwg/njsdjsljng/201807/t20180731_1078648.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "culture-tourism",
+      "supports": ["officialName", "address", "opening", "reservation", "visitNotice"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      }
+    }
+  ]
+}

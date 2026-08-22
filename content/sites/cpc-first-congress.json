@@ -1,0 +1,35 @@
+{
+  "id": "cpc-first-congress",
+  "officialName": "中国共产党第一次全国代表大会纪念馆",
+  "shortName": "中共一大纪念馆",
+  "province": "上海市",
+  "city": "上海市",
+  "district": "黄浦区",
+  "address": "上海市黄浦区黄陂南路374号",
+  "markerAddress": "上海市黄浦区兴业路76号",
+  "coordinates": { "lat": 31.220104, "lng": 121.475407 },
+  "basicInformation": {
+    "opening": "常规开放时间为星期二至星期日9:00—17:00，16:30停止入场，星期一闭馆（法定节假日除外）。2026年7月20日至8月31日实行暑期延时服务，期间星期一正常开放；之后恢复常规安排。",
+    "reservation": "截至2026年8月22日，个人观众免费、免预约入馆；团队讲解等服务按纪念馆官网预约入口办理。",
+    "visitNotice": "参观入口使用黄陂南路374号；红星地图点位继续标注会址兴业路76号。入馆须接受安全检查，禁止携带危险品，暑期及节假日安排以官网和官方微信公众号最新公告为准。"
+  },
+  "historicalImprint": "1921年7月23日，中国共产党第一次全国代表大会在上海法租界望志路106号（今兴业路76号）开幕，最后一天会议转移到浙江嘉兴南湖的游船上举行。大会通过中国共产党第一个纲领和决议，选举产生中央局，宣告中国共产党成立。",
+  "peopleStories": "出席大会的代表来自各地早期共产党组织，代表全国50多名党员。毛泽东、董必武、李达等代表的经历，连接起各地早期组织与全国性政党的创建；会址中的人物叙事也提醒人们，这次会议是在严密风险下由一群青年推动完成的。",
+  "exhibitsAndSiteMeaning": "纪念馆由中共一大会址、宣誓大厅和新建展馆等空间组成，馆藏文物、文献与历史图片用于呈现建党历程。兴业路76号是历史事件发生地，黄陂南路374号则是纪念馆当前面向观众的参观入口，两者承担不同的地图与到访功能。",
+  "spiritualLegacy": "中共一大所开启的历史进程，集中体现了坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民的建党精神。",
+  "teamReflection": {
+    "type": "team-reflection",
+    "text": "在繁忙街区中辨认会址与新馆入口，我们感到“出发点”既是地理位置，也是一次共同选择。对我们而言，纪念并不是复述熟悉结论，而是愿意回到原始材料，分清地址、时间和人物，让敬意建立在准确之上。"
+  },
+  "factSourceMap": {
+    "officialName": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"],
+    "address": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"],
+    "opening": ["cpc-first-official-home", "cpc-first-summer-2026"],
+    "reservation": ["cpc-first-official-home", "cpc-first-summer-2026"],
+    "visitNotice": ["cpc-first-official-home", "cpc-first-summer-2026"],
+    "history": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026", "cpc-first-mct-chronicle"],
+    "people": ["cpc-first-mct-chronicle"],
+    "exhibits": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"],
+    "spirit": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026", "cpc-first-mct-chronicle"]
+  }
+}

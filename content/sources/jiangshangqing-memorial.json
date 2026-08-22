@@ -1,0 +1,36 @@
+{
+  "siteId": "jiangshangqing-memorial",
+  "sources": [
+    {
+      "id": "jiangshangqing-jswm-2021",
+      "title": "江上青烈士史料陈列馆",
+      "publisher": "江苏文明网（来源：江苏省党史教育基地电子地图）",
+      "url": "https://wm.jschina.com.cn/zt2021/txxd/dsjyjd/yz/202103/t20210323_7021003.shtml",
+      "accessedAt": "2026-08-22",
+      "authorityType": "authoritative-memorial",
+      "supports": ["officialName", "address", "opening", "reservation", "visitNotice", "history", "people", "exhibits", "spirit"],
+      "temporal": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      }
+    },
+    {
+      "id": "jiangshangqing-mod-2018",
+      "title": "英雄烈士谱｜江上青：矢志不渝救亡图存",
+      "publisher": "中华人民共和国国防部（来源：新华社）",
+      "url": "https://www.mod.gov.cn/2018gfbztlbmb/2018-11/22/content_4830072.htm",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["address", "history", "people", "exhibits", "spirit"]
+    },
+    {
+      "id": "jiangshangqing-jingde-gov",
+      "title": "江上青",
+      "publisher": "旌德县人民政府",
+      "url": "https://www.ahjd.gov.cn/News/show/649967.html",
+      "accessedAt": "2026-08-22",
+      "authorityType": "government",
+      "supports": ["history", "people", "spirit"]
+    }
+  ]
+}
