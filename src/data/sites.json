@@ -19,7 +19,7 @@
     "people": "展陈以刘少奇、彭雪枫、邓子恢、张爱萍、刘瑞龙等在淮北根据地工作的人物为线索。馆内还纪念泗洪籍抗日烈士喻尊霞（1920—1940）：她投身抗日宣传与妇女工作，1940年5月牺牲，年仅20岁。",
     "spirit": "根据地史呈现了在艰难环境中依靠群众、坚持团结抗战与建设民主政权的实践，也让牺牲者的选择与普通民众的参与进入同一条历史叙事。",
     "reflection": "我们最受触动的是，宏大的根据地历史并不只由战役构成，也由宣传、教育、妇女工作和日常组织一点点托起。面对展厅里的名字与年龄，我们更愿意把“人民”理解为具体的人，以及彼此守望的行动。",
-    "heroImage": "/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -204,9 +204,9 @@
       ]
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
@@ -216,13 +216,13 @@
       "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
       "digestRef": "sha256:c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
         "alt": "阴云下，一座顶部带红色造型和金色五角星的高大纪念碑立于广场中央。",
         "sequence": 1,
         "asset": {
@@ -233,13 +233,13 @@
           "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
           "digestRef": "sha256:c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp"
         }
       },
       {
-        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
         "alt": "展厅内四尊深色人物雕塑站在红色隔离带后，背景墙陈列图文展板。",
         "sequence": 2,
         "asset": {
@@ -250,16 +250,16 @@
           "sha256": "bf733491ac6684944711615ce6472568a6ce22bab4a6e5cb7f036a24752b7058",
           "digestRef": "sha256:bf733491ac6684944711615ce6472568a6ce22bab4a6e5cb7f036a24752b7058",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
-      "poster": "/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
-      "captions": "/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
       "asset": {
         "objectPath": "media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
         "version": "v1",
@@ -268,9 +268,9 @@
         "sha256": "f39e8ffb19f3b5cd59ff14390fcd65e9686d4af2db8078ebe92d963322776785",
         "digestRef": "sha256:f39e8ffb19f3b5cd59ff14390fcd65e9686d4af2db8078ebe92d963322776785",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
@@ -280,9 +280,9 @@
         "sha256": "75e032428da8ab8de0a2d0db6e344a6dbc5d0308237a3d849fa002f9a46b25c0",
         "digestRef": "sha256:75e032428da8ab8de0a2d0db6e344a6dbc5d0308237a3d849fa002f9a46b25c0",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
@@ -292,9 +292,9 @@
         "sha256": "39be16c27880a17114db49f53d8580041fd0d3ca50134a90f1b9905fdd2cd2ec",
         "digestRef": "sha256:39be16c27880a17114db49f53d8580041fd0d3ca50134a90f1b9905fdd2cd2ec",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": false,
@@ -312,18 +312,18 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
-        "poster": "/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
-        "captions": "/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
         "alt": "阴云下，一座顶部带红色造型和金色五角星的高大纪念碑立于广场中央。"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
         "alt": "展厅内四尊深色人物雕塑站在红色隔离带后，背景墙陈列图文展板。"
       }
     ],
@@ -355,7 +355,7 @@
     "people": "基本陈列以179位烈士的生平事迹为重点，恽代英、邓中夏、罗登贤等革命者的姓名与选择构成重要线索。他们来自不同地区、从事不同革命工作，却都在新民主主义革命时期把个人生命同民族和人民的命运联系起来。",
     "spirit": "雨花英烈史所传递的，是对理想信念的坚守、面对压迫时的担当，以及把个人选择置于民族解放和人民幸福之中的价值取向。",
     "reflection": "沿着陵园主轴前行时，我们感到数字会变成重量：每一位烈士都有家庭、职业和未完成的人生。纪念的意义，不只是仰望丰碑，也是在日常判断中守住诚实、责任与对他人的关切。",
-    "heroImage": "/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -515,9 +515,9 @@
       "localMaterialSources": []
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
@@ -527,13 +527,13 @@
       "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
       "digestRef": "sha256:20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
         "alt": "灰色高塔式纪念碑前立有一尊深色人物雕塑，周围环绕树木与开阔广场。",
         "sequence": 1,
         "asset": {
@@ -544,13 +544,13 @@
           "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
           "digestRef": "sha256:20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp"
         }
       },
       {
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
         "alt": "宽阔石阶尽头立有一组多人石雕，背景是茂密树木。",
         "sequence": 2,
         "asset": {
@@ -561,13 +561,13 @@
           "sha256": "88178acd2c9fa6b95dfe1e2989d958de28f30ace19e950e0c599a2f51a706bec",
           "digestRef": "sha256:88178acd2c9fa6b95dfe1e2989d958de28f30ace19e950e0c599a2f51a706bec",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp"
         }
       },
       {
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
         "alt": "展厅墙面排列多幅黑白人物照片和说明牌，下方设有小型展柜。",
         "sequence": 3,
         "asset": {
@@ -578,13 +578,13 @@
           "sha256": "429dd363db086056312bb7d154bfabf5667db7fdbe2d640f286eb94e30a9e93a",
           "digestRef": "sha256:429dd363db086056312bb7d154bfabf5667db7fdbe2d640f286eb94e30a9e93a",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp"
         }
       },
       {
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
         "alt": "室内展板上有金色标志、红色立体大字以及中英文说明文字。",
         "sequence": 4,
         "asset": {
@@ -595,13 +595,13 @@
           "sha256": "ffc65792b6964f5f899d92f482cdf3eed4bf1fc28aef34a2fe8b84ab366f579a",
           "digestRef": "sha256:ffc65792b6964f5f899d92f482cdf3eed4bf1fc28aef34a2fe8b84ab366f579a",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp"
         }
       },
       {
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
         "alt": "红色墙面上方设有金色标志，下方排列多组金色文字。",
         "sequence": 5,
         "asset": {
@@ -612,16 +612,16 @@
           "sha256": "5866202dd080261dd1fab8b8de81dbd3331ea82c38a435ef14c4c34fe4d46f3d",
           "digestRef": "sha256:5866202dd080261dd1fab8b8de81dbd3331ea82c38a435ef14c4c34fe4d46f3d",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
-      "poster": "/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
-      "captions": "/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
       "asset": {
         "objectPath": "media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
         "version": "v1",
@@ -630,9 +630,9 @@
         "sha256": "24fc1ba5d1a48be6c8469e3fdb4adbf7ef902579503562c1423d4d0193e1f985",
         "digestRef": "sha256:24fc1ba5d1a48be6c8469e3fdb4adbf7ef902579503562c1423d4d0193e1f985",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
@@ -642,9 +642,9 @@
         "sha256": "0f1ed43d76d990fd1d61a8c2448d7a42dc26edd8a1737b6ee9ff842e926e3852",
         "digestRef": "sha256:0f1ed43d76d990fd1d61a8c2448d7a42dc26edd8a1737b6ee9ff842e926e3852",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
@@ -654,9 +654,9 @@
         "sha256": "94bf0f8b1a7d7385e27d8b30c876bc4b24d6ba543e5f8a2f5a971e5b92ea0b6d",
         "digestRef": "sha256:94bf0f8b1a7d7385e27d8b30c876bc4b24d6ba543e5f8a2f5a971e5b92ea0b6d",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": true,
@@ -674,33 +674,33 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
-        "poster": "/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
-        "captions": "/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
         "alt": "灰色高塔式纪念碑前立有一尊深色人物雕塑，周围环绕树木与开阔广场。"
       },
       {
         "type": "image",
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
         "alt": "宽阔石阶尽头立有一组多人石雕，背景是茂密树木。"
       },
       {
         "type": "image",
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
         "alt": "展厅墙面排列多幅黑白人物照片和说明牌，下方设有小型展柜。"
       },
       {
         "type": "image",
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
         "alt": "室内展板上有金色标志、红色立体大字以及中英文说明文字。"
       },
       {
         "type": "image",
-        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
         "alt": "红色墙面上方设有金色标志，下方排列多组金色文字。"
       }
     ],
@@ -732,7 +732,7 @@
     "people": "馆前总前委群像从左至右表现粟裕、邓小平、刘伯承、陈毅、谭震林五位成员，提示参观者理解战役的组织与指挥体系；展陈同时讲述渡江船工、支前群众和普通官兵的共同参与。",
     "spirit": "渡江胜利既来自战略决断与部队执行，也离不开人民支前。展陈由此把坚定信念、军民团结、勇于胜利和持续奋斗联系起来。",
     "reflection": "站在长江边再看“渡江”，我们的感受从课本中的箭头变成了水流、船只和人的选择。胜利并非抽象结果，而是许多岗位协作后的共同抵达；这也提醒我们，今天的团队工作同样需要方向、执行与彼此信任。",
-    "heroImage": "/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -919,9 +919,9 @@
       ]
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
@@ -931,13 +931,13 @@
       "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
       "digestRef": "sha256:d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
         "alt": "蓝天下，红褐色纪念馆外墙写有金色馆名，参观者沿入口坡道行走。",
         "sequence": 1,
         "asset": {
@@ -948,13 +948,13 @@
           "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
           "digestRef": "sha256:d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp"
         }
       },
       {
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
         "alt": "广场上红色折面构筑物向上展开，旗杆立于中央，远处可见高层建筑。",
         "sequence": 2,
         "asset": {
@@ -965,13 +965,13 @@
           "sha256": "536c57b5166c52dc7850558812c4befc49ad17a8c71fe19da2c4ae9496d0b45e",
           "digestRef": "sha256:536c57b5166c52dc7850558812c4befc49ad17a8c71fe19da2c4ae9496d0b45e",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp"
         }
       },
       {
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
         "alt": "玻璃展柜内分层陈列多件长短不一的深色枪械状展品。",
         "sequence": 3,
         "asset": {
@@ -982,13 +982,13 @@
           "sha256": "276e4b5fe0ac7803a3d71f366ca84b34d53532c21fa66a46112f39981d8d60ad",
           "digestRef": "sha256:276e4b5fe0ac7803a3d71f366ca84b34d53532c21fa66a46112f39981d8d60ad",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp"
         }
       },
       {
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
         "alt": "玻璃展柜内陈列一件棕色长外套、带星形标记的帽子、黑白照片和皮质文件夹。",
         "sequence": 4,
         "asset": {
@@ -999,13 +999,13 @@
           "sha256": "3dc05fb3ebf798d67f8400ae65feb3f42942735b81c4c6e6467206206550d411",
           "digestRef": "sha256:3dc05fb3ebf798d67f8400ae65feb3f42942735b81c4c6e6467206206550d411",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp"
         }
       },
       {
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
         "alt": "展柜内陈列浅色布衣、编织鞋、成卷织物和棕色挎包。",
         "sequence": 5,
         "asset": {
@@ -1016,16 +1016,16 @@
           "sha256": "5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7",
           "digestRef": "sha256:5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
-      "poster": "/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
-      "captions": "/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
       "asset": {
         "objectPath": "media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
         "version": "v1",
@@ -1034,9 +1034,9 @@
         "sha256": "dd82aa6c72d717c7485b4a20145240995a5a73ca5856b38c05d48a18c98e3ed9",
         "digestRef": "sha256:dd82aa6c72d717c7485b4a20145240995a5a73ca5856b38c05d48a18c98e3ed9",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
@@ -1046,9 +1046,9 @@
         "sha256": "d1036384ccff22054be94faeef292c7fb3de8437b9d0744440adaf7c0195e823",
         "digestRef": "sha256:d1036384ccff22054be94faeef292c7fb3de8437b9d0744440adaf7c0195e823",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
@@ -1058,9 +1058,9 @@
         "sha256": "a31674c1cba65cbd1693a5d61b8c45e3c9ef4455a45abec6e39ce9b9cbf12463",
         "digestRef": "sha256:a31674c1cba65cbd1693a5d61b8c45e3c9ef4455a45abec6e39ce9b9cbf12463",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": false,
@@ -1078,33 +1078,33 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
-        "poster": "/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
-        "captions": "/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
         "alt": "蓝天下，红褐色纪念馆外墙写有金色馆名，参观者沿入口坡道行走。"
       },
       {
         "type": "image",
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
         "alt": "广场上红色折面构筑物向上展开，旗杆立于中央，远处可见高层建筑。"
       },
       {
         "type": "image",
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
         "alt": "玻璃展柜内分层陈列多件长短不一的深色枪械状展品。"
       },
       {
         "type": "image",
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
         "alt": "玻璃展柜内陈列一件棕色长外套、带星形标记的帽子、黑白照片和皮质文件夹。"
       },
       {
         "type": "image",
-        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
         "alt": "展柜内陈列浅色布衣、编织鞋、成卷织物和棕色挎包。"
       }
     ],
@@ -1136,7 +1136,7 @@
     "people": "谢晋元时任第524团团附，是四行仓库守军指挥者。公开权威资料记载实际守军420余人；“八百壮士”是当时对外使用、并延续至今的历史称谓。年轻官兵的家书与个人经历，使群体称号重新落到具体生命上。",
     "spirit": "四行仓库保卫战体现了民族危亡时的责任、勇气与牺牲。今天理解这种精神，也需要同时尊重史实细节：既记住“八百壮士”的公共记忆，也辨明420余名守军的历史记录。",
     "reflection": "隔着苏州河看仓库，我们意识到历史现场与现代城市只隔着很短的距离。西墙上的痕迹没有替我们下结论，却让“守住”这个词变得具体：人在局势最困难时，仍能选择承担自己的位置。",
-    "heroImage": "/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -1305,9 +1305,9 @@
       "localMaterialSources": []
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
@@ -1317,13 +1317,13 @@
       "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
       "digestRef": "sha256:0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
         "alt": "蓝天下布满孔洞与砖面缺损的灰色墙体，前方有参观者和纪念馆字样。",
         "sequence": 1,
         "asset": {
@@ -1334,13 +1334,13 @@
           "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
           "digestRef": "sha256:0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp"
         }
       },
       {
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
         "alt": "展厅内悬挂多份中外文报纸样式展品，前方陈列一台黑色机械装置。",
         "sequence": 2,
         "asset": {
@@ -1351,13 +1351,13 @@
           "sha256": "c3e75cc3375e7ae2cd0adbb42e5526490e469d3e9b170fbb07055a5a155fb268",
           "digestRef": "sha256:c3e75cc3375e7ae2cd0adbb42e5526490e469d3e9b170fbb07055a5a155fb268",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp"
         }
       },
       {
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
         "alt": "展墙由大量写有姓名、编制文字和“88D”标记的长方形牌块组成。",
         "sequence": 3,
         "asset": {
@@ -1368,13 +1368,13 @@
           "sha256": "8734bad2dd5b3c9b319b06fb3b4b54d2ff18b7b13c1cd2d64bf05108dc03ce7f",
           "digestRef": "sha256:8734bad2dd5b3c9b319b06fb3b4b54d2ff18b7b13c1cd2d64bf05108dc03ce7f",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp"
         }
       },
       {
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
         "alt": "两尊深色人物塑像俯身查看桌上地图，背景陈列报纸与说明牌。",
         "sequence": 4,
         "asset": {
@@ -1385,13 +1385,13 @@
           "sha256": "bfb790fd7d5e114cdfcdcaecd084a76c3affcfaae5ca137f879742195cff9255",
           "digestRef": "sha256:bfb790fd7d5e114cdfcdcaecd084a76c3affcfaae5ca137f879742195cff9255",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp"
         }
       },
       {
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
         "alt": "展陈场景中，多个人物模型在带有铆钉的金属门洞旁搬举挡板。",
         "sequence": 5,
         "asset": {
@@ -1402,16 +1402,16 @@
           "sha256": "7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0",
           "digestRef": "sha256:7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
-      "poster": "/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
-      "captions": "/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
       "asset": {
         "objectPath": "media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
         "version": "v1",
@@ -1420,9 +1420,9 @@
         "sha256": "973c025e1141f3e5eca57cb4ae7a62fe810b6e8d939e7aff3ab0ed0bdd78f1e5",
         "digestRef": "sha256:973c025e1141f3e5eca57cb4ae7a62fe810b6e8d939e7aff3ab0ed0bdd78f1e5",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
@@ -1432,9 +1432,9 @@
         "sha256": "a49156b10ffc929d17bc459cb3201a4eccd3c415a51f3a5809fcdc3e8ab1e994",
         "digestRef": "sha256:a49156b10ffc929d17bc459cb3201a4eccd3c415a51f3a5809fcdc3e8ab1e994",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
@@ -1444,9 +1444,9 @@
         "sha256": "2437d72e44a818f9bd414dc91aaef6bb103c8ace25803132035b781d14cd740b",
         "digestRef": "sha256:2437d72e44a818f9bd414dc91aaef6bb103c8ace25803132035b781d14cd740b",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": false,
@@ -1464,33 +1464,33 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
-        "poster": "/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
-        "captions": "/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
         "alt": "蓝天下布满孔洞与砖面缺损的灰色墙体，前方有参观者和纪念馆字样。"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
         "alt": "展厅内悬挂多份中外文报纸样式展品，前方陈列一台黑色机械装置。"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
         "alt": "展墙由大量写有姓名、编制文字和“88D”标记的长方形牌块组成。"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
         "alt": "两尊深色人物塑像俯身查看桌上地图，背景陈列报纸与说明牌。"
       },
       {
         "type": "image",
-        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
         "alt": "展陈场景中，多个人物模型在带有铆钉的金属门洞旁搬举挡板。"
       }
     ],
@@ -1522,7 +1522,7 @@
     "people": "出席大会的代表来自各地早期共产党组织，代表全国50多名党员。毛泽东、董必武、李达等代表的经历，连接起各地早期组织与全国性政党的创建；会址中的人物叙事也提醒人们，这次会议是在严密风险下由一群青年推动完成的。",
     "spirit": "中共一大所开启的历史进程，集中体现了坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民的建党精神。",
     "reflection": "在繁忙街区中辨认会址与新馆入口，我们感到“出发点”既是地理位置，也是一次共同选择。对我们而言，纪念并不是复述熟悉结论，而是愿意回到原始材料，分清地址、时间和人物，让敬意建立在准确之上。",
-    "heroImage": "/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -1740,9 +1740,9 @@
       "localMaterialSources": []
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
@@ -1752,13 +1752,13 @@
       "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
       "digestRef": "sha256:363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
         "alt": "灰砖与红砖相间的建筑门面上，黑色双开门旁嵌有全国重点文物保护单位标志牌。",
         "sequence": 1,
         "asset": {
@@ -1769,13 +1769,13 @@
           "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
           "digestRef": "sha256:363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp"
         }
       },
       {
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
         "alt": "两尊深色人物塑像并肩站立，其中一人举起右手，背景墙面投映有大字。",
         "sequence": 2,
         "asset": {
@@ -1786,13 +1786,13 @@
           "sha256": "134a836a14602bfe3a3e6a5f8225ff21427bdd0ceeba24325e286f082d4cb3b7",
           "digestRef": "sha256:134a836a14602bfe3a3e6a5f8225ff21427bdd0ceeba24325e286f082d4cb3b7",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp"
         }
       },
       {
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
         "alt": "红色展柜前写有“主义的抉择”，背景悬挂多份报刊样式展品。",
         "sequence": 3,
         "asset": {
@@ -1803,13 +1803,13 @@
           "sha256": "d5f8d58771998f1c28abee4bf7d3485a4d77b1eec3ee4360c64565b104ab3adb",
           "digestRef": "sha256:d5f8d58771998f1c28abee4bf7d3485a4d77b1eec3ee4360c64565b104ab3adb",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp"
         }
       },
       {
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
         "alt": "灯光照亮的城市沙盘前方铺展河道与建筑模型，后方墙面陈列多幅黑白图文。",
         "sequence": 4,
         "asset": {
@@ -1820,13 +1820,13 @@
           "sha256": "630d1d7e362372357c1bf83aa7767e6b8555699f05466e6b6855df1b70785579",
           "digestRef": "sha256:630d1d7e362372357c1bf83aa7767e6b8555699f05466e6b6855df1b70785579",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp"
         }
       },
       {
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
         "alt": "多尊人物塑像围坐桌旁，红色背景墙陈列人物画像与说明牌。",
         "sequence": 5,
         "asset": {
@@ -1837,16 +1837,16 @@
           "sha256": "5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82",
           "digestRef": "sha256:5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
-      "poster": "/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
-      "captions": "/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
       "asset": {
         "objectPath": "media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
         "version": "v1",
@@ -1855,9 +1855,9 @@
         "sha256": "5723c8ce331d448339e2ba1388f950cc20ef023abc84ff5a59fb3b4bda0f0758",
         "digestRef": "sha256:5723c8ce331d448339e2ba1388f950cc20ef023abc84ff5a59fb3b4bda0f0758",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
@@ -1867,9 +1867,9 @@
         "sha256": "0de077add9ef4596a3d1d4c928ee61e7ff6aeab32c3a6498a710cdda26bb8c83",
         "digestRef": "sha256:0de077add9ef4596a3d1d4c928ee61e7ff6aeab32c3a6498a710cdda26bb8c83",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
@@ -1879,9 +1879,9 @@
         "sha256": "660646c85dd7a6fe3c505c5efd0761fb856de28d306e2322574f32e232044bb7",
         "digestRef": "sha256:660646c85dd7a6fe3c505c5efd0761fb856de28d306e2322574f32e232044bb7",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": false,
@@ -1899,33 +1899,33 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
-        "poster": "/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
-        "captions": "/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
         "alt": "灰砖与红砖相间的建筑门面上，黑色双开门旁嵌有全国重点文物保护单位标志牌。"
       },
       {
         "type": "image",
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
         "alt": "两尊深色人物塑像并肩站立，其中一人举起右手，背景墙面投映有大字。"
       },
       {
         "type": "image",
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
         "alt": "红色展柜前写有“主义的抉择”，背景悬挂多份报刊样式展品。"
       },
       {
         "type": "image",
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
         "alt": "灯光照亮的城市沙盘前方铺展河道与建筑模型，后方墙面陈列多幅黑白图文。"
       },
       {
         "type": "image",
-        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
         "alt": "多尊人物塑像围坐桌旁，红色背景墙陈列人物画像与说明牌。"
       }
     ],
@@ -1957,7 +1957,7 @@
     "people": "江上青（1911—1939）是中国共产党党员、抗日英烈。1929年加入中国共产党，后来从事宣传、统战和皖东北抗日根据地相关工作，1939年8月29日遇袭牺牲，年仅28岁。",
     "spirit": "江上青短暂的一生体现了追求真理、投身救亡和忠于理想的选择。旧校址中的陈列也说明，教育、写作与组织工作同样可以成为救亡实践的一部分。",
     "reflection": "二十八岁这个年龄让我们久久停留。与其把英烈塑造成遥远符号，我们更愿意看见一个青年怎样在教学、写作和组织工作中不断作出选择；这使“理想”不再是口号，而是持续承担的生活方式。",
-    "heroImage": "/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -2164,9 +2164,9 @@
       ]
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
@@ -2176,13 +2176,13 @@
       "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
       "digestRef": "sha256:33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
         "alt": "灰砖建筑入口上方悬挂写有馆名的红褐色木牌，门内可见楼梯。",
         "sequence": 1,
         "asset": {
@@ -2193,16 +2193,16 @@
           "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
           "digestRef": "sha256:33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
-      "poster": "/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
-      "captions": "/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
       "asset": {
         "objectPath": "media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
         "version": "v1",
@@ -2211,9 +2211,9 @@
         "sha256": "277650caf09a31550a99f4f4e7279c2376b3131b43c720b87d05487b227c0009",
         "digestRef": "sha256:277650caf09a31550a99f4f4e7279c2376b3131b43c720b87d05487b227c0009",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
@@ -2223,9 +2223,9 @@
         "sha256": "449a4c6304acd7a1e0d1e36395300e3962014add4fe2f2666250237b33ee992f",
         "digestRef": "sha256:449a4c6304acd7a1e0d1e36395300e3962014add4fe2f2666250237b33ee992f",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
@@ -2235,9 +2235,9 @@
         "sha256": "361ad8cd2e714b0761819d411183e04192aea4b993338752d0b57595d9620e38",
         "digestRef": "sha256:361ad8cd2e714b0761819d411183e04192aea4b993338752d0b57595d9620e38",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": true,
@@ -2255,13 +2255,13 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
-        "poster": "/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
-        "captions": "/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
         "alt": "灰砖建筑入口上方悬挂写有馆名的红褐色木牌，门内可见楼梯。"
       }
     ],
@@ -2293,7 +2293,7 @@
     "people": "园内纪念熊成基、曾玉良、曹起溍、江上青、韦一平、许晓轩等扬州地区革命先烈。不同人物跨越辛亥革命、中国共产党领导的革命与抗日战争等历史阶段，共同构成地方革命史的人物谱系。",
     "spirit": "陵园把地方人物、国家历史与当代纪念活动联系起来，传递对理想的坚守、面对危难的担当，以及铭记牺牲、珍视和平的公共责任。",
     "reflection": "在万松岭的环境里，纪念不是喧闹的表达，而是一种克制的注视。我们意识到地方史并不狭小：一座城市记住自己的烈士，也是在保存国家历史中那些容易被忽略的姓名与关系。",
-    "heroImage": "/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -2492,9 +2492,9 @@
       ]
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
@@ -2504,13 +2504,13 @@
       "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
       "digestRef": "sha256:ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
         "alt": "门式构架中央立有多人群像雕塑和刻字纪念碑，后方是一座灰瓦建筑。",
         "sequence": 1,
         "asset": {
@@ -2521,16 +2521,16 @@
           "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
           "digestRef": "sha256:ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
-      "poster": "/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
-      "captions": "/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
       "asset": {
         "objectPath": "media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
         "version": "v1",
@@ -2539,9 +2539,9 @@
         "sha256": "53691577c5fd7f86a9ec17e09773880b1647bd354b045983d66ed9387ac5439b",
         "digestRef": "sha256:53691577c5fd7f86a9ec17e09773880b1647bd354b045983d66ed9387ac5439b",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
@@ -2551,9 +2551,9 @@
         "sha256": "8a2e1fa5564a3049ceeeb7641befd0f6de9b6e84cc4dddcd8f5cee9010aef77d",
         "digestRef": "sha256:8a2e1fa5564a3049ceeeb7641befd0f6de9b6e84cc4dddcd8f5cee9010aef77d",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
@@ -2563,9 +2563,9 @@
         "sha256": "4f63941188f922ea98ff9d8c0298c0987723ab9436e4dd8103485a8ffb146a3e",
         "digestRef": "sha256:4f63941188f922ea98ff9d8c0298c0987723ab9436e4dd8103485a8ffb146a3e",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": true,
@@ -2583,13 +2583,13 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
-        "poster": "/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
-        "captions": "/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
         "alt": "门式构架中央立有多人群像雕塑和刻字纪念碑，后方是一座灰瓦建筑。"
       }
     ],
@@ -2621,7 +2621,7 @@
     "people": "周恩来、董必武、邓颖超等代表团成员在此工作生活。相关展陈也记录隐蔽战线工作者伊明（1924—2021）：他1946年随代表团到南京，参与机要工作，后来捐赠带有代表团成员题字的影集等文物。",
     "spirit": "梅园新村的历史体现了在复杂局势中坚持原则、争取和平、联系群众与严守纪律的品格，也呈现了公开政治工作和隐蔽保障工作之间的相互支撑。",
     "reflection": "普通住宅尺度让我们更容易想象当年的工作节奏：谈判、写作、联络与生活挤在相邻空间里。我们感受到，重要历史不总发生在宏伟建筑中，很多坚持恰恰藏在谨慎、耐心和对细节的守护里。",
-    "heroImage": "/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+    "heroImage": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
     "heroFocus": {
       "x": 50,
       "y": 50
@@ -2832,9 +2832,9 @@
       ]
     },
     "mediaDelivery": {
-      "status": "pre-upload-object",
+      "status": "reconciled-production",
       "version": "v1",
-      "productionBaseUrl": null
+      "productionBaseUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la"
     },
     "heroAsset": {
       "objectPath": "media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
@@ -2844,13 +2844,13 @@
       "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
       "digestRef": "sha256:0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
       "manifestPath": "content/media/media-manifest.json",
-      "deliveryStatus": "pre-upload-object",
-      "url": "/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
-      "productionUrl": null
+      "deliveryStatus": "reconciled-production",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+      "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp"
     },
     "photos": [
       {
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
         "alt": "树枝掩映的灰色旧墙上嵌有一块写有“中共代表团办事处原址”的黑色牌匾。",
         "sequence": 1,
         "asset": {
@@ -2861,13 +2861,13 @@
           "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
           "digestRef": "sha256:0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp"
         }
       },
       {
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
         "alt": "红色展墙上悬挂多幅黑白照片，下方玻璃展柜中陈列书籍样式展品。",
         "sequence": 2,
         "asset": {
@@ -2878,13 +2878,13 @@
           "sha256": "a873ad747c1efe8784183cbfaa3c2db5b5ac08a730706717ed2f23379cf0d079",
           "digestRef": "sha256:a873ad747c1efe8784183cbfaa3c2db5b5ac08a730706717ed2f23379cf0d079",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp"
         }
       },
       {
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
         "alt": "玻璃展柜内陈列两件外套、黑白照片、箱子和餐具等物件。",
         "sequence": 3,
         "asset": {
@@ -2895,13 +2895,13 @@
           "sha256": "3147e10cd44a313b1d6117e15c35184bafa6ecaaa3763c4c1946dc3da8bdf9f2",
           "digestRef": "sha256:3147e10cd44a313b1d6117e15c35184bafa6ecaaa3763c4c1946dc3da8bdf9f2",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp"
         }
       },
       {
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
         "alt": "一名参观者站在玻璃展柜前观看衣物、照片和箱子等展品。",
         "sequence": 4,
         "asset": {
@@ -2912,16 +2912,16 @@
           "sha256": "ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b",
           "digestRef": "sha256:ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b",
           "manifestPath": "content/media/media-manifest.json",
-          "deliveryStatus": "pre-upload-object",
-          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
-          "productionUrl": null
+          "deliveryStatus": "reconciled-production",
+          "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+          "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp"
         }
       }
     ],
     "video": {
-      "url": "/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
-      "poster": "/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
-      "captions": "/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+      "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+      "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+      "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
       "asset": {
         "objectPath": "media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
         "version": "v1",
@@ -2930,9 +2930,9 @@
         "sha256": "1091ffff73cceccfe590c2a251f59ee4c02291c3a82233abbf2215805a828c2a",
         "digestRef": "sha256:1091ffff73cceccfe590c2a251f59ee4c02291c3a82233abbf2215805a828c2a",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4"
       },
       "posterAsset": {
         "objectPath": "media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
@@ -2942,9 +2942,9 @@
         "sha256": "f2c3f370f3d98b09635e23ed7c63918b276621957a89e2385feb9e548b9f3c2e",
         "digestRef": "sha256:f2c3f370f3d98b09635e23ed7c63918b276621957a89e2385feb9e548b9f3c2e",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp"
       },
       "captionsAsset": {
         "objectPath": "media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
@@ -2954,9 +2954,9 @@
         "sha256": "9df1f42ba0169dd3526b7370bfd1fac8d2854a34d9703fd44a5903f618507a8d",
         "digestRef": "sha256:9df1f42ba0169dd3526b7370bfd1fac8d2854a34d9703fd44a5903f618507a8d",
         "manifestPath": "content/media/media-manifest.json",
-        "deliveryStatus": "pre-upload-object",
-        "url": "/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
-        "productionUrl": null
+        "deliveryStatus": "reconciled-production",
+        "url": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+        "productionUrl": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt"
       },
       "posterReview": {
         "aiWatermarkPresent": false,
@@ -2974,28 +2974,28 @@
     "media": [
       {
         "type": "video",
-        "src": "/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
-        "poster": "/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
-        "captions": "/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt"
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+        "poster": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+        "captions": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt"
       },
       {
         "type": "image",
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
         "alt": "树枝掩映的灰色旧墙上嵌有一块写有“中共代表团办事处原址”的黑色牌匾。"
       },
       {
         "type": "image",
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
         "alt": "红色展墙上悬挂多幅黑白照片，下方玻璃展柜中陈列书籍样式展品。"
       },
       {
         "type": "image",
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
         "alt": "玻璃展柜内陈列两件外套、黑白照片、箱子和餐具等物件。"
       },
       {
         "type": "image",
-        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+        "src": "https://7265-red-footprint-preview-d5322636bd-1438111688.tcb.qcloud.la/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
         "alt": "一名参观者站在玻璃展柜前观看衣物、照片和箱子等展品。"
       }
     ],

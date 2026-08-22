@@ -10,6 +10,10 @@ import {
   validateProductionContent,
 } from './check-production-content.mjs';
 import { checkMedia } from './check-media.mjs';
+import {
+  readReconciledDelivery,
+  validateUploadReconciliation,
+} from './check-upload-reconciliation.mjs';
 
 const MEDIA_MANIFEST_PATH = 'content/media/media-manifest.json';
 const MEDIA_RIGHTS_PATH = 'content/media/media-rights-declaration.json';
@@ -18,11 +22,14 @@ function readJson(root, relativePath) {
   return JSON.parse(readFileSync(join(root, relativePath), 'utf8'));
 }
 
-function createResource(asset, version) {
+function createResource(asset, version, delivery) {
+  const productionUrl = delivery?.objects.get(asset.objectPath) ?? null;
   return {
-    deliveryStatus: 'pre-upload-object',
-    url: `/${asset.objectPath}`,
-    productionUrl: null,
+    deliveryStatus: productionUrl
+      ? 'reconciled-production'
+      : 'pre-upload-object',
+    url: productionUrl ?? `/${asset.objectPath}`,
+    productionUrl,
     objectPath: asset.objectPath,
     version,
     mime: asset.mime,
@@ -33,17 +40,17 @@ function createResource(asset, version) {
   };
 }
 
-function createSite({ site, sources, review, media, rights, version }) {
-  const heroAsset = createResource(media.hero, version);
+function createSite({ site, sources, review, media, rights, version, delivery }) {
+  const heroAsset = createResource(media.hero, version, delivery);
   const photos = media.photos.map((photo) => ({
-    src: `/${photo.objectPath}`,
+    src: createResource(photo, version, delivery).url,
     alt: photo.alt,
     sequence: photo.sequence,
-    asset: createResource(photo, version),
+    asset: createResource(photo, version, delivery),
   }));
-  const videoAsset = createResource(media.video, version);
-  const posterAsset = createResource(media.poster, version);
-  const captionsAsset = createResource(media.captions, version);
+  const videoAsset = createResource(media.video, version, delivery);
+  const posterAsset = createResource(media.poster, version, delivery);
+  const captionsAsset = createResource(media.captions, version, delivery);
   const watermarkDisclosure = rights.aiWatermarkPosters.find(
     ({ siteId }) => siteId === site.id,
   );
@@ -100,9 +107,9 @@ function createSite({ site, sources, review, media, rights, version }) {
       ),
     },
     mediaDelivery: {
-      status: 'pre-upload-object',
+      status: delivery ? 'reconciled-production' : 'pre-upload-object',
       version,
-      productionBaseUrl: null,
+      productionBaseUrl: delivery?.productionBaseUrl ?? null,
     },
     heroImage: heroAsset.url,
     heroFocus: { x: 50, y: 50 },
@@ -151,7 +158,30 @@ function createSite({ site, sources, review, media, rights, version }) {
   };
 }
 
-export function generateSites(root = process.cwd()) {
+export function resolveReconciledDelivery(
+  mediaManifest,
+  releaseManifest,
+  reconciliation,
+) {
+  if (!releaseManifest || !reconciliation) return null;
+  const errors = validateUploadReconciliation(
+    mediaManifest,
+    releaseManifest,
+    reconciliation,
+  );
+  if (errors.length > 0) return null;
+  return {
+    productionBaseUrl: reconciliation.cdnBaseUrl,
+    objects: new Map(
+      reconciliation.objects.map((object) => [
+        object.objectPath,
+        object.httpsUrl,
+      ]),
+    ),
+  };
+}
+
+export function generateSites(root = process.cwd(), options = {}) {
   const resolvedRoot = resolve(root);
   const contentErrors = validateProductionContent(resolvedRoot);
   const mediaErrors = checkMedia(resolvedRoot);
@@ -166,6 +196,9 @@ export function generateSites(root = process.cwd()) {
 
   const manifest = readJson(resolvedRoot, MEDIA_MANIFEST_PATH);
   const rights = readJson(resolvedRoot, MEDIA_RIGHTS_PATH);
+  const delivery = Object.hasOwn(options, 'delivery')
+    ? options.delivery
+    : readReconciledDelivery(resolvedRoot, manifest);
   const mediaById = new Map(manifest.sites.map((site) => [site.id, site]));
   const sites = REQUIRED_SITE_IDS.map((siteId) =>
     createSite({
@@ -175,6 +208,7 @@ export function generateSites(root = process.cwd()) {
       media: mediaById.get(siteId),
       rights,
       version: manifest.version,
+      delivery,
     }),
   );
 

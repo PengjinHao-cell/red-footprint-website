@@ -5,6 +5,12 @@ import { join } from 'node:path';
 
 import { afterEach, describe, expect, it } from 'vitest';
 
+import {
+  generateSites,
+  resolveReconciledDelivery,
+} from './generate-sites.mjs';
+import { buildObjectReleaseManifest } from './check-upload-reconciliation.mjs';
+
 const temporaryDirectories: string[] = [];
 const expectedSites = [
   ['sihong-memorial', '淮北抗日民主根据地纪念馆'],
@@ -108,11 +114,7 @@ describe('generate-sites', () => {
   });
 
   it('emits a video-first sequence and traceable pre-upload media resources', () => {
-    const { outputPath, result } = generateToTemporaryFile();
-    expect(result.status, result.stderr).toBe(0);
-    if (result.status !== 0) return;
-
-    const sites = JSON.parse(readFileSync(outputPath, 'utf8'));
+    const sites = generateSites(process.cwd(), { delivery: null });
     sites.forEach((site: GeneratedSite) => {
       expect(site.media[0].type).toBe('video');
       expect(site.mediaDelivery).toEqual({
@@ -140,5 +142,118 @@ describe('generate-sites', () => {
         expect(resource.sha256).toMatch(/^[a-f0-9]{64}$/);
       });
     });
+  });
+});
+
+describe('reconciliation-driven media delivery', () => {
+  const environmentId = 'red-footprint-preview-d5322636bd';
+  const bucket = '7265-red-footprint-preview-d5322636bd-1438111688';
+  const cdnBaseUrl = `https://${bucket}.tcb.qcloud.la`;
+
+  function inputs() {
+    const manifest = JSON.parse(
+      readFileSync('content/media/media-manifest.json', 'utf8'),
+    );
+    const release = buildObjectReleaseManifest(manifest, {
+      environmentId,
+      bucket,
+      region: 'ap-shanghai',
+      releasedAt: '2026-08-22T12:00:00+08:00',
+    });
+    const reconciliation = {
+      schemaVersion: 1,
+      environmentId,
+      region: 'ap-shanghai',
+      bucket,
+      version: 'v1',
+      cdnBaseUrl,
+      verifiedAt: '2026-08-22T12:30:00+08:00',
+      objectCount: release.objectCount,
+      totalBytes: release.totalBytes,
+      operations: {
+        created: 60,
+        overwritten: 0,
+        deleted: 0,
+        permissionsModified: false,
+      },
+      objects: release.objects.map((object: Record<string, unknown>) => {
+        const objectPath = object.objectPath as string;
+        const bytes = object.bytes as number;
+        const mime = object.mime as string;
+        const sha256 = object.sha256 as string;
+        return {
+          objectPath,
+          bytes,
+          mime,
+          sha256,
+          httpsUrl: `${cdnBaseUrl}/${objectPath}`,
+          cloud: { exists: true, bytes, mime },
+          http: {
+            status: 200,
+            bytes,
+            mime,
+            sha256,
+            ...(mime === 'video/mp4'
+              ? {
+                  range: {
+                    request: 'bytes=0-1023',
+                    status: 206,
+                    contentRange: `bytes 0-1023/${bytes}`,
+                  },
+                }
+              : {}),
+            ...(mime.startsWith('text/vtt') ? { webVtt: true } : {}),
+            ...(mime === 'image/webp' ? { webpSignature: true } : {}),
+          },
+        };
+      }),
+    };
+    return { manifest, release, reconciliation };
+  }
+
+  it('keeps pre-upload delivery when reconciliation is absent', () => {
+    const { manifest, release } = inputs();
+    expect(resolveReconciledDelivery(manifest, release, null)).toBeNull();
+  });
+
+  it('uses reconciled production URLs only for a complete valid reconciliation', () => {
+    const { manifest, release, reconciliation } = inputs();
+    const delivery = resolveReconciledDelivery(
+      manifest,
+      release,
+      reconciliation,
+    );
+
+    expect(delivery?.productionBaseUrl).toBe(cdnBaseUrl);
+    expect(delivery?.objects.size).toBe(60);
+    expect(delivery?.objects.get(release.objects[0].objectPath)).toBe(
+      `${cdnBaseUrl}/${release.objects[0].objectPath}`,
+    );
+    const sites = generateSites(process.cwd(), { delivery });
+    expect(sites.every((site) => site.mediaDelivery.status === 'reconciled-production')).toBe(true);
+    expect(sites.every((site) => site.heroAsset.url.startsWith(cdnBaseUrl))).toBe(true);
+  });
+
+  it.each([
+    ['missing object', (value: ReturnType<typeof inputs>) => value.reconciliation.objects.pop()],
+    ['digest mismatch', (value: ReturnType<typeof inputs>) => { value.reconciliation.objects[0].sha256 = 'f'.repeat(64); }],
+    ['non-HTTPS URL', (value: ReturnType<typeof inputs>) => { value.reconciliation.objects[0].httpsUrl = value.reconciliation.objects[0].httpsUrl.replace('https://', 'http://'); }],
+    ['placeholder domain', (value: ReturnType<typeof inputs>) => {
+      value.reconciliation.cdnBaseUrl = 'https://media.example.test';
+      value.reconciliation.objects = value.reconciliation.objects.map((object) => ({
+        ...object,
+        httpsUrl: object.httpsUrl.replace(cdnBaseUrl, value.reconciliation.cdnBaseUrl),
+      }));
+    }],
+  ])('falls back to pre-upload delivery for %s', (_label, mutate) => {
+    const value = inputs();
+    mutate(value);
+    expect(
+      resolveReconciledDelivery(
+        value.manifest,
+        value.release,
+        value.reconciliation,
+      ),
+    ).toBeNull();
   });
 });

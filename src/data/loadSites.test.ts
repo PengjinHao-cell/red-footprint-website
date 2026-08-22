@@ -29,7 +29,7 @@ describe('loadSites', () => {
       expect(productionSiteSchema.safeParse(site).success).toBe(true);
       expect(site).toMatchObject({
         coordinateSystem: 'GCJ-02',
-        mediaDelivery: { status: 'pre-upload-object' },
+        mediaDelivery: { status: 'reconciled-production' },
       });
     });
   });

@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "environmentId": "red-footprint-preview-d5322636bd",
+  "region": "ap-shanghai",
+  "bucket": "7265-red-footprint-preview-d5322636bd-1438111688",
+  "version": "v1",
+  "targetPrefix": "media/sites/*/v1/",
+  "releasedAt": "2026-08-22T12:43:37+08:00",
+  "objectCount": 60,
+  "totalBytes": 95432645,
+  "writePolicy": {
+    "createOnly": true,
+    "overwrite": false,
+    "delete": false,
+    "modifyPermissions": false
+  },
+  "objects": [
+    {
+      "siteId": "sihong-memorial",
+      "kind": "hero",
+      "objectPath": "media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+      "bytes": 128044,
+      "mime": "image/webp",
+      "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3"
+    },
+    {
+      "siteId": "sihong-memorial",
+      "kind": "photo",
+      "objectPath": "media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+      "bytes": 128044,
+      "mime": "image/webp",
+      "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3"
+    },
+    {
+      "siteId": "sihong-memorial",
+      "kind": "photo",
+      "objectPath": "media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+      "bytes": 413718,
+      "mime": "image/webp",
+      "sha256": "bf733491ac6684944711615ce6472568a6ce22bab4a6e5cb7f036a24752b7058"
+    },
+    {
+      "siteId": "sihong-memorial",
+      "kind": "video",
+      "objectPath": "media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+      "bytes": 13385832,
+      "mime": "video/mp4",
+      "sha256": "f39e8ffb19f3b5cd59ff14390fcd65e9686d4af2db8078ebe92d963322776785"
+    },
+    {
+      "siteId": "sihong-memorial",
+      "kind": "poster",
+      "objectPath": "media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+      "bytes": 115600,
+      "mime": "image/webp",
+      "sha256": "75e032428da8ab8de0a2d0db6e344a6dbc5d0308237a3d849fa002f9a46b25c0"
+    },
+    {
+      "siteId": "sihong-memorial",
+      "kind": "captions",
+      "objectPath": "media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+      "bytes": 1325,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "39be16c27880a17114db49f53d8580041fd0d3ca50134a90f1b9905fdd2cd2ec"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "hero",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+      "bytes": 147016,
+      "mime": "image/webp",
+      "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "photo",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+      "bytes": 147016,
+      "mime": "image/webp",
+      "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "photo",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+      "bytes": 494198,
+      "mime": "image/webp",
+      "sha256": "88178acd2c9fa6b95dfe1e2989d958de28f30ace19e950e0c599a2f51a706bec"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "photo",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+      "bytes": 182064,
+      "mime": "image/webp",
+      "sha256": "429dd363db086056312bb7d154bfabf5667db7fdbe2d640f286eb94e30a9e93a"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "photo",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+      "bytes": 193684,
+      "mime": "image/webp",
+      "sha256": "ffc65792b6964f5f899d92f482cdf3eed4bf1fc28aef34a2fe8b84ab366f579a"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "photo",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+      "bytes": 79508,
+      "mime": "image/webp",
+      "sha256": "5866202dd080261dd1fab8b8de81dbd3331ea82c38a435ef14c4c34fe4d46f3d"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "video",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+      "bytes": 12390860,
+      "mime": "video/mp4",
+      "sha256": "24fc1ba5d1a48be6c8469e3fdb4adbf7ef902579503562c1423d4d0193e1f985"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "poster",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+      "bytes": 336864,
+      "mime": "image/webp",
+      "sha256": "0f1ed43d76d990fd1d61a8c2448d7a42dc26edd8a1737b6ee9ff842e926e3852"
+    },
+    {
+      "siteId": "yuhuatai-martyrs",
+      "kind": "captions",
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+      "bytes": 810,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "94bf0f8b1a7d7385e27d8b30c876bc4b24d6ba543e5f8a2f5a971e5b92ea0b6d"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "hero",
+      "objectPath": "media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+      "bytes": 358872,
+      "mime": "image/webp",
+      "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+      "bytes": 358872,
+      "mime": "image/webp",
+      "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+      "bytes": 223632,
+      "mime": "image/webp",
+      "sha256": "536c57b5166c52dc7850558812c4befc49ad17a8c71fe19da2c4ae9496d0b45e"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+      "bytes": 116348,
+      "mime": "image/webp",
+      "sha256": "276e4b5fe0ac7803a3d71f366ca84b34d53532c21fa66a46112f39981d8d60ad"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+      "bytes": 133964,
+      "mime": "image/webp",
+      "sha256": "3dc05fb3ebf798d67f8400ae65feb3f42942735b81c4c6e6467206206550d411"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+      "bytes": 226114,
+      "mime": "image/webp",
+      "sha256": "5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "video",
+      "objectPath": "media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+      "bytes": 13803265,
+      "mime": "video/mp4",
+      "sha256": "dd82aa6c72d717c7485b4a20145240995a5a73ca5856b38c05d48a18c98e3ed9"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "poster",
+      "objectPath": "media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+      "bytes": 81418,
+      "mime": "image/webp",
+      "sha256": "d1036384ccff22054be94faeef292c7fb3de8437b9d0744440adaf7c0195e823"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "captions",
+      "objectPath": "media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+      "bytes": 799,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "a31674c1cba65cbd1693a5d61b8c45e3c9ef4455a45abec6e39ce9b9cbf12463"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "hero",
+      "objectPath": "media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+      "bytes": 373300,
+      "mime": "image/webp",
+      "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+      "bytes": 373300,
+      "mime": "image/webp",
+      "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+      "bytes": 339784,
+      "mime": "image/webp",
+      "sha256": "c3e75cc3375e7ae2cd0adbb42e5526490e469d3e9b170fbb07055a5a155fb268"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+      "bytes": 474878,
+      "mime": "image/webp",
+      "sha256": "8734bad2dd5b3c9b319b06fb3b4b54d2ff18b7b13c1cd2d64bf05108dc03ce7f"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+      "bytes": 235596,
+      "mime": "image/webp",
+      "sha256": "bfb790fd7d5e114cdfcdcaecd084a76c3affcfaae5ca137f879742195cff9255"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+      "bytes": 276624,
+      "mime": "image/webp",
+      "sha256": "7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "video",
+      "objectPath": "media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+      "bytes": 10163744,
+      "mime": "video/mp4",
+      "sha256": "973c025e1141f3e5eca57cb4ae7a62fe810b6e8d939e7aff3ab0ed0bdd78f1e5"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "poster",
+      "objectPath": "media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+      "bytes": 270306,
+      "mime": "image/webp",
+      "sha256": "a49156b10ffc929d17bc459cb3201a4eccd3c415a51f3a5809fcdc3e8ab1e994"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "captions",
+      "objectPath": "media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+      "bytes": 820,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "2437d72e44a818f9bd414dc91aaef6bb103c8ace25803132035b781d14cd740b"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "hero",
+      "objectPath": "media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+      "bytes": 368068,
+      "mime": "image/webp",
+      "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+      "bytes": 368068,
+      "mime": "image/webp",
+      "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+      "bytes": 328386,
+      "mime": "image/webp",
+      "sha256": "134a836a14602bfe3a3e6a5f8225ff21427bdd0ceeba24325e286f082d4cb3b7"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+      "bytes": 181186,
+      "mime": "image/webp",
+      "sha256": "d5f8d58771998f1c28abee4bf7d3485a4d77b1eec3ee4360c64565b104ab3adb"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+      "bytes": 384716,
+      "mime": "image/webp",
+      "sha256": "630d1d7e362372357c1bf83aa7767e6b8555699f05466e6b6855df1b70785579"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+      "bytes": 257932,
+      "mime": "image/webp",
+      "sha256": "5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "video",
+      "objectPath": "media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+      "bytes": 10451376,
+      "mime": "video/mp4",
+      "sha256": "5723c8ce331d448339e2ba1388f950cc20ef023abc84ff5a59fb3b4bda0f0758"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "poster",
+      "objectPath": "media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+      "bytes": 198530,
+      "mime": "image/webp",
+      "sha256": "0de077add9ef4596a3d1d4c928ee61e7ff6aeab32c3a6498a710cdda26bb8c83"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "captions",
+      "objectPath": "media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+      "bytes": 807,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "660646c85dd7a6fe3c505c5efd0761fb856de28d306e2322574f32e232044bb7"
+    },
+    {
+      "siteId": "jiangshangqing-memorial",
+      "kind": "hero",
+      "objectPath": "media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+      "bytes": 338156,
+      "mime": "image/webp",
+      "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5"
+    },
+    {
+      "siteId": "jiangshangqing-memorial",
+      "kind": "photo",
+      "objectPath": "media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+      "bytes": 338156,
+      "mime": "image/webp",
+      "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5"
+    },
+    {
+      "siteId": "jiangshangqing-memorial",
+      "kind": "video",
+      "objectPath": "media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+      "bytes": 10654463,
+      "mime": "video/mp4",
+      "sha256": "277650caf09a31550a99f4f4e7279c2376b3131b43c720b87d05487b227c0009"
+    },
+    {
+      "siteId": "jiangshangqing-memorial",
+      "kind": "poster",
+      "objectPath": "media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+      "bytes": 210122,
+      "mime": "image/webp",
+      "sha256": "449a4c6304acd7a1e0d1e36395300e3962014add4fe2f2666250237b33ee992f"
+    },
+    {
+      "siteId": "jiangshangqing-memorial",
+      "kind": "captions",
+      "objectPath": "media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+      "bytes": 1454,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "361ad8cd2e714b0761819d411183e04192aea4b993338752d0b57595d9620e38"
+    },
+    {
+      "siteId": "yangzhou-martyrs",
+      "kind": "hero",
+      "objectPath": "media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+      "bytes": 332788,
+      "mime": "image/webp",
+      "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189"
+    },
+    {
+      "siteId": "yangzhou-martyrs",
+      "kind": "photo",
+      "objectPath": "media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+      "bytes": 332788,
+      "mime": "image/webp",
+      "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189"
+    },
+    {
+      "siteId": "yangzhou-martyrs",
+      "kind": "video",
+      "objectPath": "media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+      "bytes": 10561011,
+      "mime": "video/mp4",
+      "sha256": "53691577c5fd7f86a9ec17e09773880b1647bd354b045983d66ed9387ac5439b"
+    },
+    {
+      "siteId": "yangzhou-martyrs",
+      "kind": "poster",
+      "objectPath": "media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+      "bytes": 302840,
+      "mime": "image/webp",
+      "sha256": "8a2e1fa5564a3049ceeeb7641befd0f6de9b6e84cc4dddcd8f5cee9010aef77d"
+    },
+    {
+      "siteId": "yangzhou-martyrs",
+      "kind": "captions",
+      "objectPath": "media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+      "bytes": 1446,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "4f63941188f922ea98ff9d8c0298c0987723ab9436e4dd8103485a8ffb146a3e"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "hero",
+      "objectPath": "media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+      "bytes": 378702,
+      "mime": "image/webp",
+      "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "photo",
+      "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+      "bytes": 378702,
+      "mime": "image/webp",
+      "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "photo",
+      "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+      "bytes": 224828,
+      "mime": "image/webp",
+      "sha256": "a873ad747c1efe8784183cbfaa3c2db5b5ac08a730706717ed2f23379cf0d079"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "photo",
+      "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+      "bytes": 141436,
+      "mime": "image/webp",
+      "sha256": "3147e10cd44a313b1d6117e15c35184bafa6ecaaa3763c4c1946dc3da8bdf9f2"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "photo",
+      "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+      "bytes": 165824,
+      "mime": "image/webp",
+      "sha256": "ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "video",
+      "objectPath": "media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+      "bytes": 2331954,
+      "mime": "video/mp4",
+      "sha256": "1091ffff73cceccfe590c2a251f59ee4c02291c3a82233abbf2215805a828c2a"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "poster",
+      "objectPath": "media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+      "bytes": 242012,
+      "mime": "image/webp",
+      "sha256": "f2c3f370f3d98b09635e23ed7c63918b276621957a89e2385feb9e548b9f3c2e"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "captions",
+      "objectPath": "media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+      "bytes": 675,
+      "mime": "text/vtt; charset=utf-8",
+      "sha256": "9df1f42ba0169dd3526b7370bfd1fac8d2854a34d9703fd44a5903f618507a8d"
+    }
+  ]
+}
