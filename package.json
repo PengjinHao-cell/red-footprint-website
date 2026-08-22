@@ -18,7 +18,8 @@
     "media:dry-run": "node scripts/process-media.mjs --dry-run",
     "media:process": "node scripts/process-media.mjs",
     "check:media": "node scripts/check-media.mjs",
-    "check:upload-reconciliation": "node scripts/check-upload-reconciliation.mjs"
+    "check:upload-reconciliation": "node scripts/check-upload-reconciliation.mjs",
+    "verify:release": "node scripts/verify-release.mjs"
   },
   "dependencies": {
     "globe.gl": "^2.46.1",
