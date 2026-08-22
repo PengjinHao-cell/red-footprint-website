@@ -1,9 +1,39 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { describe, expect, it } from 'vitest';
 
 import { createValidEightSites, validEightSites } from '../test/fixtures/sites';
 import { loadSites } from './loadSites';
 
 describe('loadSites', () => {
+  it('loads the generated production collection through the production schema', async () => {
+    const sitesPath = join(process.cwd(), 'src/data/sites.json');
+
+    expect(existsSync(sitesPath)).toBe(true);
+    if (!existsSync(sitesPath)) return;
+
+    const schemaModule = await import('./siteSchema');
+    const productionSiteSchema = Reflect.get(
+      schemaModule,
+      'productionSiteSchema',
+    );
+    expect(productionSiteSchema).toBeDefined();
+    if (!productionSiteSchema) return;
+
+    const input: unknown = JSON.parse(readFileSync(sitesPath, 'utf8'));
+    const sites = loadSites(input);
+
+    expect(sites).toHaveLength(8);
+    sites.forEach((site) => {
+      expect(productionSiteSchema.safeParse(site).success).toBe(true);
+      expect(site).toMatchObject({
+        coordinateSystem: 'GCJ-02',
+        mediaDelivery: { status: 'pre-upload-object' },
+      });
+    });
+  });
+
   it('accepts eight complete synthetic site records', () => {
     expect(loadSites(validEightSites)).toHaveLength(8);
   });

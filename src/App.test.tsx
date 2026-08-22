@@ -1,3 +1,6 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -78,7 +81,11 @@ vi.mock('./components/globe/GlobeScene', async () => {
   return { default: MockGlobeScene };
 });
 
-const sites = siteSchema.array().parse(validEightSites);
+const productionSitesPath = join(process.cwd(), 'src/data/sites.json');
+const siteInput = existsSync(productionSitesPath)
+  ? JSON.parse(readFileSync(productionSitesPath, 'utf8'))
+  : validEightSites;
+const sites = siteSchema.array().parse(siteInput);
 const STORAGE_KEY = 'red-footprint:visited:v1';
 
 function renderExperience() {
@@ -111,6 +118,16 @@ afterEach(() => {
 });
 
 describe('App', () => {
+  it('boots the production app with generated sites instead of a test fixture', () => {
+    const mainSource = readFileSync(join(process.cwd(), 'src/main.tsx'), 'utf8');
+
+    expect(existsSync(productionSitesPath)).toBe(true);
+    expect(mainSource).toMatch(/from ['"]\.\/data\/sites\.json['"]/);
+    expect(mainSource).toMatch(/loadSites\(/);
+    expect(mainSource).toMatch(/<App sites=\{sites\}/);
+    expect(mainSource).not.toMatch(/test\/fixtures|syntheticSites|validEightSites/);
+  });
+
   it('keeps the approved title and shows a safe gate when production sites are absent', () => {
     render(<App />);
 

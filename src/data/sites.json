@@ -1,0 +1,3010 @@
+[
+  {
+    "id": "sihong-memorial",
+    "officialName": "淮北抗日民主根据地纪念馆",
+    "shortName": "淮北抗日民主根据地纪念馆",
+    "province": "江苏省",
+    "city": "宿迁市",
+    "district": "泗洪县",
+    "address": "江苏省宿迁市泗洪县体育南路23号",
+    "coordinates": {
+      "lat": 33.447482,
+      "lng": 118.210953
+    },
+    "opening": "星期三、星期六、星期日9:00—11:00、14:30—17:00对外开放；星期一、星期二、星期四、星期五由值班组接待。",
+    "reservation": "场馆免费对外开放，个人凭身份证或电子身份证现场登记即可参观；团队或工作日参观可提前电话联系。",
+    "visitNotice": "展厅内禁止使用闪光灯拍照，请勿触摸历史展板，参观全程保持安静。",
+    "officialTitle": "淮北抗日民主根据地纪念馆",
+    "history": "纪念馆呈现淮北抗日民主根据地从开辟、建设到军民坚持敌后抗战的历程。公开党史资料将1939年后中原局和新四军相关力量在淮北地区的活动、1940年前后的根据地开辟以及此后的政权与社会建设，放在华中敌后抗战的脉络中讲述。",
+    "people": "展陈以刘少奇、彭雪枫、邓子恢、张爱萍、刘瑞龙等在淮北根据地工作的人物为线索。馆内还纪念泗洪籍抗日烈士喻尊霞（1920—1940）：她投身抗日宣传与妇女工作，1940年5月牺牲，年仅20岁。",
+    "spirit": "根据地史呈现了在艰难环境中依靠群众、坚持团结抗战与建设民主政权的实践，也让牺牲者的选择与普通民众的参与进入同一条历史叙事。",
+    "reflection": "我们最受触动的是，宏大的根据地历史并不只由战役构成，也由宣传、教育、妇女工作和日常组织一点点托起。面对展厅里的名字与年龄，我们更愿意把“人民”理解为具体的人，以及彼此守望的行动。",
+    "heroImage": "/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "江苏省宿迁市泗洪县体育南路23号",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "星期三、星期六、星期日9:00—11:00、14:30—17:00对外开放；星期一、星期二、星期四、星期五由值班组接待。",
+      "reservation": "场馆免费对外开放，个人凭身份证或电子身份证现场登记即可参观；团队或工作日参观可提前电话联系。",
+      "visitNotice": "展厅内禁止使用闪光灯拍照，请勿触摸历史展板，参观全程保持安静。"
+    },
+    "historicalImprint": "纪念馆呈现淮北抗日民主根据地从开辟、建设到军民坚持敌后抗战的历程。公开党史资料将1939年后中原局和新四军相关力量在淮北地区的活动、1940年前后的根据地开辟以及此后的政权与社会建设，放在华中敌后抗战的脉络中讲述。",
+    "peopleStories": "展陈以刘少奇、彭雪枫、邓子恢、张爱萍、刘瑞龙等在淮北根据地工作的人物为线索。馆内还纪念泗洪籍抗日烈士喻尊霞（1920—1940）：她投身抗日宣传与妇女工作，1940年5月牺牲，年仅20岁。",
+    "exhibitsAndSiteMeaning": "主体建筑以五角星为构图意象；公开资料解释，外部18根立柱与建筑主体共同寓意当时淮北地区19个抗日民主根据地。序厅人物雕像、历史图片、文献和实物共同说明根据地的组织、军政与群众基础。",
+    "spiritualLegacy": "根据地史呈现了在艰难环境中依靠群众、坚持团结抗战与建设民主政权的实践，也让牺牲者的选择与普通民众的参与进入同一条历史叙事。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "我们最受触动的是，宏大的根据地历史并不只由战役构成，也由宣传、教育、妇女工作和日常组织一点点托起。面对展厅里的名字与年龄，我们更愿意把“人民”理解为具体的人，以及彼此守望的行动。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "sihong-jswm-2021",
+        "sihong-jsmzt-2021"
+      ],
+      "address": [
+        "sihong-jswm-2021"
+      ],
+      "opening": [
+        "sihong-jswm-2021"
+      ],
+      "reservation": [
+        "sihong-jswm-2021"
+      ],
+      "visitNotice": [
+        "sihong-jswm-2021"
+      ],
+      "history": [
+        "sihong-jswm-2021",
+        "sihong-jsmzt-2021"
+      ],
+      "people": [
+        "sihong-jswm-2021",
+        "sihong-jsmzt-2021"
+      ],
+      "exhibits": [
+        "sihong-jswm-2021",
+        "sihong-jsmzt-2021"
+      ],
+      "spirit": [
+        "sihong-jswm-2021",
+        "sihong-jsmzt-2021"
+      ]
+    },
+    "sources": [
+      {
+        "id": "sihong-jswm-2021",
+        "sourceType": "authoritative-web",
+        "label": "淮北抗日民主根据地纪念馆",
+        "title": "淮北抗日民主根据地纪念馆",
+        "publisher": "江苏文明网（来源：江苏省党史教育基地电子地图）",
+        "url": "https://wm.jschina.com.cn/zt2021/txxd/dsjyjd/sq/202103/t20210322_7019481.shtml",
+        "accessedAt": "2026-08-22",
+        "authorityType": "authoritative-memorial",
+        "supports": [
+          "officialName",
+          "address",
+          "opening",
+          "reservation",
+          "visitNotice",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-09-30"
+        }
+      },
+      {
+        "id": "sihong-jsmzt-2021",
+        "sourceType": "authoritative-web",
+        "label": "淮北抗日民主根据地纪念馆",
+        "title": "淮北抗日民主根据地纪念馆",
+        "publisher": "江苏省民政厅（来源：泗洪县民政局）",
+        "url": "https://mzt.jiangsu.gov.cn/art/2021/6/3/art_82393_9838826.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "officialName",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ]
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021",
+            "sihong-jsmzt-2021"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021",
+            "sihong-jsmzt-2021"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021",
+            "sihong-jsmzt-2021"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021",
+            "sihong-jsmzt-2021"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "sihong-jswm-2021",
+            "sihong-jsmzt-2021"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": [
+        {
+          "sourceType": "local-document",
+          "documentPath": "Videos/淮北抗日民主根据地纪念馆/淮北抗日民主根据地纪念馆——文案文档/淮北抗日民主根据地纪念馆.docx",
+          "supports": [
+            "reservation",
+            "visitNotice"
+          ],
+          "note": "采用文档中的身份证或电子身份证现场登记、禁止闪光灯和保持安静等信息。"
+        }
+      ]
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 128044,
+      "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
+      "digestRef": "sha256:c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/sihong-memorial/v1/hero/sihong-memorial-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+        "alt": "阴云下，一座顶部带红色造型和金色五角星的高大纪念碑立于广场中央。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 128044,
+          "sha256": "c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
+          "digestRef": "sha256:c952c99aa5cd8d15562c674972477d1a4f1e8fed502ab85ce8abb1b94425afd3",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+        "alt": "展厅内四尊深色人物雕塑站在红色隔离带后，背景墙陈列图文展板。",
+        "sequence": 2,
+        "asset": {
+          "objectPath": "media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 413718,
+          "sha256": "bf733491ac6684944711615ce6472568a6ce22bab4a6e5cb7f036a24752b7058",
+          "digestRef": "sha256:bf733491ac6684944711615ce6472568a6ce22bab4a6e5cb7f036a24752b7058",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+      "poster": "/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+      "captions": "/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 13385832,
+        "sha256": "f39e8ffb19f3b5cd59ff14390fcd65e9686d4af2db8078ebe92d963322776785",
+        "digestRef": "sha256:f39e8ffb19f3b5cd59ff14390fcd65e9686d4af2db8078ebe92d963322776785",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 115600,
+        "sha256": "75e032428da8ab8de0a2d0db6e344a6dbc5d0308237a3d849fa002f9a46b25c0",
+        "digestRef": "sha256:75e032428da8ab8de0a2d0db6e344a6dbc5d0308237a3d849fa002f9a46b25c0",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 1325,
+        "sha256": "39be16c27880a17114db49f53d8580041fd0d3ca50134a90f1b9905fdd2cd2ec",
+        "digestRef": "sha256:39be16c27880a17114db49f53d8580041fd0d3ca50134a90f1b9905fdd2cd2ec",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": null,
+        "acceptedAt": null
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/sihong-memorial/v1/video/sihong-memorial-video.mp4",
+        "poster": "/media/sites/sihong-memorial/v1/poster/sihong-memorial-video-poster.webp",
+        "captions": "/media/sites/sihong-memorial/v1/captions/sihong-memorial-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-01.webp",
+        "alt": "阴云下，一座顶部带红色造型和金色五角星的高大纪念碑立于广场中央。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihong-memorial/v1/photos/sihong-memorial-photo-02.webp",
+        "alt": "展厅内四尊深色人物雕塑站在红色隔离带后，背景墙陈列图文展板。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "yuhuatai-martyrs",
+    "officialName": "雨花台烈士陵园",
+    "shortName": "雨花台烈士陵园",
+    "province": "江苏省",
+    "city": "南京市",
+    "district": "雨花台区",
+    "address": "江苏省南京市雨花台区雨花路215号",
+    "coordinates": {
+      "lat": 31.998425,
+      "lng": 118.780177
+    },
+    "opening": "烈士纪念馆星期二至星期日8:30开放，16:00停止入馆，17:00闭馆；星期一闭馆，法定节假日除外。",
+    "reservation": "个人参观免费、无需预约；团队讲解可通过“雨花台景区预约小程序”预约，具体以官方预约服务页为准。",
+    "visitNotice": "入馆须接受安全检查；请勿携带大型行李及危险物品，展厅内禁止吸烟、饮食和触摸展品。需要讲解的团队应按预约时段到场。",
+    "officialTitle": "雨花台烈士陵园",
+    "history": "1926年至1949年间，许多共产党人和爱国志士在雨花台牺牲。新中国成立后，这里陆续建设纪念设施，形成以烈士纪念馆、烈士纪念碑、忠魂亭和烈士群雕等组成的纪念空间。",
+    "people": "基本陈列以179位烈士的生平事迹为重点，恽代英、邓中夏、罗登贤等革命者的姓名与选择构成重要线索。他们来自不同地区、从事不同革命工作，却都在新民主主义革命时期把个人生命同民族和人民的命运联系起来。",
+    "spirit": "雨花英烈史所传递的，是对理想信念的坚守、面对压迫时的担当，以及把个人选择置于民族解放和人民幸福之中的价值取向。",
+    "reflection": "沿着陵园主轴前行时，我们感到数字会变成重量：每一位烈士都有家庭、职业和未完成的人生。纪念的意义，不只是仰望丰碑，也是在日常判断中守住诚实、责任与对他人的关切。",
+    "heroImage": "/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "江苏省南京市雨花台区雨花路215号",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "烈士纪念馆星期二至星期日8:30开放，16:00停止入馆，17:00闭馆；星期一闭馆，法定节假日除外。",
+      "reservation": "个人参观免费、无需预约；团队讲解可通过“雨花台景区预约小程序”预约，具体以官方预约服务页为准。",
+      "visitNotice": "入馆须接受安全检查；请勿携带大型行李及危险物品，展厅内禁止吸烟、饮食和触摸展品。需要讲解的团队应按预约时段到场。"
+    },
+    "historicalImprint": "1926年至1949年间，许多共产党人和爱国志士在雨花台牺牲。新中国成立后，这里陆续建设纪念设施，形成以烈士纪念馆、烈士纪念碑、忠魂亭和烈士群雕等组成的纪念空间。",
+    "peopleStories": "基本陈列以179位烈士的生平事迹为重点，恽代英、邓中夏、罗登贤等革命者的姓名与选择构成重要线索。他们来自不同地区、从事不同革命工作，却都在新民主主义革命时期把个人生命同民族和人民的命运联系起来。",
+    "exhibitsAndSiteMeaning": "烈士纪念碑与大型烈士群雕把个体牺牲转化为公共记忆；纪念馆以档案、遗物、图片等展项还原人物经历。群雕以不同身份的烈士形象表现共同理想，纪念碑则成为陵园主轴上的精神标识。",
+    "spiritualLegacy": "雨花英烈史所传递的，是对理想信念的坚守、面对压迫时的担当，以及把个人选择置于民族解放和人民幸福之中的价值取向。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "沿着陵园主轴前行时，我们感到数字会变成重量：每一位烈士都有家庭、职业和未完成的人生。纪念的意义，不只是仰望丰碑，也是在日常判断中守住诚实、责任与对他人的关切。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "yuhuatai-rednanjing-2025"
+      ],
+      "address": [
+        "yuhuatai-rednanjing-2025"
+      ],
+      "opening": [
+        "yuhuatai-official-visit"
+      ],
+      "reservation": [
+        "yuhuatai-official-visit"
+      ],
+      "visitNotice": [
+        "yuhuatai-official-visit"
+      ],
+      "history": [
+        "yuhuatai-rednanjing-2025"
+      ],
+      "people": [
+        "yuhuatai-rednanjing-2025"
+      ],
+      "exhibits": [
+        "yuhuatai-rednanjing-2025"
+      ],
+      "spirit": [
+        "yuhuatai-rednanjing-2025"
+      ]
+    },
+    "sources": [
+      {
+        "id": "yuhuatai-official-visit",
+        "sourceType": "authoritative-web",
+        "label": "预约服务",
+        "title": "预约服务",
+        "publisher": "南京市雨花台烈士陵园管理局",
+        "url": "https://yht.nanjing.gov.cn/yqdl/yyfw/",
+        "accessedAt": "2026-08-22",
+        "authorityType": "venue-official",
+        "supports": [
+          "opening",
+          "reservation",
+          "visitNotice"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-11-20"
+        }
+      },
+      {
+        "id": "yuhuatai-rednanjing-2025",
+        "sourceType": "authoritative-web",
+        "label": "雨花台烈士陵园",
+        "title": "雨花台烈士陵园",
+        "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局",
+        "url": "https://yht.nanjing.gov.cn/rednanjing/hszxmap/202506/t20250611_5583622.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "authoritative-memorial",
+        "supports": [
+          "officialName",
+          "address",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ]
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-rednanjing-2025"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-rednanjing-2025"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-official-visit"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-official-visit"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-official-visit"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-rednanjing-2025"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-rednanjing-2025"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-rednanjing-2025"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "yuhuatai-rednanjing-2025"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-11-20"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": []
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 147016,
+      "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
+      "digestRef": "sha256:20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/yuhuatai-martyrs/v1/hero/yuhuatai-martyrs-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+        "alt": "灰色高塔式纪念碑前立有一尊深色人物雕塑，周围环绕树木与开阔广场。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 147016,
+          "sha256": "20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
+          "digestRef": "sha256:20cfccd1221156b0350eb18df09655dc8f0e05cc4ea712b8ebe675ee0d8c14b0",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+        "alt": "宽阔石阶尽头立有一组多人石雕，背景是茂密树木。",
+        "sequence": 2,
+        "asset": {
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 494198,
+          "sha256": "88178acd2c9fa6b95dfe1e2989d958de28f30ace19e950e0c599a2f51a706bec",
+          "digestRef": "sha256:88178acd2c9fa6b95dfe1e2989d958de28f30ace19e950e0c599a2f51a706bec",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+        "alt": "展厅墙面排列多幅黑白人物照片和说明牌，下方设有小型展柜。",
+        "sequence": 3,
+        "asset": {
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 182064,
+          "sha256": "429dd363db086056312bb7d154bfabf5667db7fdbe2d640f286eb94e30a9e93a",
+          "digestRef": "sha256:429dd363db086056312bb7d154bfabf5667db7fdbe2d640f286eb94e30a9e93a",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+        "alt": "室内展板上有金色标志、红色立体大字以及中英文说明文字。",
+        "sequence": 4,
+        "asset": {
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 193684,
+          "sha256": "ffc65792b6964f5f899d92f482cdf3eed4bf1fc28aef34a2fe8b84ab366f579a",
+          "digestRef": "sha256:ffc65792b6964f5f899d92f482cdf3eed4bf1fc28aef34a2fe8b84ab366f579a",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+        "alt": "红色墙面上方设有金色标志，下方排列多组金色文字。",
+        "sequence": 5,
+        "asset": {
+          "objectPath": "media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 79508,
+          "sha256": "5866202dd080261dd1fab8b8de81dbd3331ea82c38a435ef14c4c34fe4d46f3d",
+          "digestRef": "sha256:5866202dd080261dd1fab8b8de81dbd3331ea82c38a435ef14c4c34fe4d46f3d",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+      "poster": "/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+      "captions": "/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 12390860,
+        "sha256": "24fc1ba5d1a48be6c8469e3fdb4adbf7ef902579503562c1423d4d0193e1f985",
+        "digestRef": "sha256:24fc1ba5d1a48be6c8469e3fdb4adbf7ef902579503562c1423d4d0193e1f985",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 336864,
+        "sha256": "0f1ed43d76d990fd1d61a8c2448d7a42dc26edd8a1737b6ee9ff842e926e3852",
+        "digestRef": "sha256:0f1ed43d76d990fd1d61a8c2448d7a42dc26edd8a1737b6ee9ff842e926e3852",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 810,
+        "sha256": "94bf0f8b1a7d7385e27d8b30c876bc4b24d6ba543e5f8a2f5a971e5b92ea0b6d",
+        "digestRef": "sha256:94bf0f8b1a7d7385e27d8b30c876bc4b24d6ba543e5f8a2f5a971e5b92ea0b6d",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": true,
+        "aiWatermarkAccepted": true,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": "项目方",
+        "acceptedAt": "2026-08-21"
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/yuhuatai-martyrs/v1/video/yuhuatai-martyrs-video.mp4",
+        "poster": "/media/sites/yuhuatai-martyrs/v1/poster/yuhuatai-martyrs-video-poster.webp",
+        "captions": "/media/sites/yuhuatai-martyrs/v1/captions/yuhuatai-martyrs-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-01.webp",
+        "alt": "灰色高塔式纪念碑前立有一尊深色人物雕塑，周围环绕树木与开阔广场。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-02.webp",
+        "alt": "宽阔石阶尽头立有一组多人石雕，背景是茂密树木。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-03.webp",
+        "alt": "展厅墙面排列多幅黑白人物照片和说明牌，下方设有小型展柜。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-04.webp",
+        "alt": "室内展板上有金色标志、红色立体大字以及中英文说明文字。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/yuhuatai-martyrs/v1/photos/yuhuatai-martyrs-photo-05.webp",
+        "alt": "红色墙面上方设有金色标志，下方排列多组金色文字。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "dujiang-victory",
+    "officialName": "渡江胜利纪念馆",
+    "shortName": "渡江胜利纪念馆",
+    "province": "江苏省",
+    "city": "南京市",
+    "district": "鼓楼区",
+    "address": "江苏省南京市鼓楼区渡江路1号",
+    "coordinates": {
+      "lat": 32.073563,
+      "lng": 118.73173
+    },
+    "opening": "星期二至星期日9:00—17:00开放，16:30停止入馆；星期一闭馆。",
+    "reservation": "实行实名线上免费预约参观，观众应通过场馆官方预约渠道提交实名信息。",
+    "visitNotice": "场馆内禁止喧哗，请勿触摸展品；衣冠整洁，文明参观。",
+    "officialTitle": "渡江胜利纪念馆",
+    "history": "渡江战役于1949年4月进入决定性阶段。人民解放军突破长江防线，4月23日南京解放；纪念馆以战役部署、百万雄师过大江和南京解放等内容串联这段历史。原纪念馆1984年建成，现馆于2009年开放。",
+    "people": "馆前总前委群像从左至右表现粟裕、邓小平、刘伯承、陈毅、谭震林五位成员，提示参观者理解战役的组织与指挥体系；展陈同时讲述渡江船工、支前群众和普通官兵的共同参与。",
+    "spirit": "渡江胜利既来自战略决断与部队执行，也离不开人民支前。展陈由此把坚定信念、军民团结、勇于胜利和持续奋斗联系起来。",
+    "reflection": "站在长江边再看“渡江”，我们的感受从课本中的箭头变成了水流、船只和人的选择。胜利并非抽象结果，而是许多岗位协作后的共同抵达；这也提醒我们，今天的团队工作同样需要方向、执行与彼此信任。",
+    "heroImage": "/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "江苏省南京市鼓楼区渡江路1号",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "星期二至星期日9:00—17:00开放，16:30停止入馆；星期一闭馆。",
+      "reservation": "实行实名线上免费预约参观，观众应通过场馆官方预约渠道提交实名信息。",
+      "visitNotice": "场馆内禁止喧哗，请勿触摸展品；衣冠整洁，文明参观。"
+    },
+    "historicalImprint": "渡江战役于1949年4月进入决定性阶段。人民解放军突破长江防线，4月23日南京解放；纪念馆以战役部署、百万雄师过大江和南京解放等内容串联这段历史。原纪念馆1984年建成，现馆于2009年开放。",
+    "peopleStories": "馆前总前委群像从左至右表现粟裕、邓小平、刘伯承、陈毅、谭震林五位成员，提示参观者理解战役的组织与指挥体系；展陈同时讲述渡江船工、支前群众和普通官兵的共同参与。",
+    "exhibitsAndSiteMeaning": "“京电号”小火轮是渡江战役与南京解放的重要见证。馆区胜利广场上的红色风帆造型象征渡江之势，49.423米长的水景被解释为指向1949年4月23日南京解放这一日期。",
+    "spiritualLegacy": "渡江胜利既来自战略决断与部队执行，也离不开人民支前。展陈由此把坚定信念、军民团结、勇于胜利和持续奋斗联系起来。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "站在长江边再看“渡江”，我们的感受从课本中的箭头变成了水流、船只和人的选择。胜利并非抽象结果，而是许多岗位协作后的共同抵达；这也提醒我们，今天的团队工作同样需要方向、执行与彼此信任。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "dujiang-rednanjing-2025",
+        "dujiang-nanjing-wlt-2018"
+      ],
+      "address": [
+        "dujiang-rednanjing-2025",
+        "dujiang-nanjing-wlt-2018"
+      ],
+      "opening": [
+        "dujiang-nanjing-wlt-2018"
+      ],
+      "reservation": [
+        "dujiang-rednanjing-2025",
+        "dujiang-nanjing-wlt-2018"
+      ],
+      "visitNotice": [
+        "dujiang-rednanjing-2025",
+        "dujiang-nanjing-wlt-2018"
+      ],
+      "history": [
+        "dujiang-rednanjing-2025"
+      ],
+      "people": [
+        "dujiang-rednanjing-2025"
+      ],
+      "exhibits": [
+        "dujiang-rednanjing-2025"
+      ],
+      "spirit": [
+        "dujiang-rednanjing-2025"
+      ]
+    },
+    "sources": [
+      {
+        "id": "dujiang-rednanjing-2025",
+        "sourceType": "authoritative-web",
+        "label": "渡江胜利纪念馆",
+        "title": "渡江胜利纪念馆",
+        "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局",
+        "url": "https://yht.nanjing.gov.cn/rednanjing/hszxmap/202506/t20250611_5583639.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "authoritative-memorial",
+        "supports": [
+          "officialName",
+          "address",
+          "reservation",
+          "visitNotice",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-11-20"
+        }
+      },
+      {
+        "id": "dujiang-nanjing-wlt-2018",
+        "sourceType": "authoritative-web",
+        "label": "渡江胜利纪念馆",
+        "title": "渡江胜利纪念馆",
+        "publisher": "南京市文化和旅游局",
+        "url": "https://wlj.nanjing.gov.cn/whcg/bwg/njsdjsljng/201807/t20180731_1078648.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "culture-tourism",
+        "supports": [
+          "officialName",
+          "address",
+          "opening",
+          "reservation",
+          "visitNotice"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-09-30"
+        }
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025",
+            "dujiang-nanjing-wlt-2018"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025",
+            "dujiang-nanjing-wlt-2018"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-nanjing-wlt-2018"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025",
+            "dujiang-nanjing-wlt-2018"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025",
+            "dujiang-nanjing-wlt-2018"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "dujiang-rednanjing-2025"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": [
+        {
+          "sourceType": "local-document",
+          "documentPath": "Videos/渡江胜利纪念馆/正文文案.doc",
+          "supports": [
+            "opening",
+            "reservation",
+            "visitNotice"
+          ],
+          "note": "采用文档中的开放时段、实名线上免费预约和文明参观提示。"
+        }
+      ]
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 358872,
+      "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
+      "digestRef": "sha256:d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/dujiang-victory/v1/hero/dujiang-victory-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+        "alt": "蓝天下，红褐色纪念馆外墙写有金色馆名，参观者沿入口坡道行走。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 358872,
+          "sha256": "d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
+          "digestRef": "sha256:d66fa1726b0e93d0bf94f376f6a2643d3e720f558ac784b504ceae34a520493b",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+        "alt": "广场上红色折面构筑物向上展开，旗杆立于中央，远处可见高层建筑。",
+        "sequence": 2,
+        "asset": {
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 223632,
+          "sha256": "536c57b5166c52dc7850558812c4befc49ad17a8c71fe19da2c4ae9496d0b45e",
+          "digestRef": "sha256:536c57b5166c52dc7850558812c4befc49ad17a8c71fe19da2c4ae9496d0b45e",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+        "alt": "玻璃展柜内分层陈列多件长短不一的深色枪械状展品。",
+        "sequence": 3,
+        "asset": {
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 116348,
+          "sha256": "276e4b5fe0ac7803a3d71f366ca84b34d53532c21fa66a46112f39981d8d60ad",
+          "digestRef": "sha256:276e4b5fe0ac7803a3d71f366ca84b34d53532c21fa66a46112f39981d8d60ad",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+        "alt": "玻璃展柜内陈列一件棕色长外套、带星形标记的帽子、黑白照片和皮质文件夹。",
+        "sequence": 4,
+        "asset": {
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 133964,
+          "sha256": "3dc05fb3ebf798d67f8400ae65feb3f42942735b81c4c6e6467206206550d411",
+          "digestRef": "sha256:3dc05fb3ebf798d67f8400ae65feb3f42942735b81c4c6e6467206206550d411",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+        "alt": "展柜内陈列浅色布衣、编织鞋、成卷织物和棕色挎包。",
+        "sequence": 5,
+        "asset": {
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 226114,
+          "sha256": "5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7",
+          "digestRef": "sha256:5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+      "poster": "/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+      "captions": "/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 13803265,
+        "sha256": "dd82aa6c72d717c7485b4a20145240995a5a73ca5856b38c05d48a18c98e3ed9",
+        "digestRef": "sha256:dd82aa6c72d717c7485b4a20145240995a5a73ca5856b38c05d48a18c98e3ed9",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 81418,
+        "sha256": "d1036384ccff22054be94faeef292c7fb3de8437b9d0744440adaf7c0195e823",
+        "digestRef": "sha256:d1036384ccff22054be94faeef292c7fb3de8437b9d0744440adaf7c0195e823",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 799,
+        "sha256": "a31674c1cba65cbd1693a5d61b8c45e3c9ef4455a45abec6e39ce9b9cbf12463",
+        "digestRef": "sha256:a31674c1cba65cbd1693a5d61b8c45e3c9ef4455a45abec6e39ce9b9cbf12463",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": null,
+        "acceptedAt": null
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
+        "poster": "/media/sites/dujiang-victory/v1/poster/dujiang-victory-video-poster.webp",
+        "captions": "/media/sites/dujiang-victory/v1/captions/dujiang-victory-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-01.webp",
+        "alt": "蓝天下，红褐色纪念馆外墙写有金色馆名，参观者沿入口坡道行走。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-02.webp",
+        "alt": "广场上红色折面构筑物向上展开，旗杆立于中央，远处可见高层建筑。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-03.webp",
+        "alt": "玻璃展柜内分层陈列多件长短不一的深色枪械状展品。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-04.webp",
+        "alt": "玻璃展柜内陈列一件棕色长外套、带星形标记的帽子、黑白照片和皮质文件夹。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-05.webp",
+        "alt": "展柜内陈列浅色布衣、编织鞋、成卷织物和棕色挎包。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "sihang-warehouse",
+    "officialName": "上海四行仓库抗战纪念馆",
+    "shortName": "四行仓库抗战纪念馆",
+    "province": "上海市",
+    "city": "上海市",
+    "district": "静安区",
+    "address": "上海市静安区光复路21号",
+    "coordinates": {
+      "lat": 31.24034,
+      "lng": 121.471104
+    },
+    "opening": "星期二至星期日9:00—16:30开放，16:00停止入场；星期一闭馆，国定假日另行公告。",
+    "reservation": "个人参观免费、无需预约；团队接待和讲解服务按纪念馆官方渠道公布的规则办理。",
+    "visitNotice": "建议为安检和参观动线预留时间；节假日、专题活动及临时调整以纪念馆或上海市文化和旅游局最新公告为准。",
+    "officialTitle": "上海四行仓库抗战纪念馆",
+    "history": "1937年淞沪会战后期，国民革命军第88师262旅524团第1营官兵奉命坚守四行仓库。谢晋元率部从10月26日夜进入仓库，至10月31日凌晨撤离，以四昼夜守卫牵制日军并向中外社会展示中国军民坚持抗战的决心。",
+    "people": "谢晋元时任第524团团附，是四行仓库守军指挥者。公开权威资料记载实际守军420余人；“八百壮士”是当时对外使用、并延续至今的历史称谓。年轻官兵的家书与个人经历，使群体称号重新落到具体生命上。",
+    "spirit": "四行仓库保卫战体现了民族危亡时的责任、勇气与牺牲。今天理解这种精神，也需要同时尊重史实细节：既记住“八百壮士”的公共记忆，也辨明420余名守军的历史记录。",
+    "reflection": "隔着苏州河看仓库，我们意识到历史现场与现代城市只隔着很短的距离。西墙上的痕迹没有替我们下结论，却让“守住”这个词变得具体：人在局势最困难时，仍能选择承担自己的位置。",
+    "heroImage": "/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "上海市静安区光复路21号",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "星期二至星期日9:00—16:30开放，16:00停止入场；星期一闭馆，国定假日另行公告。",
+      "reservation": "个人参观免费、无需预约；团队接待和讲解服务按纪念馆官方渠道公布的规则办理。",
+      "visitNotice": "建议为安检和参观动线预留时间；节假日、专题活动及临时调整以纪念馆或上海市文化和旅游局最新公告为准。"
+    },
+    "historicalImprint": "1937年淞沪会战后期，国民革命军第88师262旅524团第1营官兵奉命坚守四行仓库。谢晋元率部从10月26日夜进入仓库，至10月31日凌晨撤离，以四昼夜守卫牵制日军并向中外社会展示中国军民坚持抗战的决心。",
+    "peopleStories": "谢晋元时任第524团团附，是四行仓库守军指挥者。公开权威资料记载实际守军420余人；“八百壮士”是当时对外使用、并延续至今的历史称谓。年轻官兵的家书与个人经历，使群体称号重新落到具体生命上。",
+    "exhibitsAndSiteMeaning": "纪念馆利用仓库旧址空间，通过家书、历史照片、实物、沙盘与场景复原叙述守卫战。西墙保留的弹孔与破损痕迹，使建筑本身成为战争证据，也把城市街区与全民抗战记忆连接起来。",
+    "spiritualLegacy": "四行仓库保卫战体现了民族危亡时的责任、勇气与牺牲。今天理解这种精神，也需要同时尊重史实细节：既记住“八百壮士”的公共记忆，也辨明420余名守军的历史记录。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "隔着苏州河看仓库，我们意识到历史现场与现代城市只隔着很短的距离。西墙上的痕迹没有替我们下结论，却让“守住”这个词变得具体：人在局势最困难时，仍能选择承担自己的位置。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "sihang-shanghai-wlj-2026"
+      ],
+      "address": [
+        "sihang-shanghai-wlj-2026"
+      ],
+      "opening": [
+        "sihang-shanghai-wlj-2026"
+      ],
+      "reservation": [
+        "sihang-shanghai-wlj-2026"
+      ],
+      "visitNotice": [
+        "sihang-shanghai-wlj-2026"
+      ],
+      "history": [
+        "sihang-shanghai-wlj-2026",
+        "sihang-people-daily-2025"
+      ],
+      "people": [
+        "sihang-shanghai-wlj-2026",
+        "sihang-people-daily-2025"
+      ],
+      "exhibits": [
+        "sihang-shanghai-wlj-2026"
+      ],
+      "spirit": [
+        "sihang-shanghai-wlj-2026",
+        "sihang-people-daily-2025"
+      ]
+    },
+    "sources": [
+      {
+        "id": "sihang-shanghai-wlj-2026",
+        "sourceType": "authoritative-web",
+        "label": "上海四行仓库抗战纪念馆迎来第800万名参观者",
+        "title": "上海四行仓库抗战纪念馆迎来第800万名参观者",
+        "publisher": "上海市文化和旅游局（来源：上海静安）",
+        "url": "https://whlyj.sh.gov.cn/gqfc/20260506/5fab99c9b7364ab8839d4288fa5db12f.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "culture-tourism",
+        "supports": [
+          "officialName",
+          "address",
+          "opening",
+          "reservation",
+          "visitNotice",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-11-20"
+        }
+      },
+      {
+        "id": "sihang-people-daily-2025",
+        "sourceType": "authoritative-web",
+        "label": "那年，英雄正年轻",
+        "title": "那年，英雄正年轻",
+        "publisher": "人民日报",
+        "url": "https://paper.people.com.cn/rmrb/pad/content/202504/04/content_30065781.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "history",
+          "people",
+          "spirit"
+        ]
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026",
+            "sihang-people-daily-2025"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026",
+            "sihang-people-daily-2025"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "sihang-shanghai-wlj-2026",
+            "sihang-people-daily-2025"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-11-20"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": []
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 373300,
+      "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
+      "digestRef": "sha256:0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/sihang-warehouse/v1/hero/sihang-warehouse-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+        "alt": "蓝天下布满孔洞与砖面缺损的灰色墙体，前方有参观者和纪念馆字样。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 373300,
+          "sha256": "0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
+          "digestRef": "sha256:0ff4927261e28298e80789443de23373152d9dc656b685a6b1872698be25f2f8",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+        "alt": "展厅内悬挂多份中外文报纸样式展品，前方陈列一台黑色机械装置。",
+        "sequence": 2,
+        "asset": {
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 339784,
+          "sha256": "c3e75cc3375e7ae2cd0adbb42e5526490e469d3e9b170fbb07055a5a155fb268",
+          "digestRef": "sha256:c3e75cc3375e7ae2cd0adbb42e5526490e469d3e9b170fbb07055a5a155fb268",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+        "alt": "展墙由大量写有姓名、编制文字和“88D”标记的长方形牌块组成。",
+        "sequence": 3,
+        "asset": {
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 474878,
+          "sha256": "8734bad2dd5b3c9b319b06fb3b4b54d2ff18b7b13c1cd2d64bf05108dc03ce7f",
+          "digestRef": "sha256:8734bad2dd5b3c9b319b06fb3b4b54d2ff18b7b13c1cd2d64bf05108dc03ce7f",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+        "alt": "两尊深色人物塑像俯身查看桌上地图，背景陈列报纸与说明牌。",
+        "sequence": 4,
+        "asset": {
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 235596,
+          "sha256": "bfb790fd7d5e114cdfcdcaecd084a76c3affcfaae5ca137f879742195cff9255",
+          "digestRef": "sha256:bfb790fd7d5e114cdfcdcaecd084a76c3affcfaae5ca137f879742195cff9255",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+        "alt": "展陈场景中，多个人物模型在带有铆钉的金属门洞旁搬举挡板。",
+        "sequence": 5,
+        "asset": {
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 276624,
+          "sha256": "7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0",
+          "digestRef": "sha256:7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+      "poster": "/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+      "captions": "/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 10163744,
+        "sha256": "973c025e1141f3e5eca57cb4ae7a62fe810b6e8d939e7aff3ab0ed0bdd78f1e5",
+        "digestRef": "sha256:973c025e1141f3e5eca57cb4ae7a62fe810b6e8d939e7aff3ab0ed0bdd78f1e5",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 270306,
+        "sha256": "a49156b10ffc929d17bc459cb3201a4eccd3c415a51f3a5809fcdc3e8ab1e994",
+        "digestRef": "sha256:a49156b10ffc929d17bc459cb3201a4eccd3c415a51f3a5809fcdc3e8ab1e994",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 820,
+        "sha256": "2437d72e44a818f9bd414dc91aaef6bb103c8ace25803132035b781d14cd740b",
+        "digestRef": "sha256:2437d72e44a818f9bd414dc91aaef6bb103c8ace25803132035b781d14cd740b",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": null,
+        "acceptedAt": null
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
+        "poster": "/media/sites/sihang-warehouse/v1/poster/sihang-warehouse-video-poster.webp",
+        "captions": "/media/sites/sihang-warehouse/v1/captions/sihang-warehouse-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-01.webp",
+        "alt": "蓝天下布满孔洞与砖面缺损的灰色墙体，前方有参观者和纪念馆字样。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-02.webp",
+        "alt": "展厅内悬挂多份中外文报纸样式展品，前方陈列一台黑色机械装置。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-03.webp",
+        "alt": "展墙由大量写有姓名、编制文字和“88D”标记的长方形牌块组成。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-04.webp",
+        "alt": "两尊深色人物塑像俯身查看桌上地图，背景陈列报纸与说明牌。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-05.webp",
+        "alt": "展陈场景中，多个人物模型在带有铆钉的金属门洞旁搬举挡板。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "cpc-first-congress",
+    "officialName": "中国共产党第一次全国代表大会纪念馆",
+    "shortName": "中共一大纪念馆",
+    "province": "上海市",
+    "city": "上海市",
+    "district": "黄浦区",
+    "address": "上海市黄浦区黄陂南路374号",
+    "coordinates": {
+      "lat": 31.220104,
+      "lng": 121.475407
+    },
+    "opening": "常规开放时间为星期二至星期日9:00—17:00，16:30停止入场，星期一闭馆（法定节假日除外）。2026年7月20日至8月31日实行暑期延时服务，期间星期一正常开放；之后恢复常规安排。",
+    "reservation": "截至2026年8月22日，个人观众免费、免预约入馆；团队讲解等服务按纪念馆官网预约入口办理。",
+    "visitNotice": "参观入口使用黄陂南路374号；红星地图点位继续标注会址兴业路76号。入馆须接受安全检查，禁止携带危险品，暑期及节假日安排以官网和官方微信公众号最新公告为准。",
+    "officialTitle": "中国共产党第一次全国代表大会纪念馆",
+    "history": "1921年7月23日，中国共产党第一次全国代表大会在上海法租界望志路106号（今兴业路76号）开幕，最后一天会议转移到浙江嘉兴南湖的游船上举行。大会通过中国共产党第一个纲领和决议，选举产生中央局，宣告中国共产党成立。",
+    "people": "出席大会的代表来自各地早期共产党组织，代表全国50多名党员。毛泽东、董必武、李达等代表的经历，连接起各地早期组织与全国性政党的创建；会址中的人物叙事也提醒人们，这次会议是在严密风险下由一群青年推动完成的。",
+    "spirit": "中共一大所开启的历史进程，集中体现了坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民的建党精神。",
+    "reflection": "在繁忙街区中辨认会址与新馆入口，我们感到“出发点”既是地理位置，也是一次共同选择。对我们而言，纪念并不是复述熟悉结论，而是愿意回到原始材料，分清地址、时间和人物，让敬意建立在准确之上。",
+    "heroImage": "/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "上海市黄浦区兴业路76号",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "常规开放时间为星期二至星期日9:00—17:00，16:30停止入场，星期一闭馆（法定节假日除外）。2026年7月20日至8月31日实行暑期延时服务，期间星期一正常开放；之后恢复常规安排。",
+      "reservation": "截至2026年8月22日，个人观众免费、免预约入馆；团队讲解等服务按纪念馆官网预约入口办理。",
+      "visitNotice": "参观入口使用黄陂南路374号；红星地图点位继续标注会址兴业路76号。入馆须接受安全检查，禁止携带危险品，暑期及节假日安排以官网和官方微信公众号最新公告为准。"
+    },
+    "historicalImprint": "1921年7月23日，中国共产党第一次全国代表大会在上海法租界望志路106号（今兴业路76号）开幕，最后一天会议转移到浙江嘉兴南湖的游船上举行。大会通过中国共产党第一个纲领和决议，选举产生中央局，宣告中国共产党成立。",
+    "peopleStories": "出席大会的代表来自各地早期共产党组织，代表全国50多名党员。毛泽东、董必武、李达等代表的经历，连接起各地早期组织与全国性政党的创建；会址中的人物叙事也提醒人们，这次会议是在严密风险下由一群青年推动完成的。",
+    "exhibitsAndSiteMeaning": "纪念馆由中共一大会址、宣誓大厅和新建展馆等空间组成，馆藏文物、文献与历史图片用于呈现建党历程。兴业路76号是历史事件发生地，黄陂南路374号则是纪念馆当前面向观众的参观入口，两者承担不同的地图与到访功能。",
+    "spiritualLegacy": "中共一大所开启的历史进程，集中体现了坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民的建党精神。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "在繁忙街区中辨认会址与新馆入口，我们感到“出发点”既是地理位置，也是一次共同选择。对我们而言，纪念并不是复述熟悉结论，而是愿意回到原始材料，分清地址、时间和人物，让敬意建立在准确之上。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "cpc-first-official-home",
+        "cpc-first-shanghai-gov-2026"
+      ],
+      "address": [
+        "cpc-first-official-home",
+        "cpc-first-shanghai-gov-2026"
+      ],
+      "opening": [
+        "cpc-first-official-home",
+        "cpc-first-summer-2026"
+      ],
+      "reservation": [
+        "cpc-first-official-home",
+        "cpc-first-summer-2026"
+      ],
+      "visitNotice": [
+        "cpc-first-official-home",
+        "cpc-first-summer-2026"
+      ],
+      "history": [
+        "cpc-first-official-home",
+        "cpc-first-shanghai-gov-2026",
+        "cpc-first-mct-chronicle"
+      ],
+      "people": [
+        "cpc-first-mct-chronicle"
+      ],
+      "exhibits": [
+        "cpc-first-official-home",
+        "cpc-first-shanghai-gov-2026"
+      ],
+      "spirit": [
+        "cpc-first-official-home",
+        "cpc-first-shanghai-gov-2026",
+        "cpc-first-mct-chronicle"
+      ]
+    },
+    "sources": [
+      {
+        "id": "cpc-first-official-home",
+        "sourceType": "authoritative-web",
+        "label": "中共一大纪念馆",
+        "title": "中共一大纪念馆",
+        "publisher": "中国共产党第一次全国代表大会纪念馆",
+        "url": "https://www.yida1921.cn/",
+        "accessedAt": "2026-08-22",
+        "authorityType": "venue-official",
+        "supports": [
+          "officialName",
+          "address",
+          "opening",
+          "reservation",
+          "visitNotice",
+          "history",
+          "exhibits",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-08-31"
+        }
+      },
+      {
+        "id": "cpc-first-summer-2026",
+        "sourceType": "authoritative-web",
+        "label": "暑期不打烊！中共一大纪念馆2026年暑期周一正常开放",
+        "title": "暑期不打烊！中共一大纪念馆2026年暑期周一正常开放",
+        "publisher": "中国共产党第一次全国代表大会纪念馆（上海市文化和旅游局平台发布）",
+        "url": "https://cmp.whlyj.sh.gov.cn/CMP/news_view.ac?id=7ad94c64b3a4445798f8ca02d14c6393",
+        "accessedAt": "2026-08-22",
+        "authorityType": "venue-official",
+        "supports": [
+          "opening",
+          "reservation",
+          "visitNotice"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-08-31"
+        }
+      },
+      {
+        "id": "cpc-first-shanghai-gov-2026",
+        "sourceType": "authoritative-web",
+        "label": "中共一大纪念馆",
+        "title": "中共一大纪念馆",
+        "publisher": "上海市人民政府",
+        "url": "https://www.shanghai.gov.cn/hsly/20260625/10d0e931417d4614b0d8bbbbd03495c1.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "officialName",
+          "address",
+          "history",
+          "exhibits",
+          "spirit"
+        ]
+      },
+      {
+        "id": "cpc-first-mct-chronicle",
+        "sourceType": "authoritative-web",
+        "label": "中国共产党一百年大事记（1921年7月—2021年6月）",
+        "title": "中国共产党一百年大事记（1921年7月—2021年6月）",
+        "publisher": "中华人民共和国文化和旅游部",
+        "url": "https://www.mct.gov.cn/gtb/index.jsp?url=https%3A%2F%2Fwww.mct.gov.cn%2Fpreview%2Fspecial%2F9579%2F9585%2F202106%2Ft20210630_926083.htm",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "history",
+          "people",
+          "spirit"
+        ]
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-shanghai-gov-2026"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-shanghai-gov-2026"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-summer-2026"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-summer-2026"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-summer-2026"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-shanghai-gov-2026",
+            "cpc-first-mct-chronicle"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-mct-chronicle"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-shanghai-gov-2026"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "cpc-first-official-home",
+            "cpc-first-shanghai-gov-2026",
+            "cpc-first-mct-chronicle"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-08-31"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": []
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 368068,
+      "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
+      "digestRef": "sha256:363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/cpc-first-congress/v1/hero/cpc-first-congress-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+        "alt": "灰砖与红砖相间的建筑门面上，黑色双开门旁嵌有全国重点文物保护单位标志牌。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 368068,
+          "sha256": "363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
+          "digestRef": "sha256:363ecac7e15432be93b0afa096d2d44b711e8daf6dab7a4106570022cefa153b",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+        "alt": "两尊深色人物塑像并肩站立，其中一人举起右手，背景墙面投映有大字。",
+        "sequence": 2,
+        "asset": {
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 328386,
+          "sha256": "134a836a14602bfe3a3e6a5f8225ff21427bdd0ceeba24325e286f082d4cb3b7",
+          "digestRef": "sha256:134a836a14602bfe3a3e6a5f8225ff21427bdd0ceeba24325e286f082d4cb3b7",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+        "alt": "红色展柜前写有“主义的抉择”，背景悬挂多份报刊样式展品。",
+        "sequence": 3,
+        "asset": {
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 181186,
+          "sha256": "d5f8d58771998f1c28abee4bf7d3485a4d77b1eec3ee4360c64565b104ab3adb",
+          "digestRef": "sha256:d5f8d58771998f1c28abee4bf7d3485a4d77b1eec3ee4360c64565b104ab3adb",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+        "alt": "灯光照亮的城市沙盘前方铺展河道与建筑模型，后方墙面陈列多幅黑白图文。",
+        "sequence": 4,
+        "asset": {
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 384716,
+          "sha256": "630d1d7e362372357c1bf83aa7767e6b8555699f05466e6b6855df1b70785579",
+          "digestRef": "sha256:630d1d7e362372357c1bf83aa7767e6b8555699f05466e6b6855df1b70785579",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+        "alt": "多尊人物塑像围坐桌旁，红色背景墙陈列人物画像与说明牌。",
+        "sequence": 5,
+        "asset": {
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 257932,
+          "sha256": "5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82",
+          "digestRef": "sha256:5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+      "poster": "/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+      "captions": "/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 10451376,
+        "sha256": "5723c8ce331d448339e2ba1388f950cc20ef023abc84ff5a59fb3b4bda0f0758",
+        "digestRef": "sha256:5723c8ce331d448339e2ba1388f950cc20ef023abc84ff5a59fb3b4bda0f0758",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 198530,
+        "sha256": "0de077add9ef4596a3d1d4c928ee61e7ff6aeab32c3a6498a710cdda26bb8c83",
+        "digestRef": "sha256:0de077add9ef4596a3d1d4c928ee61e7ff6aeab32c3a6498a710cdda26bb8c83",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 807,
+        "sha256": "660646c85dd7a6fe3c505c5efd0761fb856de28d306e2322574f32e232044bb7",
+        "digestRef": "sha256:660646c85dd7a6fe3c505c5efd0761fb856de28d306e2322574f32e232044bb7",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": null,
+        "acceptedAt": null
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/cpc-first-congress/v1/video/cpc-first-congress-video.mp4",
+        "poster": "/media/sites/cpc-first-congress/v1/poster/cpc-first-congress-video-poster.webp",
+        "captions": "/media/sites/cpc-first-congress/v1/captions/cpc-first-congress-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-01.webp",
+        "alt": "灰砖与红砖相间的建筑门面上，黑色双开门旁嵌有全国重点文物保护单位标志牌。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-02.webp",
+        "alt": "两尊深色人物塑像并肩站立，其中一人举起右手，背景墙面投映有大字。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-03.webp",
+        "alt": "红色展柜前写有“主义的抉择”，背景悬挂多份报刊样式展品。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-04.webp",
+        "alt": "灯光照亮的城市沙盘前方铺展河道与建筑模型，后方墙面陈列多幅黑白图文。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-05.webp",
+        "alt": "多尊人物塑像围坐桌旁，红色背景墙陈列人物画像与说明牌。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "jiangshangqing-memorial",
+    "officialName": "江上青烈士史料陈列馆",
+    "shortName": "江上青烈士史料陈列馆",
+    "province": "江苏省",
+    "city": "扬州市",
+    "district": "广陵区",
+    "address": "江苏省扬州市广陵区旌忠巷33号平民中学旧址内",
+    "coordinates": {
+      "lat": 32.390314,
+      "lng": 119.434459
+    },
+    "opening": "星期二至星期日8:30—11:30、14:00—17:00开放，星期一闭馆。",
+    "reservation": "免费参观；团队接待或讲解需求可提前联系场馆。",
+    "visitNotice": "陈列馆位于百年学堂旧址内，请按现场动线文明参观并遵守文物保护要求。",
+    "officialTitle": "江上青烈士史料陈列馆",
+    "history": "陈列馆依托江上青曾任教的平民中学旧址布展。1935年至1937年，他在这里以教师身份开展救亡宣传；1938年后赴皖东北工作，1939年牺牲。展览按人生阶段呈现其投身革命与抗日救亡的历程。",
+    "people": "江上青（1911—1939）是中国共产党党员、抗日英烈。1929年加入中国共产党，后来从事宣传、统战和皖东北抗日根据地相关工作，1939年8月29日遇袭牺牲，年仅28岁。",
+    "spirit": "江上青短暂的一生体现了追求真理、投身救亡和忠于理想的选择。旧校址中的陈列也说明，教育、写作与组织工作同样可以成为救亡实践的一部分。",
+    "reflection": "二十八岁这个年龄让我们久久停留。与其把英烈塑造成遥远符号，我们更愿意看见一个青年怎样在教学、写作和组织工作中不断作出选择；这使“理想”不再是口号，而是持续承担的生活方式。",
+    "heroImage": "/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "江苏省扬州市广陵区旌忠巷33号平民中学旧址内",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "星期二至星期日8:30—11:30、14:00—17:00开放，星期一闭馆。",
+      "reservation": "免费参观；团队接待或讲解需求可提前联系场馆。",
+      "visitNotice": "陈列馆位于百年学堂旧址内，请按现场动线文明参观并遵守文物保护要求。"
+    },
+    "historicalImprint": "陈列馆依托江上青曾任教的平民中学旧址布展。1935年至1937年，他在这里以教师身份开展救亡宣传；1938年后赴皖东北工作，1939年牺牲。展览按人生阶段呈现其投身革命与抗日救亡的历程。",
+    "peopleStories": "江上青（1911—1939）是中国共产党党员、抗日英烈。1929年加入中国共产党，后来从事宣传、统战和皖东北抗日根据地相关工作，1939年8月29日遇袭牺牲，年仅28岁。",
+    "exhibitsAndSiteMeaning": "陈列馆以照片、文献和史料复原江上青学习、任教、从事革命工作的轨迹，七个主题部分将个人生命史与民族救亡背景相连接。设馆于平民中学旧址，使“教师”身份与抗日宣传实践具有可感知的空间依托。",
+    "spiritualLegacy": "江上青短暂的一生体现了追求真理、投身救亡和忠于理想的选择。旧校址中的陈列也说明，教育、写作与组织工作同样可以成为救亡实践的一部分。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "二十八岁这个年龄让我们久久停留。与其把英烈塑造成遥远符号，我们更愿意看见一个青年怎样在教学、写作和组织工作中不断作出选择；这使“理想”不再是口号，而是持续承担的生活方式。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "jiangshangqing-jswm-2021"
+      ],
+      "address": [
+        "jiangshangqing-jswm-2021",
+        "jiangshangqing-mod-2018"
+      ],
+      "opening": [
+        "jiangshangqing-jswm-2021"
+      ],
+      "reservation": [
+        "jiangshangqing-jswm-2021"
+      ],
+      "visitNotice": [
+        "jiangshangqing-jswm-2021"
+      ],
+      "history": [
+        "jiangshangqing-jswm-2021",
+        "jiangshangqing-mod-2018",
+        "jiangshangqing-jingde-gov"
+      ],
+      "people": [
+        "jiangshangqing-jswm-2021",
+        "jiangshangqing-mod-2018",
+        "jiangshangqing-jingde-gov"
+      ],
+      "exhibits": [
+        "jiangshangqing-jswm-2021",
+        "jiangshangqing-mod-2018"
+      ],
+      "spirit": [
+        "jiangshangqing-jswm-2021",
+        "jiangshangqing-mod-2018",
+        "jiangshangqing-jingde-gov"
+      ]
+    },
+    "sources": [
+      {
+        "id": "jiangshangqing-jswm-2021",
+        "sourceType": "authoritative-web",
+        "label": "江上青烈士史料陈列馆",
+        "title": "江上青烈士史料陈列馆",
+        "publisher": "江苏文明网（来源：江苏省党史教育基地电子地图）",
+        "url": "https://wm.jschina.com.cn/zt2021/txxd/dsjyjd/yz/202103/t20210323_7021003.shtml",
+        "accessedAt": "2026-08-22",
+        "authorityType": "authoritative-memorial",
+        "supports": [
+          "officialName",
+          "address",
+          "opening",
+          "reservation",
+          "visitNotice",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-09-30"
+        }
+      },
+      {
+        "id": "jiangshangqing-mod-2018",
+        "sourceType": "authoritative-web",
+        "label": "英雄烈士谱｜江上青：矢志不渝救亡图存",
+        "title": "英雄烈士谱｜江上青：矢志不渝救亡图存",
+        "publisher": "中华人民共和国国防部（来源：新华社）",
+        "url": "https://www.mod.gov.cn/2018gfbztlbmb/2018-11/22/content_4830072.htm",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "address",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ]
+      },
+      {
+        "id": "jiangshangqing-jingde-gov",
+        "sourceType": "authoritative-web",
+        "label": "江上青",
+        "title": "江上青",
+        "publisher": "旌德县人民政府",
+        "url": "https://www.ahjd.gov.cn/News/show/649967.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "history",
+          "people",
+          "spirit"
+        ]
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021",
+            "jiangshangqing-mod-2018"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021",
+            "jiangshangqing-mod-2018",
+            "jiangshangqing-jingde-gov"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021",
+            "jiangshangqing-mod-2018",
+            "jiangshangqing-jingde-gov"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021",
+            "jiangshangqing-mod-2018"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "jiangshangqing-jswm-2021",
+            "jiangshangqing-mod-2018",
+            "jiangshangqing-jingde-gov"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": [
+        {
+          "sourceType": "local-document",
+          "documentPath": "Videos/江上青烈士史料陈列馆/江上青烈士史料陈列馆—弹窗正文+史料来源.docx",
+          "supports": [
+            "opening",
+            "reservation",
+            "visitNotice"
+          ],
+          "note": "采用文档中的每日开放时段、免费参观和旧址参观表达。"
+        }
+      ]
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 338156,
+      "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
+      "digestRef": "sha256:33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/jiangshangqing-memorial/v1/hero/jiangshangqing-memorial-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+        "alt": "灰砖建筑入口上方悬挂写有馆名的红褐色木牌，门内可见楼梯。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 338156,
+          "sha256": "33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
+          "digestRef": "sha256:33d279c6008d0931b8349c7ffd9329f171443719b9e66b9f5c76084c7ce16fa5",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+      "poster": "/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+      "captions": "/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 10654463,
+        "sha256": "277650caf09a31550a99f4f4e7279c2376b3131b43c720b87d05487b227c0009",
+        "digestRef": "sha256:277650caf09a31550a99f4f4e7279c2376b3131b43c720b87d05487b227c0009",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 210122,
+        "sha256": "449a4c6304acd7a1e0d1e36395300e3962014add4fe2f2666250237b33ee992f",
+        "digestRef": "sha256:449a4c6304acd7a1e0d1e36395300e3962014add4fe2f2666250237b33ee992f",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 1454,
+        "sha256": "361ad8cd2e714b0761819d411183e04192aea4b993338752d0b57595d9620e38",
+        "digestRef": "sha256:361ad8cd2e714b0761819d411183e04192aea4b993338752d0b57595d9620e38",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": true,
+        "aiWatermarkAccepted": true,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": "项目方",
+        "acceptedAt": "2026-08-21"
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/jiangshangqing-memorial/v1/video/jiangshangqing-memorial-video.mp4",
+        "poster": "/media/sites/jiangshangqing-memorial/v1/poster/jiangshangqing-memorial-video-poster.webp",
+        "captions": "/media/sites/jiangshangqing-memorial/v1/captions/jiangshangqing-memorial-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/jiangshangqing-memorial/v1/photos/jiangshangqing-memorial-photo-01.webp",
+        "alt": "灰砖建筑入口上方悬挂写有馆名的红褐色木牌，门内可见楼梯。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "yangzhou-martyrs",
+    "officialName": "扬州革命烈士陵园",
+    "shortName": "扬州革命烈士陵园",
+    "province": "江苏省",
+    "city": "扬州市",
+    "district": "邗江区",
+    "address": "江苏省扬州市邗江区蜀冈万松岭（瘦西湖旁）",
+    "coordinates": {
+      "lat": 32.421642,
+      "lng": 119.415186
+    },
+    "opening": "星期二至星期日9:00—17:00开放，星期一闭馆。",
+    "reservation": "免费参观；团队祭扫、讲解或教育活动可提前与陵园联系。",
+    "visitNotice": "参观全程应心怀敬畏，请勿使用闪光灯拍摄或嬉笑喧哗。",
+    "officialTitle": "扬州革命烈士陵园",
+    "history": "陵园始建于1954年，后经多次扩建改造，形成烈士纪念碑、烈士墓区、事迹陈列馆和教育活动空间。它集中纪念扬州地区不同历史时期牺牲的革命先烈，并持续承担烈士纪念与爱国主义教育功能。",
+    "people": "园内纪念熊成基、曾玉良、曹起溍、江上青、韦一平、许晓轩等扬州地区革命先烈。不同人物跨越辛亥革命、中国共产党领导的革命与抗日战争等历史阶段，共同构成地方革命史的人物谱系。",
+    "spirit": "陵园把地方人物、国家历史与当代纪念活动联系起来，传递对理想的坚守、面对危难的担当，以及铭记牺牲、珍视和平的公共责任。",
+    "reflection": "在万松岭的环境里，纪念不是喧闹的表达，而是一种克制的注视。我们意识到地方史并不狭小：一座城市记住自己的烈士，也是在保存国家历史中那些容易被忽略的姓名与关系。",
+    "heroImage": "/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "江苏省扬州市邗江区蜀冈万松岭（瘦西湖旁）",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "星期二至星期日9:00—17:00开放，星期一闭馆。",
+      "reservation": "免费参观；团队祭扫、讲解或教育活动可提前与陵园联系。",
+      "visitNotice": "参观全程应心怀敬畏，请勿使用闪光灯拍摄或嬉笑喧哗。"
+    },
+    "historicalImprint": "陵园始建于1954年，后经多次扩建改造，形成烈士纪念碑、烈士墓区、事迹陈列馆和教育活动空间。它集中纪念扬州地区不同历史时期牺牲的革命先烈，并持续承担烈士纪念与爱国主义教育功能。",
+    "peopleStories": "园内纪念熊成基、曾玉良、曹起溍、江上青、韦一平、许晓轩等扬州地区革命先烈。不同人物跨越辛亥革命、中国共产党领导的革命与抗日战争等历史阶段，共同构成地方革命史的人物谱系。",
+    "exhibitsAndSiteMeaning": "革命烈士纪念碑、烈士墓和烈士事迹陈列馆共同组成纪念空间：纪念碑承载公共悼念，墓区保存具体姓名与生命记忆，陈列馆则以史料说明人物所处的时代和行动。",
+    "spiritualLegacy": "陵园把地方人物、国家历史与当代纪念活动联系起来，传递对理想的坚守、面对危难的担当，以及铭记牺牲、珍视和平的公共责任。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "在万松岭的环境里，纪念不是喧闹的表达，而是一种克制的注视。我们意识到地方史并不狭小：一座城市记住自己的烈士，也是在保存国家历史中那些容易被忽略的姓名与关系。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "yangzhou-jsmzt-2021",
+        "yangzhou-mva-2026"
+      ],
+      "address": [
+        "yangzhou-jsmzt-2021"
+      ],
+      "opening": [
+        "yangzhou-jwjw-republish-2025"
+      ],
+      "reservation": [
+        "yangzhou-jwjw-republish-2025"
+      ],
+      "visitNotice": [
+        "yangzhou-jwjw-republish-2025"
+      ],
+      "history": [
+        "yangzhou-jsmzt-2021",
+        "yangzhou-mva-2026"
+      ],
+      "people": [
+        "yangzhou-jsmzt-2021",
+        "yangzhou-mva-2026"
+      ],
+      "exhibits": [
+        "yangzhou-jsmzt-2021",
+        "yangzhou-mva-2026"
+      ],
+      "spirit": [
+        "yangzhou-jsmzt-2021",
+        "yangzhou-mva-2026"
+      ]
+    },
+    "sources": [
+      {
+        "id": "yangzhou-jsmzt-2021",
+        "sourceType": "authoritative-web",
+        "label": "扬州革命烈士陵园",
+        "title": "扬州革命烈士陵园",
+        "publisher": "江苏省民政厅（来源：扬州市邗江区民政局）",
+        "url": "https://mzt.jiangsu.gov.cn/art/2021/6/3/art_82390_9838494.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "officialName",
+          "address",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ]
+      },
+      {
+        "id": "yangzhou-mva-2026",
+        "sourceType": "authoritative-web",
+        "label": "江苏扬州：开展“行走的红色课堂”主题活动",
+        "title": "江苏扬州：开展“行走的红色课堂”主题活动",
+        "publisher": "中华人民共和国退役军人事务部（来源：江苏省退役军人事务厅）",
+        "url": "https://www.mva.gov.cn/xinwen/dfdt/202604/t20260421_538878.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government",
+        "supports": [
+          "officialName",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ]
+      },
+      {
+        "id": "yangzhou-jwjw-republish-2025",
+        "sourceType": "authoritative-web",
+        "label": "江河交汇扬清风丨①理想信念专线——扬州革命烈士陵园",
+        "title": "江河交汇扬清风丨①理想信念专线——扬州革命烈士陵园",
+        "publisher": "扬州市纪委监委（搜狐号转载）",
+        "url": "https://www.sohu.com/a/856592738_121106832",
+        "accessedAt": "2026-08-22",
+        "authorityType": "government-origin-republication",
+        "supports": [
+          "opening",
+          "reservation",
+          "visitNotice"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-09-30"
+        }
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jsmzt-2021",
+            "yangzhou-mva-2026"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jsmzt-2021"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jwjw-republish-2025"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jwjw-republish-2025"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jwjw-republish-2025"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jsmzt-2021",
+            "yangzhou-mva-2026"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jsmzt-2021",
+            "yangzhou-mva-2026"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jsmzt-2021",
+            "yangzhou-mva-2026"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "yangzhou-jsmzt-2021",
+            "yangzhou-mva-2026"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": [
+        {
+          "sourceType": "local-document",
+          "documentPath": "Videos/扬州革命烈士陵园/扬州革命烈士陵园—弹窗正文+史料来源.docx",
+          "supports": [
+            "address",
+            "opening",
+            "reservation",
+            "visitNotice"
+          ],
+          "note": "采用文档中的无门牌号地址、9:00—17:00开放、免费参观及肃穆参观提示。"
+        }
+      ]
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 332788,
+      "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
+      "digestRef": "sha256:ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/yangzhou-martyrs/v1/hero/yangzhou-martyrs-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+        "alt": "门式构架中央立有多人群像雕塑和刻字纪念碑，后方是一座灰瓦建筑。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 332788,
+          "sha256": "ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
+          "digestRef": "sha256:ef1b4973fdf167ef64c438771c611f867110430a703bf7e28de606e30d4e5189",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+      "poster": "/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+      "captions": "/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 10561011,
+        "sha256": "53691577c5fd7f86a9ec17e09773880b1647bd354b045983d66ed9387ac5439b",
+        "digestRef": "sha256:53691577c5fd7f86a9ec17e09773880b1647bd354b045983d66ed9387ac5439b",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 302840,
+        "sha256": "8a2e1fa5564a3049ceeeb7641befd0f6de9b6e84cc4dddcd8f5cee9010aef77d",
+        "digestRef": "sha256:8a2e1fa5564a3049ceeeb7641befd0f6de9b6e84cc4dddcd8f5cee9010aef77d",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 1446,
+        "sha256": "4f63941188f922ea98ff9d8c0298c0987723ab9436e4dd8103485a8ffb146a3e",
+        "digestRef": "sha256:4f63941188f922ea98ff9d8c0298c0987723ab9436e4dd8103485a8ffb146a3e",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": true,
+        "aiWatermarkAccepted": true,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": "项目方",
+        "acceptedAt": "2026-08-21"
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/yangzhou-martyrs/v1/video/yangzhou-martyrs-video.mp4",
+        "poster": "/media/sites/yangzhou-martyrs/v1/poster/yangzhou-martyrs-video-poster.webp",
+        "captions": "/media/sites/yangzhou-martyrs/v1/captions/yangzhou-martyrs-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/yangzhou-martyrs/v1/photos/yangzhou-martyrs-photo-01.webp",
+        "alt": "门式构架中央立有多人群像雕塑和刻字纪念碑，后方是一座灰瓦建筑。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  },
+  {
+    "id": "meiyuan-new-village",
+    "officialName": "中国共产党代表团梅园新村纪念馆",
+    "shortName": "梅园新村纪念馆",
+    "province": "江苏省",
+    "city": "南京市",
+    "district": "玄武区",
+    "address": "江苏省南京市玄武区汉府街18-1号",
+    "coordinates": {
+      "lat": 32.042379,
+      "lng": 118.801602
+    },
+    "opening": "星期二至星期日9:00—17:30开放，星期一闭馆。",
+    "reservation": "免费参观，通过官方微信公众号进行实名预约。",
+    "visitNotice": "携带预约所用证件，旧址文物禁止触摸，参观全程保持安静庄重。",
+    "officialTitle": "中国共产党代表团梅园新村纪念馆",
+    "history": "1946年5月至1947年3月，以周恩来为首的中国共产党代表团在南京同国民党政府开展谈判，并在梅园新村开展公开与秘密工作。纪念馆保留梅园新村17号、30号、35号等代表团办事处旧址，并以史料陈列呈现这段国共谈判史。",
+    "people": "周恩来、董必武、邓颖超等代表团成员在此工作生活。相关展陈也记录隐蔽战线工作者伊明（1924—2021）：他1946年随代表团到南京，参与机要工作，后来捐赠带有代表团成员题字的影集等文物。",
+    "spirit": "梅园新村的历史体现了在复杂局势中坚持原则、争取和平、联系群众与严守纪律的品格，也呈现了公开政治工作和隐蔽保障工作之间的相互支撑。",
+    "reflection": "普通住宅尺度让我们更容易想象当年的工作节奏：谈判、写作、联络与生活挤在相邻空间里。我们感受到，重要历史不总发生在宏伟建筑中，很多坚持恰恰藏在谨慎、耐心和对细节的守护里。",
+    "heroImage": "/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+    "heroFocus": {
+      "x": 50,
+      "y": 50
+    },
+    "markerAddress": "江苏省南京市玄武区汉府街18-1号",
+    "coordinateSystem": "GCJ-02",
+    "basicInformation": {
+      "opening": "星期二至星期日9:00—17:30开放，星期一闭馆。",
+      "reservation": "免费参观，通过官方微信公众号进行实名预约。",
+      "visitNotice": "携带预约所用证件，旧址文物禁止触摸，参观全程保持安静庄重。"
+    },
+    "historicalImprint": "1946年5月至1947年3月，以周恩来为首的中国共产党代表团在南京同国民党政府开展谈判，并在梅园新村开展公开与秘密工作。纪念馆保留梅园新村17号、30号、35号等代表团办事处旧址，并以史料陈列呈现这段国共谈判史。",
+    "peopleStories": "周恩来、董必武、邓颖超等代表团成员在此工作生活。相关展陈也记录隐蔽战线工作者伊明（1924—2021）：他1946年随代表团到南京，参与机要工作，后来捐赠带有代表团成员题字的影集等文物。",
+    "exhibitsAndSiteMeaning": "旧址中的办公室和生活空间让谈判时期的工作环境得以保存。伊明使用过的绿色保险箱、代表团成员题字影集等文物，说明公开谈判背后还存在严谨的机要、通讯与组织工作；旧址群本身则是这一历史过程的空间见证。",
+    "spiritualLegacy": "梅园新村的历史体现了在复杂局势中坚持原则、争取和平、联系群众与严守纪律的品格，也呈现了公开政治工作和隐蔽保障工作之间的相互支撑。",
+    "teamReflection": {
+      "type": "team-reflection",
+      "text": "普通住宅尺度让我们更容易想象当年的工作节奏：谈判、写作、联络与生活挤在相邻空间里。我们感受到，重要历史不总发生在宏伟建筑中，很多坚持恰恰藏在谨慎、耐心和对细节的守护里。"
+    },
+    "factSourceMap": {
+      "officialName": [
+        "meiyuan-nanjing-wlt-2018"
+      ],
+      "address": [
+        "meiyuan-nanjing-wlt-2018"
+      ],
+      "opening": [
+        "meiyuan-nanjing-wlt-2018"
+      ],
+      "reservation": [
+        "meiyuan-rednanjing-reservation"
+      ],
+      "visitNotice": [
+        "meiyuan-nanjing-wlt-2018",
+        "meiyuan-rednanjing-reservation"
+      ],
+      "history": [
+        "meiyuan-nanjing-wlt-2018",
+        "meiyuan-rednanjing-reservation",
+        "meiyuan-rednanjing-artifact"
+      ],
+      "people": [
+        "meiyuan-nanjing-wlt-2018",
+        "meiyuan-rednanjing-reservation",
+        "meiyuan-rednanjing-artifact"
+      ],
+      "exhibits": [
+        "meiyuan-nanjing-wlt-2018",
+        "meiyuan-rednanjing-artifact"
+      ],
+      "spirit": [
+        "meiyuan-nanjing-wlt-2018",
+        "meiyuan-rednanjing-reservation",
+        "meiyuan-rednanjing-artifact"
+      ]
+    },
+    "sources": [
+      {
+        "id": "meiyuan-nanjing-wlt-2018",
+        "sourceType": "authoritative-web",
+        "label": "中共代表团梅园新村纪念馆",
+        "title": "中共代表团梅园新村纪念馆",
+        "publisher": "南京市文化和旅游局",
+        "url": "https://wlj.nanjing.gov.cn/whcg/bwg/zgdbtmyxcjng/201807/t20180731_1078650.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "culture-tourism",
+        "supports": [
+          "officialName",
+          "address",
+          "opening",
+          "visitNotice",
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-09-30"
+        }
+      },
+      {
+        "id": "meiyuan-rednanjing-reservation",
+        "sourceType": "authoritative-web",
+        "label": "暑期红色课堂开课啦",
+        "title": "暑期红色课堂开课啦",
+        "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局（来源：博物南京）",
+        "url": "https://yht.nanjing.gov.cn/rednanjing/hsbb/202504/t20250410_5120556.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "authoritative-memorial",
+        "supports": [
+          "reservation",
+          "visitNotice",
+          "history",
+          "people",
+          "spirit"
+        ],
+        "temporal": {
+          "checkedAt": "2026-08-22",
+          "validThrough": "2026-09-30"
+        }
+      },
+      {
+        "id": "meiyuan-rednanjing-artifact",
+        "sourceType": "authoritative-web",
+        "label": "梅园新村纪念馆新增珍贵文物",
+        "title": "梅园新村纪念馆新增珍贵文物",
+        "publisher": "中共南京市委宣传部、南京市雨花台烈士陵园管理局（来源：金陵瞭望）",
+        "url": "https://yht.nanjing.gov.cn/rednanjing/hsbb/202504/t20250410_5120684.html",
+        "accessedAt": "2026-08-22",
+        "authorityType": "authoritative-memorial",
+        "supports": [
+          "history",
+          "people",
+          "exhibits",
+          "spirit"
+        ]
+      }
+    ],
+    "contentReview": {
+      "status": "verified",
+      "reviewedAt": "2026-08-22",
+      "reviewedBy": "Task 3 内容审核（权威网页逐字段核对）",
+      "factReviews": {
+        "officialName": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018"
+          ]
+        },
+        "address": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018"
+          ]
+        },
+        "opening": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018"
+          ]
+        },
+        "reservation": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-rednanjing-reservation"
+          ]
+        },
+        "visitNotice": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018",
+            "meiyuan-rednanjing-reservation"
+          ]
+        },
+        "history": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018",
+            "meiyuan-rednanjing-reservation",
+            "meiyuan-rednanjing-artifact"
+          ]
+        },
+        "people": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018",
+            "meiyuan-rednanjing-reservation",
+            "meiyuan-rednanjing-artifact"
+          ]
+        },
+        "exhibits": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018",
+            "meiyuan-rednanjing-artifact"
+          ]
+        },
+        "spirit": {
+          "status": "verified",
+          "sourceIds": [
+            "meiyuan-nanjing-wlt-2018",
+            "meiyuan-rednanjing-reservation",
+            "meiyuan-rednanjing-artifact"
+          ]
+        }
+      },
+      "temporalReview": {
+        "checkedAt": "2026-08-22",
+        "validThrough": "2026-09-30"
+      },
+      "separationReview": {
+        "factAndReflectionSeparated": true,
+        "reflectionIntroducesNewFacts": false
+      },
+      "unresolvedFacts": [],
+      "localMaterialSources": [
+        {
+          "sourceType": "local-document",
+          "documentPath": "Videos/中国共产党代表团梅园新村纪念馆/文档/文档.doc",
+          "supports": [
+            "opening",
+            "reservation",
+            "visitNotice"
+          ],
+          "note": "采用文档中的周二至周日开放、官方公众号实名预约及旧址文物参观提示。"
+        }
+      ]
+    },
+    "mediaDelivery": {
+      "status": "pre-upload-object",
+      "version": "v1",
+      "productionBaseUrl": null
+    },
+    "heroAsset": {
+      "objectPath": "media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+      "version": "v1",
+      "mime": "image/webp",
+      "bytes": 378702,
+      "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
+      "digestRef": "sha256:0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
+      "manifestPath": "content/media/media-manifest.json",
+      "deliveryStatus": "pre-upload-object",
+      "url": "/media/sites/meiyuan-new-village/v1/hero/meiyuan-new-village-hero.webp",
+      "productionUrl": null
+    },
+    "photos": [
+      {
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+        "alt": "树枝掩映的灰色旧墙上嵌有一块写有“中共代表团办事处原址”的黑色牌匾。",
+        "sequence": 1,
+        "asset": {
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 378702,
+          "sha256": "0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
+          "digestRef": "sha256:0165529352f1c13fd5a2a36751861d554877f2568dd6beb672512f4294d609a3",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+        "alt": "红色展墙上悬挂多幅黑白照片，下方玻璃展柜中陈列书籍样式展品。",
+        "sequence": 2,
+        "asset": {
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 224828,
+          "sha256": "a873ad747c1efe8784183cbfaa3c2db5b5ac08a730706717ed2f23379cf0d079",
+          "digestRef": "sha256:a873ad747c1efe8784183cbfaa3c2db5b5ac08a730706717ed2f23379cf0d079",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+        "alt": "玻璃展柜内陈列两件外套、黑白照片、箱子和餐具等物件。",
+        "sequence": 3,
+        "asset": {
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 141436,
+          "sha256": "3147e10cd44a313b1d6117e15c35184bafa6ecaaa3763c4c1946dc3da8bdf9f2",
+          "digestRef": "sha256:3147e10cd44a313b1d6117e15c35184bafa6ecaaa3763c4c1946dc3da8bdf9f2",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+          "productionUrl": null
+        }
+      },
+      {
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+        "alt": "一名参观者站在玻璃展柜前观看衣物、照片和箱子等展品。",
+        "sequence": 4,
+        "asset": {
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+          "version": "v1",
+          "mime": "image/webp",
+          "bytes": 165824,
+          "sha256": "ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b",
+          "digestRef": "sha256:ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b",
+          "manifestPath": "content/media/media-manifest.json",
+          "deliveryStatus": "pre-upload-object",
+          "url": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+          "productionUrl": null
+        }
+      }
+    ],
+    "video": {
+      "url": "/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+      "poster": "/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+      "captions": "/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+      "asset": {
+        "objectPath": "media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+        "version": "v1",
+        "mime": "video/mp4",
+        "bytes": 2331954,
+        "sha256": "1091ffff73cceccfe590c2a251f59ee4c02291c3a82233abbf2215805a828c2a",
+        "digestRef": "sha256:1091ffff73cceccfe590c2a251f59ee4c02291c3a82233abbf2215805a828c2a",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+        "productionUrl": null
+      },
+      "posterAsset": {
+        "objectPath": "media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+        "version": "v1",
+        "mime": "image/webp",
+        "bytes": 242012,
+        "sha256": "f2c3f370f3d98b09635e23ed7c63918b276621957a89e2385feb9e548b9f3c2e",
+        "digestRef": "sha256:f2c3f370f3d98b09635e23ed7c63918b276621957a89e2385feb9e548b9f3c2e",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+        "productionUrl": null
+      },
+      "captionsAsset": {
+        "objectPath": "media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+        "version": "v1",
+        "mime": "text/vtt; charset=utf-8",
+        "bytes": 675,
+        "sha256": "9df1f42ba0169dd3526b7370bfd1fac8d2854a34d9703fd44a5903f618507a8d",
+        "digestRef": "sha256:9df1f42ba0169dd3526b7370bfd1fac8d2854a34d9703fd44a5903f618507a8d",
+        "manifestPath": "content/media/media-manifest.json",
+        "deliveryStatus": "pre-upload-object",
+        "url": "/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt",
+        "productionUrl": null
+      },
+      "posterReview": {
+        "aiWatermarkPresent": false,
+        "aiWatermarkAccepted": false,
+        "disclosurePath": "content/media/media-rights-declaration.json",
+        "acceptedBy": null,
+        "acceptedAt": null
+      },
+      "captionsReview": {
+        "reviewedAgainst": "real-audio-and-video",
+        "reviewedBy": "Task 4 逐视频校对",
+        "reviewedAt": "2026-08-22"
+      }
+    },
+    "media": [
+      {
+        "type": "video",
+        "src": "/media/sites/meiyuan-new-village/v1/video/meiyuan-new-village-video.mp4",
+        "poster": "/media/sites/meiyuan-new-village/v1/poster/meiyuan-new-village-video-poster.webp",
+        "captions": "/media/sites/meiyuan-new-village/v1/captions/meiyuan-new-village-captions.vtt"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-01.webp",
+        "alt": "树枝掩映的灰色旧墙上嵌有一块写有“中共代表团办事处原址”的黑色牌匾。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-02.webp",
+        "alt": "红色展墙上悬挂多幅黑白照片，下方玻璃展柜中陈列书籍样式展品。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-03.webp",
+        "alt": "玻璃展柜内陈列两件外套、黑白照片、箱子和餐具等物件。"
+      },
+      {
+        "type": "image",
+        "src": "/media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-04.webp",
+        "alt": "一名参观者站在玻璃展柜前观看衣物、照片和箱子等展品。"
+      }
+    ],
+    "mediaRights": {
+      "declarationPath": "content/media/media-rights-declaration.json",
+      "declarationDate": "2026-08-21",
+      "declaredBy": "项目方",
+      "statement": "项目方已确认照片、视频、视频内音乐和字幕具有本项目公开展示使用权，并允许照片中可辨识人物公开展示。",
+      "identifiablePeopleApproved": true
+    }
+  }
+]
