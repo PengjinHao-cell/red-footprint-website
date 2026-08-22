@@ -25,7 +25,6 @@ const releaseCalls = [
   'run lint',
   'run test:run',
   'run build',
-  'run test:e2e',
 ];
 const expectedCalls = releaseCalls.map(
   (call) => `${call === 'run test:run' ? 'release' : 'local'}|${call}`,
@@ -99,6 +98,10 @@ describe('release verification configuration', () => {
       'run: npx playwright install --with-deps chromium webkit',
     );
     expect(workflow).toContain('run: npm run verify:release');
+    expect(workflow).toContain('run: npm run test:e2e');
+    expect(workflow.indexOf('run: npm run test:e2e')).toBeGreaterThan(
+      workflow.indexOf('run: npm run verify:release'),
+    );
   });
 });
 

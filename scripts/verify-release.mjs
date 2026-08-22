@@ -10,7 +10,6 @@ const releaseSteps = [
   { script: 'lint', args: [] },
   { script: 'test:run', args: [], mediaCheckMode: 'release' },
   { script: 'build', args: [] },
-  { script: 'test:e2e', args: [] },
 ];
 
 for (const [index, step] of releaseSteps.entries()) {

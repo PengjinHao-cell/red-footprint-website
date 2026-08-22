@@ -25,3 +25,5 @@ jobs:
         run: npx playwright install --with-deps chromium webkit
       - name: Run release gates
         run: npm run verify:release
+      - name: Run E2E tests
+        run: npm run test:e2e
