@@ -17,6 +17,7 @@ export const EXPECTED_PHOTO_COUNTS = Object.freeze({
 const AI_WATERMARK_SITES = new Set(['yuhuatai-martyrs', 'jiangshangqing-memorial', 'yangzhou-martyrs']);
 const SHA256 = /^[a-f0-9]{64}$/;
 const VERSIONED_PATH = /^media\/sites\/([a-z0-9-]+)\/v1\/(hero|photos|video|poster|captions)\//;
+const MEDIA_CHECK_MODE_ENV = 'RED_FOOTPRINT_MEDIA_CHECK_MODE';
 
 const isRecord = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
 const nonEmpty = (value) => typeof value === 'string' && value.trim().length > 0;
@@ -175,7 +176,9 @@ export function parseWebVtt(input) {
 }
 
 function resolveMode(options) {
-  const mode = options.mode ?? 'local';
+  const mode = Object.hasOwn(options, 'mode')
+    ? options.mode
+    : process.env[MEDIA_CHECK_MODE_ENV] ?? 'local';
   if (mode !== 'local' && mode !== 'release') {
     throw new Error(`unknown media check mode: ${mode}`);
   }

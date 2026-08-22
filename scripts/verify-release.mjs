@@ -1,5 +1,6 @@
 import { spawnSync } from 'node:child_process';
 
+const MEDIA_CHECK_MODE_ENV = 'RED_FOOTPRINT_MEDIA_CHECK_MODE';
 const releaseSteps = [
   { script: 'check:production-content', args: [] },
   { script: 'check:media', args: ['--', '--release'] },
@@ -7,7 +8,7 @@ const releaseSteps = [
   { script: 'check:content', args: ['--', '--release'] },
   { script: 'check:map', args: [] },
   { script: 'lint', args: [] },
-  { script: 'test:run', args: [] },
+  { script: 'test:run', args: [], mediaCheckMode: 'release' },
   { script: 'build', args: [] },
   { script: 'test:e2e', args: [] },
 ];
@@ -15,7 +16,13 @@ const releaseSteps = [
 for (const [index, step] of releaseSteps.entries()) {
   const npmArguments = ['run', step.script, ...step.args];
   console.log(`[verify:release] ${index + 1}/${releaseSteps.length} npm ${npmArguments.join(' ')}`);
-  const result = spawnSync('npm', npmArguments, { stdio: 'inherit' });
+  const result = spawnSync('npm', npmArguments, {
+    stdio: 'inherit',
+    env: {
+      ...process.env,
+      [MEDIA_CHECK_MODE_ENV]: step.mediaCheckMode ?? 'local',
+    },
+  });
 
   if (result.error) {
     console.error(`[verify:release] unable to start ${step.script}: ${result.error.message}`);

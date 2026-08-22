@@ -22,6 +22,7 @@ import {
 } from './check-media.mjs';
 
 const temporaryDirectories: string[] = [];
+const MEDIA_CHECK_MODE_ENV = 'RED_FOOTPRINT_MEDIA_CHECK_MODE';
 
 function createCommittedMediaRoot() {
   const root = mkdtempSync(join(tmpdir(), 'committed-media-'));
@@ -32,6 +33,18 @@ function createCommittedMediaRoot() {
     { recursive: true },
   );
   return root;
+}
+
+function withMediaCheckMode<T>(mode: string | undefined, callback: () => T) {
+  const previous = process.env[MEDIA_CHECK_MODE_ENV];
+  if (mode === undefined) delete process.env[MEDIA_CHECK_MODE_ENV];
+  else process.env[MEDIA_CHECK_MODE_ENV] = mode;
+  try {
+    return callback();
+  } finally {
+    if (previous === undefined) delete process.env[MEDIA_CHECK_MODE_ENV];
+    else process.env[MEDIA_CHECK_MODE_ENV] = previous;
+  }
 }
 
 afterEach(() => {
@@ -172,7 +185,17 @@ describe('media gate modes', () => {
   it('keeps the default local mode strict when raw and staging files are absent', () => {
     const root = createCommittedMediaRoot();
 
-    expect(checkMedia(root).join('\n')).toMatch(/staged file does not exist|original source does not exist/i);
+    withMediaCheckMode(undefined, () => {
+      expect(checkMedia(root).join('\n')).toMatch(/staged file does not exist|original source does not exist/i);
+    });
+  });
+
+  it('accepts a clean export when release mode is explicitly passed by CI', () => {
+    const root = createCommittedMediaRoot();
+
+    withMediaCheckMode('release', () => {
+      expect(checkMedia(root)).toEqual([]);
+    });
   });
 
   it('rejects manifest digest, rights, and committed-caption failures in release mode', () => {

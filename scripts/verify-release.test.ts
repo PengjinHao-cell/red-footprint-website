@@ -27,6 +27,9 @@ const releaseCalls = [
   'run build',
   'run test:e2e',
 ];
+const expectedCalls = releaseCalls.map(
+  (call) => `${call === 'run test:run' ? 'release' : 'local'}|${call}`,
+);
 
 function runWithFakeNpm(failingCall?: string) {
   const directory = mkdtempSync(join(tmpdir(), 'verify-release-'));
@@ -36,7 +39,7 @@ function runWithFakeNpm(failingCall?: string) {
   writeFileSync(
     npmPath,
     `#!/bin/sh
-printf '%s\\n' "$*" >> "$VERIFY_RELEASE_TEST_LOG"
+printf '%s|%s\\n' "\${RED_FOOTPRINT_MEDIA_CHECK_MODE:-local}" "$*" >> "$VERIFY_RELEASE_TEST_LOG"
 if [ "$*" = "$VERIFY_RELEASE_FAIL_STEP" ]; then
   exit 23
 fi
@@ -104,7 +107,7 @@ describe('release verification runner', () => {
     const result = runWithFakeNpm();
 
     expect(result.status, `${result.stdout}${result.stderr}`).toBe(0);
-    expect(result.calls).toEqual(releaseCalls);
+    expect(result.calls).toEqual(expectedCalls);
   });
 
   it('stops at the first failed gate and preserves its non-zero exit code', () => {
@@ -113,8 +116,17 @@ describe('release verification runner', () => {
 
     expect(result.status).toBe(23);
     expect(result.calls).toEqual(
-      releaseCalls.slice(0, releaseCalls.indexOf(failingCall) + 1),
+      expectedCalls.slice(0, releaseCalls.indexOf(failingCall) + 1),
     );
+  });
+
+  it('passes explicit release mode only to the full unit-test process', () => {
+    const result = runWithFakeNpm();
+
+    expect(result.calls).toContain('release|run test:run');
+    expect(result.calls.filter((call) => call.startsWith('release|'))).toEqual([
+      'release|run test:run',
+    ]);
   });
 
   it('keeps reconciliation, digest, HTTPS, and video Range evidence mandatory', () => {

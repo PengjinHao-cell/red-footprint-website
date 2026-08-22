@@ -12,6 +12,7 @@ const placeholderHostPattern =
   /(?:example(?:\.|$)|\.invalid$|\.test$|localhost$|^127\.|^0\.0\.0\.0$|placeholder|invalid)/i;
 const forbiddenProductionText =
   /(?:fixture|synthetic|example\.test|\.invalid|localhost|placeholder|test-data|todo|tbd|待补|占位)/i;
+const MEDIA_CHECK_MODE_ENV = 'RED_FOOTPRINT_MEDIA_CHECK_MODE';
 
 function visitStrings(value, path, visitor) {
   if (typeof value === 'string') {
@@ -73,6 +74,18 @@ function parseArguments(argv) {
     index += 1;
   }
   return options;
+}
+
+function resolveReleaseMode(options) {
+  const environmentMode = process.env[MEDIA_CHECK_MODE_ENV];
+  if (
+    environmentMode !== undefined &&
+    environmentMode !== 'local' &&
+    environmentMode !== 'release'
+  ) {
+    throw new Error(`unknown media check mode: ${environmentMode}`);
+  }
+  return options.release || environmentMode === 'release';
 }
 
 function validateReleaseBuildInputs(input, root) {
@@ -167,6 +180,7 @@ export function runContentCheck(
   root = resolve(dirname(fileURLToPath(import.meta.url)), '..'),
 ) {
   const options = parseArguments(argv);
+  const releaseMode = resolveReleaseMode(options);
   const sitesPath = resolve(root, options.sites);
   const errors = [];
 
@@ -180,7 +194,7 @@ export function runContentCheck(
   }
 
   const mediaErrors = checkMedia(root, {
-    mode: options.release ? 'release' : 'local',
+    mode: releaseMode ? 'release' : 'local',
   });
   if (mediaErrors.length > 0) {
     errors.push(...mediaErrors.map((error) => `[Task 4 media] ${error}`));
@@ -206,7 +220,7 @@ export function runContentCheck(
         console.log('[check:content] production schema passed');
       }
 
-      if (options.release) {
+      if (releaseMode) {
         const releaseInputErrors = validateReleaseBuildInputs(input, root);
         if (releaseInputErrors.length > 0) {
           errors.push(...releaseInputErrors);

@@ -16,6 +16,7 @@ import { runContentCheck, validateContent } from './check-content.mjs';
 
 const temporaryDirectories: string[] = [];
 const productionSitesPath = join(process.cwd(), 'src/data/sites.json');
+const MEDIA_CHECK_MODE_ENV = 'RED_FOOTPRINT_MEDIA_CHECK_MODE';
 
 function readProductionSites() {
   expect(existsSync(productionSitesPath)).toBe(true);
@@ -33,6 +34,18 @@ function createCommittedProjectRoot() {
   return root;
 }
 
+function withMediaCheckMode<T>(mode: string | undefined, callback: () => T) {
+  const previous = process.env[MEDIA_CHECK_MODE_ENV];
+  if (mode === undefined) delete process.env[MEDIA_CHECK_MODE_ENV];
+  else process.env[MEDIA_CHECK_MODE_ENV] = mode;
+  try {
+    return callback();
+  } finally {
+    if (previous === undefined) delete process.env[MEDIA_CHECK_MODE_ENV];
+    else process.env[MEDIA_CHECK_MODE_ENV] = previous;
+  }
+}
+
 afterEach(() => {
   temporaryDirectories.splice(0).forEach((directory) => {
     rmSync(directory, { force: true, recursive: true });
@@ -41,7 +54,7 @@ afterEach(() => {
 
 describe('content production gate', () => {
   it('chains Task 3, Task 4, schema, deterministic generation, and drift checks', () => {
-    const result = spawnSync('npm', ['run', 'check:content'], {
+    const result = spawnSync('npm', ['run', 'check:content', '--', '--release'], {
       cwd: process.cwd(),
       encoding: 'utf8',
     });
@@ -51,7 +64,7 @@ describe('content production gate', () => {
     expect(output).toMatch(/Task 3 production content.*passed/i);
     expect(output).toMatch(/Task 4 media.*passed/i);
     expect(output).toMatch(/production schema.*passed/i);
-    expect(output).toMatch(/generated sites.*byte-identical/i);
+    expect(output).toMatch(/release build inputs.*manifest.*reconciliation/i);
     expect(output).toMatch(/fixture.*placeholder.*manual drift.*absent/i);
   });
 
@@ -74,24 +87,24 @@ describe('content production gate', () => {
     );
   });
 
-  it('rejects a manually drifted sites file instead of regenerating over it', () => {
+  it('rejects release build-input drift against the committed manifest', () => {
     const sites = readProductionSites();
     if (sites.length === 0) return;
     const directory = mkdtempSync(join(tmpdir(), 'content-drift-'));
     temporaryDirectories.push(directory);
     const sitesPath = join(directory, 'sites.json');
-    sites[0].shortName = `${sites[0].shortName}手工改写`;
+    sites[0].heroAsset.sha256 = 'f'.repeat(64);
     writeFileSync(sitesPath, `${JSON.stringify(sites, null, 2)}\n`);
 
     const result = spawnSync(
       'node',
-      ['scripts/check-content.mjs', '--sites', sitesPath],
+      ['scripts/check-content.mjs', '--release', '--sites', sitesPath],
       { cwd: process.cwd(), encoding: 'utf8' },
     );
     const output = `${result.stdout}${result.stderr}`;
 
     expect(result.status).toBe(1);
-    expect(output).toMatch(/manual drift|does not match generated output/i);
+    expect(output).toMatch(/match media manifest|digestRef/i);
   });
 
   it('passes explicit release mode in a clean committed project export', () => {
@@ -103,7 +116,17 @@ describe('content production gate', () => {
   it('does not silently relax the default local gate in a clean export', () => {
     const root = createCommittedProjectRoot();
 
-    expect(runContentCheck([], root)).toBe(1);
+    withMediaCheckMode(undefined, () => {
+      expect(runContentCheck([], root)).toBe(1);
+    });
+  });
+
+  it('passes a clean export when CI explicitly selects release mode', () => {
+    const root = createCommittedProjectRoot();
+
+    withMediaCheckMode('release', () => {
+      expect(runContentCheck([], root)).toBe(0);
+    });
   });
 
   it('rejects non-HTTPS production media in release mode', () => {
