@@ -258,6 +258,28 @@ function validateReviewFile(review, site, siteId, sourceMap, today, errors) {
       }
     });
   }
+  if (review.localMaterialSupplements !== undefined) {
+    if (!Array.isArray(review.localMaterialSupplements)) {
+      errors.push(`${prefix}.localMaterialSupplements must be an array`);
+    } else {
+      review.localMaterialSupplements.forEach((supplement, index) => {
+        const label = `${prefix}.localMaterialSupplements[${index}]`;
+        if (!isRecord(supplement)) {
+          errors.push(`${label} must be an object`);
+          return;
+        }
+        if (!nonEmpty(supplement.documentPath)) errors.push(`${label}.documentPath is required`);
+        if (
+          !Array.isArray(supplement.fields) ||
+          supplement.fields.length === 0 ||
+          supplement.fields.some((field) => !REQUIRED_FACT_FIELDS.includes(field))
+        ) {
+          errors.push(`${label}.fields must list known fact fields`);
+        }
+        if (!nonEmpty(supplement.note)) errors.push(`${label}.note is required`);
+      });
+    }
+  }
 }
 
 export function validateProductionContent(root = process.cwd(), options = {}) {

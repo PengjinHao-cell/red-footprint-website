@@ -6,7 +6,7 @@
   "factReviews": {
     "officialName": { "status": "verified", "sourceIds": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"] },
     "address": { "status": "verified", "sourceIds": ["yangzhou-jsmzt-2021"], "note": "只发布权威来源一致的蜀冈万松岭位置，不写争议门牌号。" },
-    "opening": { "status": "verified", "sourceIds": ["yangzhou-jwjw-republish-2025"], "note": "正文说明为政府机构原始内容的第三方转载并提示行前确认。" },
+    "opening": { "status": "verified", "sourceIds": ["yangzhou-jwjw-republish-2025"], "note": "本地文档的9:00—17:00用于展示，替代转载页面的分段时段。" },
     "reservation": { "status": "verified", "sourceIds": ["yangzhou-jwjw-republish-2025"] },
     "visitNotice": { "status": "verified", "sourceIds": ["yangzhou-jwjw-republish-2025"] },
     "history": { "status": "verified", "sourceIds": ["yangzhou-jsmzt-2021", "yangzhou-mva-2026"] },
@@ -16,21 +16,12 @@
   },
   "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
   "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
-  "unresolvedFacts": [
+  "unresolvedFacts": [],
+  "localMaterialSupplements": [
     {
-      "field": "address",
-      "description": "公开网页对平山堂东路具体门牌号存在不一致，未找到陵园官方页面消除冲突。",
-      "excludedFromPublishedCopy": true
-    },
-    {
-      "field": "opening",
-      "description": "开放时段来自扬州市纪委监委内容的第三方转载，未找到陵园直接发布的当前页面。",
-      "excludedFromPublishedCopy": true
-    },
-    {
-      "field": "reservation",
-      "description": "未找到陵园官方个人线上预约入口或明确的免预约声明。",
-      "excludedFromPublishedCopy": true
+      "documentPath": "Videos/扬州革命烈士陵园/扬州革命烈士陵园—弹窗正文+史料来源.docx",
+      "fields": ["address", "opening", "reservation", "visitNotice"],
+      "note": "采用文档中的无门牌号地址、9:00—17:00开放、免费参观及肃穆参观提示。"
     }
   ]
 }

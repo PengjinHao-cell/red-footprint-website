@@ -230,4 +230,16 @@ describe('validateProductionContent', () => {
     writeJson(root, 'content/reviews/yangzhou-martyrs.json', review);
     expect(errors(root)).toMatch(/unresolvedFacts.*excluded/i);
   });
+
+  it('requires explicit provenance for local-material supplements', () => {
+    const root = createRoot();
+    createFixture(root);
+    const path = join(root, 'content/reviews/yangzhou-martyrs.json');
+    const review = JSON.parse(readFileSync(path, 'utf8'));
+    review.localMaterialSupplements = [
+      { documentPath: '', fields: ['opening'], note: '采用本地候选稿。' },
+    ];
+    writeJson(root, 'content/reviews/yangzhou-martyrs.json', review);
+    expect(errors(root)).toMatch(/localMaterialSupplements.*documentPath/i);
+  });
 });

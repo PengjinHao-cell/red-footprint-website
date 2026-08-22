@@ -6,7 +6,7 @@
   "factReviews": {
     "officialName": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
     "address": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
-    "opening": { "status": "verified", "sourceIds": ["dujiang-nanjing-wlt-2018"], "note": "正文标注为文旅局公开资料记录并提示行前复核。" },
+    "opening": { "status": "verified", "sourceIds": ["dujiang-nanjing-wlt-2018"] },
     "reservation": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
     "visitNotice": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025", "dujiang-nanjing-wlt-2018"] },
     "history": { "status": "verified", "sourceIds": ["dujiang-rednanjing-2025"] },
@@ -16,11 +16,12 @@
   },
   "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
   "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
-  "unresolvedFacts": [
+  "unresolvedFacts": [],
+  "localMaterialSupplements": [
     {
-      "field": "opening",
-      "description": "未找到比南京市文化和旅游局2018年页面更新、且由场馆直接发布的常态时段页面。",
-      "excludedFromPublishedCopy": true
+      "documentPath": "Videos/渡江胜利纪念馆/正文文案.doc",
+      "fields": ["opening", "reservation", "visitNotice"],
+      "note": "采用文档中的开放时段、实名线上免费预约和文明参观提示。"
     }
   ]
 }

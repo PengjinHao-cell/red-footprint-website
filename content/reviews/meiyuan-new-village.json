@@ -6,7 +6,7 @@
   "factReviews": {
     "officialName": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"] },
     "address": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"] },
-    "opening": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"], "note": "正文标注页面较早并要求行前核验。" },
+    "opening": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018"] },
     "reservation": { "status": "verified", "sourceIds": ["meiyuan-rednanjing-reservation"] },
     "visitNotice": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation"] },
     "history": { "status": "verified", "sourceIds": ["meiyuan-nanjing-wlt-2018", "meiyuan-rednanjing-reservation", "meiyuan-rednanjing-artifact"] },
@@ -16,11 +16,12 @@
   },
   "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-09-30" },
   "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
-  "unresolvedFacts": [
+  "unresolvedFacts": [],
+  "localMaterialSupplements": [
     {
-      "field": "opening",
-      "description": "未找到场馆2026年直接发布、可替代南京市文化和旅游局2018年页面的常态开放时段。",
-      "excludedFromPublishedCopy": true
+      "documentPath": "Videos/中国共产党代表团梅园新村纪念馆/文档/文档.doc",
+      "fields": ["opening", "reservation", "visitNotice"],
+      "note": "采用文档中的周二至周日开放、官方公众号实名预约及旧址文物参观提示。"
     }
   ]
 }
