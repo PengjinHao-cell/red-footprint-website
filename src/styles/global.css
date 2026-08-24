@@ -314,7 +314,7 @@ button {
   }
 }
 
-/* 地球 HTML 星标:SVG 五角星、点击区、近邻引线 */
+/* 地球 HTML 星标:SVG 五角星、点击区、近邻引线、地点提示 */
 .globe-marker {
   display: grid;
   width: 44px;
@@ -324,13 +324,14 @@ button {
   border: 0;
   background: transparent;
   cursor: pointer;
+  transform: translate(var(--marker-x, 0), var(--marker-y, 0))
+    scale(var(--marker-scale, 1));
+  transform-origin: center;
 }
 
 .globe-marker__star {
   display: grid;
   place-items: center;
-  transform: translate(var(--marker-x, 0), var(--marker-y, 0));
-  transition: transform 240ms ease;
 }
 
 .globe-marker__star svg {
@@ -350,12 +351,38 @@ button {
   transform: rotate(var(--leader-angle, 0deg));
 }
 
+.globe-marker__tooltip {
+  position: absolute;
+  bottom: calc(100% + 0.4rem);
+  left: 50%;
+  width: max-content;
+  max-width: 16rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--brick);
+  border-radius: 0.4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
 .globe-marker[aria-pressed='true'] .globe-marker__star {
   transform: none;
 }
 
 .globe-marker[aria-pressed='true'] .globe-marker__leader {
   display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .globe-marker:hover .globe-marker__tooltip,
+  .globe-marker:focus-visible .globe-marker__tooltip {
+    opacity: 1;
+  }
 }
 
 /* 长三角加载动画占位:岸线描边、星点依次点亮、背景呼吸、文字跳动 */

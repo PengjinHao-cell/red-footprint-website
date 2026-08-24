@@ -40,10 +40,14 @@ type MockGlobeInstance = {
   pointRadiusAccessor: ((point: object) => number) | undefined;
   pointsData: ReturnType<typeof vi.fn>;
   polygonData: unknown[];
+  polygonLabelCalls: number;
   pathData: unknown[];
   readyCallback: (() => void) | undefined;
   rendererPixelRatio: ReturnType<typeof vi.fn>;
   ringData: Marker[];
+  zoomCallback:
+    | ((view: { altitude: number; lat: number; lng: number }) => void)
+    | undefined;
 };
 
 const globeMock = vi.hoisted(() => ({
@@ -127,11 +131,15 @@ vi.mock('globe.gl', () => {
       pointOfViewCalls: Array<{ altitude: number; lat: number; lng: number }> = [];
       pointRadiusAccessor: ((point: object) => number) | undefined;
       polygonData: unknown[] = [];
+      polygonLabelCalls = 0;
       pathData: unknown[] = [];
       view = { lat: 31.2, lng: 119.4, altitude: 1.4 };
       readyCallback: (() => void) | undefined;
       rendererPixelRatio = vi.fn();
       ringData: Marker[] = [];
+      zoomCallback:
+        | ((view: { altitude: number; lat: number; lng: number }) => void)
+        | undefined;
 
       constructor() {
         if (globeMock.shouldThrow) {
@@ -248,6 +256,12 @@ vi.mock('globe.gl', () => {
       }
 
       polygonLabel() {
+        this.polygonLabelCalls += 1;
+        return this;
+      }
+
+      onZoom(callback: (view: { altitude: number; lat: number; lng: number }) => void) {
+        this.zoomCallback = callback;
         return this;
       }
 
@@ -784,6 +798,36 @@ describe('GlobeScene', () => {
     await waitFor(() => expect(props.onError).toHaveBeenCalledTimes(1));
     expect(props.onReady).not.toHaveBeenCalled();
     expect(await screen.findAllByRole('button')).toHaveLength(8);
+  });
+
+  it('removes province hover labels and binds tooltip and zoom presentation to the marker button', async () => {
+    setWebGLSupported(true);
+    renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const instance = latestInstance();
+
+    expect(instance.polygonLabelCalls).toBe(0);
+
+    const stars = starButtons(instance);
+    const star = stars[0];
+    expect(star).not.toHaveAttribute('title');
+    expect(star).toHaveTextContent(sites[0].officialName);
+    expect(star.querySelector('.globe-marker__tooltip')).not.toBeNull();
+    expect(star.style.getPropertyValue('--marker-scale')).toBe('1');
+
+    const offsetStar = stars.find(
+      (button) =>
+        button.style.getPropertyValue('--marker-x') !== '0px' ||
+        button.style.getPropertyValue('--marker-y') !== '0px',
+    );
+    expect(offsetStar).toBeDefined();
+
+    instance.zoomCallback?.({ lat: 32, lng: 120, altitude: 0.35 });
+
+    expect(star.style.getPropertyValue('--marker-scale')).toBe('1.45');
+    expect(offsetStar?.style.getPropertyValue('--marker-x')).toBe('0px');
+    expect(offsetStar?.style.getPropertyValue('--marker-y')).toBe('0px');
   });
 
   it('does not call callbacks after unmount and destroys the globe instance', async () => {

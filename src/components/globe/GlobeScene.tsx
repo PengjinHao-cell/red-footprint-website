@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import chinaGlobeMap from '../../data/china-globe-map.simplified.json';
 import type { Site } from '../../data/siteSchema';
@@ -11,6 +11,7 @@ import {
 } from './cameraFlight';
 import { getYangtzeDeltaOverview } from './globeView';
 import { layoutNearbyMarkers } from './markerLayout';
+import { getMarkerPresentation } from './markerPresentation';
 import { getRenderBudget } from './renderBudget';
 import SiteListFallback from './SiteListFallback';
 
@@ -21,6 +22,8 @@ const VISITED_COLOR = '#54201d';
 const SELECTED_COLOR = '#b33a32';
 const BOUNDARY_COLOR = '#7f463c';
 const PROVINCE_COLOR = '#e2c9a4';
+/** 进入精确定位阶段（偏移归零、尺寸封顶）的相机高度阈值。 */
+const PRECISION_ALTITUDE = 0.35;
 type MarkerState = 'selected' | 'visited' | 'unvisited';
 
 type GlobeMarker = {
@@ -119,7 +122,6 @@ function createStarElement(
   const star = document.createElement('button');
   star.type = 'button';
   star.className = 'globe-marker';
-  star.title = marker.officialName;
   star.setAttribute('aria-label', marker.officialName);
   star.setAttribute('aria-pressed', String(marker.markerState === 'selected'));
   star.style.appearance = 'none';
@@ -132,6 +134,7 @@ function createStarElement(
   star.style.pointerEvents = 'auto';
   star.style.setProperty('--marker-x', `${offset.x}px`);
   star.style.setProperty('--marker-y', `${offset.y}px`);
+  star.style.setProperty('--marker-scale', '1');
   const leaderLength = Math.hypot(offset.x, offset.y);
   const leaderAngle =
     leaderLength === 0
@@ -144,6 +147,12 @@ function createStarElement(
   leader.className = 'globe-marker__leader';
   leader.setAttribute('aria-hidden', 'true');
   star.append(leader);
+
+  const tooltip = document.createElement('span');
+  tooltip.className = 'globe-marker__tooltip';
+  tooltip.setAttribute('aria-hidden', 'true');
+  tooltip.textContent = marker.officialName;
+  star.append(tooltip);
 
   const starSpan = document.createElement('span');
   starSpan.className = 'globe-marker__star';
@@ -204,6 +213,9 @@ export default function GlobeScene({
   const markerLayoutsRef = useRef<Map<string, { x: number; y: number }>>(
     new Map(),
   );
+  const markerButtonsRef = useRef<Map<string, HTMLButtonElement>>(new Map());
+  const overviewAltitudeRef = useRef(0.9);
+  const currentAltitudeRef = useRef<number | null>(null);
   const animateRingsRef = useRef(true);
   const selectedIdRef = useRef(selectedId);
   const onSelectRef = useRef(onSelect);
@@ -266,6 +278,37 @@ export default function GlobeScene({
     sites,
   ]);
 
+  const updateMarkerPresentations = useCallback((altitude: number) => {
+    const overviewAltitude = overviewAltitudeRef.current;
+    const selectedIds = new Set(
+      markersRef.current
+        .filter(({ markerState }) => markerState === 'selected')
+        .map(({ id }) => id),
+    );
+
+    markerButtonsRef.current.forEach((button, id) => {
+      const baseOffset = selectedIds.has(id)
+        ? { x: 0, y: 0 }
+        : (markerLayoutsRef.current.get(id) ?? { x: 0, y: 0 });
+      const { offset, scale } = getMarkerPresentation({
+        altitude,
+        overviewAltitude,
+        precisionAltitude: PRECISION_ALTITUDE,
+        baseOffset,
+      });
+      button.style.setProperty('--marker-x', `${offset.x}px`);
+      button.style.setProperty('--marker-y', `${offset.y}px`);
+      button.style.setProperty('--marker-scale', String(scale));
+      const leaderLength = Math.hypot(offset.x, offset.y);
+      const leaderAngle =
+        leaderLength === 0
+          ? 0
+          : (Math.atan2(offset.y, offset.x) * 180) / Math.PI;
+      button.style.setProperty('--leader-length', `${leaderLength}px`);
+      button.style.setProperty('--leader-angle', `${leaderAngle}deg`);
+    });
+  }, []);
+
   useEffect(() => {
     if (forceE2EHarnessFallback || !supportsWebGL || initializationFailed) {
       if (!fallbackErrorDeliveredRef.current) {
@@ -322,6 +365,7 @@ export default function GlobeScene({
         animateRingsRef.current = budget.animateRings;
 
         const overview = getYangtzeDeltaOverview(width);
+        overviewAltitudeRef.current = overview.altitude;
         const initialMarkers = markersRef.current;
         const initialUnvisitedMarkers = budget.animateRings
           ? initialMarkers.filter(
@@ -410,9 +454,6 @@ export default function GlobeScene({
           .polygonCapColor(() => PROVINCE_COLOR)
           .polygonSideColor(() => SAND_COLOR)
           .polygonStrokeColor(() => BOUNDARY_COLOR)
-          .polygonLabel((feature) =>
-            (feature as GlobeMapFeature).properties.name,
-          )
           .pathsData(maritimeBoundaryPaths)
           .pathPoints('points')
           .pathPointLat((point) => (point as GeoPosition)[1])
@@ -433,7 +474,13 @@ export default function GlobeScene({
                     x: 0,
                     y: 0,
                   });
-            return createStarElement(globeMarker, offset, selectMarker);
+            const button = createStarElement(
+              globeMarker,
+              offset,
+              selectMarker,
+            );
+            markerButtonsRef.current.set(globeMarker.id, button);
+            return button;
           })
           .ringsData(initialUnvisitedMarkers)
           .ringLat('lat')
@@ -442,12 +489,21 @@ export default function GlobeScene({
           .ringMaxRadius(2.2)
           .ringPropagationSpeed(0.55)
           .ringRepeatPeriod(2200)
+          .onZoom(({ altitude }) => {
+            if (!active) {
+              return;
+            }
+            currentAltitudeRef.current = altitude;
+            updateMarkerPresentations(altitude);
+          })
           .onGlobeReady(() => {
             if (!active || readyDelivered) {
               return;
             }
 
             globe?.pointOfView(overview, 0);
+            currentAltitudeRef.current = overview.altitude;
+            updateMarkerPresentations(overview.altitude);
             readyDelivered = true;
             onReadyRef.current();
           });
@@ -486,7 +542,7 @@ export default function GlobeScene({
       globeRef.current = null;
       activeSiteIdRef.current = null;
     };
-  }, [forceE2EHarnessFallback, initializationFailed, supportsWebGL]);
+  }, [forceE2EHarnessFallback, initializationFailed, supportsWebGL, updateMarkerPresentations]);
 
   useEffect(() => {
     const globe = globeRef.current;
@@ -499,7 +555,10 @@ export default function GlobeScene({
         ? markers.filter(({ markerState }) => markerState === 'unvisited')
         : [],
     );
-  }, [markers]);
+    updateMarkerPresentations(
+      currentAltitudeRef.current ?? overviewAltitudeRef.current,
+    );
+  }, [markers, updateMarkerPresentations]);
 
   useEffect(() => {
     const controller = controllerRef.current;
