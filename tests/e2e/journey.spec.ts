@@ -84,7 +84,7 @@ test('welcome to detail and back preserves one visited site', async ({ page }) =
   ).toBeVisible();
   await expect(page.getByText('已点亮 0 / 8 处红色坐标')).toBeVisible();
 
-  await page.getByRole('button', { name: TARGET_SITE }).click();
+  await page.getByRole('button', { name: TARGET_SITE, exact: true }).click();
   await expect(page.getByRole('status')).toContainText('正在调整地图视角');
   await expect(page.getByRole('dialog', { name: TARGET_SITE })).toBeVisible();
   await expect(page.getByText('已点亮 1 / 8 处红色坐标')).toBeVisible();
@@ -97,4 +97,88 @@ test('welcome to detail and back preserves one visited site', async ({ page }) =
     page.getByRole('region', { name: 'TEST-ONLY 受控地图适配器' }),
   ).toBeVisible();
   await expect(page.getByText('已点亮 1 / 8 处红色坐标')).toBeVisible();
+});
+
+test('desktop directory shows eight cards with intact names that open detail directly', async ({
+  page,
+}) => {
+  await installTestMapAdapter(page);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('');
+
+  await page.getByRole('button', { name: '开启寻访' }).click();
+  await expect(
+    page.getByRole('region', { name: 'TEST-ONLY 受控地图适配器' }),
+  ).toBeVisible();
+
+  const cards = page.getByRole('button', { name: /^查看/ });
+  await expect(cards).toHaveCount(8);
+
+  const longCard = page.getByRole('button', {
+    name: /查看中国共产党第一次全国代表大会纪念馆/,
+  });
+  await longCard.scrollIntoViewIfNeeded();
+  await expect(longCard).toBeVisible();
+  await expect(longCard).toContainText('中国共产党第一次全国代表大会纪念馆');
+  const overflow = await longCard.evaluate((element) => {
+    const title = element.querySelector('.site-directory__card-title');
+    if (!title) {
+      return -1;
+    }
+    return title.scrollWidth - title.clientWidth;
+  });
+  expect(overflow).toBeLessThanOrEqual(0);
+
+  await longCard.click();
+  await expect(
+    page.getByRole('dialog', { name: '中国共产党第一次全国代表大会纪念馆' }),
+  ).toBeVisible();
+  await expect(page.getByText('正在调整地图视角')).toHaveCount(0);
+  await expect(page.getByText('已点亮 1 / 8 处红色坐标')).toBeVisible();
+
+  await page.getByRole('button', { name: '关闭景点详情' }).click();
+  await expect(
+    page.getByRole('region', { name: 'TEST-ONLY 受控地图适配器' }),
+  ).toBeVisible();
+
+  const martyrCard = page.getByRole('button', { name: /查看雨花台烈士陵园/ });
+  await martyrCard.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('dialog', { name: '雨花台烈士陵园' })).toBeVisible();
+});
+
+test('mobile directory stacks one column and opens detail from a tap', async ({
+  page,
+}) => {
+  await installTestMapAdapter(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('');
+
+  await page.getByRole('button', { name: '开启寻访' }).click();
+  await expect(
+    page.getByRole('region', { name: 'TEST-ONLY 受控地图适配器' }),
+  ).toBeVisible();
+
+  const cards = page.getByRole('button', { name: /^查看/ });
+  await expect(cards).toHaveCount(8);
+
+  const firstCard = cards.nth(0);
+  const secondCard = cards.nth(1);
+  await firstCard.scrollIntoViewIfNeeded();
+  await expect(firstCard).toBeVisible();
+
+  const firstBox = await firstCard.boundingBox();
+  const secondBox = await secondCard.boundingBox();
+  expect(firstBox).not.toBeNull();
+  expect(secondBox).not.toBeNull();
+  expect(secondBox!.x).toBeCloseTo(firstBox!.x, 0);
+  expect(secondBox!.y).toBeGreaterThan(firstBox!.y);
+
+  const secondName = await secondCard
+    .locator('.site-directory__card-title')
+    .textContent();
+  await secondCard.click();
+  await expect(
+    page.getByRole('dialog', { name: secondName?.trim() ?? '' }),
+  ).toBeVisible();
 });
