@@ -308,6 +308,29 @@ button {
   }
 }
 
+@media (min-width: 48rem) and (max-height: 56.25rem) {
+  .welcome-screen {
+    padding-block: clamp(1rem, 3svh, 2rem);
+  }
+
+  .welcome-screen__content {
+    padding-top: clamp(5.5rem, 15.5svh, 8.75rem);
+  }
+
+  .welcome-screen__guide {
+    margin-top: 0.75rem;
+  }
+
+  .welcome-route {
+    width: min(44vw, 15rem);
+    margin-top: 0.75rem;
+  }
+
+  .welcome-screen__button {
+    margin-top: 0.75rem;
+  }
+}
+
 /* 地球 HTML 星标:SVG 五角星、点击区、近邻引线、地点提示 */
 .globe-marker {
   display: grid;

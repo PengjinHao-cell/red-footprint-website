@@ -182,3 +182,65 @@ test('mobile directory stacks one column and opens detail from a tap', async ({
     page.getByRole('dialog', { name: secondName?.trim() ?? '' }),
   ).toBeVisible();
 });
+
+test('compact desktop welcome keeps the route and entry button in view', async ({
+  page,
+}, testInfo) => {
+  test.skip(
+    testInfo.project.name !== 'Desktop Chromium',
+    'This boundary measurement is for desktop layout only.',
+  );
+
+  for (const viewport of [
+    { width: 1280, height: 720 },
+    { width: 1366, height: 768 },
+    { width: 1440, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto('/');
+    await page.waitForTimeout(800);
+
+    const measurements = await page.evaluate(() => {
+      const getBounds = (selector: string) => {
+        const element = document.querySelector<HTMLElement>(selector);
+        if (!element) {
+          throw new Error(`Missing ${selector}`);
+        }
+        const rect = element.getBoundingClientRect();
+        return { top: rect.top, bottom: rect.bottom, height: rect.height };
+      };
+
+      const title = getBounds('.welcome-screen__title');
+      return {
+        height: window.innerHeight,
+        title,
+        subtitle: getBounds('.welcome-screen__subtitle'),
+        guide: getBounds('.welcome-screen__guide'),
+        route: getBounds('.welcome-route'),
+        button: getBounds('.welcome-screen__button'),
+      };
+    });
+
+    for (const bounds of [
+      measurements.subtitle,
+      measurements.title,
+      measurements.guide,
+      measurements.route,
+      measurements.button,
+    ]) {
+      expect(bounds.top).toBeGreaterThanOrEqual(0);
+      expect(bounds.bottom).toBeLessThanOrEqual(measurements.height);
+    }
+    expect(
+      (measurements.title.top + measurements.title.bottom) /
+        2 /
+        measurements.height,
+    ).toBeGreaterThanOrEqual(0.43);
+    expect(
+      (measurements.title.top + measurements.title.bottom) /
+        2 /
+        measurements.height,
+    ).toBeLessThanOrEqual(0.48);
+    expect(measurements.button.height).toBeGreaterThanOrEqual(48);
+  }
+});
