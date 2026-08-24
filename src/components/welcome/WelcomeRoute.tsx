@@ -1,6 +1,5 @@
 type WelcomeRouteProps = {
   motion?: 'full' | 'reduced';
-  variant?: 'full' | 'short';
 };
 
 const STAR_POINTS = [
@@ -11,22 +10,19 @@ const STAR_POINTS = [
   { cx: 480, cy: 120 },
 ];
 
-const MAIN_PATH =
-  'M90 230 C 130 205, 150 185, 180 170 S 250 155, 285 150 S 355 165, 395 175 S 450 140, 480 120';
+const STAR_PATH =
+  'M0 -9 L2.6 -3.2 8.6 -2.6 4.1 1.6 5.3 7.6 0 4.6 -5.3 7.6 -4.1 1.6 -8.6 -2.6 -2.6 -3.2 Z';
 
 /**
- * 开屏"足迹连线"装饰动画:5 个抽象星点 + 1 条暖红路线。
+ * 开屏"足迹连线"装饰动画:5 个抽象星点 + 4 段依次绘制的连线。
+ * 外层 <g> 固定星点坐标,内层 path 只做透明度/缩放动画,避免 CSS transform 覆盖坐标;
  * 星点不标注站点名称,不冒充真实地理坐标;全部子元素对辅助技术隐藏。
  */
-export default function WelcomeRoute({
-  motion = 'full',
-  variant = 'full',
-}: WelcomeRouteProps) {
+export default function WelcomeRoute({ motion = 'full' }: WelcomeRouteProps) {
   return (
     <div
       className="welcome-route"
       data-motion={motion}
-      data-variant={variant}
       aria-hidden="true"
     >
       <svg
@@ -36,24 +32,36 @@ export default function WelcomeRoute({
         preserveAspectRatio="xMidYMid meet"
         className="welcome-route__svg"
       >
-        <path
-          className="welcome-route__line"
-          d={MAIN_PATH}
-          fill="none"
-          stroke="#982e2d"
-          strokeWidth="3"
-          strokeLinecap="round"
-          aria-hidden="true"
-        />
+        {STAR_POINTS.slice(0, -1).map((point, index) => {
+          const next = STAR_POINTS[index + 1];
+          return (
+            <path
+              aria-hidden="true"
+              className="welcome-route__segment"
+              data-step={index}
+              d={`M${point.cx} ${point.cy} L${next.cx} ${next.cy}`}
+              fill="none"
+              key={`segment-${index}`}
+              stroke="#982e2d"
+              strokeLinecap="round"
+              strokeWidth="3"
+            />
+          );
+        })}
         {STAR_POINTS.map(({ cx, cy }, index) => (
-          <path
+          <g
             aria-hidden="true"
-            className="welcome-route__star"
-            d="M0 -9 L2.6 -3.2 8.6 -2.6 4.1 1.6 5.3 7.6 0 4.6 -5.3 7.6 -4.1 1.6 -8.6 -2.6 -2.6 -3.2 Z"
-            fill="#982e2d"
+            className="welcome-route__star-anchor"
             key={`star-${index}`}
-            transform={`translate(${cx} ${cy}) scale(0.85)`}
-          />
+            transform={`translate(${cx} ${cy})`}
+          >
+            <path
+              className="welcome-route__star"
+              data-step={index}
+              d={STAR_PATH}
+              fill="#982e2d"
+            />
+          </g>
         ))}
       </svg>
     </div>

@@ -127,4 +127,32 @@ describe('WelcomeScreen', () => {
     fireEvent.click(screen.getByRole('button', { name: '开启寻访' }));
     expect(onEnter).toHaveBeenCalledTimes(1);
   });
+
+  it('removes the seal and lays the welcome screen out in the approved order', () => {
+    const { container } = render(<WelcomeScreen ready onEnter={() => undefined} />);
+
+    expect(container.querySelector('.welcome-screen__seal')).toBeNull();
+
+    const content = container.querySelector('.welcome-screen__content');
+    expect(
+      [...(content?.children ?? [])].map((element) => element.className),
+    ).toEqual([
+      'welcome-screen__subtitle',
+      'welcome-screen__title',
+      'welcome-screen__guide',
+      'welcome-route',
+      'welcome-screen__button',
+    ]);
+  });
+
+  it('plays the full route animation again even when the old seen flag is present', () => {
+    vi.unstubAllGlobals();
+    window.sessionStorage.setItem('red-footprint:welcome-seen:v1', '1');
+    const { container } = render(<WelcomeScreen ready onEnter={() => undefined} />);
+
+    const route = container.querySelector('.welcome-route');
+    expect(route).not.toBeNull();
+    expect(route?.getAttribute('data-variant')).toBeNull();
+    expect(route?.getAttribute('data-motion')).toBe('full');
+  });
 });

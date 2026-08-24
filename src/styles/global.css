@@ -84,22 +84,9 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
+  padding-top: clamp(1.5rem, 5svh, 3.5rem);
   animation: welcome-reveal 700ms ease-out both;
-}
-
-.welcome-screen__seal {
-  display: grid;
-  width: 3.25rem;
-  height: 3.25rem;
-  margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
-  place-items: center;
-  transform: rotate(-5deg);
-  border: 2px solid var(--brick);
-  color: var(--brick);
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
 .welcome-screen__subtitle {
@@ -154,10 +141,10 @@ button {
   animation: loading-pulse 1.4s ease-in-out infinite;
 }
 
-/* 开屏"足迹连线"动画 */
+/* 开屏"足迹连线"动画:4 段路线 + 5 颗星按顺序出现 */
 .welcome-route {
   width: min(78vw, 30rem);
-  margin-bottom: -0.5rem;
+  margin: clamp(0.25rem, 1.5vw, 0.75rem) 0 0;
 }
 
 .welcome-route__svg {
@@ -167,55 +154,62 @@ button {
   overflow: visible;
 }
 
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__line {
-  stroke-dasharray: 620;
-  stroke-dashoffset: 620;
-  animation: route-draw 900ms ease-out 300ms forwards;
+.welcome-route[data-motion='full'] .welcome-route__segment {
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: route-draw 300ms ease-out forwards;
 }
 
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__star {
+.welcome-route[data-motion='full'] .welcome-route__star {
   opacity: 0;
   animation: star-pop 180ms ease-out forwards;
 }
 
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__star:nth-of-type(1) {
-  animation-delay: 0ms;
-}
-
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__star:nth-of-type(2) {
+.welcome-route[data-motion='full'] .welcome-route__segment[data-step='0'] {
   animation-delay: 180ms;
 }
 
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__star:nth-of-type(3) {
-  animation-delay: 360ms;
+.welcome-route[data-motion='full'] .welcome-route__segment[data-step='1'] {
+  animation-delay: 600ms;
 }
 
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__star:nth-of-type(4) {
-  animation-delay: 540ms;
+.welcome-route[data-motion='full'] .welcome-route__segment[data-step='2'] {
+  animation-delay: 1020ms;
 }
 
-.welcome-route[data-motion='full'][data-variant='full']
-  .welcome-route__star:nth-of-type(5) {
-  animation-delay: 720ms;
+.welcome-route[data-motion='full'] .welcome-route__segment[data-step='3'] {
+  animation-delay: 1440ms;
 }
 
-.welcome-route[data-motion='full'][data-variant='full'] {
-  animation: route-settle 600ms ease-out 1600ms both;
+.welcome-route[data-motion='full'] .welcome-route__star[data-step='0'] {
+  animation-delay: 0ms;
 }
 
-.welcome-route[data-motion='reduced'] .welcome-route__line,
-.welcome-route[data-variant='short'] .welcome-route__line {
+.welcome-route[data-motion='full'] .welcome-route__star[data-step='1'] {
+  animation-delay: 420ms;
+}
+
+.welcome-route[data-motion='full'] .welcome-route__star[data-step='2'] {
+  animation-delay: 840ms;
+}
+
+.welcome-route[data-motion='full'] .welcome-route__star[data-step='3'] {
+  animation-delay: 1260ms;
+}
+
+.welcome-route[data-motion='full'] .welcome-route__star[data-step='4'] {
+  animation-delay: 1680ms;
+}
+
+.welcome-route[data-motion='full'] {
+  animation: route-settle 600ms ease-out 2000ms both;
+}
+
+.welcome-route[data-motion='reduced'] .welcome-route__segment {
   stroke-dashoffset: 0;
 }
 
-.welcome-route[data-motion='reduced'] .welcome-route__star,
-.welcome-route[data-variant='short'] .welcome-route__star {
+.welcome-route[data-motion='reduced'] .welcome-route__star {
   opacity: 1;
 }
 
