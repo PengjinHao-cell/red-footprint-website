@@ -68,7 +68,7 @@ The release gate validates reviewed site content, the production media manifest,
 
 ## Content and Media
 
-Production site records are generated from reviewed structured content. The application references 60 versioned media objects: 8 hero images, 28 selected photographs, 8 video posters, 8 short videos, and 8 WebVTT subtitle files.
+Production site records are generated from reviewed structured content. The application references 77 versioned media objects: 8 hero images, all 45 supplied photographs, 8 video posters, 8 short videos, and 8 WebVTT subtitle files.
 
 Original working media, local processing output, and cloud credentials are intentionally excluded from this repository. Structured review records are included so production content remains traceable. Published media and historical content remain subject to their recorded source, review, and usage declarations; repository access does not grant permission to reuse them independently.
 
