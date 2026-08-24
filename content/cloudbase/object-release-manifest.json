@@ -5,9 +5,9 @@
   "bucket": "7265-red-footprint-preview-d5322636bd-1438111688",
   "version": "v1",
   "targetPrefix": "media/sites/*/v1/",
-  "releasedAt": "2026-08-22T12:43:37+08:00",
-  "objectCount": 60,
-  "totalBytes": 95432645,
+  "releasedAt": "2026-08-24T03:08:34.093Z",
+  "objectCount": 77,
+  "totalBytes": 100252923,
   "writePolicy": {
     "createOnly": true,
     "overwrite": false,
@@ -185,6 +185,38 @@
     },
     {
       "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-06.webp",
+      "bytes": 380608,
+      "mime": "image/webp",
+      "sha256": "82811e5462ae7966b6a57ecd947787fad3746205f15b77ce901700314bb6e4db"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-07.webp",
+      "bytes": 353564,
+      "mime": "image/webp",
+      "sha256": "70e4e9343da2494339b01aa5e1302f5d5699c4bf75a7846000cf5ed805b7f365"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-08.webp",
+      "bytes": 218936,
+      "mime": "image/webp",
+      "sha256": "967dee5e3444c55b7634f21702afab28ef5ff4a3fd179081c6ac0347abc0ff49"
+    },
+    {
+      "siteId": "dujiang-victory",
+      "kind": "photo",
+      "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-09.webp",
+      "bytes": 155580,
+      "mime": "image/webp",
+      "sha256": "e96b0c93e7a8198f3d1d456a35b66f8cd5d72cc672be8c8a0d6661db29947bbb"
+    },
+    {
+      "siteId": "dujiang-victory",
       "kind": "video",
       "objectPath": "media/sites/dujiang-victory/v1/video/dujiang-victory-video.mp4",
       "bytes": 13803265,
@@ -257,6 +289,54 @@
     },
     {
       "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-06.webp",
+      "bytes": 277072,
+      "mime": "image/webp",
+      "sha256": "54c1bf0cba65966d518deaa1ef66dc432a92bcfee0546da035f47b854fe7a40b"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-07.webp",
+      "bytes": 155774,
+      "mime": "image/webp",
+      "sha256": "003f88deceb0752ad5dc04260f273633e4180f249724237cffec29b7dc42e6a9"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-08.webp",
+      "bytes": 205164,
+      "mime": "image/webp",
+      "sha256": "3656997ac8e5ac0b5eb2bf161400d644db3b504bf99a2e771a293343849cd50b"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-09.webp",
+      "bytes": 540708,
+      "mime": "image/webp",
+      "sha256": "529087c9b43a8acf8bd4356392a457d3450afa7517ed283375b6e631ddadb813"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-10.webp",
+      "bytes": 319466,
+      "mime": "image/webp",
+      "sha256": "724ed6cc31360962a58383ee9652ab08217cb8de4601bb47f0380bb2ff612669"
+    },
+    {
+      "siteId": "sihang-warehouse",
+      "kind": "photo",
+      "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-11.webp",
+      "bytes": 227270,
+      "mime": "image/webp",
+      "sha256": "b3c8e8d7f07b8421780609337e1dde16f3adaa51de85633677488967d32a5201"
+    },
+    {
+      "siteId": "sihang-warehouse",
       "kind": "video",
       "objectPath": "media/sites/sihang-warehouse/v1/video/sihang-warehouse-video.mp4",
       "bytes": 10163744,
@@ -326,6 +406,46 @@
       "bytes": 257932,
       "mime": "image/webp",
       "sha256": "5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-06.webp",
+      "bytes": 292984,
+      "mime": "image/webp",
+      "sha256": "fe725a734f9d8abea30ff9e78342e7359bd8fcf568a38ced7e9413d3955438ee"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-07.webp",
+      "bytes": 448504,
+      "mime": "image/webp",
+      "sha256": "0d6b6e0c166618dec25c84c85b789665daeb5a7897ea3daef1e51eba9c3c327a"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-08.webp",
+      "bytes": 148976,
+      "mime": "image/webp",
+      "sha256": "91b646ffbedfa9f90110f39fbc704535dc54185d393a11c819d35ca4684f7a66"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-09.webp",
+      "bytes": 278200,
+      "mime": "image/webp",
+      "sha256": "5093b24035566261868c8461e972605e5f7928853ecb6043c025f2f4d40507a0"
+    },
+    {
+      "siteId": "cpc-first-congress",
+      "kind": "photo",
+      "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-10.webp",
+      "bytes": 274140,
+      "mime": "image/webp",
+      "sha256": "ebf571596c30e77eb8d4e76c3b2942ffa97f178e575f41a01ed3e04c495c801e"
     },
     {
       "siteId": "cpc-first-congress",
@@ -470,6 +590,22 @@
       "bytes": 165824,
       "mime": "image/webp",
       "sha256": "ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "photo",
+      "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-05.webp",
+      "bytes": 424020,
+      "mime": "image/webp",
+      "sha256": "de01a060473909afa7826496de1de8573ceab8ed8e6f29bde28584b2453c632c"
+    },
+    {
+      "siteId": "meiyuan-new-village",
+      "kind": "photo",
+      "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-06.webp",
+      "bytes": 119312,
+      "mime": "image/webp",
+      "sha256": "c81114a3f94b75b8543177e38e506e73eed1233547ec206457a76d3ec26f809c"
     },
     {
       "siteId": "meiyuan-new-village",

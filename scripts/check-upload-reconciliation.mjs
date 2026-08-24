@@ -330,6 +330,10 @@ export function checkUploadReconciliation(root = process.cwd()) {
   return errors;
 }
 
+export function formatUploadReconciliationSuccess(reconciliation) {
+  return `Upload reconciliation passed: ${reconciliation.objectCount} immutable CloudBase v1 objects verified.`;
+}
+
 const modulePath = fileURLToPath(import.meta.url);
 if (process.argv[1] && resolve(process.argv[1]) === modulePath) {
   const root = resolve(dirname(modulePath), '..');
@@ -339,6 +343,7 @@ if (process.argv[1] && resolve(process.argv[1]) === modulePath) {
     errors.forEach((error) => console.error(`- ${error}`));
     process.exitCode = 1;
   } else {
-    console.log('Upload reconciliation passed: 60 immutable CloudBase v1 objects verified.');
+    const reconciliation = readJson(root, RECONCILIATION_PATH);
+    console.log(formatUploadReconciliationSuccess(reconciliation));
   }
 }

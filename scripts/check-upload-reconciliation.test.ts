@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   buildObjectReleaseManifest,
+  formatUploadReconciliationSuccess,
   validateUploadReconciliation,
 } from './check-upload-reconciliation.mjs';
 
@@ -172,5 +173,24 @@ describe('CloudBase upload reconciliation validation', () => {
         reconciliation,
       ).join('\n'),
     ).toMatch(/placeholder|domain/i);
+  });
+
+  it('keeps committed release and reconciliation evidence complete for every published object', () => {
+    const release = JSON.parse(
+      readFileSync('content/cloudbase/object-release-manifest.json', 'utf8'),
+    );
+    const reconciliation = JSON.parse(
+      readFileSync('content/cloudbase/upload-reconciliation.json', 'utf8'),
+    );
+
+    expect(
+      validateUploadReconciliation(mediaManifest(), release, reconciliation),
+    ).toEqual([]);
+  });
+
+  it('reports the verified object count from reconciliation evidence', () => {
+    expect(formatUploadReconciliationSuccess({ objectCount: 77 })).toBe(
+      'Upload reconciliation passed: 77 immutable CloudBase v1 objects verified.',
+    );
   });
 });
