@@ -85,7 +85,7 @@ button {
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding-top: clamp(1.5rem, 5svh, 3.5rem);
+  padding-top: clamp(7rem, 17svh, 12rem);
   animation: welcome-reveal 700ms ease-out both;
 }
 
