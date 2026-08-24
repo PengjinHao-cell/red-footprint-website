@@ -8,7 +8,7 @@
 
 ## 提交清单
 
-对应基线 `fb18e40`（父仓库 main），共 6 个功能/测试提交 + 1 个验收修正提交：
+对应基线 `fb18e40`（父仓库 main），截至本文档首次提交前共有 6 个功能/测试提交 + 1 个验收修正提交：
 
 1. `6251f95 fix: align globe marker interaction`
 2. `6b4d861 fix: prevent accidental globe marker taps`
@@ -16,7 +16,9 @@
 4. `4bb1926 feat: add staged globe loading progress`
 5. `e04da0a feat: add responsive site directory`
 6. `068ef20 test: cover refined globe interactions`
-7. `（验收修正）fix: center welcome title in the approved visual band`
+7. `e5628e6 fix: center welcome title in the approved visual band`
+
+本文档本身对应后续提交 `e687fc0 docs: record round-2 maintenance acceptance`。
 
 每次提交仅暂存计划列出的 `暑期网站/` 路径，无 `git add .`、无 amend、无 force push；`quiz-app` 与父仓库其他文件未纳入。
 
@@ -76,3 +78,9 @@
 
 - Vite 构建提示 globe.gl 分包超过 500 kB（gzip 约 533 kB），为既有现象，不影响本轮功能。
 - headless SwiftShader 帧率低导致 CSS 过渡推进缓慢，仅影响自动化等待时长，不影响真实浏览器表现。
+
+## 验收后修正（2026-08-24）
+
+- `c3c59bc fix: keep welcome entry visible on compact desktops`：为宽度至少 48rem、高度不超过 900px 的桌面加入紧凑开屏规则；不影响 390×844 手机布局。
+- 新增回归测试直接访问网站根页面，并等待 800ms 开屏动画结束后测量，避免测试壳页面和动画瞬时位移产生误判。
+- 稳定页面实测：1280×720、1366×768、1440×900 的主标题中心分别为 43.09%、44.00%、46.02%；路线与入口按钮均在首屏内，入口按钮高度为 48px。390×844 无横向溢出，主标题中心为 44.04%。
