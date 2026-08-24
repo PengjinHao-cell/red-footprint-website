@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 
 import AppErrorBoundary from './components/AppErrorBoundary';
 import SiteDetailPanel from './components/detail/SiteDetailPanel';
+import SiteDirectory from './components/directory/SiteDirectory';
 import ProgressiveGlobe from './components/globe/ProgressiveGlobe';
 import JourneyProgress from './components/progress/JourneyProgress';
 import WelcomeScreen from './components/welcome/WelcomeScreen';
@@ -111,9 +112,16 @@ export default function App({ sites }: AppProps) {
         />
 
         {pageState === 'map' && (
-          <button onClick={retryGlobe} type="button">
-            重新加载3D地图
-          </button>
+          <>
+            <button onClick={retryGlobe} type="button">
+              重新加载3D地图
+            </button>
+            <SiteDirectory
+              onOpen={openDetail}
+              sites={sites}
+              visitedIds={visitedIds}
+            />
+          </>
         )}
 
         {pageState === 'detail' && selectedSite && (

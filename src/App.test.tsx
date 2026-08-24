@@ -229,7 +229,7 @@ describe('App', () => {
     renderExperience();
 
     expect(screen.getByRole('region', { name: '景点列表降级' })).toBeVisible();
-    expect(screen.getAllByRole('button')).toHaveLength(10);
+    expect(screen.getAllByRole('button', { name: /^查看/ })).toHaveLength(8);
 
     fireEvent.click(screen.getByRole('button', { name: sites[0].officialName }));
     expect(screen.getByRole('status')).toHaveTextContent('正在调整地图视角');
@@ -268,10 +268,28 @@ describe('App', () => {
     renderExperience();
 
     expect(screen.getByRole('region', { name: '景点列表降级' })).toBeVisible();
+    expect(screen.getAllByRole('button', { name: /^查看/ })).toHaveLength(8);
     fireEvent.click(screen.getByRole('button', { name: '重新加载3D地图' }));
 
     expect(screen.getByRole('region', { name: '景点列表降级' })).toBeVisible();
-    expect(screen.getAllByRole('button')).toHaveLength(10);
+    expect(screen.getAllByRole('button', { name: /^查看/ })).toHaveLength(8);
+  });
+
+  it('opens detail directly from a directory card without a camera flight', async () => {
+    renderExperience();
+    await waitForMap();
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: new RegExp(`查看${sites[0].officialName}`),
+      }),
+    );
+
+    expect(screen.queryByText(/正在调整地图视角/)).not.toBeInTheDocument();
+    expect(
+      await screen.findByRole('dialog', { name: sites[0].officialName }),
+    ).toBeVisible();
+    expect(screen.getByText('已点亮 1 / 8 处红色坐标')).toBeVisible();
   });
 
   it('recovers a rendering failure by remounting the map subtree', async () => {

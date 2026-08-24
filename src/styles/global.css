@@ -574,6 +574,136 @@ button {
   pointer-events: auto;
 }
 
+/* 红色地标名录:地图下方八张左图右文地点卡片 */
+.site-directory {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.site-directory__heading {
+  margin: 0 0 clamp(0.75rem, 2vw, 1rem);
+  color: var(--brick-dark);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  letter-spacing: 0.08em;
+}
+
+.site-directory__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+}
+
+.site-directory__card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--sand);
+  border-radius: 0.85rem;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 1px 3px rgb(63 41 37 / 8%);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.site-directory__card-image {
+  display: block;
+  width: 8.5rem;
+  flex: 0 0 8.5rem;
+  align-self: stretch;
+  object-fit: cover;
+  border-radius: 0.85rem 0 0 0.85rem;
+  background: var(--sand);
+}
+
+.site-directory__card-image--failure {
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  color: var(--ink);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.site-directory__card-body {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.85rem 1rem 0.85rem 0.9rem;
+}
+
+.site-directory__card-city {
+  color: var(--brick);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.site-directory__card-title {
+  overflow: visible;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  color: var(--brick-dark);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.site-directory__card-action {
+  color: var(--brick);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.site-directory__card-visited {
+  align-self: flex-start;
+  margin-top: 0.1rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--brick);
+  border-radius: 999px;
+  color: var(--brick);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-directory__card:hover,
+  .site-directory__card:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--brick);
+    box-shadow: 0 6px 14px rgb(63 41 37 / 14%);
+  }
+}
+
+.site-directory__card:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 42rem) {
+  .site-directory__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-directory__card:hover,
+  .site-directory__card:focus-visible,
+  .site-directory__card:active {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
