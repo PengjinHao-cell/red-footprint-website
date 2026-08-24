@@ -10,9 +10,20 @@ describe('GlobeLoadingPlaceholder', () => {
     render(<GlobeLoadingPlaceholder />);
 
     expect(screen.getByRole('status')).toHaveTextContent(
-      '正在载入长三角红色足迹',
+      '正在准备长三角红色足迹',
     );
     expect(screen.getByLabelText('长三角地图加载占位')).toBeVisible();
+  });
+
+  it('renders the accessible preparation progress bar', () => {
+    render(<GlobeLoadingPlaceholder progress={75} />);
+
+    const progressbar = screen.getByRole('progressbar');
+    expect(progressbar).toHaveAttribute('aria-valuenow', '75');
+    expect(progressbar).toHaveAttribute('aria-valuemin', '0');
+    expect(progressbar).toHaveAttribute('aria-valuemax', '100');
+    expect(screen.getByText('75%')).toBeVisible();
+    expect(screen.getByText(/正在准备长三角红色足迹/)).toBeVisible();
   });
 
   it('renders five decorative stars and a breathing glow with full motion', () => {

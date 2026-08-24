@@ -102,7 +102,18 @@ function renderExperience() {
   fireEvent.click(screen.getByRole('button', { name: '开启寻访' }));
 }
 
+async function waitForMap() {
+  await waitFor(
+    () =>
+      expect(
+        screen.queryByRole('region', { name: '测试三维地图' }),
+      ).toBeVisible(),
+    { timeout: 4_000 },
+  );
+}
+
 async function openFirstSiteFromMap() {
+  await waitForMap();
   fireEvent.click(screen.getByRole('button', { name: sites[0].officialName }));
   expect(screen.getByRole('status')).toHaveTextContent('正在调整地图视角');
   fireEvent.click(screen.getByRole('button', { name: '完成镜头飞行' }));
@@ -152,18 +163,19 @@ describe('App', () => {
     expect(screen.queryByRole('button', { name: '开启寻访' })).not.toBeInTheDocument();
   });
 
-  it('moves from the existing welcome screen to the map when modules are ready', () => {
+  it('moves from the existing welcome screen to the map when modules are ready', async () => {
     render(<App sites={sites} />);
 
     expect(screen.getByRole('button', { name: '开启寻访' })).toBeEnabled();
     fireEvent.click(screen.getByRole('button', { name: '开启寻访' }));
 
-    expect(screen.getByRole('region', { name: '测试三维地图' })).toBeVisible();
+    await waitForMap();
     expect(screen.getByText('已点亮 0 / 8 处红色坐标')).toBeVisible();
   });
 
   it('travels to a point, opens its detail, and records the visit only on open', async () => {
     renderExperience();
+    await waitForMap();
 
     fireEvent.click(screen.getByRole('button', { name: sites[0].officialName }));
 
@@ -182,8 +194,9 @@ describe('App', () => {
     ]);
   });
 
-  it('ignores another point while travelling', () => {
+  it('ignores another point while travelling', async () => {
     renderExperience();
+    await waitForMap();
 
     fireEvent.click(screen.getByRole('button', { name: sites[0].officialName }));
 
@@ -270,7 +283,7 @@ describe('App', () => {
     globeHarness.shouldThrow = false;
     fireEvent.click(screen.getByRole('button', { name: '重新尝试' }));
 
-    expect(await screen.findByRole('region', { name: '测试三维地图' })).toBeVisible();
+    await waitForMap();
     expect(consoleError).toHaveBeenCalled();
   });
 });

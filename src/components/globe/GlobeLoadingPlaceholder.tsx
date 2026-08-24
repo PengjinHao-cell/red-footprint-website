@@ -2,12 +2,20 @@
  * 三维地球就绪前的长三角加载动画占位。
  * 只包含内联 SVG 与纯 CSS,不导入 globe.gl、Three.js 或地图 JSON。
  * 动画:岸线描边绘制 → 5 颗星点依次点亮 → 背景呼吸;reduced-motion 下静态。
+ * progress:准备进度(0-100),语义为"准备"而非真实下载百分比。
  */
 import useReducedMotion from '../../hooks/useReducedMotion';
 
-export default function GlobeLoadingPlaceholder() {
+type GlobeLoadingPlaceholderProps = {
+  progress?: number;
+};
+
+export default function GlobeLoadingPlaceholder({
+  progress = 0,
+}: GlobeLoadingPlaceholderProps) {
   const reducedMotion = useReducedMotion();
   const motion = reducedMotion ? 'reduced' : 'full';
+  const clamped = Math.min(100, Math.max(0, Math.round(progress)));
 
   return (
     <section
@@ -76,15 +84,23 @@ export default function GlobeLoadingPlaceholder() {
           />
         ))}
       </svg>
-      <p
-        className="globe-placeholder__status"
-        role="status"
+      <div
+        aria-label="地图准备进度"
+        aria-valuemax={100}
+        aria-valuemin={0}
+        aria-valuenow={clamped}
+        className="globe-placeholder__progress"
+        role="progressbar"
       >
-        正在载入长三角红色足迹
-        <span className="globe-placeholder__dots" aria-hidden="true">
-          <span className="globe-placeholder__dot" />
-          <span className="globe-placeholder__dot" />
-          <span className="globe-placeholder__dot" />
+        <span
+          className="globe-placeholder__progress-bar"
+          style={{ width: `${clamped}%` }}
+        />
+      </div>
+      <p className="globe-placeholder__status" role="status">
+        正在准备长三角红色足迹
+        <span className="globe-placeholder__percentage" aria-hidden="true">
+          {clamped}%
         </span>
       </p>
     </section>

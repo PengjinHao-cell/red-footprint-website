@@ -453,6 +453,30 @@ button {
   animation-delay: 1120ms;
 }
 
+.globe-placeholder__progress {
+  position: absolute;
+  inset: auto auto clamp(3.75rem, 9vh, 5.5rem) 50%;
+  width: min(70%, 20rem);
+  height: 0.35rem;
+  overflow: hidden;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--sand);
+}
+
+.globe-placeholder__progress-bar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--brick);
+  transition: width 120ms linear;
+}
+
+.globe-placeholder__percentage {
+  margin-left: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
 .globe-placeholder__status {
   position: absolute;
   inset: auto auto 1.25rem 50%;
@@ -524,6 +548,30 @@ button {
   50% {
     opacity: 1;
   }
+}
+
+/* 渐进加载:占位层与地图层交叉淡化 */
+.globe-loading-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity 300ms ease;
+}
+
+.globe-loading-layer--leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.globe-scene-layer {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.globe-scene-layer--visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

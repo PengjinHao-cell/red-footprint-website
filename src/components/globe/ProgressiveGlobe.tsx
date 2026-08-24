@@ -1,11 +1,23 @@
 import { useEffect, useRef, useState } from 'react';
 
 import type { Site } from '../../data/siteSchema';
+import useReducedMotion from '../../hooks/useReducedMotion';
+import {
+  CROSS_FADE_MS,
+  getPendingProgress,
+  getReadyProgress,
+  READY_HOLD_MS,
+} from './globeLoadingProgress';
 import GlobeLoadingPlaceholder from './GlobeLoadingPlaceholder';
 import GlobeScene from './GlobeScene';
 import SiteListFallback from './SiteListFallback';
 
-type GlobeLoadState = 'loading' | 'ready' | 'failed' | 'timed-out';
+type GlobeLoadState =
+  | 'loading'
+  | 'finishing'
+  | 'ready'
+  | 'failed'
+  | 'timed-out';
 
 const READY_TIMEOUT_MS = 8_000;
 
@@ -28,9 +40,77 @@ export default function ProgressiveGlobe({
   onTravelComplete,
   onReturnComplete,
 }: ProgressiveGlobeProps) {
+  const reducedMotion = useReducedMotion();
   const [state, setState] = useState<GlobeLoadState>('loading');
   const [attempt, setAttempt] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [placeholderGone, setPlaceholderGone] = useState(false);
+  const readyReceivedRef = useRef(false);
+  const progressRef = useRef(0);
+  const progressStartRef = useRef(0);
+  const finishingStartRef = useRef(0);
   const previousDetailOpenRef = useRef(detailOpen);
+
+  useEffect(() => {
+    if (state !== 'loading' && state !== 'finishing') {
+      return;
+    }
+
+    if (reducedMotion) {
+      if (state === 'loading') {
+        progressRef.current = 75;
+        queueMicrotask(() => {
+          setProgress(75);
+          if (readyReceivedRef.current) {
+            setState('finishing');
+          }
+        });
+      } else {
+        progressRef.current = 100;
+        queueMicrotask(() => {
+          setProgress(100);
+          setState('ready');
+        });
+      }
+      return;
+    }
+
+    let finishing = state === 'finishing';
+    const start = performance.now();
+    if (finishing) {
+      finishingStartRef.current = start;
+    } else {
+      progressStartRef.current = start;
+    }
+
+    let frame = 0;
+    const tick = () => {
+      const now = performance.now();
+      if (!finishing) {
+        const pending = getPendingProgress(now - progressStartRef.current);
+        setProgress(pending);
+        progressRef.current = pending;
+        if (pending >= 75 && readyReceivedRef.current) {
+          finishing = true;
+          finishingStartRef.current = now;
+        }
+      } else {
+        const completed = getReadyProgress(
+          now - finishingStartRef.current,
+        );
+        setProgress(completed);
+        progressRef.current = completed;
+        if (completed >= 100) {
+          setState('ready');
+          return;
+        }
+      }
+      frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [reducedMotion, state]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -39,6 +119,18 @@ export default function ProgressiveGlobe({
 
     return () => clearTimeout(timer);
   }, [attempt]);
+
+  useEffect(() => {
+    if (state !== 'ready') {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setPlaceholderGone(true);
+    }, READY_HOLD_MS + CROSS_FADE_MS);
+
+    return () => clearTimeout(timer);
+  }, [state]);
 
   useEffect(() => {
     const wasOpen = previousDetailOpenRef.current;
@@ -52,8 +144,21 @@ export default function ProgressiveGlobe({
     }
   }, [detailOpen, onReturnComplete, state]);
 
+  const handleReady = () => {
+    if (readyReceivedRef.current) {
+      return;
+    }
+    readyReceivedRef.current = true;
+    if (progressRef.current >= 75) {
+      setState('finishing');
+    }
+  };
+
   const retry = () => {
     setState('loading');
+    setProgress(0);
+    setPlaceholderGone(false);
+    readyReceivedRef.current = false;
     setAttempt((value) => value + 1);
   };
 
@@ -110,31 +215,31 @@ export default function ProgressiveGlobe({
 
   return (
     <div style={{ position: 'relative' }}>
-      {!ready && (
+      {!placeholderGone && (
         <div
-          style={{
-            position: ready ? 'static' : 'absolute',
-            inset: 0,
-            zIndex: 1,
-          }}
           aria-hidden={ready}
+          className={
+            ready
+              ? 'globe-loading-layer globe-loading-layer--leaving'
+              : 'globe-loading-layer'
+          }
         >
-          <GlobeLoadingPlaceholder />
+          <GlobeLoadingPlaceholder progress={progress} />
         </div>
       )}
       <div
-        style={{
-          opacity: ready ? 1 : 0,
-          pointerEvents: ready ? 'auto' : 'none',
-          transition: 'opacity 300ms ease',
-        }}
         aria-hidden={!ready}
+        className={
+          ready
+            ? 'globe-scene-layer globe-scene-layer--visible'
+            : 'globe-scene-layer'
+        }
       >
         <GlobeScene
           key={attempt}
           detailOpen={detailOpen}
           onError={() => setState('failed')}
-          onReady={() => setState('ready')}
+          onReady={handleReady}
           onReturnComplete={onReturnComplete}
           onSelect={onSelect}
           onTravelComplete={onTravelComplete}
