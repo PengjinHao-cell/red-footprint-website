@@ -21,6 +21,8 @@ vi.mock('./components/globe/GlobeScene', async () => {
     sites: ReadonlyArray<Site>;
     selectedId: string | null;
     detailOpen: boolean;
+    onReady: () => void;
+    onError: (error: Error) => void;
     onSelect: (id: string) => void;
     onTravelComplete: (id: string) => void;
     onReturnComplete: () => void;
@@ -30,13 +32,20 @@ vi.mock('./components/globe/GlobeScene', async () => {
     sites,
     selectedId,
     detailOpen,
+    onReady,
+    onError,
     onSelect,
     onTravelComplete,
     onReturnComplete,
   }: MockGlobeProps) {
     React.useEffect(() => {
       globeHarness.mounts += 1;
-    }, []);
+      if (globeHarness.fallback) {
+        onError(new Error('synthetic compliance fallback'));
+      } else {
+        onReady();
+      }
+    }, [onError, onReady]);
 
     if (globeHarness.shouldThrow) {
       throw new Error('synthetic globe render failure');
@@ -207,7 +216,7 @@ describe('App', () => {
     renderExperience();
 
     expect(screen.getByRole('region', { name: '景点列表降级' })).toBeVisible();
-    expect(screen.getAllByRole('button')).toHaveLength(9);
+    expect(screen.getAllByRole('button')).toHaveLength(10);
 
     fireEvent.click(screen.getByRole('button', { name: sites[0].officialName }));
     expect(screen.getByRole('status')).toHaveTextContent('正在调整地图视角');
@@ -249,7 +258,7 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '重新加载3D地图' }));
 
     expect(screen.getByRole('region', { name: '景点列表降级' })).toBeVisible();
-    expect(screen.getAllByRole('button')).toHaveLength(9);
+    expect(screen.getAllByRole('button')).toHaveLength(10);
   });
 
   it('recovers a rendering failure by remounting the map subtree', async () => {

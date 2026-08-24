@@ -39,7 +39,7 @@ function completeReconciliation() {
     objectCount: release.objectCount,
     totalBytes: release.totalBytes,
     operations: {
-      created: 60,
+      created: release.objectCount,
       overwritten: 0,
       deleted: 0,
       permissionsModified: false,
@@ -83,7 +83,7 @@ function completeReconciliation() {
 }
 
 describe('CloudBase upload reconciliation validation', () => {
-  it('builds an immutable release manifest for all 60 authorized v1 objects', () => {
+  it('builds an immutable release manifest for all 77 authorized v1 objects', () => {
     const release = completeRelease();
 
     expect(release).toMatchObject({
@@ -92,8 +92,7 @@ describe('CloudBase upload reconciliation validation', () => {
       bucket: BUCKET,
       region: 'ap-shanghai',
       version: 'v1',
-      objectCount: 60,
-      totalBytes: 95_432_645,
+      objectCount: release.objects.length,
       writePolicy: {
         createOnly: true,
         overwrite: false,
@@ -101,8 +100,8 @@ describe('CloudBase upload reconciliation validation', () => {
         modifyPermissions: false,
       },
     });
-    expect(release.objects).toHaveLength(60);
-    expect(new Set(release.objects.map(({ objectPath }: { objectPath: string }) => objectPath)).size).toBe(60);
+    expect(release.objects).toHaveLength(77);
+    expect(new Set(release.objects.map(({ objectPath }: { objectPath: string }) => objectPath)).size).toBe(77);
   });
 
   it('accepts a complete exact reconciliation with HTTPS, digest, Range, image, and VTT evidence', () => {
@@ -115,7 +114,7 @@ describe('CloudBase upload reconciliation validation', () => {
     ).toEqual([]);
   });
 
-  it('rejects a reconciliation missing one of the 60 objects', () => {
+  it('rejects a reconciliation missing one of the 77 objects', () => {
     const reconciliation = completeReconciliation();
     reconciliation.objects.pop();
     reconciliation.objectCount -= 1;
@@ -126,7 +125,7 @@ describe('CloudBase upload reconciliation validation', () => {
         completeRelease(),
         reconciliation,
       ).join('\n'),
-    ).toMatch(/60|missing/i);
+    ).toMatch(/77|missing/i);
   });
 
   it('rejects a remote digest that differs from the media manifest', () => {

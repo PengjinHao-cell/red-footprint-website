@@ -43,6 +43,10 @@ export const MEDIA_SITES = Object.freeze([
       photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141515_32_2.jpg', '玻璃展柜内分层陈列多件长短不一的深色枪械状展品。'),
       photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141518_33_2.jpg', '玻璃展柜内陈列一件棕色长外套、带星形标记的帽子、黑白照片和皮质文件夹。'),
       photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141544_39_2.jpg', '展柜内陈列浅色布衣、编织鞋、成卷织物和棕色挎包。'),
+      photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141511_31_2.jpg', '纪念馆入口前立有写有“77周年”字样的大型临时活动牌，建筑墙面被部分遮挡。'),
+      photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141535_37_2.jpg', '玻璃展柜内陈列多枚徽章样式展品，画面略有倾斜并带有灯光反射。'),
+      photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141548_40_2.jpg', '展柜内陈列文件、黑白照片、徽章和皮包等物品。'),
+      photo('Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141551_41_2.jpg', '从低角度仰拍的纪念馆建筑外墙，天空占画面较大。'),
     ],
     videoSourcePath: 'Videos/渡江胜利纪念馆/渡江胜利纪念馆-讲解视频/68130e9a1397db41890ad3077dc221a9.mp4',
     poster: { sourcePath: 'Videos/渡江胜利纪念馆/渡江胜利纪念馆-讲解视频/微信图片_20260728145144_43_2.jpg', aiWatermarkPresent: false },
@@ -57,6 +61,12 @@ export const MEDIA_SITES = Object.freeze([
       photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/6AB4B76C9281A2C6920909439E78EBE8.jpg', '展墙由大量写有姓名、编制文字和“88D”标记的长方形牌块组成。'),
       photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/7C1F7E832BB8EC9B5709C5F460DAA382.jpg', '两尊深色人物塑像俯身查看桌上地图，背景陈列报纸与说明牌。'),
       photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/F5994272536B3D592203089A0252AFC8.jpg', '展陈场景中，多个人物模型在带有铆钉的金属门洞旁搬举挡板。'),
+      photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/22C2EBEB7427DA712395E2529ACCBCC4.jpg', '布满孔洞与缺损的灰色建筑墙面，上方天空占画面较大。'),
+      photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/50A2E5DB099B593999FF154990E2036B.jpg', '展厅内可见标识与大字展板，画面上方为天花板、下方留白较多。'),
+      photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/792F6DE441435DB4E8C0A74F4CF7D7EF.jpg', '报刊样式展墙前方陈列人物模型，画面带有倾斜与反光。'),
+      photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/A45087987CD3A073FFD3A70B9465B821.jpg', '建筑窗墙旁嵌有写有“四行仓库抗战旧址”字样的牌匾。'),
+      photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/CADEFAC7A46C805B8109C7983347811F.jpg', '展陈场景中，坐姿人物模型身旁放有步枪状道具与沙袋。'),
+      photo('Videos/上海四行仓库抗战纪念馆/四行仓库照片/E20E5955EC8949D00687084F921C4AAF.jpg', '围桌而坐的人物雕塑群，近处立有提示牌，画面略显拥挤。'),
     ],
     videoSourcePath: 'Videos/上海四行仓库抗战纪念馆/四行仓库视频.mp4',
     poster: { sourcePath: 'Videos/上海四行仓库抗战纪念馆/四行仓库视频封面.png', aiWatermarkPresent: false },
@@ -71,6 +81,11 @@ export const MEDIA_SITES = Object.freeze([
       photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/8D70EF22FF390D14D390D0FA5035264D.jpg', '红色展柜前写有“主义的抉择”，背景悬挂多份报刊样式展品。'),
       photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/EA6C78133FAB923B003D12F2CEBADA1C.jpg', '灯光照亮的城市沙盘前方铺展河道与建筑模型，后方墙面陈列多幅黑白图文。'),
       photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/FB8B58D316E1DD035C88DBCB430F537F.jpg', '多尊人物塑像围坐桌旁，红色背景墙陈列人物画像与说明牌。'),
+      photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/302FF3BFDA9568D28541A2DC73EA5889.jpg', '现代纪念馆入口上方可见馆名，天空与前景占画面较大。'),
+      photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/3D85AF1A6350666A712A8A73B49C1D21.jpg', '历史砖楼入口处可见安保设施，前景略有杂物。'),
+      photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/99088B168FC361A1F3111715B4FE186E.jpg', '红色墙面上排列醒目文字，画面上方留白较多。'),
+      photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/DEC010531E62FD01B886524192815C51.jpg', '展柜内陈列建筑石构件样式的展品。'),
+      photo('Videos/中国共产党第一次全国代表大会会址/一大会址照片/DEE40E7340271A1C9EF64AFBF5B0CE2D.jpg', '展厅墙面悬挂大型多人画作，画面中出现“星火”字样。'),
     ],
     videoSourcePath: 'Videos/中国共产党第一次全国代表大会会址/一大会址视频.mp4',
     poster: { sourcePath: 'Videos/中国共产党第一次全国代表大会会址/一大会址视频封面.png', aiWatermarkPresent: false },
@@ -100,6 +115,8 @@ export const MEDIA_SITES = Object.freeze([
       photo('Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片2.jpg', '红色展墙上悬挂多幅黑白照片，下方玻璃展柜中陈列书籍样式展品。'),
       photo('Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片3.jpg', '玻璃展柜内陈列两件外套、黑白照片、箱子和餐具等物件。'),
       photo('Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片6.jpg', '一名参观者站在玻璃展柜前观看衣物、照片和箱子等展品。'),
+      photo('Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 图片1.jpg', '展馆现场一名人物正面入镜，身后可见展墙与展柜。'),
+      photo('Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片4.jpg', '展馆内参观者站在展柜前，右侧展墙被部分遮挡，上方留白较多。'),
     ],
     videoSourcePath: 'Videos/中国共产党代表团梅园新村纪念馆/讲解视频/梅园新村 讲解视频.mp4',
     poster: { generatedFromVideoAtSeconds: 1, aiWatermarkPresent: false },
@@ -343,7 +360,7 @@ function dryRun(root) {
   const ffprobe = resolveTool(root, 'FFPROBE_PATH', 'ffprobe', 'ffprobe');
   const cwebp = resolveTool(root, 'CWEBP_PATH', 'cwebp', 'cwebp');
   const plan = buildMediaPlan(root);
-  console.log(`Media dry run passed: ${MEDIA_SITES.length} sites, 28 photos, 8 heroes, 8 videos, 8 posters, 8 VTT, ${plan.length} objects.`);
+  console.log(`Media dry run passed: ${MEDIA_SITES.length} sites, 45 photos, 8 heroes, 8 videos, 8 posters, 8 VTT, ${plan.length} objects.`);
   console.log(`Staging: ${join(root, STAGING_DIRECTORY)} (ffmpeg: ${ffmpeg}; ffprobe: ${ffprobe}; cwebp: ${cwebp})`);
 }
 

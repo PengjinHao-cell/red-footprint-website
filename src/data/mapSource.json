@@ -10,15 +10,15 @@
     "sha256": "6f759d9b14920c8dab4e59674c666a1093d478c41dc75e83f1c8cd7df44def02"
   },
   "runtimeResource": {
-    "path": "src/data/china-globe-map.json",
+    "path": "src/data/china-globe-map.simplified.json",
     "format": "GeoJSON",
-    "sha256": "b6c1c3a4eb69f931281b1829dc339df68316e459abee12aa887607c5c1eac34a",
+    "sha256": "07f173b4d20873b1b97ffc8cf27da4cfd92954165cab2df27982f05c4527727f",
     "geometrySource": {
       "name": "DataV.GeoAtlas 中国省级行政区边界数据",
       "url": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json",
       "retrievedAt": "2026-08-21"
     },
-    "generation": "仅整理经纬度几何：删除标题、图例、纸面空白、标签、中心点与非几何属性，保留34个省级行政面与1组南海界线坐标，供 Globe.gl 球面 polygon/path 图层使用。"
+    "generation": "仅整理经纬度几何：删除标题、图例、纸面空白、标签、中心点与非几何属性，保留34个省级行政面与1组南海界线坐标；再经离线拓扑保持简化(仍保留行政边界与南海边界，坐标点数从25240降至7858)，供 Globe.gl 球面 polygon/path 图层使用。"
   },
   "visualCalibration": {
     "reference": "GS(2023)2762号官方平面中国地图",

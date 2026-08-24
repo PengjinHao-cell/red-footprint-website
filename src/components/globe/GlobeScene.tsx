@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import chinaGlobeMap from '../../data/china-globe-map.json';
+import chinaGlobeMap from '../../data/china-globe-map.simplified.json';
 import type { Site } from '../../data/siteSchema';
 import useReducedMotion from '../../hooks/useReducedMotion';
 import useWebGLSupport from '../../hooks/useWebGLSupport';
@@ -9,6 +9,9 @@ import {
   type CameraFlightController,
   type CameraFlightState,
 } from './cameraFlight';
+import { getYangtzeDeltaOverview } from './globeView';
+import { layoutNearbyMarkers } from './markerLayout';
+import { getRenderBudget } from './renderBudget';
 import SiteListFallback from './SiteListFallback';
 
 const PAPER_COLOR = '#fbf7ee';
@@ -18,7 +21,6 @@ const VISITED_COLOR = '#54201d';
 const SELECTED_COLOR = '#b33a32';
 const BOUNDARY_COLOR = '#7f463c';
 const PROVINCE_COLOR = '#e2c9a4';
-const MAX_DEVICE_PIXEL_RATIO = 1.5;
 type MarkerState = 'selected' | 'visited' | 'unvisited';
 
 type GlobeMarker = {
@@ -109,36 +111,60 @@ function getMarkerColor(marker: GlobeMarker): string {
   return marker.markerState === 'visited' ? VISITED_COLOR : BRICK_COLOR;
 }
 
-function getChinaOverview(width: number) {
-  if (width < 600) {
-    return { lat: 35, lng: 104, altitude: 2.05 };
-  }
-  if (width < 900) {
-    return { lat: 35, lng: 104, altitude: 1.45 };
-  }
-  return { lat: 35, lng: 104, altitude: 1.25 };
-}
-
 function createStarElement(
   marker: GlobeMarker,
+  offset: { x: number; y: number },
   onActivate: (marker: GlobeMarker) => void,
 ) {
   const star = document.createElement('button');
   star.type = 'button';
-  star.textContent = '★';
+  star.className = 'globe-marker';
   star.title = marker.officialName;
   star.setAttribute('aria-label', marker.officialName);
   star.setAttribute('aria-pressed', String(marker.markerState === 'selected'));
   star.style.appearance = 'none';
   star.style.background = 'transparent';
   star.style.border = '0';
-  star.style.color = getMarkerColor(marker);
   star.style.cursor = 'pointer';
-  star.style.fontSize = marker.primary ? '2rem' : '1.45rem';
-  star.style.lineHeight = '1';
-  star.style.padding = '0.2rem';
+  star.style.padding = '0';
+  star.style.width = '44px';
+  star.style.height = '44px';
   star.style.pointerEvents = 'auto';
-  star.style.textShadow = '0 1px 2px rgba(84, 32, 29, 0.35)';
+  star.style.setProperty('--marker-x', `${offset.x}px`);
+  star.style.setProperty('--marker-y', `${offset.y}px`);
+  const leaderLength = Math.hypot(offset.x, offset.y);
+  const leaderAngle =
+    leaderLength === 0
+      ? 0
+      : (Math.atan2(offset.y, offset.x) * 180) / Math.PI;
+  star.style.setProperty('--leader-length', `${leaderLength}px`);
+  star.style.setProperty('--leader-angle', `${leaderAngle}deg`);
+
+  const leader = document.createElement('span');
+  leader.className = 'globe-marker__leader';
+  leader.setAttribute('aria-hidden', 'true');
+  star.append(leader);
+
+  const starSpan = document.createElement('span');
+  starSpan.className = 'globe-marker__star';
+  star.append(starSpan);
+
+  const svgNamespace = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNamespace, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.style.width = marker.primary ? '2rem' : '1.45rem';
+  svg.style.height = marker.primary ? '2rem' : '1.45rem';
+  svg.style.display = 'block';
+  const path = document.createElementNS(svgNamespace, 'path');
+  path.setAttribute(
+    'd',
+    'M12 2.5l2.84 5.75 6.35.92-4.6 4.48 1.09 6.32L12 17l-5.68 2.97 1.09-6.32-4.6-4.48 6.35-.92L12 2.5z',
+  );
+  path.setAttribute('fill', getMarkerColor(marker));
+  svg.append(path);
+  starSpan.append(svg);
+
   star.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -175,6 +201,10 @@ export default function GlobeScene({
   const previousDetailOpenRef = useRef(detailOpen);
   const sitesRef = useRef(sites);
   const markersRef = useRef<GlobeMarker[]>([]);
+  const markerLayoutsRef = useRef<Map<string, { x: number; y: number }>>(
+    new Map(),
+  );
+  const animateRingsRef = useRef(true);
   const selectedIdRef = useRef(selectedId);
   const onSelectRef = useRef(onSelect);
   const onTravelCompleteRef = useRef(onTravelComplete);
@@ -182,6 +212,7 @@ export default function GlobeScene({
   const onReadyRef = useRef(onReady);
   const onErrorRef = useRef(onError);
   const [initializationFailed, setInitializationFailed] = useState(false);
+  const fallbackErrorDeliveredRef = useRef(false);
   const forceE2EHarnessFallback =
     import.meta.env.DEV &&
     import.meta.env.VITE_E2E_FORCE_FALLBACK === '1' &&
@@ -213,6 +244,11 @@ export default function GlobeScene({
     selectedIdRef.current = selectedId;
     reducedMotionRef.current = reducedMotion;
     markersRef.current = markers;
+    markerLayoutsRef.current = new Map(
+      layoutNearbyMarkers(
+        markers.map(({ id, lat, lng }) => ({ id, lat, lng })),
+      ).map(({ id, offset }) => [id, offset]),
+    );
     onSelectRef.current = onSelect;
     onTravelCompleteRef.current = onTravelComplete;
     onReturnCompleteRef.current = onReturnComplete;
@@ -232,8 +268,21 @@ export default function GlobeScene({
 
   useEffect(() => {
     if (forceE2EHarnessFallback || !supportsWebGL || initializationFailed) {
+      if (!fallbackErrorDeliveredRef.current) {
+        fallbackErrorDeliveredRef.current = true;
+        onErrorRef.current(
+          new Error(
+            forceE2EHarnessFallback
+              ? 'Synthetic E2E harness fallback.'
+              : !supportsWebGL
+                ? 'WebGL is not supported by this browser.'
+                : 'Globe initialization failed.',
+          ),
+        );
+      }
       return;
     }
+    fallbackErrorDeliveredRef.current = false;
 
     let active = true;
     let globe: import('globe.gl').GlobeInstance | undefined;
@@ -251,21 +300,34 @@ export default function GlobeScene({
           return;
         }
 
+        const width = Math.max(container.clientWidth, 320);
+        const height = Math.max(container.clientHeight, 480);
+        const budget = getRenderBudget({
+          width,
+          devicePixelRatio:
+            typeof window === 'undefined' ||
+            !Number.isFinite(window.devicePixelRatio)
+              ? 1
+              : window.devicePixelRatio,
+        });
+
         globe = new Globe(container, {
+          animateIn: false,
           rendererConfig: {
             alpha: true,
-            antialias: true,
+            antialias: budget.antialias,
           },
         });
         globeRef.current = globe;
+        animateRingsRef.current = budget.animateRings;
 
-        const width = Math.max(container.clientWidth, 320);
-        const height = Math.max(container.clientHeight, 480);
-        const overview = getChinaOverview(width);
+        const overview = getYangtzeDeltaOverview(width);
         const initialMarkers = markersRef.current;
-        const initialUnvisitedMarkers = initialMarkers.filter(
-          ({ markerState }) => markerState === 'unvisited',
-        );
+        const initialUnvisitedMarkers = budget.animateRings
+          ? initialMarkers.filter(
+              ({ markerState }) => markerState === 'unvisited',
+            )
+          : [];
 
         let previousFlightState: CameraFlightState = 'idle';
         const controls = globe.controls();
@@ -362,24 +424,17 @@ export default function GlobeScene({
           .htmlLat('lat')
           .htmlLng('lng')
           .htmlAltitude(0.025)
-          .htmlElement((marker) =>
-            createStarElement(marker as GlobeMarker, selectMarker),
-          )
-          .pointsData(initialMarkers)
-          .pointLat('lat')
-          .pointLng('lng')
-          .pointLabel('officialName')
-          .pointColor((point) => getMarkerColor(point as GlobeMarker))
-          .pointAltitude((point) =>
-            (point as GlobeMarker).markerState === 'selected' ? 0.045 : 0.025,
-          )
-          .pointRadius((point) =>
-            (point as GlobeMarker).markerState === 'selected'
-              ? 0.55
-              : (point as GlobeMarker).primary
-                ? 0.48
-                : 0.38,
-          )
+          .htmlElement((marker) => {
+            const globeMarker = marker as GlobeMarker;
+            const offset =
+              globeMarker.markerState === 'selected'
+                ? { x: 0, y: 0 }
+                : (markerLayoutsRef.current.get(globeMarker.id) ?? {
+                    x: 0,
+                    y: 0,
+                  });
+            return createStarElement(globeMarker, offset, selectMarker);
+          })
           .ringsData(initialUnvisitedMarkers)
           .ringLat('lat')
           .ringLng('lng')
@@ -387,7 +442,6 @@ export default function GlobeScene({
           .ringMaxRadius(2.2)
           .ringPropagationSpeed(0.55)
           .ringRepeatPeriod(2200)
-          .onPointClick((point) => selectMarker(point as GlobeMarker))
           .onGlobeReady(() => {
             if (!active || readyDelivered) {
               return;
@@ -402,15 +456,7 @@ export default function GlobeScene({
         material.color?.set(SAND_COLOR);
         material.shininess = 8;
 
-        const devicePixelRatio =
-          typeof window === 'undefined' || !Number.isFinite(window.devicePixelRatio)
-            ? 1
-            : window.devicePixelRatio;
-        globe
-          .renderer()
-          .setPixelRatio(
-            Math.min(MAX_DEVICE_PIXEL_RATIO, Math.max(1, devicePixelRatio)),
-          );
+        globe.renderer().setPixelRatio(budget.pixelRatio);
 
         controls.autoRotate = false;
         controls.enableDamping = true;
@@ -448,8 +494,10 @@ export default function GlobeScene({
       return;
     }
 
-    globe.pointsData(markers).htmlElementsData(markers).ringsData(
-      markers.filter(({ markerState }) => markerState === 'unvisited'),
+    globe.htmlElementsData(markers).ringsData(
+      animateRingsRef.current
+        ? markers.filter(({ markerState }) => markerState === 'unvisited')
+        : [],
     );
   }, [markers]);
 

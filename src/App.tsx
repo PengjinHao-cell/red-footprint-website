@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 
 import AppErrorBoundary from './components/AppErrorBoundary';
 import SiteDetailPanel from './components/detail/SiteDetailPanel';
-import GlobeScene from './components/globe/GlobeScene';
+import ProgressiveGlobe from './components/globe/ProgressiveGlobe';
 import JourneyProgress from './components/progress/JourneyProgress';
 import WelcomeScreen from './components/welcome/WelcomeScreen';
 import type { Site } from './data/siteSchema';
@@ -99,11 +99,9 @@ export default function App({ sites }: AppProps) {
           </p>
         )}
 
-        <GlobeScene
+        <ProgressiveGlobe
           detailOpen={pageState === 'detail'}
           key={globeRetryKey}
-          onError={() => undefined}
-          onReady={() => undefined}
           onReturnComplete={finishReturn}
           onSelect={selectSite}
           onTravelComplete={openDetail}

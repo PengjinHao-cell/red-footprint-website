@@ -7,12 +7,12 @@ export const REQUIRED_SITE_IDS = Object.freeze(['sihong-memorial', 'yuhuatai-mar
 export const EXPECTED_PHOTO_COUNTS = Object.freeze({
   'sihong-memorial': 2,
   'yuhuatai-martyrs': 5,
-  'dujiang-victory': 5,
-  'sihang-warehouse': 5,
-  'cpc-first-congress': 5,
+  'dujiang-victory': 9,
+  'sihang-warehouse': 11,
+  'cpc-first-congress': 10,
   'jiangshangqing-memorial': 1,
   'yangzhou-martyrs': 1,
-  'meiyuan-new-village': 4,
+  'meiyuan-new-village': 6,
 });
 const AI_WATERMARK_SITES = new Set(['yuhuatai-martyrs', 'jiangshangqing-memorial', 'yangzhou-martyrs']);
 const SHA256 = /^[a-f0-9]{64}$/;
@@ -93,7 +93,7 @@ export function validateMediaManifest(manifest, options = {}) {
     if (!nonEmpty(asset?.objectPath) || !VERSIONED_PATH.test(asset.objectPath)) errors.push(`${label}.objectPath must be versioned`);
   }
   const paths = allAssets.map(([asset]) => asset?.objectPath).filter(Boolean);
-  if (paths.length !== 60) errors.push(`manifest must contain 60 media objects, found ${paths.length}`);
+  if (paths.length !== 77) errors.push(`manifest must contain 77 media objects, found ${paths.length}`);
   if (new Set(paths).size !== paths.length) errors.push('media object paths must be unique');
 
   for (const siteId of REQUIRED_SITE_IDS) {
@@ -224,9 +224,9 @@ if (process.argv[1] && resolve(process.argv[1]) === modulePath) {
       errors.forEach((error) => console.error(`- ${error}`));
       process.exitCode = 1;
     } else if (options.mode === 'release') {
-      console.log('Media release check passed: manifest, rights, and 8 committed VTT files cover 60 immutable objects.');
+      console.log('Media release check passed: manifest, rights, and 8 committed VTT files cover 77 immutable objects.');
     } else {
-      console.log('Media check passed: 28 photos and 8 complete hero/video/poster/VTT sets (60 staged objects).');
+      console.log('Media check passed: 45 photos and 8 complete hero/video/poster/VTT sets (77 staged objects).');
     }
   } catch (error) {
     console.error(error);

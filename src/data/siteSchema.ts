@@ -243,8 +243,7 @@ const basicSiteSchema = z.object({
         alt: z.string().min(4),
       }),
     )
-    .min(1)
-    .max(5),
+    .min(1),
   video: z.object({
     url: legacyHttpsUrlSchema,
     poster: z.string().min(1),
@@ -263,7 +262,7 @@ const basicSiteSchema = z.object({
 const productionPhotoSchema = z.object({
   src: z.string().min(1),
   alt: z.string().min(4),
-  sequence: z.number().int().min(1).max(5),
+  sequence: z.number().int().min(1),
   asset: mediaResourceSchema,
 });
 
@@ -319,7 +318,7 @@ export const productionSiteSchema = basicSiteSchema
       }),
     ]),
     heroAsset: mediaResourceSchema,
-    photos: z.array(productionPhotoSchema).min(1).max(5),
+    photos: z.array(productionPhotoSchema).min(1),
     video: z.object({
       url: z.string().min(1),
       poster: z.string().min(1),

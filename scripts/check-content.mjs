@@ -125,8 +125,13 @@ function validateReleaseBuildInputs(input, root) {
   ]);
   const resourcePaths = resources.map((resource) => resource?.objectPath);
 
-  if (resources.length !== 60 || new Set(resourcePaths).size !== 60) {
-    errors.push('[release build input] sites.json must contain 60 unique media resources');
+  if (
+    resources.length !== expectedObjects.size ||
+    new Set(resourcePaths).size !== expectedObjects.size
+  ) {
+    errors.push(
+      `[release build input] sites.json must contain ${expectedObjects.size} unique media resources`,
+    );
   }
 
   for (const resource of resources) {

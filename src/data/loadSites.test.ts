@@ -29,7 +29,7 @@ describe('loadSites', () => {
       expect(productionSiteSchema.safeParse(site).success).toBe(true);
       expect(site).toMatchObject({
         coordinateSystem: 'GCJ-02',
-        mediaDelivery: { status: 'reconciled-production' },
+        mediaDelivery: { status: 'pre-upload-object' },
       });
     });
   });
@@ -100,20 +100,15 @@ describe('loadSites', () => {
     expect(loadSites(sites)).toHaveLength(8);
   });
 
-  it('rejects a site containing six selected photos', () => {
+  it('accepts a site containing six selected photos', () => {
     const sites = createValidEightSites();
     const selectedPhoto = sites[0].photos[0];
     sites[0] = {
       ...sites[0],
-      photos: [
-        ...sites[0].photos,
-        selectedPhoto,
-        selectedPhoto,
-        selectedPhoto,
-      ],
+      photos: [...sites[0].photos, selectedPhoto, selectedPhoto],
     };
 
-    expect(() => loadSites(sites)).toThrow();
+    expect(loadSites(sites)).toHaveLength(8);
   });
 
   it('rejects a selected photo without alt text', () => {

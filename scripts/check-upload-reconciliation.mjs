@@ -94,11 +94,13 @@ export function validateObjectReleaseManifest(mediaManifest, releaseManifest) {
     errors.push('release manifest must enforce create-only writes');
   }
   if (
-    releaseManifest.objectCount !== 60 ||
+    releaseManifest.objectCount !== expectedObjects.length ||
     !Array.isArray(releaseManifest.objects) ||
-    releaseManifest.objects.length !== 60
+    releaseManifest.objects.length !== expectedObjects.length
   ) {
-    errors.push('release manifest must contain exactly 60 objects');
+    errors.push(
+      `release manifest must contain exactly ${expectedObjects.length} objects`,
+    );
   }
   const expectedBytes = expectedObjects.reduce(
     (sum, object) => sum + object.bytes,
@@ -177,19 +179,23 @@ export function validateUploadReconciliation(
     errors,
   );
   if (
-    reconciliation.operations?.created !== 60 ||
+    reconciliation.operations?.created !== expectedObjects.length ||
     reconciliation.operations?.overwritten !== 0 ||
     reconciliation.operations?.deleted !== 0 ||
     reconciliation.operations?.permissionsModified !== false
   ) {
-    errors.push('upload reconciliation operations must record 60 create-only writes');
+    errors.push(
+      `upload reconciliation operations must record ${expectedObjects.length} create-only writes`,
+    );
   }
   if (
-    reconciliation.objectCount !== 60 ||
+    reconciliation.objectCount !== expectedObjects.length ||
     !Array.isArray(reconciliation.objects) ||
-    reconciliation.objects.length !== 60
+    reconciliation.objects.length !== expectedObjects.length
   ) {
-    errors.push('upload reconciliation must contain exactly 60 objects');
+    errors.push(
+      `upload reconciliation must contain exactly ${expectedObjects.length} objects`,
+    );
   }
   if (reconciliation.totalBytes !== releaseManifest.totalBytes) {
     errors.push('upload reconciliation totalBytes must match release manifest');

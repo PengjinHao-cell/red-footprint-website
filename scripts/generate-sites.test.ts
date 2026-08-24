@@ -22,7 +22,7 @@ const expectedSites = [
   ['yangzhou-martyrs', '扬州革命烈士陵园'],
   ['meiyuan-new-village', '中国共产党代表团梅园新村纪念馆'],
 ] as const;
-const expectedPhotoCounts = [2, 5, 5, 5, 5, 1, 1, 4];
+const expectedPhotoCounts = [2, 5, 9, 11, 10, 1, 1, 6];
 
 type GeneratedResource = {
   deliveryStatus: string;
@@ -143,6 +143,55 @@ describe('generate-sites', () => {
       });
     });
   });
+
+  it('reconciles manifest, site, and media items to 45 photos with the video untouched', () => {
+    const manifest = JSON.parse(
+      readFileSync('content/media/media-manifest.json', 'utf8'),
+    );
+    const manifestCounts = Object.fromEntries(
+      manifest.sites.map(
+        (site: { id: string; photos: unknown[] }) => [
+          site.id,
+          site.photos.length,
+        ],
+      ),
+    );
+    const sites = generateSites(process.cwd(), { delivery: null });
+    const videoSnapshots = new Map(
+      sites.map((site) => [
+        site.id,
+        {
+          url: site.video.url,
+          poster: site.video.poster,
+          captions: site.video.captions,
+          asset: site.video.asset,
+        },
+      ]),
+    );
+
+    for (const site of sites) {
+      expect(manifestCounts[site.id]).toBe(expectedPhotoCounts[expectedSites.findIndex(([id]) => id === site.id)]);
+      expect(site.photos).toHaveLength(manifestCounts[site.id]);
+      expect(site.media).toHaveLength(manifestCounts[site.id] + 1);
+      expect(site.media[0].type).toBe('video');
+      expect(site.media[0]).toEqual({
+        type: 'video',
+        src: site.video.url,
+        poster: site.video.poster,
+        captions: site.video.captions,
+      });
+    }
+
+    // 再次生成必须逐字段保持视频 URL、poster、captions 与 asset 不变
+    const regenerated = generateSites(process.cwd(), { delivery: null });
+    for (const site of regenerated) {
+      const snapshot = videoSnapshots.get(site.id);
+      expect(site.video.url).toBe(snapshot?.url);
+      expect(site.video.poster).toBe(snapshot?.poster);
+      expect(site.video.captions).toBe(snapshot?.captions);
+      expect(site.video.asset).toEqual(snapshot?.asset);
+    }
+  });
 });
 
 describe('reconciliation-driven media delivery', () => {
@@ -171,7 +220,7 @@ describe('reconciliation-driven media delivery', () => {
       objectCount: release.objectCount,
       totalBytes: release.totalBytes,
       operations: {
-        created: 60,
+        created: release.objectCount,
         overwritten: 0,
         deleted: 0,
         permissionsModified: false,
@@ -225,7 +274,7 @@ describe('reconciliation-driven media delivery', () => {
     );
 
     expect(delivery?.productionBaseUrl).toBe(cdnBaseUrl);
-    expect(delivery?.objects.size).toBe(60);
+    expect(delivery?.objects.size).toBe(release.objectCount);
     expect(delivery?.objects.get(release.objects[0].objectPath)).toBe(
       `${cdnBaseUrl}/${release.objects[0].objectPath}`,
     );

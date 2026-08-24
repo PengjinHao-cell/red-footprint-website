@@ -133,7 +133,7 @@ function completeRights() {
 }
 
 describe('media manifest validation', () => {
-  it('accepts eight sites, 28 ordered photos, and 60 versioned objects', () => {
+  it('accepts eight sites, 45 ordered photos, and 77 versioned objects', () => {
     expect(validateMediaManifest(completeManifest(), { verifyFiles: false })).toEqual([]);
   });
 

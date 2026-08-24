@@ -432,6 +432,86 @@
           "height": 1920,
           "bytes": 226114,
           "sha256": "5bf09f89ee6cedd10ada6c06bf202cdfd1c86c4d8012ed02396b300aa4e6bcb7"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141511_31_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-06.webp",
+          "sequence": 6,
+          "alt": "纪念馆入口前立有写有“77周年”字样的大型临时活动牌，建筑墙面被部分遮挡。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 7804197,
+            "sha256": "f22c91e50a4da4a8d0bd6938c0d4719136031e4f723bb7335d6614ea9a675bb3"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 380608,
+          "sha256": "82811e5462ae7966b6a57ecd947787fad3746205f15b77ce901700314bb6e4db"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141535_37_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-07.webp",
+          "sequence": 7,
+          "alt": "玻璃展柜内陈列多枚徽章样式展品，画面略有倾斜并带有灯光反射。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 9751412,
+            "sha256": "b8f79ce4e32c5df466f5937d79d31a752f010ef6e5b036ac0cc888834b7690be"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 353564,
+          "sha256": "70e4e9343da2494339b01aa5e1302f5d5699c4bf75a7846000cf5ed805b7f365"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141548_40_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-08.webp",
+          "sequence": 8,
+          "alt": "展柜内陈列文件、黑白照片、徽章和皮包等物品。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 7558623,
+            "sha256": "1b9ba2c9e4a1e25821ec646ca7b26b26994f19dd9e6e78a124cba636eba4ffa0"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 218936,
+          "sha256": "967dee5e3444c55b7634f21702afab28ef5ff4a3fd179081c6ac0347abc0ff49"
+        },
+        {
+          "sourcePath": "Videos/渡江胜利纪念馆/渡江胜利纪念馆-主图/微信图片_20260728141551_41_2.jpg",
+          "objectPath": "media/sites/dujiang-victory/v1/photos/dujiang-victory-photo-09.webp",
+          "sequence": 9,
+          "alt": "从低角度仰拍的纪念馆建筑外墙，天空占画面较大。",
+          "original": {
+            "codedWidth": 5712,
+            "codedHeight": 4284,
+            "rotation": -90,
+            "width": 4284,
+            "height": 5712,
+            "bytes": 5701555,
+            "sha256": "ef4827250eca32f2894652861afbdf938dcedc4e32616e769db663c09f5f5755"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 155580,
+          "sha256": "e96b0c93e7a8198f3d1d456a35b66f8cd5d72cc672be8c8a0d6661db29947bbb"
         }
       ],
       "video": {
@@ -615,6 +695,126 @@
           "height": 1920,
           "bytes": 276624,
           "sha256": "7e9046c8af168e7df577789ed4373648c4a384228b1d7978a07accb179ec14a0"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/22C2EBEB7427DA712395E2529ACCBCC4.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-06.webp",
+          "sequence": 6,
+          "alt": "布满孔洞与缺损的灰色建筑墙面，上方天空占画面较大。",
+          "original": {
+            "codedWidth": 3207,
+            "codedHeight": 5702,
+            "rotation": 0,
+            "width": 3207,
+            "height": 5702,
+            "bytes": 3708727,
+            "sha256": "56b5b9527037c39d6beed4521cb5adb7f2499080a83bb314a3973398cc25f662"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 277072,
+          "sha256": "54c1bf0cba65966d518deaa1ef66dc432a92bcfee0546da035f47b854fe7a40b"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/50A2E5DB099B593999FF154990E2036B.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-07.webp",
+          "sequence": 7,
+          "alt": "展厅内可见标识与大字展板，画面上方为天花板、下方留白较多。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 1651920,
+            "sha256": "022942d9ddc51b21fc18f81fae5dfdc5a0192fa7fa5462b33ac8de19ef23a779"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 155774,
+          "sha256": "003f88deceb0752ad5dc04260f273633e4180f249724237cffec29b7dc42e6a9"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/792F6DE441435DB4E8C0A74F4CF7D7EF.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-08.webp",
+          "sequence": 8,
+          "alt": "报刊样式展墙前方陈列人物模型，画面带有倾斜与反光。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 1728135,
+            "sha256": "33bbc5fef50f80cfba8c42ef06cbf06b77312ac1d62be12939ba93c9f7243f63"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 205164,
+          "sha256": "3656997ac8e5ac0b5eb2bf161400d644db3b504bf99a2e771a293343849cd50b"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/A45087987CD3A073FFD3A70B9465B821.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-09.webp",
+          "sequence": 9,
+          "alt": "建筑窗墙旁嵌有写有“四行仓库抗战旧址”字样的牌匾。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 6225627,
+            "sha256": "cb6131b5952f588d939bc6d609da1ea8b60834c48ef11a2d57bc25aecea7b736"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 540708,
+          "sha256": "529087c9b43a8acf8bd4356392a457d3450afa7517ed283375b6e631ddadb813"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/CADEFAC7A46C805B8109C7983347811F.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-10.webp",
+          "sequence": 10,
+          "alt": "展陈场景中，坐姿人物模型身旁放有步枪状道具与沙袋。",
+          "original": {
+            "codedWidth": 3213,
+            "codedHeight": 5712,
+            "rotation": 0,
+            "width": 3213,
+            "height": 5712,
+            "bytes": 3441641,
+            "sha256": "227a1f8fc55c996e68c61f24c33e618f5365a30628e194da55be9d4313104f56"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 319466,
+          "sha256": "724ed6cc31360962a58383ee9652ab08217cb8de4601bb47f0380bb2ff612669"
+        },
+        {
+          "sourcePath": "Videos/上海四行仓库抗战纪念馆/四行仓库照片/E20E5955EC8949D00687084F921C4AAF.jpg",
+          "objectPath": "media/sites/sihang-warehouse/v1/photos/sihang-warehouse-photo-11.webp",
+          "sequence": 11,
+          "alt": "围桌而坐的人物雕塑群，近处立有提示牌，画面略显拥挤。",
+          "original": {
+            "codedWidth": 3157,
+            "codedHeight": 5612,
+            "rotation": 0,
+            "width": 3157,
+            "height": 5612,
+            "bytes": 3118158,
+            "sha256": "4cec1cd2faf5075bb785a3545f6b5cd8ba8d3223aeb0634270abd23b83a2a80b"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 227270,
+          "sha256": "b3c8e8d7f07b8421780609337e1dde16f3adaa51de85633677488967d32a5201"
         }
       ],
       "video": {
@@ -798,6 +998,106 @@
           "height": 1920,
           "bytes": 257932,
           "sha256": "5bce02b3e4b9ce6f6661fdca339e1bf2ed6877f78aa183902a94c8f3c6e02d82"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/302FF3BFDA9568D28541A2DC73EA5889.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-06.webp",
+          "sequence": 6,
+          "alt": "现代纪念馆入口上方可见馆名，天空与前景占画面较大。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 2123045,
+            "sha256": "cae487d20b25f7961702da8e45cc4d51b1608af44de1e59c65caf755b080b5a4"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 292984,
+          "sha256": "fe725a734f9d8abea30ff9e78342e7359bd8fcf568a38ced7e9413d3955438ee"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/3D85AF1A6350666A712A8A73B49C1D21.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-07.webp",
+          "sequence": 7,
+          "alt": "历史砖楼入口处可见安保设施，前景略有杂物。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 2820322,
+            "sha256": "d1d3cedc8f49636a992056fca7b9d611d64def63bea3c43636726fe7d00a9ecb"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 448504,
+          "sha256": "0d6b6e0c166618dec25c84c85b789665daeb5a7897ea3daef1e51eba9c3c327a"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/99088B168FC361A1F3111715B4FE186E.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-08.webp",
+          "sequence": 8,
+          "alt": "红色墙面上排列醒目文字，画面上方留白较多。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 2053420,
+            "sha256": "9c6261187c52cea35e57bc28104a035e956359f18b86938ff0f3c41991a634c3"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 148976,
+          "sha256": "91b646ffbedfa9f90110f39fbc704535dc54185d393a11c819d35ca4684f7a66"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/DEC010531E62FD01B886524192815C51.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-09.webp",
+          "sequence": 9,
+          "alt": "展柜内陈列建筑石构件样式的展品。",
+          "original": {
+            "codedWidth": 2268,
+            "codedHeight": 4032,
+            "rotation": 0,
+            "width": 2268,
+            "height": 4032,
+            "bytes": 2310319,
+            "sha256": "f21062d9b55bb2aef3bc20648420feeafbcb57e30eff21c0628e58187431ac96"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 278200,
+          "sha256": "5093b24035566261868c8461e972605e5f7928853ecb6043c025f2f4d40507a0"
+        },
+        {
+          "sourcePath": "Videos/中国共产党第一次全国代表大会会址/一大会址照片/DEE40E7340271A1C9EF64AFBF5B0CE2D.jpg",
+          "objectPath": "media/sites/cpc-first-congress/v1/photos/cpc-first-congress-photo-10.webp",
+          "sequence": 10,
+          "alt": "展厅墙面悬挂大型多人画作，画面中出现“星火”字样。",
+          "original": {
+            "codedWidth": 2208,
+            "codedHeight": 3926,
+            "rotation": 0,
+            "width": 2208,
+            "height": 3926,
+            "bytes": 1989015,
+            "sha256": "9164af8bf0f8c0f06c1739f9db99ef161f76aafdbbcbdc52fe7d8ab240c02dd6"
+          },
+          "mime": "image/webp",
+          "width": 1080,
+          "height": 1920,
+          "bytes": 274140,
+          "sha256": "ebf571596c30e77eb8d4e76c3b2942ffa97f178e575f41a01ed3e04c495c801e"
         }
       ],
       "video": {
@@ -1167,6 +1467,46 @@
           "height": 1920,
           "bytes": 165824,
           "sha256": "ede5d22b94efc1361beffc8267b1eaa3f91789cae70ba907dd42f4cadd40877b"
+        },
+        {
+          "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 图片1.jpg",
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-05.webp",
+          "sequence": 5,
+          "alt": "展馆现场一名人物正面入镜，身后可见展墙与展柜。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 5774828,
+            "sha256": "eeac54018f49044e751982a9710efe75b56c21b44e938ee9524291842fbc0d1d"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 424020,
+          "sha256": "de01a060473909afa7826496de1de8573ceab8ed8e6f29bde28584b2453c632c"
+        },
+        {
+          "sourcePath": "Videos/中国共产党代表团梅园新村纪念馆/图片/梅园新村 照片4.jpg",
+          "objectPath": "media/sites/meiyuan-new-village/v1/photos/meiyuan-new-village-photo-06.webp",
+          "sequence": 6,
+          "alt": "展馆内参观者站在展柜前，右侧展墙被部分遮挡，上方留白较多。",
+          "original": {
+            "codedWidth": 3072,
+            "codedHeight": 4096,
+            "rotation": 0,
+            "width": 3072,
+            "height": 4096,
+            "bytes": 2957197,
+            "sha256": "a8210d48c56add47c6374e4eb46593a9d7c8e53cfb02b777976fcb61e46524b0"
+          },
+          "mime": "image/webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 119312,
+          "sha256": "c81114a3f94b75b8543177e38e506e73eed1233547ec206457a76d3ec26f809c"
         }
       ],
       "video": {

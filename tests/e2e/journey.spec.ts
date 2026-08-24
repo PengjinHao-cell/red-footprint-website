@@ -32,6 +32,10 @@ async function installTestMapAdapter(page: Page) {
           const previousDetailOpen = useRef(props.detailOpen);
 
           useEffect(() => {
+            props.onReady?.();
+          }, [props.onReady]);
+
+          useEffect(() => {
             const wasOpen = previousDetailOpen.current;
             previousDetailOpen.current = props.detailOpen;
             if (wasOpen && !props.detailOpen) {

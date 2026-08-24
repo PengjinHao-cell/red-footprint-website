@@ -154,6 +154,101 @@ button {
   animation: loading-pulse 1.4s ease-in-out infinite;
 }
 
+/* 开屏"足迹连线"动画 */
+.welcome-route {
+  width: min(78vw, 30rem);
+  margin-bottom: -0.5rem;
+}
+
+.welcome-route__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__line {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: route-draw 900ms ease-out 300ms forwards;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__star {
+  opacity: 0;
+  animation: star-pop 180ms ease-out forwards;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__star:nth-of-type(1) {
+  animation-delay: 0ms;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__star:nth-of-type(2) {
+  animation-delay: 180ms;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__star:nth-of-type(3) {
+  animation-delay: 360ms;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__star:nth-of-type(4) {
+  animation-delay: 540ms;
+}
+
+.welcome-route[data-motion='full'][data-variant='full']
+  .welcome-route__star:nth-of-type(5) {
+  animation-delay: 720ms;
+}
+
+.welcome-route[data-motion='full'][data-variant='full'] {
+  animation: route-settle 600ms ease-out 1600ms both;
+}
+
+.welcome-route[data-motion='reduced'] .welcome-route__line,
+.welcome-route[data-variant='short'] .welcome-route__line {
+  stroke-dashoffset: 0;
+}
+
+.welcome-route[data-motion='reduced'] .welcome-route__star,
+.welcome-route[data-variant='short'] .welcome-route__star {
+  opacity: 1;
+}
+
+@keyframes route-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes star-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes route-settle {
+  from {
+    opacity: 0.4;
+    transform: translateY(0.4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .welcome-screen__button {
   display: inline-flex;
   min-width: 10rem;
@@ -216,6 +311,197 @@ button {
   .welcome-screen__subtitle {
     max-width: 18rem;
     line-height: 1.8;
+  }
+}
+
+/* 地球 HTML 星标:SVG 五角星、点击区、近邻引线 */
+.globe-marker {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.globe-marker__star {
+  display: grid;
+  place-items: center;
+  transform: translate(var(--marker-x, 0), var(--marker-y, 0));
+  transition: transform 240ms ease;
+}
+
+.globe-marker__star svg {
+  filter: drop-shadow(0 1px 2px rgb(84 32 29 / 35%));
+}
+
+.globe-marker__leader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--leader-length, 0);
+  height: 1px;
+  background: var(--brick);
+  opacity: 0.55;
+  pointer-events: none;
+  transform-origin: 0 50%;
+  transform: rotate(var(--leader-angle, 0deg));
+}
+
+.globe-marker[aria-pressed='true'] .globe-marker__star {
+  transform: none;
+}
+
+.globe-marker[aria-pressed='true'] .globe-marker__leader {
+  display: none;
+}
+
+/* 长三角加载动画占位:岸线描边、星点依次点亮、背景呼吸、文字跳动 */
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__glow,
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__coast,
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__island,
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__star,
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__dot {
+  animation: none;
+}
+
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__coast {
+  stroke-dashoffset: 0;
+}
+
+.globe-placeholder[data-motion='reduced'] .globe-placeholder__star {
+  opacity: 1;
+}
+
+.globe-placeholder__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgb(231 212 181 / 55%) 0 30%,
+    rgb(231 212 181 / 0%) 72%
+  );
+  animation: globe-placeholder-breathe 2.4s ease-in-out infinite;
+}
+
+.globe-placeholder__map {
+  position: relative;
+  width: min(82%, 34rem);
+  height: auto;
+  overflow: visible;
+}
+
+.globe-placeholder__coast {
+  stroke-dasharray: 560;
+  stroke-dashoffset: 560;
+  animation: globe-placeholder-draw 900ms ease-out 150ms forwards;
+}
+
+.globe-placeholder__coast--dashed {
+  animation-delay: 250ms;
+}
+
+.globe-placeholder__island {
+  animation: globe-placeholder-fade 600ms ease-out 1s both;
+}
+
+.globe-placeholder__star {
+  opacity: 0;
+  animation: globe-placeholder-star 180ms ease-out forwards;
+}
+
+.globe-placeholder__star[data-star='0'] {
+  animation-delay: 400ms;
+}
+
+.globe-placeholder__star[data-star='1'] {
+  animation-delay: 580ms;
+}
+
+.globe-placeholder__star[data-star='2'] {
+  animation-delay: 760ms;
+}
+
+.globe-placeholder__star[data-star='3'] {
+  animation-delay: 940ms;
+}
+
+.globe-placeholder__star[data-star='4'] {
+  animation-delay: 1120ms;
+}
+
+.globe-placeholder__status {
+  position: absolute;
+  inset: auto auto 1.25rem 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  color: var(--brick-dark);
+  font: 700 0.9rem/1.4 var(--font-body);
+  letter-spacing: 0.08em;
+}
+
+.globe-placeholder__dots {
+  display: inline-flex;
+  gap: 0.2rem;
+}
+
+.globe-placeholder__dot {
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: var(--brick);
+  animation: loading-pulse 1.4s ease-in-out infinite;
+}
+
+.globe-placeholder__dot:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.globe-placeholder__dot:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+@keyframes globe-placeholder-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes globe-placeholder-star {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes globe-placeholder-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes globe-placeholder-breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
   }
 }
 

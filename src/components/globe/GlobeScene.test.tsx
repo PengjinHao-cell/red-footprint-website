@@ -1,4 +1,11 @@
-import { act, cleanup, render, screen, waitFor } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { siteSchema, type Site } from '../../data/siteSchema';
@@ -31,6 +38,7 @@ type MockGlobeInstance = {
   pointData: Marker[];
   pointOfViewCalls: Array<{ altitude: number; lat: number; lng: number }>;
   pointRadiusAccessor: ((point: object) => number) | undefined;
+  pointsData: ReturnType<typeof vi.fn>;
   polygonData: unknown[];
   pathData: unknown[];
   readyCallback: (() => void) | undefined;
@@ -165,10 +173,10 @@ vi.mock('globe.gl', () => {
         };
       }
 
-      pointsData(data: Marker[]) {
+      pointsData = vi.fn((data: Marker[]) => {
         this.pointData = data;
         return this;
-      }
+      });
 
       pointLat() {
         return this;
@@ -380,6 +388,17 @@ function latestInstance(): MockGlobeInstance {
   return globeMock.instances.at(-1) as MockGlobeInstance;
 }
 
+function starButtons(instance: MockGlobeInstance): HTMLElement[] {
+  return instance.htmlData.map((marker) =>
+    instance.htmlElementAccessor?.(marker),
+  ) as HTMLElement[];
+}
+
+function clickStar(instance: MockGlobeInstance, index: number): void {
+  const star = starButtons(instance)[index];
+  fireEvent.click(star);
+}
+
 afterEach(() => {
   cleanup();
   window.history.replaceState({}, '', '/');
@@ -430,7 +449,10 @@ describe('GlobeScene', () => {
     expect(globeMock.moduleLoads).toBe(moduleLoadsBeforeRender);
     expect(globeMock.instances).toHaveLength(0);
     expect(props.onReady).not.toHaveBeenCalled();
-    expect(props.onError).not.toHaveBeenCalled();
+    await waitFor(() => expect(props.onError).toHaveBeenCalledTimes(1));
+    expect(props.onError).toHaveBeenCalledWith(
+      expect.objectContaining({ message: expect.stringContaining('WebGL') }),
+    );
   });
 
   it('initializes the bundled China globe resource without approval environment variables', async () => {
@@ -442,23 +464,23 @@ describe('GlobeScene', () => {
     expect(latestInstance().polygonData).toHaveLength(34);
     expect(latestInstance().pathData.length).toBeGreaterThan(0);
     expect(latestInstance().pointOfViewCalls[0]).toEqual({
-      lat: 35,
-      lng: 104,
-      altitude: 2.05,
+      lat: 32,
+      lng: 120,
+      altitude: 0.9,
     });
     expect(props.onError).not.toHaveBeenCalled();
   });
 
-  it('uses a larger China-centered overview for tablet viewports', async () => {
+  it('uses a larger Yangtze Delta overview for tablet viewports', async () => {
     vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(720);
     setWebGLSupported(true);
     renderScene();
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     expect(latestInstance().pointOfViewCalls[0]).toEqual({
-      lat: 35,
-      lng: 104,
-      altitude: 1.45,
+      lat: 32,
+      lng: 120,
+      altitude: 0.78,
     });
   });
 
@@ -474,7 +496,7 @@ describe('GlobeScene', () => {
     instance.readyCallback?.();
 
     expect(instance.pointOfViewCalls).toEqual([
-      { lat: 35, lng: 104, altitude: 2.05 },
+      { lat: 32, lng: 120, altitude: 0.9 },
     ]);
     expect(instance.controlsState.autoRotate).toBe(false);
     expect(props.onReady).toHaveBeenCalledTimes(1);
@@ -494,6 +516,9 @@ describe('GlobeScene', () => {
 
   it('marks visited, unvisited, and selected points with distinct states', async () => {
     setWebGLSupported(true);
+    vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(
+      1440,
+    );
     renderScene({
       selectedId: sites[0].id,
       visitedIds: [sites[0].id, sites[1].id],
@@ -502,16 +527,16 @@ describe('GlobeScene', () => {
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
 
-    expect(instance.pointData[0].markerState).toBe('selected');
-    expect(instance.pointData[1].markerState).toBe('visited');
-    expect(instance.pointData[2].markerState).toBe('unvisited');
+    expect(instance.htmlData[0].markerState).toBe('selected');
+    expect(instance.htmlData[1].markerState).toBe('visited');
+    expect(instance.htmlData[2].markerState).toBe('unvisited');
     expect(instance.ringData).toHaveLength(6);
     expect(instance.ringData.every(({ markerState }) => markerState === 'unvisited')).toBe(
       true,
     );
   });
 
-  it('uses brick red, dark red, and a clear selected color for point states', async () => {
+  it('uses brick red, dark red, and a clear selected color for star states', async () => {
     setWebGLSupported(true);
     renderScene({
       selectedId: sites[0].id,
@@ -520,11 +545,14 @@ describe('GlobeScene', () => {
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
-    const getColor = instance.pointColorAccessor;
+    const fills = starButtons(instance).map(
+      (star) =>
+        star.querySelector('svg path')?.getAttribute('fill'),
+    );
 
-    expect(getColor?.(instance.pointData[0])).toBe('#b33a32');
-    expect(getColor?.(instance.pointData[1])).toBe('#54201d');
-    expect(getColor?.(instance.pointData[2])).toBe('#982e2d');
+    expect(fills[0]).toBe('#b33a32');
+    expect(fills[1]).toBe('#54201d');
+    expect(fills[2]).toBe('#982e2d');
   });
 
   it('keeps the first-congress star larger than the other unselected stars', async () => {
@@ -533,12 +561,18 @@ describe('GlobeScene', () => {
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
-    const primaryMarker = instance.pointData.find(({ primary }) => primary);
-    const regularMarker = instance.pointData.find(({ primary }) => !primary);
+    const sizes = starButtons(instance).map(
+      (star) => star.querySelector('svg')?.getAttribute('style'),
+    );
+    const primaryIndex = instance.htmlData.findIndex(({ primary }) => primary);
+    const regularIndex = instance.htmlData.findIndex(
+      ({ primary }) => !primary,
+    );
 
-    expect(primaryMarker).toBeDefined();
-    expect(instance.pointRadiusAccessor?.(primaryMarker!)).toBe(0.48);
-    expect(instance.pointRadiusAccessor?.(regularMarker!)).toBe(0.38);
+    expect(primaryIndex).toBeGreaterThanOrEqual(0);
+    expect(regularIndex).toBeGreaterThanOrEqual(0);
+    expect(sizes[primaryIndex]).toContain('2rem');
+    expect(sizes[regularIndex]).toContain('1.45rem');
   });
 
   it('renders eight accessible red five-point stars at their exact coordinates', async () => {
@@ -547,16 +581,18 @@ describe('GlobeScene', () => {
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
-    const stars = instance.htmlData.map((marker) =>
-      instance.htmlElementAccessor?.(marker),
-    );
+    const stars = starButtons(instance);
 
+    expect(instance.pointsData).not.toHaveBeenCalled();
+    expect(instance.htmlData).toHaveLength(8);
     expect(stars).toHaveLength(8);
-    expect(stars.every((star) => star?.textContent === '★')).toBe(true);
-    expect(stars.map((star) => star?.getAttribute('aria-label'))).toEqual(
+    expect(stars.every((star) => star.querySelector('svg path'))).toBe(true);
+    expect(stars.every((star) => star.classList.contains('globe-marker'))).toBe(
+      true,
+    );
+    expect(stars.map((star) => star.getAttribute('aria-label'))).toEqual(
       sites.map(({ officialName }) => officialName),
     );
-    expect(stars.every((star) => star?.style.translate === '')).toBe(true);
     expect(instance.htmlData.map(({ lat, lng }) => ({ lat, lng }))).toEqual(
       sites.map(({ coordinates }) => coordinates),
     );
@@ -568,7 +604,7 @@ describe('GlobeScene', () => {
 
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
-    instance.pointClick?.(instance.pointData[4]);
+    clickStar(instance, 4);
 
     expect(props.onSelect).toHaveBeenCalledTimes(1);
     expect(props.onSelect).toHaveBeenCalledWith(sites[4].id);
@@ -582,7 +618,7 @@ describe('GlobeScene', () => {
     const instance = latestInstance();
     vi.useFakeTimers();
 
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
 
     expect(props.onSelect).toHaveBeenCalledWith(sites[0].id);
     expect(instance.enablePointerInteractionCalls).toContain(false);
@@ -607,8 +643,8 @@ describe('GlobeScene', () => {
     const instance = latestInstance();
     vi.useFakeTimers();
 
-    instance.pointClick?.(instance.pointData[0]);
-    instance.pointClick?.(instance.pointData[1]);
+    clickStar(instance, 0);
+    clickStar(instance, 1);
     act(() => vi.runAllTimers());
 
     expect(props.onSelect).toHaveBeenCalledTimes(1);
@@ -625,7 +661,7 @@ describe('GlobeScene', () => {
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
     vi.useFakeTimers();
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
 
     unmount();
     act(() => vi.runAllTimers());
@@ -643,7 +679,7 @@ describe('GlobeScene', () => {
     const instance = latestInstance();
     const spatialViewsBeforeFlight = instance.pointOfViewCalls.length;
     vi.useFakeTimers();
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
 
     act(() => vi.runAllTimers());
 
@@ -659,7 +695,7 @@ describe('GlobeScene', () => {
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
     vi.useFakeTimers();
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
     act(() => vi.runAllTimers());
 
     rendered.rerender(<GlobeScene {...rendered.props} detailOpen />);
@@ -667,9 +703,9 @@ describe('GlobeScene', () => {
     act(() => vi.runAllTimers());
 
     expect(instance.pointOfViewCalls.at(-1)).toEqual({
-      lat: 35,
-      lng: 104,
-      altitude: 2.05,
+      lat: 32,
+      lng: 120,
+      altitude: 0.9,
     });
     expect(rendered.props.onReturnComplete).toHaveBeenCalledTimes(1);
   });
@@ -681,7 +717,7 @@ describe('GlobeScene', () => {
     await waitFor(() => expect(globeMock.instances).toHaveLength(1));
     const instance = latestInstance();
     vi.useFakeTimers();
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
     act(() => vi.runAllTimers());
     const spatialViewsAfterFlight = instance.pointOfViewCalls.length;
 
@@ -714,7 +750,7 @@ describe('GlobeScene', () => {
     await act(async () => Promise.resolve());
     vi.useFakeTimers();
 
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
     act(() => vi.runAllTimers());
 
     expect(instance.pointOfViewCalls.length).toBeGreaterThan(0);
@@ -724,8 +760,11 @@ describe('GlobeScene', () => {
     expect(globeMock.instances).toHaveLength(1);
   });
 
-  it('uses a bright warm shell and caps high device pixel ratios', async () => {
+  it('uses a bright warm shell and caps high device pixel ratios on desktop', async () => {
     setWebGLSupported(true);
+    vi.spyOn(HTMLElement.prototype, 'clientWidth', 'get').mockReturnValue(
+      1440,
+    );
     vi.stubGlobal('devicePixelRatio', 3);
     renderScene();
 
@@ -734,7 +773,7 @@ describe('GlobeScene', () => {
 
     expect(instance.background).toBe('#fbf7ee');
     expect(instance.globeColor).toHaveBeenCalledWith('#e7d4b5');
-    expect(instance.rendererPixelRatio).toHaveBeenCalledWith(1.5);
+    expect(instance.rendererPixelRatio).toHaveBeenCalledWith(1.25);
   });
 
   it('reports initialization errors and switches to the eight-site fallback', async () => {
@@ -757,7 +796,7 @@ describe('GlobeScene', () => {
     unmount();
 
     instance.readyCallback?.();
-    instance.pointClick?.(instance.pointData[0]);
+    clickStar(instance, 0);
 
     expect(instance.destructor).toHaveBeenCalledTimes(1);
     expect(props.onReady).not.toHaveBeenCalled();
