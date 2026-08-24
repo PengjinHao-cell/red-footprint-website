@@ -12,6 +12,7 @@ import {
 import { getYangtzeDeltaOverview } from './globeView';
 import { layoutNearbyMarkers } from './markerLayout';
 import { getMarkerPresentation } from './markerPresentation';
+import { isTapGesture, type PointerSample } from './pointerIntent';
 import { getRenderBudget } from './renderBudget';
 import SiteListFallback from './SiteListFallback';
 
@@ -174,10 +175,62 @@ function createStarElement(
   svg.append(path);
   starSpan.append(svg);
 
+  let pointerStart: PointerSample | null = null;
+  let pointerMoved = false;
+  let tapApproved = false;
+
+  star.addEventListener('pointerdown', (event) => {
+    pointerStart = {
+      x: event.clientX,
+      y: event.clientY,
+      pointerId: event.pointerId,
+      pointerType: event.pointerType,
+    };
+    pointerMoved = false;
+    tapApproved = false;
+  });
+
+  star.addEventListener('pointermove', (event) => {
+    if (!pointerStart || pointerMoved) {
+      return;
+    }
+    if (
+      !isTapGesture(pointerStart, {
+        x: event.clientX,
+        y: event.clientY,
+        pointerId: event.pointerId,
+        pointerType: event.pointerType,
+      })
+    ) {
+      pointerMoved = true;
+    }
+  });
+
+  star.addEventListener('pointercancel', () => {
+    pointerStart = null;
+    pointerMoved = false;
+    tapApproved = false;
+  });
+
+  star.addEventListener('pointerup', (event) => {
+    if (
+      pointerStart &&
+      event.pointerId === pointerStart.pointerId &&
+      !pointerMoved
+    ) {
+      tapApproved = true;
+    }
+    pointerStart = null;
+  });
+
   star.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    onActivate(marker);
+    const keyboardClick = event.detail === 0;
+    if (keyboardClick || tapApproved) {
+      tapApproved = false;
+      onActivate(marker);
+    }
   });
   return star;
 }

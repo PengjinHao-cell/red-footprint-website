@@ -830,6 +830,74 @@ describe('GlobeScene', () => {
     expect(offsetStar?.style.getPropertyValue('--marker-y')).toBe('0px');
   });
 
+  it('rejects a touch drag on a marker as a tap', async () => {
+    setWebGLSupported(true);
+    const { props } = renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const star = starButtons(latestInstance())[0];
+
+    fireEvent.pointerDown(star, {
+      clientX: 100,
+      clientY: 100,
+      pointerId: 1,
+      pointerType: 'touch',
+    });
+    fireEvent.pointerMove(star, {
+      clientX: 125,
+      clientY: 100,
+      pointerId: 1,
+      pointerType: 'touch',
+    });
+    fireEvent.pointerUp(star, {
+      clientX: 125,
+      clientY: 100,
+      pointerId: 1,
+      pointerType: 'touch',
+    });
+    fireEvent.click(star, { detail: 1 });
+
+    expect(props.onSelect).not.toHaveBeenCalled();
+  });
+
+  it('opens the exact site from a stationary touch tap', async () => {
+    setWebGLSupported(true);
+    const { props } = renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const star = starButtons(latestInstance())[0];
+
+    fireEvent.pointerDown(star, {
+      clientX: 100,
+      clientY: 100,
+      pointerId: 1,
+      pointerType: 'touch',
+    });
+    fireEvent.pointerUp(star, {
+      clientX: 104,
+      clientY: 103,
+      pointerId: 1,
+      pointerType: 'touch',
+    });
+    fireEvent.click(star, { detail: 1 });
+
+    expect(props.onSelect).toHaveBeenCalledTimes(1);
+    expect(props.onSelect).toHaveBeenCalledWith(sites[0].id);
+  });
+
+  it('allows keyboard activation directly without pointer approval', async () => {
+    setWebGLSupported(true);
+    const { props } = renderScene();
+
+    await waitFor(() => expect(globeMock.instances).toHaveLength(1));
+    const star = starButtons(latestInstance())[0];
+
+    fireEvent.click(star);
+
+    expect(props.onSelect).toHaveBeenCalledTimes(1);
+    expect(props.onSelect).toHaveBeenCalledWith(sites[0].id);
+  });
+
   it('does not call callbacks after unmount and destroys the globe instance', async () => {
     setWebGLSupported(true);
     globeMock.autoReady = false;
