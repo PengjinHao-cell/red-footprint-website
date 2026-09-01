@@ -1,13 +1,16 @@
-import { useCallback, useReducer, useState } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 
 import AppErrorBoundary from './components/AppErrorBoundary';
 import SiteDetailPanel from './components/detail/SiteDetailPanel';
 import SiteDirectory from './components/directory/SiteDirectory';
-import ProgressiveGlobe from './components/globe/ProgressiveGlobe';
 import {
   initialExperienceState,
   transition,
 } from './components/map/experienceState';
+import MapExperience, {
+  type MapExperienceEvent,
+  type MapExperienceState,
+} from './components/map/MapExperience';
 import JourneyProgress from './components/progress/JourneyProgress';
 import WelcomeScreen from './components/welcome/WelcomeScreen';
 import type { Site } from './data/siteSchema';
@@ -19,33 +22,26 @@ type AppProps = {
 
 export default function App({ sites }: AppProps) {
   const [experience, dispatch] = useReducer(transition, initialExperienceState);
-  const [globeRetryKey, setGlobeRetryKey] = useState(0);
   const { markVisited, visitedIds } = useJourneyProgress();
 
   const selectedSite =
-    sites?.find(({ id }) => id === experience.siteId) ?? null;
+    sites?.find(({ id }) => id === ('siteId' in experience ? experience.siteId : null)) ?? null;
 
-  const selectSite = useCallback(
-    (id: string) => {
-      if (experience.view !== 'national' || !sites?.some((site) => site.id === id)) {
+  useEffect(() => {
+    if (experience.view === 'detail') markVisited(experience.siteId);
+  }, [experience, markVisited]);
+
+  const handleMapEvent = useCallback(
+    (event: MapExperienceEvent) => {
+      if (
+        event.type === 'SELECT_SITE' &&
+        !sites?.some((site) => site.id === event.siteId)
+      ) {
         return;
       }
-
-      dispatch({ type: 'SELECT_SITE', siteId: id });
+      dispatch(event);
     },
-    [experience.view, sites],
-  );
-
-  const openDetail = useCallback(
-    (id: string) => {
-      if (!sites?.some((site) => site.id === id)) {
-        return;
-      }
-
-      markVisited(id);
-      dispatch({ type: 'TRAVEL_COMPLETE' });
-    },
-    [markVisited, sites],
+    [sites],
   );
 
   const openDirectoryDetail = useCallback(
@@ -54,23 +50,17 @@ export default function App({ sites }: AppProps) {
         return;
       }
 
-      markVisited(id);
       dispatch({ type: 'OPEN_DIRECTORY_DETAIL', siteId: id });
     },
-    [markVisited, sites],
+    [sites],
   );
-
-  const finishReturn = useCallback(() => {
-    dispatch({ type: 'RETURN_COMPLETE' });
-  }, []);
 
   const closeDetail = useCallback(() => {
     dispatch({ type: 'CLOSE_DETAIL' });
   }, []);
 
-  const retryGlobe = useCallback(() => {
+  const resetMap = useCallback(() => {
     dispatch({ type: 'RESET_MAP' });
-    setGlobeRetryKey((key) => key + 1);
   }, []);
 
   if (!sites?.length) {
@@ -102,7 +92,7 @@ export default function App({ sites }: AppProps) {
   }
 
   return (
-    <AppErrorBoundary onReset={retryGlobe}>
+    <AppErrorBoundary onReset={resetMap}>
       <main
         style={{
           minHeight: '100vh',
@@ -112,30 +102,22 @@ export default function App({ sites }: AppProps) {
       >
         <JourneyProgress visitedCount={visitedIds.length} />
 
-        {(experience.view === 'travelling-site' ||
-          experience.view === 'returning-national') &&
-          selectedSite && (
-            <p aria-live="polite" role="status">
-              正在调整地图视角：{selectedSite.officialName}
-            </p>
-          )}
-
-        <ProgressiveGlobe
-          detailOpen={experience.view === 'detail'}
-          key={globeRetryKey}
-          onReturnComplete={finishReturn}
-          onSelect={selectSite}
-          onTravelComplete={openDetail}
-          selectedId={experience.siteId ?? null}
+        <MapExperience
+          onEvent={handleMapEvent}
           sites={sites}
-          visitedIds={visitedIds}
+          state={(
+            experience.view === 'detail'
+              ? experience.origin === 'city-map' && experience.cityId
+                ? { view: 'city', cityId: experience.cityId }
+                : { view: 'national' }
+              : experience.view === 'returning-national'
+                ? { view: 'national' }
+                : experience
+          ) as MapExperienceState}
         />
 
         {experience.view === 'national' && (
           <>
-            <button onClick={retryGlobe} type="button">
-              重新加载3D地图
-            </button>
             <SiteDirectory
               onOpen={openDirectoryDetail}
               sites={sites}

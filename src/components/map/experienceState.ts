@@ -1,3 +1,5 @@
+import type { CityId } from './cityMapConfig';
+
 /**
  * 两级平面地图体验的显式状态机。
  *
@@ -10,6 +12,8 @@
 export type ExperienceView =
   | 'welcome'
   | 'national'
+  | 'entering-city'
+  | 'city'
   | 'travelling-site'
   | 'detail'
   | 'returning-national'
@@ -17,16 +21,29 @@ export type ExperienceView =
 
 export type DetailOrigin = 'directory' | 'city-map' | 'legacy-map';
 
-export type ExperienceState = {
-  view: ExperienceView;
-  cityId?: string | null;
-  siteId?: string | null;
-  origin?: DetailOrigin | null;
-};
+export type ExperienceState =
+  | { view: 'welcome' }
+  | { view: 'national' }
+  | { view: 'entering-city'; cityId: CityId }
+  | { view: 'city'; cityId: CityId }
+  | { view: 'travelling-site'; cityId: CityId; siteId: string }
+  | {
+      view: 'detail';
+      siteId: string;
+      origin: DetailOrigin;
+      cityId: CityId | null;
+    }
+  | { view: 'returning-national'; siteId: string }
+  | { view: 'returning-site'; cityId: CityId; siteId: string };
 
 export type ExperienceEvent =
   | { type: 'OPEN_DIRECTORY_DETAIL'; siteId: string }
+  | { type: 'SELECT_CITY'; cityId: CityId }
+  | { type: 'CITY_ENTERED' }
   | { type: 'SELECT_SITE'; siteId: string }
+  | { type: 'SITE_REACHED' }
+  | { type: 'SITE_RETURNED' }
+  | { type: 'BACK_TO_NATIONAL' }
   | { type: 'TRAVEL_COMPLETE' }
   | { type: 'RETURN_COMPLETE' }
   | { type: 'CLOSE_DETAIL' }
@@ -40,13 +57,37 @@ export function transition(
 ): ExperienceState {
   switch (event.type) {
     case 'OPEN_DIRECTORY_DETAIL':
-      return { view: 'detail', siteId: event.siteId, origin: 'directory' };
-    case 'SELECT_SITE':
+      return { view: 'detail', siteId: event.siteId, origin: 'directory', cityId: null };
+    case 'SELECT_CITY':
       if (state.view !== 'national') return state;
-      return { view: 'travelling-site', siteId: event.siteId, origin: 'legacy-map' };
+      return { view: 'entering-city', cityId: event.cityId };
+    case 'CITY_ENTERED':
+      if (state.view !== 'entering-city' || !state.cityId) return state;
+      return { view: 'city', cityId: state.cityId };
+    case 'SELECT_SITE':
+      if (state.view !== 'city' || !state.cityId) return state;
+      return {
+        view: 'travelling-site',
+        cityId: state.cityId,
+        siteId: event.siteId,
+      };
+    case 'SITE_REACHED':
+      if (state.view !== 'travelling-site' || !state.cityId || !state.siteId) return state;
+      return {
+        view: 'detail',
+        cityId: state.cityId,
+        siteId: state.siteId,
+        origin: 'city-map',
+      };
+    case 'SITE_RETURNED':
+      if (state.view !== 'returning-site' || !state.cityId) return state;
+      return { view: 'city', cityId: state.cityId };
+    case 'BACK_TO_NATIONAL':
+      if (state.view !== 'city') return state;
+      return { view: 'national' };
     case 'TRAVEL_COMPLETE':
       if (state.view !== 'travelling-site') return state;
-      return { view: 'detail', siteId: state.siteId, origin: 'legacy-map' };
+      return { view: 'detail', siteId: state.siteId, origin: 'legacy-map', cityId: null };
     case 'RETURN_COMPLETE':
       if (state.view !== 'returning-national') return state;
       return { view: 'national' };
