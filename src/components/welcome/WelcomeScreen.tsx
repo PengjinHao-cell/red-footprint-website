@@ -1,7 +1,4 @@
-import { useEffect } from 'react';
-
 import useReducedMotion from '../../hooks/useReducedMotion';
-import { prefetchGlobeModule, scheduleIdleTask } from './globePrefetch';
 import WelcomeRoute from './WelcomeRoute';
 
 type WelcomeScreenProps = {
@@ -14,16 +11,6 @@ export default function WelcomeScreen({
   onEnter,
 }: WelcomeScreenProps) {
   const reducedMotion = useReducedMotion();
-
-  useEffect(() => {
-    const cancel = scheduleIdleTask(() => {
-      prefetchGlobeModule().catch((error: unknown) => {
-        console.warn('globe.gl prefetch failed', error);
-      });
-    });
-
-    return cancel;
-  }, []);
 
   const motion = reducedMotion ? 'reduced' : 'full';
 

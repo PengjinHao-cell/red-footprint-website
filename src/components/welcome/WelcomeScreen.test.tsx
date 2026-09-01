@@ -1,41 +1,12 @@
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import WelcomeScreen from './WelcomeScreen';
 
-const globePrefetch = vi.hoisted(() => ({
-  loadCount: 0,
-  rejectNext: false,
-}));
-
-vi.mock('globe.gl', () => {
-  globePrefetch.loadCount += 1;
-  if (globePrefetch.rejectNext) {
-    throw new Error('synthetic prefetch failure');
-  }
-  return { default: class MockPrefetchedGlobe {} };
-});
-
 afterEach(() => {
   cleanup();
-  globePrefetch.loadCount = 0;
-  globePrefetch.rejectNext = false;
   vi.restoreAllMocks();
 });
-
-function stubIdleCallbackImmediate() {
-  vi.stubGlobal('requestIdleCallback', (callback: () => void) => {
-    callback();
-    return 0;
-  });
-  vi.stubGlobal('cancelIdleCallback', () => undefined);
-}
 
 describe('WelcomeScreen', () => {
   it('shows the approved school subtitle', () => {
@@ -92,38 +63,6 @@ describe('WelcomeScreen', () => {
     const { container } = render(<WelcomeScreen ready onEnter={onEnter} />);
 
     expect(container.querySelector('[data-motion="reduced"]')).not.toBeNull();
-    fireEvent.click(screen.getByRole('button', { name: '开启寻访' }));
-    expect(onEnter).toHaveBeenCalledTimes(1);
-  });
-
-  it('prefetches the globe module in idle time without blocking entry', async () => {
-    stubIdleCallbackImmediate();
-    const onEnter = vi.fn();
-    render(<WelcomeScreen ready onEnter={onEnter} />);
-
-    await waitFor(() => expect(globePrefetch.loadCount).toBe(1));
-    expect(screen.getByRole('button', { name: '开启寻访' })).toBeEnabled();
-    fireEvent.click(screen.getByRole('button', { name: '开启寻访' }));
-    expect(onEnter).toHaveBeenCalledTimes(1);
-  });
-
-  it('keeps entry usable when the prefetch itself fails', async () => {
-    const warnSpy = vi
-      .spyOn(console, 'warn')
-      .mockImplementation(() => undefined);
-    stubIdleCallbackImmediate();
-    vi.resetModules();
-    vi.doMock('globe.gl', () => {
-      globePrefetch.loadCount += 1;
-      throw new Error('synthetic prefetch failure');
-    });
-    const { default: ReloadedWelcomeScreen } = await import('./WelcomeScreen');
-
-    const onEnter = vi.fn();
-    render(<ReloadedWelcomeScreen ready onEnter={onEnter} />);
-
-    await waitFor(() => expect(warnSpy).toHaveBeenCalled());
-    expect(screen.getByRole('button', { name: '开启寻访' })).toBeEnabled();
     fireEvent.click(screen.getByRole('button', { name: '开启寻访' }));
     expect(onEnter).toHaveBeenCalledTimes(1);
   });
