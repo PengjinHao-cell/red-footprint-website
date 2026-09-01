@@ -9,4 +9,10 @@
   --font-body: 'PingFang SC', 'Microsoft YaHei', sans-serif;
   --content-width: 48rem;
   --touch-target: 44px;
+  --map-land: #ead9bb;
+  --map-boundary: #7f463c;
+  --map-city-brick: #c83a32;
+  --map-city-ochre: #d58a2a;
+  --map-city-teal: #2f7d68;
+  --map-city-blue: #3f7f9b;
 }
