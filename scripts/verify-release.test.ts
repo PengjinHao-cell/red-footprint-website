@@ -22,6 +22,7 @@ const releaseCalls = [
   'run check:upload-reconciliation',
   'run check:content -- --release',
   'run check:map',
+  'run check:city-maps',
   'run lint',
   'run test:run',
   'run build',

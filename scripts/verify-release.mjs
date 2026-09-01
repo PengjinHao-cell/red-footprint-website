@@ -7,6 +7,7 @@ const releaseSteps = [
   { script: 'check:upload-reconciliation', args: [] },
   { script: 'check:content', args: ['--', '--release'] },
   { script: 'check:map', args: [] },
+  { script: 'check:city-maps', args: [] },
   { script: 'lint', args: [] },
   { script: 'test:run', args: [], mediaCheckMode: 'release' },
   { script: 'build', args: [] },

@@ -47,6 +47,31 @@ const REQUIRED_ADMIN_CODES = [
   '820000',
 ];
 
+const STABLE_SITE_COORDINATES = {
+  'sihong-memorial': { lat: 33.447482, lng: 118.210953 },
+  'yuhuatai-martyrs': { lat: 31.998425, lng: 118.780177 },
+  'dujiang-victory': { lat: 32.073563, lng: 118.73173 },
+  'sihang-warehouse': { lat: 31.24034, lng: 121.471104 },
+  'cpc-first-congress': { lat: 31.220104, lng: 121.475407 },
+  'jiangshangqing-memorial': { lat: 32.390314, lng: 119.434459 },
+  'yangzhou-martyrs': { lat: 32.421642, lng: 119.415186 },
+  'meiyuan-new-village': { lat: 32.042379, lng: 118.801602 },
+};
+
+const CITY_NAME_TO_ID = {
+  南京市: 'nanjing',
+  上海市: 'shanghai',
+  宿迁市: 'suqian',
+  扬州市: 'yangzhou',
+};
+
+const EXPECTED_CITY_GROUPS = {
+  nanjing: 3,
+  shanghai: 2,
+  suqian: 1,
+  yangzhou: 2,
+};
+
 const sha256Pattern = /^[a-f0-9]{64}$/i;
 
 function isRecord(value) {
@@ -309,36 +334,35 @@ function validateCompliance(record, errors) {
     },
   );
 
-  if (!Array.isArray(record.markers) || record.markers.length !== 8) {
-    errors.push('mapCompliance.markers: exactly 8 markers are required');
+  if (!isRecord(record.nationalMap)) {
+    errors.push('mapCompliance.nationalMap: is required');
   } else {
-    const ids = new Set();
-    const coordinates = new Set();
-    record.markers.forEach((marker, index) => {
-      if (!isRecord(marker)) {
-        errors.push(`mapCompliance.markers[${index}]: must be an object`);
-        return;
+    if (record.nationalMap.cityCount !== 4) {
+      errors.push('mapCompliance.nationalMap.cityCount: exactly 4 cities are required');
+    }
+    if (record.nationalMap.starCount !== 0) {
+      errors.push('mapCompliance.nationalMap.starCount: national layer must have 0 stars');
+    }
+  }
+
+  if (!isRecord(record.siteProjection)) {
+    errors.push('mapCompliance.siteProjection: is required');
+  } else {
+    const groups = record.siteProjection.groups;
+    if (!isRecord(groups)) {
+      errors.push('mapCompliance.siteProjection.groups: is required');
+    } else {
+      for (const [cityId, count] of Object.entries(EXPECTED_CITY_GROUPS)) {
+        if (groups[cityId] !== count) {
+          errors.push(
+            `mapCompliance.siteProjection.groups.${cityId}: expected ${count}, got ${groups[cityId]}`,
+          );
+        }
       }
-      if (typeof marker.id !== 'string' || ids.has(marker.id)) {
-        errors.push('mapCompliance.markers: IDs must be unique');
-      }
-      ids.add(marker.id);
-      const key = `${marker.lat},${marker.lng}`;
-      if (coordinates.has(key)) {
-        errors.push('mapCompliance.markers: coordinates must be unique');
-      }
-      coordinates.add(key);
-      if (
-        typeof marker.lat !== 'number' ||
-        marker.lat < 3 ||
-        marker.lat > 54 ||
-        typeof marker.lng !== 'number' ||
-        marker.lng < 73 ||
-        marker.lng > 136
-      ) {
-        errors.push(`mapCompliance.markers[${index}]: outside China bounds`);
-      }
-    });
+    }
+    if (record.siteProjection.totalSites !== 8) {
+      errors.push('mapCompliance.siteProjection.totalSites: must total 8');
+    }
   }
 
   if (!isRecord(record.checks)) {
@@ -348,7 +372,9 @@ function validateCompliance(record, errors) {
       'sourceRecord',
       'digest',
       'geometry',
-      'eightMarkers',
+      'nationalLayer',
+      'cityLayer',
+      'siteProjection',
       'fallbackList',
       'reducedMotion',
     ].forEach((field) => {
@@ -378,12 +404,70 @@ function validateCompliance(record, errors) {
     'nationalBoundaries',
     'administrativeBoundaries',
     'majorIslands',
-    'eightMarkers',
+    'nationalCities',
+    'cityStars',
   ].forEach((field) => {
     if (visual[field] !== true) {
       errors.push(`mapCompliance.humanVisualIntegrity.${field}: must be true`);
     }
   });
+}
+
+function validateSiteCoordinates(sitesPath, errors) {
+  if (!sitesPath || !requireFile(sitesPath, 'sites.json', errors)) return;
+
+  const sites = parseJson(sitesPath, errors, 'sites.json');
+  if (!Array.isArray(sites)) {
+    errors.push('sites.json: must be an array of sites');
+    return;
+  }
+  if (sites.length !== 8) {
+    errors.push(`sites.json: expected 8 sites, got ${sites.length}`);
+    return;
+  }
+
+  const ids = new Set();
+  const groups = { nanjing: 0, shanghai: 0, suqian: 0, yangzhou: 0 };
+  sites.forEach((site, index) => {
+    if (!isRecord(site) || typeof site.id !== 'string') {
+      errors.push(`sites.json[${index}]: site with id is required`);
+      return;
+    }
+    if (ids.has(site.id)) {
+      errors.push(`sites.json: duplicate site id ${site.id}`);
+    }
+    ids.add(site.id);
+
+    const stable = STABLE_SITE_COORDINATES[site.id];
+    if (!stable) {
+      errors.push(`sites.json[${index}]: unexpected site id ${site.id}`);
+      return;
+    }
+    if (
+      !isRecord(site.coordinates) ||
+      site.coordinates.lat !== stable.lat ||
+      site.coordinates.lng !== stable.lng
+    ) {
+      errors.push(
+        `sites.json[${index}] ${site.id}: coordinates must match the confirmed site point`,
+      );
+    }
+
+    const cityId = CITY_NAME_TO_ID[site.city];
+    if (!cityId) {
+      errors.push(`sites.json[${index}] ${site.id}: unsupported city ${site.city}`);
+      return;
+    }
+    groups[cityId] += 1;
+  });
+
+  for (const [cityId, count] of Object.entries(EXPECTED_CITY_GROUPS)) {
+    if (groups[cityId] !== count) {
+      errors.push(
+        `sites.json: city ${cityId} must group ${count} sites, got ${groups[cityId]}`,
+      );
+    }
+  }
 }
 
 function parseArguments(argv) {
@@ -392,10 +476,11 @@ function parseArguments(argv) {
     source: 'src/data/mapSource.json',
     compliance: 'src/data/mapCompliance.json',
     resource: undefined,
+    sites: 'src/data/sites.json',
   };
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
-    if (!['--root', '--source', '--compliance', '--resource'].includes(argument)) {
+    if (!['--root', '--source', '--compliance', '--resource', '--sites'].includes(argument)) {
       throw new Error(`unknown argument: ${argument}`);
     }
     const value = argv[index + 1];
@@ -451,6 +536,9 @@ export function runMapResourceCheck(argv = process.argv.slice(2)) {
   }
   validateCompliance(compliance, errors);
 
+  const sitesPath = resolveInsideRoot(root, options.sites, '--sites', errors);
+  validateSiteCoordinates(sitesPath, errors);
+
   if (errors.length > 0) {
     errors.forEach((error) => console.error(`[map] ${error}`));
     return 1;
@@ -459,7 +547,8 @@ export function runMapResourceCheck(argv = process.argv.slice(2)) {
   console.log('[map] source passed: 自然资源部 GS(2023)2762号 reference recorded');
   console.log('[map] digest passed: official reference and runtime SHA-256 recorded; available files match');
   console.log('[map] geometry passed: 34 province features and 1 maritime-boundary feature');
-  console.log('[map] 8 markers passed: unique IDs and GCJ-02 coordinate bounds');
+  console.log('[map] national layer passed: 4 city glows and 0 stars');
+  console.log('[map] site projection passed: 8 sites grouped 3/2/2/1 with confirmed coordinates');
   console.log('[map] visual integrity passed: 390x844, 768x1024, 1366x768, 1920x1080');
   return 0;
 }
