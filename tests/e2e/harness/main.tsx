@@ -26,6 +26,7 @@ createRoot(rootElement).render(
         padding: '0.3rem 0.55rem',
         background: '#fff200',
         color: '#111',
+        pointerEvents: 'none',
         font: '700 12px/1.2 sans-serif',
       }}
     >

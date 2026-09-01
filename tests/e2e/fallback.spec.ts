@@ -8,7 +8,7 @@ import {
 
 const TARGET_SITE = '雨花台烈士陵园';
 
-async function openFallbackDetail(
+async function openDirectoryDetail(
   page: Page,
   options: SyntheticMediaOptions = {},
 ): Promise<SyntheticMediaController> {
@@ -19,11 +19,8 @@ async function openFallbackDetail(
   await expect(page.getByRole('complementary', { name: 'TEST-ONLY 标识' })).toBeVisible();
   await page.getByRole('button', { name: '开启寻访' }).click();
 
-  const fallback = page.getByRole('region', { name: '红色足迹景点列表' });
-  await expect(fallback).toBeVisible();
-  await expect(fallback.getByRole('button')).toHaveCount(8);
-
-  await fallback.getByRole('button', { name: TARGET_SITE }).click();
+  await expect(page.getByRole('region', { name: '选择城市' })).toBeVisible();
+  await page.getByRole('button', { name: new RegExp(`查看${TARGET_SITE}`) }).click();
   await expect(page.getByRole('dialog', { name: TARGET_SITE })).toBeVisible();
   return media;
 }
@@ -52,10 +49,10 @@ function isMobileProject(testInfo: TestInfo) {
   return testInfo.project.name !== 'Desktop Chromium';
 }
 
-test('compliance fallback exposes eight native buttons and Escape keeps detail accessible', async ({
+test('directory exposes eight native buttons and Escape keeps detail accessible', async ({
   page,
 }) => {
-  await openFallbackDetail(page);
+  await openDirectoryDetail(page);
 
   await expect(page.getByText('TEST-ONLY 合成开放信息，不用于参观')).toBeVisible();
   await expect(page.getByRole('heading', { name: '历史印记' })).toBeVisible();
@@ -63,14 +60,14 @@ test('compliance fallback exposes eight native buttons and Escape keeps detail a
 
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).toBeHidden();
-  await expect(page.getByRole('status')).toBeHidden();
-  await expect(page.getByRole('region', { name: '红色足迹景点列表' })).toBeVisible();
+  await expect(page.getByRole('status')).toHaveCount(0);
+  await expect(page.getByRole('region', { name: '选择城市' })).toBeVisible();
 });
 
 test('media starts with video and device navigation stops at the last photo', async ({
   page,
 }, testInfo) => {
-  await openFallbackDetail(page);
+  await openDirectoryDetail(page);
 
   const previous = page.getByRole('button', { name: '上一项媒体' });
   const next = page.getByRole('button', { name: '下一项媒体' });
@@ -105,7 +102,7 @@ test('media starts with video and device navigation stops at the last photo', as
 test('native video focus keeps Space while playback locks every carousel input', async ({
   page,
 }, testInfo) => {
-  await openFallbackDetail(page);
+  await openDirectoryDetail(page);
 
   const video = page.getByLabel('景点讲解视频');
   const carousel = page.getByRole('region', { name: '景点媒体' });
@@ -155,7 +152,7 @@ test('native video focus keeps Space while playback locks every carousel input',
 test('metadata requests stay partial until playback is explicitly allowed', async ({
   page,
 }) => {
-  const media = await openFallbackDetail(page);
+  const media = await openDirectoryDetail(page);
   const video = page.getByLabel('景点讲解视频');
 
   await page.waitForTimeout(150);
@@ -191,7 +188,7 @@ test('metadata requests stay partial until playback is explicitly allowed', asyn
 test('controlled image and video failures preserve narrative access', async ({
   page,
 }) => {
-  await openFallbackDetail(page, { failFirstPhoto: true, failVideo: true });
+  await openDirectoryDetail(page, { failFirstPhoto: true, failVideo: true });
 
   const video = page.getByLabel('景点讲解视频');
   await video.evaluate((element) => {
