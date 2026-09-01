@@ -4,6 +4,15 @@
   "derivedThreeDimensionalResource": true,
   "newReviewClaimed": false,
   "coordinateSystem": "GCJ-02",
+  "cityMaps": {
+    "status": "integrity-checked",
+    "manifest": "src/data/maps/cities/city-map-sources.json",
+    "cityCount": 4,
+    "controlPointCount": 16,
+    "calibrationCoordinateSystem": "GCJ-02",
+    "checkedAt": "2026-09-01",
+    "newReviewClaimed": false
+  },
   "markers": [
     {
       "id": "sihong-memorial",

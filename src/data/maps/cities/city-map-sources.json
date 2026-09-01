@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "accessedAt": "2026-08-31",
+  "calibrationCoordinateSystem": "GCJ-02",
+  "calibrationMethod": "least-squares affine transform from four visually measured administrative-seat symbols",
+  "cities": [
+    {
+      "id": "nanjing",
+      "name": "南京市",
+      "title": "南京市地图（政区版）8开",
+      "scale": "1:420000",
+      "version": "2025年编制版（平台更新日期 2026-01-05）",
+      "reviewNumber": "宁S（2025）077号",
+      "sourcePageUrl": "https://jiangsu.tianditu.gov.cn/nanjing/index.html#/thematicAppDetail?id=2b069553af860b86f40e944fa37aa48e&name=政区版",
+      "downloadUrl": "https://jiangsu.tianditu.gov.cn/nanjing/standardFile/downloadFilesById?fileId=2b069553af860b86f40e944fa37aa48e",
+      "localPath": "src/data/maps/cities/nanjing.jpg",
+      "width": 3371,
+      "height": 4966,
+      "bytes": 5024768,
+      "sha256": "2f6e6f93a4b50dd77d251a6045c17d6d20860d504a9ccc6b9ab9097ed04507bc",
+      "controlPoints": [
+        { "name": "六合区人民政府", "coordinates": { "lat": 32.323235, "lng": 118.822241 }, "pixel": { "x": 1752, "y": 1338 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B00190ZDU7" },
+        { "name": "南京市人民政府", "coordinates": { "lat": 32.059344, "lng": 118.796624 }, "pixel": { "x": 1687, "y": 2175 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B0019141NK" },
+        { "name": "溧水区人民政府", "coordinates": { "lat": 31.651821219, "lng": 119.028722608 }, "pixel": { "x": 2308, "y": 3442 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://api.openstreetmap.org/api/0.6/node/9638802306.json", "coordinateDerivation": "WGS84 converted to GCJ-02 with the standard public offset algorithm" },
+        { "name": "高淳区人民政府", "coordinates": { "lat": 31.328678, "lng": 118.892074 }, "pixel": { "x": 1816, "y": 4430 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://www.amap.com/place/B001905M3E" }
+      ]
+    },
+    {
+      "id": "yangzhou",
+      "name": "扬州市",
+      "title": "扬州市地图（有邻域）8开",
+      "scale": "1:400000",
+      "version": "2025年3月版",
+      "reviewNumber": "苏K（2025）8号",
+      "sourcePageUrl": "https://jiangsu.tianditu.gov.cn/yangzhou/static/stdMap/index.html",
+      "downloadUrl": "https://jiangsu.tianditu.gov.cn/yangzhou/static/stdMap/maps/扬州市地图有邻域8K.jpg",
+      "localPath": "src/data/maps/cities/yangzhou.jpg",
+      "width": 3368,
+      "height": 4962,
+      "bytes": 3321651,
+      "sha256": "489b4ad704327576e9d793180c234554c70f9449aa090e8e5438993cbd31b368",
+      "controlPoints": [
+        { "name": "宝应县人民政府", "coordinates": { "lat": 33.241125, "lng": 119.358389 }, "pixel": { "x": 1307, "y": 1149 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B0202151ZQ" },
+        { "name": "高邮市人民政府", "coordinates": { "lat": 32.781606, "lng": 119.45892 }, "pixel": { "x": 1683, "y": 2693 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B020214UPI" },
+        { "name": "扬州市人民政府", "coordinates": { "lat": 32.394404, "lng": 119.412834 }, "pixel": { "x": 1558, "y": 4023 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B020200FXX" },
+        { "name": "仪征市人民政府", "coordinates": { "lat": 32.272833, "lng": 119.184468 }, "pixel": { "x": 893, "y": 4422 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B020200EO1" }
+      ]
+    },
+    {
+      "id": "suqian",
+      "name": "宿迁市",
+      "title": "宿迁市地图—政区版（有邻区分区设色）8开",
+      "scale": "1:500000",
+      "version": "2025年11月版",
+      "reviewNumber": "苏N（2025）13号",
+      "sourcePageUrl": "https://jiangsu.tianditu.gov.cn/suqian/map/static/staticmap/standard.html",
+      "downloadUrl": "https://jiangsu.tianditu.gov.cn/staticServer/download/2025/suqianStandrad/宿迁市/03-8开《宿迁市地图—政区版》（有邻区分区设色）.zip",
+      "localPath": "src/data/maps/cities/suqian.jpg",
+      "width": 3307,
+      "height": 4606,
+      "bytes": 1549395,
+      "sha256": "6e5b0cf3452348d9a4d394d6b07f56513e406bd463d5a2e2e93275e93db66ef1",
+      "controlPoints": [
+        { "name": "沭阳县人民政府", "coordinates": { "lat": 34.110642, "lng": 118.804321 }, "pixel": { "x": 2137, "y": 1434 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://www.amap.com/place/B020F0IHUC" },
+        { "name": "宿迁市人民政府", "coordinates": { "lat": 33.963192, "lng": 118.27529 }, "pixel": { "x": 1053, "y": 1807 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B020F007B5" },
+        { "name": "泗阳县人民政府", "coordinates": { "lat": 33.723576, "lng": 118.703636 }, "pixel": { "x": 1976, "y": 2447 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://www.amap.com/place/B020F02B46" },
+        { "name": "泗洪县人民政府", "coordinates": { "lat": 33.457500827, "lng": 118.221692026 }, "pixel": { "x": 921, "y": 3075 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://zh.wikipedia.org/wiki/泗洪县", "coordinateDerivation": "published WGS84 seat coordinate converted to GCJ-02 with the standard public offset algorithm" }
+      ]
+    },
+    {
+      "id": "shanghai",
+      "name": "上海市",
+      "title": "上海市地图（无邻省）",
+      "scale": "图上线段比例尺",
+      "version": "2025年7月版",
+      "reviewNumber": "沪S（2025）053号",
+      "sourcePageUrl": "https://shanghai.tianditu.gov.cn/map/views/standardMap.html",
+      "downloadUrl": "https://shanghai.tianditu.gov.cn/map/data/standardMap/上海市标准地图/3-上海市地图（无邻省）.jpg",
+      "localPath": "src/data/maps/cities/shanghai.jpg",
+      "width": 2466,
+      "height": 3273,
+      "bytes": 4968962,
+      "sha256": "ce793ac3bb84b3bfd2292814da23e47ed59fd9b11b9a7b29d8416f3b47821fb9",
+      "controlPoints": [
+        { "name": "崇明区人民政府", "coordinates": { "lat": 31.623786, "lng": 121.397624 }, "pixel": { "x": 1182, "y": 780 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://www.amap.com/place/B001528BFB" },
+        { "name": "嘉定区人民政府", "coordinates": { "lat": 31.375566, "lng": 121.265276 }, "pixel": { "x": 897, "y": 1390 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://ditu.amap.com/place/B00150BA32" },
+        { "name": "浦东新区人民政府", "coordinates": { "lat": 31.221518, "lng": 121.54438 }, "pixel": { "x": 1492, "y": 1772 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://www.amap.com/place/B00150BA3B" },
+        { "name": "金山区人民政府", "coordinates": { "lat": 30.741572, "lng": 121.340692 }, "pixel": { "x": 1036, "y": 2959 }, "coordinateSystem": "GCJ-02", "coordinateSourceUrl": "https://www.amap.com/place/B00156GQIU", "coordinateDerivation": "government-campus roadside point used for the visually measured district-seat symbol" }
+      ]
+    }
+  ]
+}
