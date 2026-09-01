@@ -1,39 +1,39 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useReducer, useState } from 'react';
 
 import AppErrorBoundary from './components/AppErrorBoundary';
 import SiteDetailPanel from './components/detail/SiteDetailPanel';
 import SiteDirectory from './components/directory/SiteDirectory';
 import ProgressiveGlobe from './components/globe/ProgressiveGlobe';
+import {
+  initialExperienceState,
+  transition,
+} from './components/map/experienceState';
 import JourneyProgress from './components/progress/JourneyProgress';
 import WelcomeScreen from './components/welcome/WelcomeScreen';
 import type { Site } from './data/siteSchema';
 import useJourneyProgress from './hooks/useJourneyProgress';
-
-type PageState = 'welcome' | 'map' | 'travelling' | 'detail';
 
 type AppProps = {
   sites?: ReadonlyArray<Site>;
 };
 
 export default function App({ sites }: AppProps) {
-  const [pageState, setPageState] = useState<PageState>('welcome');
-  const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
+  const [experience, dispatch] = useReducer(transition, initialExperienceState);
   const [globeRetryKey, setGlobeRetryKey] = useState(0);
   const { markVisited, visitedIds } = useJourneyProgress();
 
   const selectedSite =
-    sites?.find(({ id }) => id === selectedSiteId) ?? null;
+    sites?.find(({ id }) => id === experience.siteId) ?? null;
 
   const selectSite = useCallback(
     (id: string) => {
-      if (pageState !== 'map' || !sites?.some((site) => site.id === id)) {
+      if (experience.view !== 'national' || !sites?.some((site) => site.id === id)) {
         return;
       }
 
-      setSelectedSiteId(id);
-      setPageState('travelling');
+      dispatch({ type: 'SELECT_SITE', siteId: id });
     },
-    [pageState, sites],
+    [experience.view, sites],
   );
 
   const openDetail = useCallback(
@@ -42,21 +42,34 @@ export default function App({ sites }: AppProps) {
         return;
       }
 
-      setSelectedSiteId(id);
       markVisited(id);
-      setPageState('detail');
+      dispatch({ type: 'TRAVEL_COMPLETE' });
+    },
+    [markVisited, sites],
+  );
+
+  const openDirectoryDetail = useCallback(
+    (id: string) => {
+      if (!sites?.some((site) => site.id === id)) {
+        return;
+      }
+
+      markVisited(id);
+      dispatch({ type: 'OPEN_DIRECTORY_DETAIL', siteId: id });
     },
     [markVisited, sites],
   );
 
   const finishReturn = useCallback(() => {
-    setSelectedSiteId(null);
-    setPageState('map');
+    dispatch({ type: 'RETURN_COMPLETE' });
+  }, []);
+
+  const closeDetail = useCallback(() => {
+    dispatch({ type: 'CLOSE_DETAIL' });
   }, []);
 
   const retryGlobe = useCallback(() => {
-    setSelectedSiteId(null);
-    setPageState('map');
+    dispatch({ type: 'RESET_MAP' });
     setGlobeRetryKey((key) => key + 1);
   }, []);
 
@@ -79,8 +92,13 @@ export default function App({ sites }: AppProps) {
     );
   }
 
-  if (pageState === 'welcome') {
-    return <WelcomeScreen onEnter={() => setPageState('map')} ready />;
+  if (experience.view === 'welcome') {
+    return (
+      <WelcomeScreen
+        onEnter={() => dispatch({ type: 'RESET_MAP' })}
+        ready
+      />
+    );
   }
 
   return (
@@ -94,40 +112,42 @@ export default function App({ sites }: AppProps) {
       >
         <JourneyProgress visitedCount={visitedIds.length} />
 
-        {pageState === 'travelling' && selectedSite && (
-          <p aria-live="polite" role="status">
-            正在调整地图视角：{selectedSite.officialName}
-          </p>
-        )}
+        {(experience.view === 'travelling-site' ||
+          experience.view === 'returning-national') &&
+          selectedSite && (
+            <p aria-live="polite" role="status">
+              正在调整地图视角：{selectedSite.officialName}
+            </p>
+          )}
 
         <ProgressiveGlobe
-          detailOpen={pageState === 'detail'}
+          detailOpen={experience.view === 'detail'}
           key={globeRetryKey}
           onReturnComplete={finishReturn}
           onSelect={selectSite}
           onTravelComplete={openDetail}
-          selectedId={selectedSiteId}
+          selectedId={experience.siteId ?? null}
           sites={sites}
           visitedIds={visitedIds}
         />
 
-        {pageState === 'map' && (
+        {experience.view === 'national' && (
           <>
             <button onClick={retryGlobe} type="button">
               重新加载3D地图
             </button>
             <SiteDirectory
-              onOpen={openDetail}
+              onOpen={openDirectoryDetail}
               sites={sites}
               visitedIds={visitedIds}
             />
           </>
         )}
 
-        {pageState === 'detail' && selectedSite && (
+        {experience.view === 'detail' && selectedSite && (
           <SiteDetailPanel
             key={selectedSite.id}
-            onClose={() => setPageState('travelling')}
+            onClose={closeDetail}
             site={selectedSite}
           />
         )}

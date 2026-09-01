@@ -292,6 +292,23 @@ describe('App', () => {
     expect(screen.getByText('已点亮 1 / 8 处红色坐标')).toBeVisible();
   });
 
+  it('returns directly to the national view after closing directory detail', async () => {
+    renderExperience();
+    await waitForMap();
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: new RegExp(`查看${sites[0].officialName}`),
+      }),
+    );
+    await screen.findByRole('dialog', { name: sites[0].officialName });
+    fireEvent.click(screen.getByRole('button', { name: '关闭景点详情' }));
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(screen.queryByText(/正在调整地图视角/)).not.toBeInTheDocument();
+    expect(screen.getByRole('region', { name: '测试三维地图' })).toBeVisible();
+  });
+
   it('recovers a rendering failure by remounting the map subtree', async () => {
     const consoleError = vi.spyOn(console, 'error').mockImplementation(() => undefined);
     globeHarness.shouldThrow = true;
