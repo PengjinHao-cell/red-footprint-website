@@ -153,6 +153,28 @@
   }
 }
 
+.map-experience {
+  --map-scale: 1;
+  overflow: hidden;
+}
+
+.map-experience > section {
+  transform: scale(var(--map-scale));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.map-experience[data-motion-phase='city-flash'],
+.map-experience[data-motion-phase='site-bounce'] {
+  filter: brightness(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-experience > section {
+    transform: none;
+  }
+}
+
 .city-map {
   width: min(100%, 72rem);
   margin-inline: auto;
