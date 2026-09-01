@@ -14,7 +14,7 @@
     "exhibits": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026"] },
     "spirit": { "status": "verified", "sourceIds": ["cpc-first-official-home", "cpc-first-shanghai-gov-2026", "cpc-first-mct-chronicle"] }
   },
-  "temporalReview": { "checkedAt": "2026-08-22", "validThrough": "2026-08-31" },
+  "temporalReview": { "checkedAt": "2026-09-01", "validThrough": "2026-09-30" },
   "separationReview": { "factAndReflectionSeparated": true, "reflectionIntroducesNewFacts": false },
   "unresolvedFacts": []
 }

@@ -1822,8 +1822,8 @@
           "spirit"
         ],
         "temporal": {
-          "checkedAt": "2026-08-22",
-          "validThrough": "2026-08-31"
+          "checkedAt": "2026-09-01",
+          "validThrough": "2026-09-30"
         }
       },
       {
@@ -1841,8 +1841,8 @@
           "visitNotice"
         ],
         "temporal": {
-          "checkedAt": "2026-08-22",
-          "validThrough": "2026-08-31"
+          "checkedAt": "2026-09-01",
+          "validThrough": "2026-09-30"
         }
       },
       {
@@ -1949,8 +1949,8 @@
         }
       },
       "temporalReview": {
-        "checkedAt": "2026-08-22",
-        "validThrough": "2026-08-31"
+        "checkedAt": "2026-09-01",
+        "validThrough": "2026-09-30"
       },
       "separationReview": {
         "factAndReflectionSeparated": true,

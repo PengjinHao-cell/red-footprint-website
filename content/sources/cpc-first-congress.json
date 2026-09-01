@@ -10,8 +10,8 @@
       "authorityType": "venue-official",
       "supports": ["officialName", "address", "opening", "reservation", "visitNotice", "history", "exhibits", "spirit"],
       "temporal": {
-        "checkedAt": "2026-08-22",
-        "validThrough": "2026-08-31"
+        "checkedAt": "2026-09-01",
+        "validThrough": "2026-09-30"
       }
     },
     {
@@ -23,8 +23,8 @@
       "authorityType": "venue-official",
       "supports": ["opening", "reservation", "visitNotice"],
       "temporal": {
-        "checkedAt": "2026-08-22",
-        "validThrough": "2026-08-31"
+        "checkedAt": "2026-09-01",
+        "validThrough": "2026-09-30"
       }
     },
     {
