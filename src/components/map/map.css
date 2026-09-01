@@ -39,15 +39,25 @@
   letter-spacing: 0.08em;
 }
 
+.national-map__canvas {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 1000 / 700;
+}
+
 .national-map__svg {
   display: block;
   width: 100%;
-  min-height: 26rem;
+  height: 100%;
   filter: drop-shadow(0 1.2rem 1.6rem rgb(84 32 29 / 12%));
 }
 
 .national-map__feature {
   vector-effect: non-scaling-stroke;
+}
+
+.national-map__provinces {
+  pointer-events: none;
 }
 
 .national-map__feature--province {
@@ -88,14 +98,15 @@
 .national-map__city-anchor--blue .national-map__city-glow { fill: var(--map-city-blue); }
 
 .national-map__city-button {
-  position: relative;
-  width: 112px;
-  height: 112px;
+  position: absolute;
+  width: 6.4%; /* 64 of 1000 viewBox units */
+  height: 9.142857%; /* 64 of 700 viewBox units */
   padding: 0;
   border: 0;
   background: transparent;
   color: var(--brick-dark);
   cursor: pointer;
+  transform: translate(-50%, -50%);
 }
 
 .national-map__city-label {
@@ -116,12 +127,17 @@
   opacity: 0.58;
 }
 
+.national-map__city-button:focus-visible {
+  outline: 2px solid var(--brick);
+  outline-offset: 2px;
+}
+
 .national-map__city-anchor[data-active='true'] .national-map__city-flash {
   animation: city-flash 200ms ease-out both;
 }
 
 .national-map__hint {
-  margin: -1rem 0 0;
+  margin: 0.75rem 0 0;
   color: var(--ink);
   font-size: 0.8rem;
   letter-spacing: 0.08em;
@@ -141,9 +157,8 @@
 @media (max-width: 42rem) {
   .national-map { padding: 0.75rem; }
   .national-map__heading { top: 1rem; left: 1rem; }
-  .national-map__svg { min-height: 31rem; }
   .national-map__city-label { font-size: 24px; stroke-width: 10px; }
-  .national-map__hint { margin-top: -2rem; text-align: center; }
+  .national-map__hint { margin-top: 0.5rem; text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -90,61 +90,72 @@ export default function NationalMap({ disabled, onSelectCity }: NationalMapProps
         <p>长三角红色足迹</p>
         <h2>选择一座城市</h2>
       </header>
-      <svg
-        aria-label="中华人民共和国平面地图"
-        className="national-map__svg"
-        preserveAspectRatio="xMidYMid meet"
-        role="img"
-        viewBox={`0 0 ${VIEW_BOX.width} ${VIEW_BOX.height}`}
-      >
-        <g aria-hidden="true" className="national-map__provinces">
-          {features.map((feature) => {
-            const path = collectRings(feature.geometry.coordinates).map(ringPath).join(' ');
+      <div className="national-map__canvas">
+        <svg
+          aria-label="中华人民共和国平面地图"
+          className="national-map__svg"
+          preserveAspectRatio="none"
+          role="img"
+          viewBox={`0 0 ${VIEW_BOX.width} ${VIEW_BOX.height}`}
+        >
+          <g aria-hidden="true" className="national-map__provinces">
+            {features.map((feature) => {
+              const path = collectRings(feature.geometry.coordinates).map(ringPath).join(' ');
+              return (
+                <path
+                  className={`national-map__feature national-map__feature--${feature.properties.kind}`}
+                  d={path}
+                  fillRule="evenodd"
+                  key={`${feature.properties.kind}-${feature.properties.adcode}`}
+                />
+              );
+            })}
+          </g>
+          {cities.map((city) => {
+            const anchor = project([city.lng, city.lat]);
             return (
-              <path
-                className={`national-map__feature national-map__feature--${feature.properties.kind}`}
-                d={path}
-                fillRule="evenodd"
-                key={`${feature.properties.kind}-${feature.properties.adcode}`}
-              />
+              <g
+                className={`national-map__city-anchor national-map__city-anchor--${city.colorClass}`}
+                data-active={activeCity === city.id}
+                key={city.id}
+                transform={`translate(${anchor.x.toFixed(2)} ${anchor.y.toFixed(2)})`}
+              >
+                <path aria-hidden="true" className="national-map__city-glow" d={city.glowPath} />
+                <path aria-hidden="true" className="national-map__city-flash" d={city.glowPath} />
+                <text
+                  aria-hidden="true"
+                  className="national-map__city-label"
+                  textAnchor="middle"
+                  x={city.label.x}
+                  y={city.label.y}
+                >
+                  {city.name}
+                </text>
+              </g>
             );
           })}
-        </g>
+        </svg>
         {cities.map((city) => {
           const anchor = project([city.lng, city.lat]);
+          const buttonX = anchor.x + city.label.x;
+          const buttonY = anchor.y + city.label.y;
           return (
-            <g
-              className={`national-map__city-anchor national-map__city-anchor--${city.colorClass}`}
+            <button
+              aria-label={`进入${city.name}`}
+              className="national-map__city-button"
               data-active={activeCity === city.id}
+              disabled={disabled}
               key={city.id}
-              transform={`translate(${anchor.x.toFixed(2)} ${anchor.y.toFixed(2)})`}
-            >
-              <path aria-hidden="true" className="national-map__city-glow" d={city.glowPath} />
-              <path aria-hidden="true" className="national-map__city-flash" d={city.glowPath} />
-              <foreignObject height="112" width="112" x="-56" y="-56">
-                <button
-                  aria-label={`进入${city.name}`}
-                  className="national-map__city-button"
-                  data-active={activeCity === city.id}
-                  disabled={disabled}
-                  onClick={() => selectCity(city.id)}
-                  type="button"
-                >
-                </button>
-              </foreignObject>
-              <text
-                aria-hidden="true"
-                className="national-map__city-label"
-                textAnchor="middle"
-                x={city.label.x}
-                y={city.label.y}
-              >
-                {city.name}
-              </text>
-            </g>
+              onClick={() => selectCity(city.id)}
+              style={{
+                left: `${((buttonX / VIEW_BOX.width) * 100).toFixed(3)}%`,
+                top: `${((buttonY / VIEW_BOX.height) * 100).toFixed(3)}%`,
+              }}
+              type="button"
+            />
           );
         })}
-      </svg>
+      </div>
       <p className="national-map__hint">点击城市色斑，进入当地红色足迹地图</p>
     </section>
   );
