@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
 import type { Site } from '../../data/siteSchema';
 import { cityIdForSite, cityMapConfigs, type CityId } from './cityMapConfig';
@@ -28,24 +28,39 @@ export default function CityMap({
   sites,
 }: CityMapProps) {
   const [imageFailed, setImageFailed] = useState(false);
-  const markerRefs = useRef(new Map<string, HTMLElement>());
+  const canvasRef = useRef<HTMLDivElement>(null);
   const config = cityMapConfigs[cityId];
   const citySites = useMemo(
     () => sites.filter((site) => cityIdForSite(site) === cityId),
     [cityId, sites],
   );
 
-  const handleStarSelect = (clientX: number, clientY: number, fallbackId: string) => {
-    const candidates = [...markerRefs.current.entries()].map(([id, element]) => {
-      const rect = element.getBoundingClientRect();
-      return {
-        id,
-        x: rect.left + rect.width / 2,
-        y: rect.top + rect.height / 2,
-      };
-    });
-    onSelectSite(nearestSiteId(candidates, clientX, clientY, CITY_STAR_HIT_RADIUS) ?? fallbackId);
-  };
+  const handleStarSelect = useCallback(
+    (clientX: number, clientY: number, fallbackId: string) => {
+      const canvas = canvasRef.current;
+      if (!canvas) {
+        onSelectSite(fallbackId);
+        return;
+      }
+      const candidates = Array.from(
+        canvas.querySelectorAll<HTMLElement>('.city-star[data-site-id]'),
+      )
+        .map((element) => {
+          const id = element.getAttribute('data-site-id') ?? '';
+          const rect = element.getBoundingClientRect();
+          return {
+            id,
+            x: rect.left + rect.width / 2,
+            y: rect.top + rect.height / 2,
+          };
+        })
+        .filter((candidate) => candidate.id !== '');
+      onSelectSite(
+        nearestSiteId(candidates, clientX, clientY, CITY_STAR_HIT_RADIUS) ?? fallbackId,
+      );
+    },
+    [onSelectSite],
+  );
 
   return (
     <section
@@ -86,7 +101,7 @@ export default function CityMap({
           </ul>
         </div>
       ) : (
-        <div className="city-map__canvas">
+        <div className="city-map__canvas" ref={canvasRef}>
           <CityMapViewport viewBox={config.viewBox}>
             <img
               aria-label={`${config.name}标准地图底图`}
@@ -110,10 +125,6 @@ export default function CityMap({
                   phaseIndex={index}
                   placement="responsive"
                   point={point}
-                  registerAnchor={(element) => {
-                    if (element) markerRefs.current.set(site.id, element);
-                    else markerRefs.current.delete(site.id);
-                  }}
                   selected={selectedSiteId === site.id}
                   site={site}
                   viewBox={config.viewBox}

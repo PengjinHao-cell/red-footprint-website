@@ -14,7 +14,6 @@ type CityStarMarkerProps = {
   phaseIndex?: number;
   placement?: 'absolute' | 'responsive';
   point: ProjectedPoint;
-  registerAnchor?: (element: HTMLElement | null) => void;
   selected?: boolean;
   site: MarkerSite;
   viewBox?: MarkerViewBox;
@@ -30,7 +29,6 @@ export default function CityStarMarker({
   phaseIndex = 0,
   placement = 'absolute',
   point,
-  registerAnchor,
   selected = false,
   site,
   viewBox,
@@ -51,8 +49,8 @@ export default function CityStarMarker({
       data-anchor-y={point.y}
       data-phase={phaseIndex % 3}
       data-selected={selected}
+      data-site-id={site.id}
       data-testid="city-star"
-      ref={registerAnchor}
       style={markerStyle}
     >
       <button

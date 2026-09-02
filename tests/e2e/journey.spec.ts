@@ -64,7 +64,9 @@ test('three Nanjing stars open their own details on mobile', async ({ page }, te
   for (const [starName, dialogName] of stars) {
     const star = page.getByRole('button', { name: starName });
     await expect(star).toBeEnabled();
-    await star.click({ force: true });
+    const box = await star.boundingBox();
+    expect(box).not.toBeNull();
+    await page.touchscreen.tap(box!.x + box!.width / 2, box!.y + box!.height / 2);
     await expect(page.getByRole('dialog', { name: dialogName })).toBeVisible();
     await page.getByRole('button', { name: '关闭景点详情' }).click();
     await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();

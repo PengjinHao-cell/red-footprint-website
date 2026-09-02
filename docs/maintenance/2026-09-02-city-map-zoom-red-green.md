@@ -13,7 +13,8 @@
 | `da9a5ef` | Task 4 城市地图缩放控件（放大/缩小/复位、滚轮、双指） |
 | `e3da0f0` | Task 5 隔离永久视口缩放与详情过渡（`--motion-scale`） |
 | `ee3f0f4` | Task 6 浏览器矩阵与发布门禁证据 |
-| （本提交） | 红星本体最近命中解析（验收驳回后修复） |
+| `fed462a` | 红星本体最近命中解析（验收驳回后修复） |
+| （本提交） | 红星 E2E 改真实触屏点击 + 消除 ref 抖动导致的桌面转场偶发 |
 
 ## 关键 RED → GREEN
 
@@ -52,17 +53,22 @@
   名称、未逐一点击红星，因此 30/30 未覆盖原始问题。
 - **RED（真实浏览器）**：`journey.spec.ts` 新增
   `three Nanjing stars open their own details on mobile`，在 Pixel / iPhone 逐个
-  `force` 点击三颗红星命中按钮并断言对话框标题。修复前 2 失败（移动端）：
+  点击三颗红星命中按钮并断言对话框标题。修复前 2 失败（移动端）：
   点「渡江胜利纪念馆」红星未打开对应详情。
 - **修复**：保持红星坐标与视觉大小不变，新增纯函数
-  `nearestSiteId(candidates, x, y, maxDistance)`（`nearestSite.ts`），
-  `CityMap` 通过 `registerAnchor` 记录每个锚点 DOM 元素，`handleStarSelect` 用
-  `getBoundingClientRect()` 取当前屏幕锚点、以 `24px` 半径选「离点击位置最近的红星」；
+  `nearestSiteId(candidates, x, y, maxDistance)`（`nearestSite.ts`）。
+  `CityMap` 用画布容器的 `querySelectorAll('.city-star[data-site-id]')` 取当前屏幕锚点，
+  `handleStarSelect` 用 `getBoundingClientRect()` 以 `24px` 半径选「离点击位置最近的红星」；
   键盘（`clientX/clientY` 为 0）或锚点缺失时回退到按钮自身 `site.id`。
   `CityStarMarker` 的星体按钮改为经 `onSelectStar(clientX, clientY, site.id)` 走解析，
   名称按钮仍直接 `onSelect(site.id)`。
-- **GREEN**：`three Nanjing stars` 移动端 2 工程 `--repeat-each=10` = 20/20 通过；
-  单测新增 `nearestSite`（4 用例）、`CityStarMarker` 坐标透传、`CityMap` 最近锚点路由。
+- **真实触屏验收**：`three Nanjing stars` 用例不再用 `force`（会绕过真实遮挡），改为
+  取每颗红星中心坐标后用 `page.touchscreen.tap(x, y)` 真实触屏点击；移动端 2 工程
+  `--repeat-each=10` = 20/20 通过。单测新增 `nearestSite`（4 用例）、
+  `CityStarMarker` 坐标透传、`CityMap` 最近锚点路由。
+- **附带修复**：首次实现用每标记 `registerAnchor` ref 回调（每次渲染身份变化 → ref
+  抖动），导致桌面 `desktop completes` 转场偶发卡在 `travelling-site`（`--repeat-each=10`
+  出现 3/10 失败）。改为 `querySelectorAll` 一次性查询后，该用例 10/10 通过。
 
 ## 最终四项命令（2026-09-02）
 
