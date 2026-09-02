@@ -62,8 +62,8 @@ export default function MapExperience({
       setPhase: (phase) => {
         if (rootRef.current) rootRef.current.dataset.motionPhase = phase;
       },
-      setScale: (scale) => {
-        rootRef.current?.style.setProperty('--map-scale', String(scale));
+      setMotionScale: (scale) => {
+        rootRef.current?.style.setProperty('--motion-scale', String(scale));
       },
     };
     const controller = motionControllerFactory(adapter, { reducedMotion });

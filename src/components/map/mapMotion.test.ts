@@ -15,7 +15,7 @@ class FakeAdapter implements MapMotionAdapter {
     this.phases.push(phase);
   }
 
-  setScale(scale: number): void {
+  setMotionScale(scale: number): void {
     this.scales.push(scale);
   }
 }

@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 
 export interface MapMotionAdapter {
   setPhase(phase: string): void;
-  setScale(scale: number): void;
+  setMotionScale(scale: number): void;
 }
 
 export type MapMotionTween = {
@@ -88,7 +88,7 @@ export function createMapMotionController(
         onUpdate: () => {
           if (activeOperation !== operation) return;
           scale = value.scale;
-          adapter.setScale(scale);
+          adapter.setMotionScale(scale);
         },
       });
       const nextStep = steps[index + 1];
@@ -113,7 +113,7 @@ export function createMapMotionController(
     activeTimeline?.kill();
     activeTimeline = null;
     scale = 1;
-    adapter.setScale(1);
+    adapter.setMotionScale(1);
     adapter.setPhase('idle');
   }
 

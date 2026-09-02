@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { siteSchema } from '../../data/siteSchema';
 import MapExperience from './MapExperience';
-import type { MapMotionController } from './mapMotion';
+import type { MapMotionAdapter, MapMotionController } from './mapMotion';
 
 const sites = siteSchema.array().parse(
   JSON.parse(readFileSync('src/data/sites.json', 'utf8')),
@@ -86,6 +86,41 @@ describe('MapExperience', () => {
     );
     motion.callbacks.shift()?.();
     expect(onEvent).toHaveBeenCalledWith({ type: 'SITE_RETURNED' });
+  });
+
+  it('writes motion scale to --motion-scale and leaves --city-scale untouched', () => {
+    const holder: { adapter?: MapMotionAdapter } = {};
+    const controller: MapMotionController = {
+      approachSite: vi.fn(),
+      cancel: vi.fn(),
+      enterCity: vi.fn(),
+      returnFromSite: vi.fn(),
+    };
+    const factory = (captured: MapMotionAdapter) => {
+      holder.adapter = captured;
+      return controller;
+    };
+
+    const { container } = render(
+      <MapExperience
+        motionControllerFactory={factory}
+        onEvent={vi.fn()}
+        sites={sites}
+        state={{ view: 'entering-city', cityId: 'nanjing' }}
+      />,
+    );
+
+    const root = container.querySelector('.map-experience') as HTMLElement;
+    root.style.setProperty('--city-scale', '1.5');
+
+    holder.adapter?.setMotionScale(1.35);
+    expect(root.style.getPropertyValue('--motion-scale')).toBe('1.35');
+    expect(root.style.getPropertyValue('--city-scale')).toBe('1.5');
+    expect(root.style.getPropertyValue('--map-scale')).toBe('');
+
+    holder.adapter?.setMotionScale(1);
+    expect(root.style.getPropertyValue('--motion-scale')).toBe('1');
+    expect(root.style.getPropertyValue('--city-scale')).toBe('1.5');
   });
 
   it('cancels the controller on unmount so no completion event is sent', () => {

@@ -169,12 +169,12 @@
 }
 
 .map-experience {
-  --map-scale: 1;
+  --motion-scale: 1;
   overflow: hidden;
 }
 
 .map-experience > section {
-  transform: scale(var(--map-scale));
+  transform: scale(var(--motion-scale));
   transform-origin: center;
   will-change: transform;
 }
