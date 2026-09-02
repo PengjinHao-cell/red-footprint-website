@@ -31,7 +31,11 @@
 - **期望详情**：点击「雨花台烈士陵园」→ 对话框标题「雨花台烈士陵园」；
   点击「渡江胜利纪念馆」→ 「渡江胜利纪念馆」；点击「中国共产党代表团梅园新村纪念馆」→ 同名。
 - **实际详情**：桌面点击雨花台未打开对应对话框；移动端点击雨花台/渡江被梅园按钮拦截。
-- **GREEN**：（待 Task 2 分层标记后补记）
+- **GREEN**（Task 2 分层标记后）：`CityStarMarker` 拆为锚点容器
+  `.city-star`（`pointer-events:none`）与两个真实按钮——`.city-star__hit`
+  （`44px × 44px`，aria-label `定位并查看{官方名}`）与 `.city-star__label-button`
+  （`min-height:44px`，aria-label `{官方名}`）。星体与名称各自独立 `onClick`，
+  名称按钮不再依赖星体冒泡；三个浏览器工程 `three Nanjing labels` 用例 3/3 通过。
 
 ## 最终四项命令
 

@@ -13,7 +13,7 @@ const site = {
 afterEach(cleanup);
 
 describe('CityStarMarker', () => {
-  it('keeps geographic positioning on the outer button and animation on the inner shape', () => {
+  it('keeps geographic positioning on the container and animation on the inner shape', () => {
     const { container } = render(
       <CityStarMarker
         disabled={false}
@@ -23,7 +23,7 @@ describe('CityStarMarker', () => {
       />,
     );
 
-    const marker = screen.getByRole('button', { name: site.officialName });
+    const marker = container.querySelector('.city-star');
     expect(marker).toHaveStyle({ left: '320px', top: '180px' });
     expect(marker).toHaveAttribute('data-anchor-x', '320');
     expect(marker).toHaveAttribute('data-anchor-y', '180');
@@ -31,9 +31,31 @@ describe('CityStarMarker', () => {
     expect(container.querySelector('.city-star__shape')).not.toBeNull();
   });
 
-  it('selects the exact site once and supports a disabled transition state', () => {
+  it('marks the visual SVG as aria-hidden and gives both targets clear names', () => {
+    const { container } = render(
+      <CityStarMarker
+        disabled={false}
+        onSelect={vi.fn()}
+        point={{ x: 320, y: 180 }}
+        site={site}
+      />,
+    );
+
+    expect(container.querySelector('.city-star__shape svg')).toHaveAttribute(
+      'aria-hidden',
+      'true',
+    );
+    expect(
+      screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' }),
+    ).toBeVisible();
+    expect(
+      screen.getByRole('button', { name: '雨花台烈士陵园', exact: true }),
+    ).toBeVisible();
+  });
+
+  it('selects the same site from the star hit target and the name button', () => {
     const onSelect = vi.fn();
-    const { rerender } = render(
+    render(
       <CityStarMarker
         disabled={false}
         onSelect={onSelect}
@@ -41,10 +63,17 @@ describe('CityStarMarker', () => {
         site={site}
       />,
     );
-    fireEvent.click(screen.getByRole('button', { name: site.officialName }));
-    expect(onSelect).toHaveBeenCalledWith(site.id);
 
-    rerender(
+    fireEvent.click(screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' }));
+    fireEvent.click(screen.getByRole('button', { name: '雨花台烈士陵园', exact: true }));
+    expect(onSelect).toHaveBeenCalledTimes(2);
+    expect(onSelect).toHaveBeenNthCalledWith(1, site.id);
+    expect(onSelect).toHaveBeenNthCalledWith(2, site.id);
+  });
+
+  it('supports a disabled transition state across both targets', () => {
+    const onSelect = vi.fn();
+    render(
       <CityStarMarker
         disabled
         onSelect={onSelect}
@@ -52,8 +81,12 @@ describe('CityStarMarker', () => {
         site={site}
       />,
     );
-    fireEvent.click(screen.getByRole('button', { name: site.officialName }));
-    expect(onSelect).toHaveBeenCalledTimes(1);
+
+    expect(screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' })).toBeDisabled();
+    expect(screen.getByRole('button', { name: '雨花台烈士陵园', exact: true })).toBeDisabled();
+
+    fireEvent.click(screen.getByRole('button', { name: '雨花台烈士陵园', exact: true }));
+    expect(onSelect).not.toHaveBeenCalled();
   });
 
   it('uses a deterministic negative animation delay and a stable selected anchor', () => {
@@ -67,8 +100,8 @@ describe('CityStarMarker', () => {
         site={site}
       />,
     );
-    const marker = screen.getByRole('button', { name: site.officialName });
-    const initialStyle = marker.getAttribute('style');
+    const marker = container.querySelector('.city-star');
+    const initialStyle = marker?.getAttribute('style');
     expect(container.querySelector('.city-star__shape')).toHaveStyle({ animationDelay: '-0.51s' });
 
     rerender(
@@ -81,12 +114,12 @@ describe('CityStarMarker', () => {
         site={site}
       />,
     );
-    expect(marker).toHaveAttribute('data-selected', 'true');
-    expect(marker.getAttribute('style')).toBe(initialStyle);
+    expect(container.querySelector('.city-star')).toHaveAttribute('data-selected', 'true');
+    expect(container.querySelector('.city-star')?.getAttribute('style')).toBe(initialStyle);
   });
 
   it('converts calibrated pixels into responsive percentages without moving the anchor', () => {
-    render(
+    const { container } = render(
       <CityStarMarker
         disabled={false}
         onSelect={vi.fn()}
@@ -97,7 +130,7 @@ describe('CityStarMarker', () => {
       />,
     );
 
-    const marker = screen.getByRole('button', { name: site.officialName });
+    const marker = container.querySelector('.city-star');
     expect(marker).toHaveStyle({ left: '25%', top: '50%' });
     expect(marker).toHaveAttribute('data-anchor-x', '250');
     expect(marker).toHaveAttribute('data-anchor-y', '400');

@@ -41,25 +41,37 @@ export default function CityStarMarker({
   };
 
   return (
-    <button
-      aria-label={site.officialName}
+    <span
       className="city-star"
       data-anchor-x={point.x}
       data-anchor-y={point.y}
       data-phase={phaseIndex % 3}
       data-selected={selected}
       data-testid="city-star"
-      disabled={disabled}
-      onClick={() => onSelect(site.id)}
       style={markerStyle}
-      type="button"
     >
-      <span aria-hidden="true" className="city-star__shape" style={shapeStyle}>
-        <svg aria-hidden="true" viewBox="-42 -42 84 84">
-          <path d={STAR_PATH} />
-        </svg>
-      </span>
-      <span className="city-star__label">{site.shortName}</span>
-    </button>
+      <button
+        aria-label={`定位并查看${site.officialName}`}
+        className="city-star__hit"
+        disabled={disabled}
+        onClick={() => onSelect(site.id)}
+        type="button"
+      >
+        <span aria-hidden="true" className="city-star__shape" style={shapeStyle}>
+          <svg aria-hidden="true" viewBox="-42 -42 84 84">
+            <path d={STAR_PATH} />
+          </svg>
+        </span>
+      </button>
+      <button
+        aria-label={site.officialName}
+        className="city-star__label-button"
+        disabled={disabled}
+        onClick={() => onSelect(site.id)}
+        type="button"
+      >
+        {site.shortName}
+      </button>
+    </span>
   );
 }
