@@ -17,6 +17,8 @@ describe('map resource command', () => {
     expect(output).toMatch(/geometry.*passed/i);
     expect(output).toMatch(/national layer.*passed/i);
     expect(output).toMatch(/site projection.*passed/i);
+    expect(output).toMatch(/zoom range.*passed/i);
+    expect(output).toMatch(/hit targets.*passed/i);
     expect(output).toMatch(/visual integrity.*passed/i);
   });
 

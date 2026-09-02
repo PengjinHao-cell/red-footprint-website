@@ -6,7 +6,13 @@
 
 | 提交 | 说明 |
 | --- | --- |
-| （Task 1） | 复现重叠红星误点契约 |
+| `869bae3` | Task 1 复现重叠红星误点契约（组件契约 + 浏览器 RED） |
+| `b6d932a` | Task 2 分离星体命中与名称入口，44px 星体命中区 |
+| `db3c487` | Task 3 纯函数缩放状态（1—2.5 限制、锚点缩放、复位） |
+| `8522b38` | 校正 `getByRole` 名称匹配类型（移除无效 `exact` 选项） |
+| `da9a5ef` | Task 4 城市地图缩放控件（放大/缩小/复位、滚轮、双指） |
+| `e3da0f0` | Task 5 隔离永久视口缩放与详情过渡（`--motion-scale`） |
+| （Task 6） | 浏览器矩阵与发布门禁证据 |
 
 ## 关键 RED → GREEN
 
@@ -37,6 +43,18 @@
   （`min-height:44px`，aria-label `{官方名}`）。星体与名称各自独立 `onClick`，
   名称按钮不再依赖星体冒泡；三个浏览器工程 `three Nanjing labels` 用例 3/3 通过。
 
-## 最终四项命令
+## 最终四项命令（2026-09-02）
 
-（完成全部 Task 后补记）
+- `npm run lint` → 退出码 0（`verify:release` 7/9）
+- `npm run test:run` → 36 文件 / 216 用例全部通过
+- `npm run test:e2e` → 32 通过 / 7 跳过（Desktop Chromium、Pixel Mobile Chromium、iPhone Mobile WebKit）
+- `npm run verify:release` → 9/9 门禁全部通过，构建产物不重新引入 `globe.gl` 或 `three`
+
+## 浏览器矩阵与发布门禁证据（Task 6）
+
+- `three Nanjing labels` 用例连续运行 `--repeat-each=10`：3 浏览器 × 10 = 30/30 通过。
+- 缩放控件用例（放大、缩小、复位）在三浏览器工程通过；`data-scale` 复位恢复 `1`。
+- 红星命中区缩放前后保持约 44px（`≥44px` 且 `≤46px`）。
+- 移动端无横向页面溢出（沿用 `mobile map has 44px targets` 用例）。
+- `check:map` 新增 `zoom range passed: 1—2.5` 与 `hit targets passed: 44px star hit`
+  两道源码护栏，`check-map-resource.test.ts` 断言其输出。

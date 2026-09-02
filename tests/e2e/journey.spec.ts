@@ -18,8 +18,8 @@ test('desktop completes the two-level map journey and returns to Nanjing', async
 
   await page.getByRole('button', { name: '进入南京市' }).click();
   await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
-  await expect(page.getByRole('button', { name: TARGET_SITE })).toBeVisible();
-  await page.getByRole('button', { name: TARGET_SITE }).click();
+  await expect(page.getByRole('button', { name: TARGET_SITE, exact: true })).toBeVisible();
+  await page.getByRole('button', { name: TARGET_SITE, exact: true }).click();
   await expect(page.getByRole('dialog', { name: TARGET_SITE })).toBeVisible();
   await expect(page.getByText('已点亮 1 / 8 处红色坐标')).toBeVisible();
 
@@ -48,6 +48,51 @@ test('three Nanjing labels open their own matching details', async ({ page }) =>
   }
 });
 
+test('city map zoom controls zoom in, out, and reset', async ({ page }) => {
+  await page.goto('');
+  await page.getByRole('button', { name: '开启寻访' }).click();
+  await page.getByRole('button', { name: '进入南京市' }).click();
+  await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
+
+  const viewport = page.getByTestId('city-map-viewport');
+  await expect(viewport).toHaveAttribute('data-scale', '1');
+
+  await page.getByRole('button', { name: '放大地图' }).click();
+  await expect.poll(() => viewport.getAttribute('data-scale')).not.toBe('1');
+
+  await page.getByRole('button', { name: '复位地图' }).click();
+  await expect(viewport).toHaveAttribute('data-scale', '1');
+
+  await page.getByRole('button', { name: '缩小地图' }).click();
+  await expect(viewport).toHaveAttribute('data-scale', '1');
+});
+
+test('city star hit target stays about 44px under zoom', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'Desktop Chromium', 'Desktop hit-size only');
+  await page.goto('');
+  await page.getByRole('button', { name: '开启寻访' }).click();
+  await page.getByRole('button', { name: '进入南京市' }).click();
+  await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
+
+  const hit = page.getByRole('button', { name: '定位并查看雨花台烈士陵园' });
+  const before = await hit.boundingBox();
+  expect(before).not.toBeNull();
+  expect(before!.width).toBeGreaterThanOrEqual(44);
+  expect(before!.height).toBeGreaterThanOrEqual(44);
+
+  await page.getByRole('button', { name: '放大地图' }).click();
+  await expect
+    .poll(() => page.getByTestId('city-map-viewport').getAttribute('data-scale'))
+    .not.toBe('1');
+
+  const after = await hit.boundingBox();
+  expect(after).not.toBeNull();
+  expect(after!.width).toBeGreaterThanOrEqual(44);
+  expect(after!.width).toBeLessThanOrEqual(46);
+  expect(after!.height).toBeGreaterThanOrEqual(44);
+  expect(after!.height).toBeLessThanOrEqual(46);
+});
+
 test('directory detail closes directly to a usable national map', async ({ page }) => {
   await page.goto('');
   await page.getByRole('button', { name: '开启寻访' }).click();
@@ -70,7 +115,7 @@ test('mobile map has 44px targets and no horizontal overflow', async ({ page }, 
   await page.getByRole('button', { name: '进入南京市' }).click();
   await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
 
-  const star = page.getByRole('button', { name: TARGET_SITE });
+  const star = page.getByRole('button', { name: `定位并查看${TARGET_SITE}` });
   const box = await star.boundingBox();
   expect(box).not.toBeNull();
   expect(box!.width).toBeGreaterThanOrEqual(44);
@@ -86,7 +131,7 @@ test('reduced motion enters detail and returns without spatial waiting', async (
   await page.getByRole('button', { name: '开启寻访' }).click();
   await page.getByRole('button', { name: '进入南京市' }).click();
   await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
-  await page.getByRole('button', { name: MOBILE_SITE }).click();
+  await page.getByRole('button', { name: MOBILE_SITE, exact: true }).click();
   await expect(page.getByRole('dialog', { name: MOBILE_SITE })).toBeVisible();
   await page.getByRole('button', { name: '关闭景点详情' }).click();
   await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();

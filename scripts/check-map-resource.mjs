@@ -470,6 +470,57 @@ function validateSiteCoordinates(sitesPath, errors) {
   }
 }
 
+function validateMapControls(root, errors) {
+  const viewportPath = resolveInsideRoot(
+    root,
+    'src/components/map/cityMapViewport.ts',
+    'map controls',
+    errors,
+  );
+  const markerPath = resolveInsideRoot(
+    root,
+    'src/components/map/CityStarMarker.tsx',
+    'map controls',
+    errors,
+  );
+  const stylesPath = resolveInsideRoot(
+    root,
+    'src/components/map/map.css',
+    'map controls',
+    errors,
+  );
+  if (!viewportPath || !markerPath || !stylesPath) return;
+  if (
+    !requireFile(viewportPath, 'cityMapViewport.ts', errors) ||
+    !requireFile(markerPath, 'CityStarMarker.tsx', errors) ||
+    !requireFile(stylesPath, 'map.css', errors)
+  ) {
+    return;
+  }
+
+  const viewportSource = readFileSync(viewportPath, 'utf8');
+  if (!/MIN_CITY_SCALE\s*=\s*1\b/.test(viewportSource)) {
+    errors.push('map controls: MIN_CITY_SCALE must equal 1');
+  }
+  if (!/MAX_CITY_SCALE\s*=\s*2\.5\b/.test(viewportSource)) {
+    errors.push('map controls: MAX_CITY_SCALE must equal 2.5');
+  }
+
+  const markerSource = readFileSync(markerPath, 'utf8');
+  if (!markerSource.includes('city-star__hit')) {
+    errors.push('map controls: CityStarMarker must expose a star hit target');
+  }
+  if (!markerSource.includes('city-star__label-button')) {
+    errors.push('map controls: CityStarMarker must expose a separated label button');
+  }
+
+  const stylesSource = readFileSync(stylesPath, 'utf8');
+  const hitBlock = stylesSource.match(/\.city-star__hit\s*\{([^}]*)\}/s);
+  if (!hitBlock || !/width:\s*44px/.test(hitBlock[1])) {
+    errors.push('map controls: star hit target must be 44px wide');
+  }
+}
+
 function parseArguments(argv) {
   const options = {
     root: process.cwd(),
@@ -538,6 +589,7 @@ export function runMapResourceCheck(argv = process.argv.slice(2)) {
 
   const sitesPath = resolveInsideRoot(root, options.sites, '--sites', errors);
   validateSiteCoordinates(sitesPath, errors);
+  validateMapControls(root, errors);
 
   if (errors.length > 0) {
     errors.forEach((error) => console.error(`[map] ${error}`));
@@ -549,6 +601,8 @@ export function runMapResourceCheck(argv = process.argv.slice(2)) {
   console.log('[map] geometry passed: 34 province features and 1 maritime-boundary feature');
   console.log('[map] national layer passed: 4 city glows and 0 stars');
   console.log('[map] site projection passed: 8 sites grouped 3/2/2/1 with confirmed coordinates');
+  console.log('[map] zoom range passed: 1—2.5 city scale');
+  console.log('[map] hit targets passed: 44px star hit separated from label buttons');
   console.log('[map] visual integrity passed: 390x844, 768x1024, 1366x768, 1920x1080');
   return 0;
 }
