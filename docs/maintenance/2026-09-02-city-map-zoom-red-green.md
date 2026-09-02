@@ -12,7 +12,8 @@
 | `8522b38` | 校正 `getByRole` 名称匹配类型（移除无效 `exact` 选项） |
 | `da9a5ef` | Task 4 城市地图缩放控件（放大/缩小/复位、滚轮、双指） |
 | `e3da0f0` | Task 5 隔离永久视口缩放与详情过渡（`--motion-scale`） |
-| （Task 6） | 浏览器矩阵与发布门禁证据 |
+| `ee3f0f4` | Task 6 浏览器矩阵与发布门禁证据 |
+| （本提交） | 红星本体最近命中解析（验收驳回后修复） |
 
 ## 关键 RED → GREEN
 
@@ -43,16 +44,37 @@
   （`min-height:44px`，aria-label `{官方名}`）。星体与名称各自独立 `onClick`，
   名称按钮不再依赖星体冒泡；三个浏览器工程 `three Nanjing labels` 用例 3/3 通过。
 
+### 2. 红星本体仍被重叠命中区拦截（验收驳回后的 RED）
+
+- **驳回事实**：Task 2 把星体命中区从 `64px` 缩到 `44px`，但 390×844 下南京三颗星
+  中心距离仅约 `15—27px`，`44px` 命中区仍严重重叠；点击「雨花台」或「渡江胜利纪念馆」
+  红星本体仍被梅园新村纪念馆红星拦截，只有梅园可正常点击。此前的 E2E 只逐一点击
+  名称、未逐一点击红星，因此 30/30 未覆盖原始问题。
+- **RED（真实浏览器）**：`journey.spec.ts` 新增
+  `three Nanjing stars open their own details on mobile`，在 Pixel / iPhone 逐个
+  `force` 点击三颗红星命中按钮并断言对话框标题。修复前 2 失败（移动端）：
+  点「渡江胜利纪念馆」红星未打开对应详情。
+- **修复**：保持红星坐标与视觉大小不变，新增纯函数
+  `nearestSiteId(candidates, x, y, maxDistance)`（`nearestSite.ts`），
+  `CityMap` 通过 `registerAnchor` 记录每个锚点 DOM 元素，`handleStarSelect` 用
+  `getBoundingClientRect()` 取当前屏幕锚点、以 `24px` 半径选「离点击位置最近的红星」；
+  键盘（`clientX/clientY` 为 0）或锚点缺失时回退到按钮自身 `site.id`。
+  `CityStarMarker` 的星体按钮改为经 `onSelectStar(clientX, clientY, site.id)` 走解析，
+  名称按钮仍直接 `onSelect(site.id)`。
+- **GREEN**：`three Nanjing stars` 移动端 2 工程 `--repeat-each=10` = 20/20 通过；
+  单测新增 `nearestSite`（4 用例）、`CityStarMarker` 坐标透传、`CityMap` 最近锚点路由。
+
 ## 最终四项命令（2026-09-02）
 
 - `npm run lint` → 退出码 0（`verify:release` 7/9）
-- `npm run test:run` → 36 文件 / 216 用例全部通过
-- `npm run test:e2e` → 32 通过 / 7 跳过（Desktop Chromium、Pixel Mobile Chromium、iPhone Mobile WebKit）
+- `npm run test:run` → 37 文件 / 222 用例全部通过
+- `npm run test:e2e` → 34 通过 / 8 跳过（Desktop Chromium、Pixel Mobile Chromium、iPhone Mobile WebKit）
 - `npm run verify:release` → 9/9 门禁全部通过，构建产物不重新引入 `globe.gl` 或 `three`
 
 ## 浏览器矩阵与发布门禁证据（Task 6）
 
 - `three Nanjing labels` 用例连续运行 `--repeat-each=10`：3 浏览器 × 10 = 30/30 通过。
+- `three Nanjing stars` 用例连续运行 `--repeat-each=10`：2 移动工程 × 10 = 20/20 通过。
 - 缩放控件用例（放大、缩小、复位）在三浏览器工程通过；`data-scale` 复位恢复 `1`。
 - 红星命中区缩放前后保持约 44px（`≥44px` 且 `≤46px`）。
 - 移动端无横向页面溢出（沿用 `mobile map has 44px targets` 用例）。

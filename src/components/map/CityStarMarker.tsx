@@ -10,9 +10,11 @@ type MarkerSite = Pick<Site, 'id' | 'officialName' | 'shortName'>;
 type CityStarMarkerProps = {
   disabled: boolean;
   onSelect: (siteId: string) => void;
+  onSelectStar?: (clientX: number, clientY: number, siteId: string) => void;
   phaseIndex?: number;
   placement?: 'absolute' | 'responsive';
   point: ProjectedPoint;
+  registerAnchor?: (element: HTMLElement | null) => void;
   selected?: boolean;
   site: MarkerSite;
   viewBox?: MarkerViewBox;
@@ -24,9 +26,11 @@ const STAR_PATH =
 export default function CityStarMarker({
   disabled,
   onSelect,
+  onSelectStar,
   phaseIndex = 0,
   placement = 'absolute',
   point,
+  registerAnchor,
   selected = false,
   site,
   viewBox,
@@ -48,13 +52,20 @@ export default function CityStarMarker({
       data-phase={phaseIndex % 3}
       data-selected={selected}
       data-testid="city-star"
+      ref={registerAnchor}
       style={markerStyle}
     >
       <button
         aria-label={`定位并查看${site.officialName}`}
         className="city-star__hit"
         disabled={disabled}
-        onClick={() => onSelect(site.id)}
+        onClick={(event) => {
+          if (onSelectStar) {
+            onSelectStar(event.clientX, event.clientY, site.id);
+          } else {
+            onSelect(site.id);
+          }
+        }}
         type="button"
       >
         <span aria-hidden="true" className="city-star__shape" style={shapeStyle}>

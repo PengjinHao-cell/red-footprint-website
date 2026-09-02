@@ -71,6 +71,28 @@ describe('CityStarMarker', () => {
     expect(onSelect).toHaveBeenNthCalledWith(2, site.id);
   });
 
+  it('forwards star hit coordinates through onSelectStar without selecting directly', () => {
+    const onSelect = vi.fn();
+    const onSelectStar = vi.fn();
+    render(
+      <CityStarMarker
+        disabled={false}
+        onSelect={onSelect}
+        onSelectStar={onSelectStar}
+        point={{ x: 320, y: 180 }}
+        site={site}
+      />,
+    );
+
+    fireEvent.click(
+      screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' }),
+      { clientX: 120, clientY: 80 },
+    );
+
+    expect(onSelectStar).toHaveBeenCalledWith(120, 80, site.id);
+    expect(onSelect).not.toHaveBeenCalled();
+  });
+
   it('supports a disabled transition state across both targets', () => {
     const onSelect = vi.fn();
     render(

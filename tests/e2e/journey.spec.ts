@@ -48,6 +48,29 @@ test('three Nanjing labels open their own matching details', async ({ page }) =>
   }
 });
 
+test('three Nanjing stars open their own details on mobile', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name === 'Desktop Chromium', 'Mobile overlap only');
+  await page.goto('');
+  await page.getByRole('button', { name: '开启寻访' }).click();
+  await page.getByRole('button', { name: '进入南京市' }).click();
+  await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
+
+  const stars = [
+    ['定位并查看雨花台烈士陵园', '雨花台烈士陵园'],
+    ['定位并查看渡江胜利纪念馆', '渡江胜利纪念馆'],
+    ['定位并查看中国共产党代表团梅园新村纪念馆', '中国共产党代表团梅园新村纪念馆'],
+  ] as const;
+
+  for (const [starName, dialogName] of stars) {
+    const star = page.getByRole('button', { name: starName });
+    await expect(star).toBeEnabled();
+    await star.click({ force: true });
+    await expect(page.getByRole('dialog', { name: dialogName })).toBeVisible();
+    await page.getByRole('button', { name: '关闭景点详情' }).click();
+    await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
+  }
+});
+
 test('city map zoom controls zoom in, out, and reset', async ({ page }) => {
   await page.goto('');
   await page.getByRole('button', { name: '开启寻访' }).click();
