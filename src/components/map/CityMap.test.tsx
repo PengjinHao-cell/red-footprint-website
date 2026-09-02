@@ -56,6 +56,17 @@ describe('CityMap', () => {
     expect(onBack).toHaveBeenCalledTimes(1);
   });
 
+  it.each([
+    ['雨花台烈士陵园', 'yuhuatai-martyrs'],
+    ['渡江胜利纪念馆', 'dujiang-victory'],
+    ['中国共产党代表团梅园新村纪念馆', 'meiyuan-new-village'],
+  ])('selects %s without another marker intercepting it', (name, id) => {
+    const onSelectSite = vi.fn();
+    render(<CityMap cityId="nanjing" onBack={vi.fn()} onSelectSite={onSelectSite} sites={sites} />);
+    fireEvent.click(screen.getByRole('button', { name, exact: true }));
+    expect(onSelectSite).toHaveBeenLastCalledWith(id);
+  });
+
   it('falls back to accessible site buttons when the map image fails', () => {
     const onSelectSite = vi.fn();
     render(

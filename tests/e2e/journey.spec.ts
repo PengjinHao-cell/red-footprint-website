@@ -28,6 +28,26 @@ test('desktop completes the two-level map journey and returns to Nanjing', async
   await expect(page.getByRole('status')).toHaveCount(0);
 });
 
+test('three Nanjing labels open their own matching details', async ({ page }) => {
+  await page.goto('');
+  await page.getByRole('button', { name: '开启寻访' }).click();
+  await page.getByRole('button', { name: '进入南京市' }).click();
+  await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
+
+  const labels = [
+    ['雨花台烈士陵园', '雨花台烈士陵园'],
+    ['渡江胜利纪念馆', '渡江胜利纪念馆'],
+    ['中国共产党代表团梅园新村纪念馆', '中国共产党代表团梅园新村纪念馆'],
+  ] as const;
+
+  for (const [label, dialogName] of labels) {
+    await page.getByRole('button', { name: label, exact: true }).click();
+    await expect(page.getByRole('dialog', { name: dialogName })).toBeVisible();
+    await page.getByRole('button', { name: '关闭景点详情' }).click();
+    await expect(page.getByRole('region', { name: '南京市红色足迹地图' })).toBeVisible();
+  }
+});
+
 test('directory detail closes directly to a usable national map', async ({ page }) => {
   await page.goto('');
   await page.getByRole('button', { name: '开启寻访' }).click();
