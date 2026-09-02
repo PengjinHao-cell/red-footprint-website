@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import type { Site } from '../../data/siteSchema';
 import { cityIdForSite, cityMapConfigs, type CityId } from './cityMapConfig';
 import CityStarMarker from './CityStarMarker';
+import CityMapViewport from './CityMapViewport.tsx';
 import { projectCoordinate } from './mapProjection';
 import './map.css';
 
@@ -69,36 +70,36 @@ export default function CityMap({
           </ul>
         </div>
       ) : (
-        <div
-          className="city-map__canvas"
-          style={{ aspectRatio: `${config.viewBox.width} / ${config.viewBox.height}` }}
-        >
-          <img
-            aria-label={`${config.name}标准地图底图`}
-            className="city-map__image"
-            onError={() => setImageFailed(true)}
-            src={config.imageUrl}
-          />
-          {citySites.map((site, index) => {
-            const point = projectCoordinate(
-              site.coordinates,
-              config.projection,
-              config.viewBox,
-            );
-            return (
-              <CityStarMarker
-                disabled={disabled}
-                key={site.id}
-                onSelect={onSelectSite}
-                phaseIndex={index}
-                placement="responsive"
-                point={point}
-                selected={selectedSiteId === site.id}
-                site={site}
-                viewBox={config.viewBox}
-              />
-            );
-          })}
+        <div className="city-map__canvas">
+          <CityMapViewport viewBox={config.viewBox}>
+            <img
+              aria-label={`${config.name}标准地图底图`}
+              className="city-map__image"
+              onError={() => setImageFailed(true)}
+              src={config.imageUrl}
+            />
+            <div aria-hidden="true" className="city-map__canvas-wash" />
+            {citySites.map((site, index) => {
+              const point = projectCoordinate(
+                site.coordinates,
+                config.projection,
+                config.viewBox,
+              );
+              return (
+                <CityStarMarker
+                  disabled={disabled}
+                  key={site.id}
+                  onSelect={onSelectSite}
+                  phaseIndex={index}
+                  placement="responsive"
+                  point={point}
+                  selected={selectedSiteId === site.id}
+                  site={site}
+                  viewBox={config.viewBox}
+                />
+              );
+            })}
+          </CityMapViewport>
         </div>
       )}
 
