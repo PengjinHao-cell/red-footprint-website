@@ -49,7 +49,7 @@ describe('CityStarMarker', () => {
       screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' }),
     ).toBeVisible();
     expect(
-      screen.getByRole('button', { name: '雨花台烈士陵园', exact: true }),
+      screen.getByRole('button', { name: '雨花台烈士陵园' }),
     ).toBeVisible();
   });
 
@@ -65,7 +65,7 @@ describe('CityStarMarker', () => {
     );
 
     fireEvent.click(screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' }));
-    fireEvent.click(screen.getByRole('button', { name: '雨花台烈士陵园', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: '雨花台烈士陵园' }));
     expect(onSelect).toHaveBeenCalledTimes(2);
     expect(onSelect).toHaveBeenNthCalledWith(1, site.id);
     expect(onSelect).toHaveBeenNthCalledWith(2, site.id);
@@ -83,9 +83,9 @@ describe('CityStarMarker', () => {
     );
 
     expect(screen.getByRole('button', { name: '定位并查看雨花台烈士陵园' })).toBeDisabled();
-    expect(screen.getByRole('button', { name: '雨花台烈士陵园', exact: true })).toBeDisabled();
+    expect(screen.getByRole('button', { name: '雨花台烈士陵园' })).toBeDisabled();
 
-    fireEvent.click(screen.getByRole('button', { name: '雨花台烈士陵园', exact: true }));
+    fireEvent.click(screen.getByRole('button', { name: '雨花台烈士陵园' }));
     expect(onSelect).not.toHaveBeenCalled();
   });
 

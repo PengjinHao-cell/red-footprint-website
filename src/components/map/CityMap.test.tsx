@@ -63,7 +63,7 @@ describe('CityMap', () => {
   ])('selects %s without another marker intercepting it', (name, id) => {
     const onSelectSite = vi.fn();
     render(<CityMap cityId="nanjing" onBack={vi.fn()} onSelectSite={onSelectSite} sites={sites} />);
-    fireEvent.click(screen.getByRole('button', { name, exact: true }));
+    fireEvent.click(screen.getByRole('button', { name }));
     expect(onSelectSite).toHaveBeenLastCalledWith(id);
   });
 
